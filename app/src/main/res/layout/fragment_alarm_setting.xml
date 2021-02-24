@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/login_close_button_size"
+        android:layout_height="@dimen/login_close_button_size"
+        android:padding="@dimen/login_close_button_padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:adjustViewBounds="true"
+        android:src="@drawable/backbutton"
+        android:id="@+id/btnBack"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnBack"
+        app:layout_constraintBottom_toBottomOf="@id/btnBack"
+        android:textColor="@color/dark_grey"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:textSize="@dimen/fix_text_size_4"
+        android:textStyle="bold"
+        android:text="@string/mypage_setting_alarm" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBack"/>
+
+    <!-- 전체 알림 수신 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutAlarmAll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/mypage_bookmark_pet_guide_margin_top"
+        android:paddingStart="@dimen/mypage_pet_side_margin"
+        android:paddingBottom="@dimen/pet_kind_list_item_padding_top"
+        android:paddingEnd="@dimen/mypage_pet_information_profile_margin"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mypage_setting_alarm_all"
+            android:textStyle="normal"
+            android:textSize="@dimen/fix_text_size_3"
+            android:textColor="@color/gunmetal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Switch
+            android:id="@+id/btnAlarmAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="0dp"
+        android:layout_height="6dp"
+        android:background="@color/colorf0f2f4"
+        app:layout_constraintTop_toBottomOf="@+id/layoutAlarmAll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 상담 채팅 알림 수신 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutAlarmChatting"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/mypage_bookmark_pet_guide_margin_top"
+        android:paddingStart="@dimen/mypage_pet_side_margin"
+        android:paddingBottom="@dimen/pet_kind_list_item_padding_top"
+        android:paddingEnd="@dimen/mypage_pet_information_profile_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider1">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mypage_setting_chatting_alarm"
+            android:textStyle="normal"
+            android:textSize="@dimen/fix_text_size_3"
+            android:textColor="@color/gunmetal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Switch
+            android:id="@+id/btnChattingAlarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/layoutAlarmChatting"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 댓글 알림 수신 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutAlarmReply"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/mypage_bookmark_pet_guide_margin_top"
+        android:paddingStart="@dimen/mypage_pet_side_margin"
+        android:paddingBottom="@dimen/pet_kind_list_item_padding_top"
+        android:paddingEnd="@dimen/mypage_pet_information_profile_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mypage_setting_reply_alarm"
+            android:textStyle="normal"
+            android:textSize="@dimen/fix_text_size_3"
+            android:textColor="@color/gunmetal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Switch
+            android:id="@+id/btnReplyAlarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/layoutAlarmReply"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 등급 알림 수신 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutAlarmLevel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/mypage_bookmark_pet_guide_margin_top"
+        android:paddingStart="@dimen/mypage_pet_side_margin"
+        android:paddingBottom="@dimen/pet_kind_list_item_padding_top"
+        android:paddingEnd="@dimen/mypage_pet_information_profile_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider3">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mypage_setting_level_alarm"
+            android:textStyle="normal"
+            android:textSize="@dimen/fix_text_size_3"
+            android:textColor="@color/gunmetal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Switch
+            android:id="@+id/btnLevelAlarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/layoutAlarmLevel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

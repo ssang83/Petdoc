@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/root"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/diagnosisCheck"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/detail_search_check_off"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="26dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/diagnosisContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:layout_marginEnd="26dp"
+        app:layout_constraintStart_toEndOf="@id/diagnosisCheck"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/diagnosisCheck"
+        tools:text="평소 소화를 잘 못하고 밥을 먹을 때 숨을 거칠게 쉬는 편인가요?"
+        android:textSize="@dimen/fix_text_size_3"
+        android:textColor="@color/reddishgrey"
+        android:textStyle="normal"
+        android:layout_marginStart="8dp"
+        android:maxLines="2"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/topLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/stepper"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/pet_add_stepper_height"
+            android:layout_marginStart="@dimen/pet_add_stepper_margin"
+            android:layout_marginEnd="@dimen/pet_add_stepper_margin"
+            android:background="@drawable/bg_pet_add_inactive"
+            android:layout_marginTop="@dimen/pet_add_name_profile_margin_top"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/pet_add_stepper_height"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.5"
+                android:background="@drawable/bg_pet_add_active"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/login_close_button_size"
+                android:layout_height="@dimen/login_close_button_size"
+                android:padding="@dimen/login_close_button_padding"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/x_button"
+                android:id="@+id/btnClose"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btnClose"
+                app:layout_constraintBottom_toBottomOf="@id/btnClose"
+                android:textColor="@color/dark_grey"
+                android:textAlignment="gravity"
+                android:gravity="center"
+                android:textSize="@dimen/fix_text_size_4"
+                android:textStyle="bold"
+                android:text="@string/pet_info_detail" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewPetBreedDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/pet_add_stepper_margin"
+        android:layout_marginEnd="@dimen/pet_add_stepper_margin"
+        android:layout_marginTop="30dp"
+        android:textSize="@dimen/fix_text_size_3"
+        android:textColor="@color/light_grey"
+        android:textStyle="bold"
+        android:includeFontPadding="false"
+        tools:text="심바의 품종을 알려주세요."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout"/>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPetBreedDesc"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        android:id="@+id/speciesList"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnNext"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnNext"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height_default"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/button_margin"
+        android:layout_marginEnd="@dimen/button_margin"
+        android:layout_marginBottom="@dimen/button_margin"
+        android:background="@drawable/btn_pet_add_next"
+        android:textColor="@drawable/color_btn_pet_add_next_text"
+        android:textStyle="bold"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:textSize="@dimen/fix_text_size_5"
+        android:text="@string/pet_add_next" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

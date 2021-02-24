@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/login_close_button_size"
+        android:layout_height="@dimen/login_close_button_size"
+        android:padding="@dimen/login_close_button_padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:adjustViewBounds="true"
+        android:src="@drawable/backbutton"
+        android:id="@+id/btnBack"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnBack"
+        app:layout_constraintBottom_toBottomOf="@id/btnBack"
+        android:textColor="@color/dark_grey"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:textSize="@dimen/fix_text_size_4"
+        android:textStyle="bold"
+        android:text="@string/mypage_inquiry_write" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBack"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="@dimen/inquriy_item_padding"
+        app:layout_constraintTop_toBottomOf="@+id/btnBack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/replyTitle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/sign_up_social_input_box_height"
+            android:layout_marginTop="@dimen/sign_up_social_input_box_image_padding"
+            android:background="@drawable/grey_round_stoke_rect"
+            android:gravity="center_vertical|start"
+            android:hint="@string/mypage_inquiry_write_hint"
+            android:textColorHint="@color/light_grey3"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingStart="@dimen/inquriy_item_padding"
+            android:paddingEnd="@dimen/inquriy_item_padding"
+            android:singleLine="true"
+            android:textAlignment="gravity"
+            android:textColor="@color/dark_grey"
+            android:textStyle="normal"
+            android:textSize="@dimen/fix_text_size_3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/replySubject"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/inquriy_write_text_size"
+            android:layout_marginTop="@dimen/sign_up_social_input_box_image_padding"
+            android:background="@drawable/grey_round_stoke_rect"
+            android:gravity="center_vertical|top"
+            android:hint="@string/mypage_inquiry_write_comment_hint"
+            android:textColorHint="@color/light_grey3"
+            android:inputType="textMultiLine"
+            android:paddingStart="@dimen/inquriy_item_padding"
+            android:paddingTop="@dimen/inquriy_item_padding"
+            android:paddingEnd="@dimen/inquriy_item_padding"
+            android:textAlignment="gravity"
+            android:textColor="@color/dark_grey"
+            android:textStyle="normal"
+            android:textSize="@dimen/fix_text_size_3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/replyTitle"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnPost"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height_default"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/orange_round_rect"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textSize="@dimen/fix_text_size_5"
+            android:text="@string/mypage_inquiry_write_post" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/little_orange">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:textStyle="bold"
+            android:textColor="@color/slateGrey"
+            android:textSize="@dimen/fix_text_size_4"
+            android:text="펫 체크 어드밴스드"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/login_close_button_size"
+            android:layout_height="@dimen/login_close_button_size"
+            android:padding="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_back"
+            android:id="@+id/btnClose"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/layoutHeader"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/little_orange"
+            >
+
+            <LinearLayout
+                android:id="@+id/logoLayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                >
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="180dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/img_checkup_logo"
+                    android:id="@+id/imageViewLogo"
+                    android:adjustViewBounds="true"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginStart="26dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="26dp"
+                    android:text="149종의 혈액/알러지 검사를\n합리적 가격으로\n펫닥에서 케어해보세요."
+                    android:textStyle="bold"
+                    android:textSize="22dp"
+                    android:textColor="@color/slateGrey"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewLogo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginEnd="26dp"
+                    android:text="44종의 혈액 검사를 통해 영양 상태부터 질병 여부까지 꼼꼼하게 체크하고, 우리나라 환경과 식이에 맞춘 105종의 알러지 검사로 내 반려동물의 건강 상태를 미리 예방하세요."
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal"
+                    app:layout_constraintTop_toBottomOf="@+id/tv1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_care_checkup_detail"
+                android:adjustViewBounds="true"
+                app:layout_constraintTop_toBottomOf="@+id/logoLayer"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="9dp"
+                />
+
+            <LinearLayout
+                android:id="@+id/guideLayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/logoLayer"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="165dp"
+                android:background="@drawable/white_round_top_only"
+                android:orientation="vertical"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginStart="26dp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:id="@+id/desc1"
+                        android:text="1"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:textColor="@color/white"
+                        android:includeFontPadding="false"
+                        android:gravity="center"
+                        android:background="@drawable/salmon_pink_solid_round_rect"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="예방적 건강검진의 필요성"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/slateGrey"
+                        android:layout_marginStart="10dp"
+                        android:includeFontPadding="false"
+                        app:layout_constraintTop_toTopOf="@+id/desc1"
+                        app:layout_constraintStart_toEndOf="@+id/desc1"
+                        app:layout_constraintBottom_toBottomOf="@+id/desc1"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="반려동물도 사람과 같이 생애주기에 따른 다양한 질병을 가지고 있습니다. 성장에 따른 근골격계 문제 및 노화에 따른 질병사례도 보고되고 있죠. 따라서 미리미리 건강 상태를 확인하며, 원인모를 질병을 대비하는게 좋습니다."
+                    android:textColor="@color/slateGrey"
+                    android:textStyle="normal"
+                    android:textSize="16dp"
+                    android:includeFontPadding="false"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginEnd="26dp"
+                    android:layout_marginTop="14dp"
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginStart="26dp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:id="@+id/desc2"
+                        android:text="2"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:textColor="@color/white"
+                        android:includeFontPadding="false"
+                        android:gravity="center"
+                        android:background="@drawable/peach_solid_round_rect"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="합리적 가격과 편리한 사용"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/slateGrey"
+                        android:layout_marginStart="10dp"
+                        android:includeFontPadding="false"
+                        app:layout_constraintTop_toTopOf="@+id/desc2"
+                        app:layout_constraintStart_toEndOf="@+id/desc2"
+                        app:layout_constraintBottom_toBottomOf="@+id/desc2"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="펫 체크 어드밴스드는 서울, 경기 228개 이상의 펫닥과 계약된 동물병원에서 편리하게 이용할 수 있으며, 혈액 + 알러지 149종의 검사를 299,000원(부가세 별도)의 합리적인 가격으로 이용할 수 있습니다."
+                    android:textColor="@color/slateGrey"
+                    android:textStyle="normal"
+                    android:textSize="16dp"
+                    android:includeFontPadding="false"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginEnd="26dp"
+                    android:layout_marginTop="14dp"
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/btnHospitalSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="66dp"
+                    android:background="@drawable/shadow"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="26dp"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="35dp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewSearch"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_search"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/slateGrey"
+                        android:includeFontPadding="false"
+                        android:text="검사 가능한 병원 찾아보기"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewSearch"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewSearch"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageViewSearch"
+                        android:layout_marginStart="6dp"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:src="@drawable/ic_arrow"
+                        android:adjustViewBounds="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/guideLayer"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@color/little_orange"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="펫 체크 어드밴스드\n어떻게 이용하나요?"
+                    android:textColor="@color/slateGrey"
+                    android:textStyle="bold"
+                    android:textSize="22dp"
+                    android:includeFontPadding="false"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginStart="26dp"
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="36dp"
+                    >
+
+                    <View
+                        android:id="@+id/step1"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:background="@drawable/white_circle"
+                        app:layout_constraintEnd_toStartOf="@+id/imageViewStep1"
+                        app:layout_constraintTop_toTopOf="@id/imageViewStep1"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageViewStep1"
+                        android:layout_marginEnd="10dp"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:src="@drawable/img_checkup_genetotal_step_01"
+                        android:adjustViewBounds="true"
+                        android:id="@+id/imageViewStep1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="34dp"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/step1Layer"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginEnd="23dp"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewStep1"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewStep1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="상품 구매하기"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/slateGrey"
+                            android:includeFontPadding="false"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="구매하기 버튼을 눌러 상품을 구매해주세요. 상품 구매 후, 카카오 알림톡 혹은 SMS 식별코드가 전송됩니다. "
+                            android:textColor="@color/slateGrey"
+                            android:textStyle="normal"
+                            android:includeFontPadding="false"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/btnPurchase"
+                            android:layout_width="match_parent"
+                            android:layout_height="43dp"
+                            android:layout_marginTop="10dp"
+                            android:textStyle="bold"
+                            android:background="@drawable/orange_round_solid_6"
+                            android:textColor="@color/white"
+                            android:textAlignment="gravity"
+                            android:gravity="center"
+                            android:textSize="@dimen/fix_text_size_5"
+                            android:text="펫 체크 어드밴스드 구매하기" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layerType="software"
+                        android:background="@drawable/dash_grey_line_vertical"
+                        app:layout_constraintTop_toBottomOf="@+id/step1"
+                        app:layout_constraintBottom_toTopOf="@+id/step2"
+                        app:layout_constraintStart_toStartOf="@+id/step1"
+                        app:layout_constraintEnd_toEndOf="@+id/step1"
+                        />
+
+                    <View
+                        android:id="@+id/step2"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:background="@drawable/light_peach_circle"
+                        app:layout_constraintEnd_toStartOf="@+id/imageViewStep2"
+                        app:layout_constraintTop_toTopOf="@id/imageViewStep2"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageViewStep2"
+                        android:layout_marginEnd="10dp"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:src="@drawable/img_checkup_genetotal_step_02"
+                        android:adjustViewBounds="true"
+                        android:id="@+id/imageViewStep2"
+                        app:layout_constraintTop_toBottomOf="@+id/step1Layer"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="34dp"
+                        android:layout_marginTop="30dp"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/step2Layer"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginEnd="23dp"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewStep2"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewStep2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="검사하기 / 병원예약"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/slateGrey"
+                            android:includeFontPadding="false"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="검사하기 버튼을 눌러 전송된 식별코드를 입력하고 혈액 채취를 위해 예약 가능한 병원을 예약해주세요."
+                            android:textColor="@color/slateGrey"
+                            android:textStyle="normal"
+                            android:includeFontPadding="false"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/btnTest"
+                            android:layout_width="match_parent"
+                            android:layout_height="43dp"
+                            android:layout_marginTop="10dp"
+                            android:textStyle="bold"
+                            android:background="@drawable/blue_grey_round_solid_6"
+                            android:textColor="@color/white"
+                            android:textAlignment="gravity"
+                            android:gravity="center"
+                            android:textSize="@dimen/fix_text_size_5"
+                            android:text="구매가 되었다면 검사하기" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layerType="software"
+                        android:background="@drawable/dash_grey_line_vertical"
+                        app:layout_constraintTop_toBottomOf="@+id/step2"
+                        app:layout_constraintBottom_toTopOf="@+id/step3"
+                        app:layout_constraintStart_toStartOf="@+id/step2"
+                        app:layout_constraintEnd_toEndOf="@+id/step2"
+                        />
+
+                    <View
+                        android:id="@+id/step3"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:background="@drawable/salmon_pink_circle"
+                        app:layout_constraintEnd_toStartOf="@+id/imageViewStep3"
+                        app:layout_constraintTop_toTopOf="@id/imageViewStep3"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageViewStep3"
+                        android:layout_marginEnd="10dp"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:src="@drawable/img_checkup_genetotal_step_03"
+                        android:adjustViewBounds="true"
+                        android:id="@+id/imageViewStep3"
+                        app:layout_constraintTop_toBottomOf="@+id/step2Layer"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="34dp"
+                        android:layout_marginTop="30dp"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/step3Layer"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginEnd="23dp"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewStep3"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewStep3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="병원 방문하여 채혈 진행"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/slateGrey"
+                            android:includeFontPadding="false"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="예약된 시간에 병원 방문하여 혈액을 채취해주세요."
+                            android:textColor="@color/slateGrey"
+                            android:textStyle="normal"
+                            android:includeFontPadding="false"
+                            />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layerType="software"
+                        android:background="@drawable/dash_grey_line_vertical"
+                        app:layout_constraintTop_toBottomOf="@+id/step3"
+                        app:layout_constraintBottom_toTopOf="@+id/step4"
+                        app:layout_constraintStart_toStartOf="@+id/step3"
+                        app:layout_constraintEnd_toEndOf="@+id/step3"
+                        />
+
+                    <View
+                        android:id="@+id/step4"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:background="@drawable/slate_grey_circle"
+                        app:layout_constraintEnd_toStartOf="@+id/imageViewStep4"
+                        app:layout_constraintTop_toTopOf="@id/imageViewStep4"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageViewStep4"
+                        android:layout_marginEnd="10dp"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:src="@drawable/img_checkup_genetotal_step_04"
+                        android:adjustViewBounds="true"
+                        android:id="@+id/imageViewStep4"
+                        app:layout_constraintTop_toBottomOf="@+id/step3Layer"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="34dp"
+                        android:layout_marginTop="30dp"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/step4Layer"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginEnd="23dp"
+                        android:layout_marginBottom="50dp"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewStep4"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewStep4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="마이페이지에서 검사 결과 확인"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/slateGrey"
+                            android:includeFontPadding="false"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="검사 결과가 등록되면 카카오 알림톡 혹은 SMS로 알림이 전송되며, 마이페이지 > 혈액/알러지 검사 결과에서 확인 가능합니다."
+                            android:textColor="@color/slateGrey"
+                            android:textStyle="normal"
+                            android:includeFontPadding="false"
+                            />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="21dp"
+                    android:paddingEnd="40dp"
+                    android:paddingStart="26dp"
+                    android:paddingBottom="50dp"
+                    android:orientation="vertical"
+                    android:background="@color/colorf0f2f4"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="유의사항"
+                        android:textColor="@color/slate_grey_two"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:includeFontPadding="false"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="※ 상품 구매 후, 카카오 알림톡 혹은 SMS 식별코드 전송 시 일부 시간이 소요될 수 있습니다."
+                        android:textColor="@color/slateGrey"
+                        android:textStyle="normal"
+                        android:textSize="13dp"
+                        android:includeFontPadding="false"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="※ 검사 결과는 채혈일로부터 영업일 기준 4-5일 후에 확인 가능합니다."
+                        android:textColor="@color/slateGrey"
+                        android:textStyle="normal"
+                        android:textSize="13dp"
+                        android:includeFontPadding="false"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="※ 여러 마리의 반려동물을 키우고 있는 경우, 아이별로 따로 상품을 구매하여 검사를 진행해야 합니다."
+                        android:textColor="@color/slateGrey"
+                        android:textStyle="normal"
+                        android:textSize="13dp"
+                        android:includeFontPadding="false"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="※ 식별코드 등록 후 결제취소가 불가능합니다."
+                        android:textColor="@color/slateGrey"
+                        android:textStyle="normal"
+                        android:textSize="13dp"
+                        android:includeFontPadding="false"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="※ 혈액/알러지 검사는 반려견과 반려묘만 선택 가능합니다."
+                        android:textColor="@color/slateGrey"
+                        android:textStyle="normal"
+                        android:textSize="13dp"
+                        android:includeFontPadding="false"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/resultLayer"
+        android:layout_width="99dp"
+        android:layout_height="36dp"
+        android:background="@drawable/blue_grey_solid_round_18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="17dp"
+        android:visibility="gone"
+        >
+
+        <View
+            android:layout_width="7dp"
+            android:layout_height="7dp"
+            android:background="@drawable/orange_circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="3dp"
+            android:layout_marginTop="2dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/petProfile2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            tools:background="@drawable/orange_circle"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="12dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/petProfile1"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            tools:background="@drawable/img_pet_profile_default"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="6dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="검사 결과"
+            android:textSize="12dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginEnd="12dp"
+            android:includeFontPadding="false"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

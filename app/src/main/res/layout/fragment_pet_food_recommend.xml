@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="foodreference" type="kr.co.petdoc.petdoc.viewmodel.FoodRecommentDataModel"/>
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ImageView
+                android:layout_width="@dimen/login_close_button_size"
+                android:layout_height="@dimen/login_close_button_size"
+                android:padding="14dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/backbutton"
+                android:id="@+id/petfood_recommend_back_button"
+                />
+
+            <TextView
+                android:id="@+id/mypage_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/petfood_recommend_back_button"
+                app:layout_constraintBottom_toBottomOf="@id/petfood_recommend_back_button"
+                android:textColor="@color/dark_grey"
+                android:textAlignment="gravity"
+                android:gravity="center"
+                android:textSize="@dimen/fix_text_size_4"
+                android:textStyle="bold"
+                android:text="@string/pet_info_detail_diagnosis_result"
+                />
+
+            <View
+                android:id="@+id/emptyView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/petfood_recommend_back_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/verylightpinkthree"
+                app:layout_constraintTop_toBottomOf="@id/petfood_recommend_back_button"
+                app:layout_constraintStart_toStartOf="@id/petfood_recommend_back_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/food_recommend_result_profile_pannel"
+                >
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/food_recommend_result_pet_image_size"
+                    android:layout_height="@dimen/food_recommend_result_pet_image_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/img_customeal_pet_profile"
+                    android:id="@+id/food_recommend_result_profile_image"
+                    android:layout_marginTop="@dimen/food_recommend_result_color_panel_padding"
+                    android:layout_marginStart="@dimen/food_recommend_result_color_panel_padding"
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/food_recommend_result_profile_image"
+                    app:layout_constraintStart_toEndOf="@id/food_recommend_result_profile_image"
+                    app:layout_constraintBottom_toBottomOf="@+id/food_recommend_result_profile_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/food_recommend_result_color_panel_name_height"
+                        android:textColor="@color/dark_grey"
+                        android:textStyle="bold"
+                        android:text="@{foodreference.petname}"
+                        android:layout_marginStart="@dimen/food_recommend_result_color_panel_name_padding2"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:id="@+id/food_recommend_result_profile_name_text"
+                        android:textAlignment="gravity"
+                        android:gravity="center_vertical|start"
+                        android:includeFontPadding="false"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/food_recommend_result_color_panel_name_height"
+                        android:textColor="@color/dark_grey"
+                        android:includeFontPadding="false"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/food_recommend_result_profile_name_text"
+                        android:text="@string/pet_info_detail_diagnosis_keyword"
+                        android:layout_marginStart="@dimen/food_recommend_result_color_panel_name_padding3"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textAlignment="gravity"
+                        android:gravity="center_vertical|start"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/resultKeyword"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="@id/food_recommend_result_profile_name_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/food_recommend_result_profile_name_text"
+                        android:layout_marginTop="4dp"
+                        android:includeFontPadding="false"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textColor="@color/salmon"
+                        tools:text="@string/food_recommend_like_sample"
+                        android:maxLines="2"
+                        android:textStyle="bold"
+                        android:paddingEnd="@dimen/food_recommend_result_color_panel_padding"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="@dimen/food_recommend_result_color_panel_fix_button_width"
+                    android:layout_height="@dimen/food_recommend_result_color_panel_fix_button_height"
+                    android:text="@string/fix"
+                    android:textSize="@dimen/fix_text_size_4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="@drawable/pinkishgrey_full_round_rect_tranparent"
+                    android:textAlignment="gravity"
+                    android:gravity="center"
+                    android:layout_marginEnd="@dimen/food_recommend_result_color_panel_name_padding"
+                    android:layout_marginTop="@dimen/food_recommend_result_color_panel_name_padding"
+                    android:lineSpacingMultiplier="1.1"
+                    android:textColor="@color/reddishgrey"
+                    android:id="@+id/food_recommend_result_profile_fix"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/toolTipImg"
+                    android:layout_width="173dp"
+                    android:layout_height="61dp"
+                    android:src="@drawable/img_customeal_tooltip"
+                    android:adjustViewBounds="true"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintTop_toBottomOf="@+id/food_recommend_result_profile_fix"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <kr.co.petdoc.petdoc.widget.BottomSheetViewPager
+            android:id="@+id/bottomSheetPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:behavior_peekHeight="500dp"
+            app:layout_behavior="@string/bottom_sheet_behavior"
+            >
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/white_round_top_only"
+                android:layout_gravity="top"
+                app:tabGravity="fill"
+                app:tabIndicatorFullWidth="false"
+                app:tabIndicatorHeight="2.5dp"
+                app:tabIndicatorColor="@color/salmon"
+                app:tabMode="fixed"
+                app:tabPadding="0dp"
+                app:tabTextAppearance="@style/BottomSheetTabLayoutTextStyle"
+                app:tabSelectedTextColor="@color/dark_grey"
+                app:tabTextColor="@color/light_grey"
+                />
+        </kr.co.petdoc.petdoc.widget.BottomSheetViewPager>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black_alpha_60"
+            android:id="@+id/dim"
+            android:visibility="gone"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutFeedChoice"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/white_top_round_stroke"
+            android:visibility="gone"
+            android:layout_gravity="bottom"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="28dp"
+                android:layout_height="10dp"
+                android:id="@+id/btnFoldPopup"
+                android:src="@drawable/ic_popup_fold_arrow"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewFeedChoice"
+                android:text="식단 선택"
+                android:textStyle="bold"
+                android:textSize="@dimen/fix_text_size_6"
+                android:textColor="@color/dark_grey"
+                android:includeFontPadding="false"
+                app:layout_constraintTop_toBottomOf="@+id/btnFoldPopup"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="26dp"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:id="@+id/feedChoiceList"
+                app:layout_constraintTop_toBottomOf="@+id/textViewFeedChoice"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="17dp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/petfood_recommend_result_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_default"
+            android:background="@drawable/salmon_round_rect"
+            android:textColor="@color/white"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="@dimen/fix_text_size_5"
+            android:text="@string/buy_recommend_food"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="@dimen/food_reference_body_panel_button_margin"
+            android:layout_marginBottom="@dimen/food_reference_body_panel_padding"
+            android:layout_marginStart="@dimen/food_reference_body_panel_padding"
+            android:layout_marginEnd="@dimen/food_reference_body_panel_padding"
+            />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

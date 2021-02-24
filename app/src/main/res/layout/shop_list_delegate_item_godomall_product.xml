@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvRecommendedProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/home_content_margin"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/shopping_recommend_product"
+        android:textColor="@color/dark_grey"
+        android:textSize="@dimen/fix_text_size_4"
+        android:textStyle="bold"
+        android:visibility="gone"/>
+
+    <androidx.cardview.widget.CardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/home_content_margin"
+        android:layout_marginEnd="@dimen/home_content_margin"
+        android:layout_marginBottom="@dimen/shop_content_margin1"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/productImg"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/shop_product_wide_img_size"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:background="@color/orange" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/shop_content_margin2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productImg">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/productTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/fix_text_size_2"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="브이랩 테이스트 플러스 조인트 케어" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/productDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:textColor="@color/light_grey"
+                    android:textSize="@dimen/fix_text_size_1"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/productTitle"
+                    tools:text="영양학 수의사가 만든 진짜 맛있는 관절 영양제" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/shop_content_margin3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/productDesc">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/originPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/fix_text_size_1"
+                        android:textStyle="normal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:text="25,600원" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/saleRate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/shop_content_margin4"
+                        android:textColor="@color/orange"
+                        android:textSize="@dimen/fix_text_size_2"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/originPrice"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="30%" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/salePrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/shop_content_margin4"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/fix_text_size_2"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/saleRate"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="25,600원" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
+

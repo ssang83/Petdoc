@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/shop_content_margin1"
+        android:layout_marginStart="@dimen/home_content_margin"
+        android:layout_marginEnd="@dimen/home_content_margin"
+        android:layout_marginBottom="@dimen/shop_content_margin1"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="2dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnCustomeal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:src="@drawable/img_custom_meal"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPagerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginStart="@dimen/shop_content_margin2"
+                android:layout_marginEnd="@dimen/shop_content_margin2"
+                android:overScrollMode="never"
+                app:layout_constraintTop_toTopOf="@+id/marginSpace"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <Space
+                android:id="@+id/marginSpace"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnCustomeal"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/indicator"
+                android:layout_width="64dp"
+                android:layout_height="3dp"
+                app:tabBackground="@color/pale_two"
+                app:tabGravity="center"
+                app:tabIndicatorHeight="3dp"
+                app:tabIndicatorColor="@color/salmon"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/viewPagerContainer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

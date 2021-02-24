@@ -1,0 +1,78 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/orange</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <!-- Splash Theme -->
+    <style name="DefaultTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--<item name="android:background">@drawable/splash</item>-->
+        <item name="colorPrimary">@color/transfer</item>
+        <item name="colorPrimaryDark">@color/transfer</item>
+        <item name="colorAccent">@color/transfer</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:fontFamily">@font/default_font_normal</item>
+        <item name="fontFamily">@font/default_font_normal</item>
+    </style>
+
+    <style name="PetdocScreenDefaultTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/transfer</item>
+        <item name="colorPrimaryDark">@color/transfer</item>
+        <item name="colorAccent">@color/transfer</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:fontFamily">@font/default_font_normal</item>
+        <item name="fontFamily">@font/default_font_normal</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="TabLayoutTextStyle">
+        <item name="android:fontFamily">@font/notosanskr_regular</item>
+        <item name="android:textSize">@dimen/fix_text_size_3</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="BottomSheetTabLayoutTextStyle">
+        <item name="android:fontFamily">@font/notosanskr_bold</item>
+        <item name="android:textSize">@dimen/fix_text_size_5</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="days_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/fix_text_size_2</item>
+        <item name="android:textColor">@color/pale_rose</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="DialogTheme" parent="DefaultTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <style name="DefaultAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="buttonBarNegativeButtonStyle">@style/DefaultAlertDialogButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/DefaultAlertDialogButtonStyle</item>
+    </style>
+
+    <style name="DefaultAlertDialogButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/orange</item>
+    </style>
+
+    <style name="FullDialog">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+</resources>

@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/white"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/login_close_button_size"
+            android:layout_height="@dimen/login_close_button_size"
+            android:padding="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:adjustViewBounds="true"
+            android:src="@drawable/backbutton"
+            android:id="@+id/btnBack"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/hospitalTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnBack"
+            app:layout_constraintBottom_toBottomOf="@id/btnBack"
+            android:textColor="@color/dark_grey"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textSize="@dimen/fix_text_size_4"
+            android:textStyle="bold"
+            android:text="날짜/시간 선택"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/white"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutClinicInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@drawable/white_bottom_round_35"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutMonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:id="@+id/btnBeforeMonth"
+                        android:src="@drawable/ic_arrow_before"
+                        android:adjustViewBounds="true"
+                        app:layout_constraintTop_toTopOf="@+id/header"
+                        app:layout_constraintBottom_toBottomOf="@+id/header"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/header"
+                        tools:text="2020년 03월"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/fix_text_size_7"
+                        android:textColor="@color/dark_grey"
+                        android:includeFontPadding="false"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/btnBeforeMonth"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:id="@+id/btnNextMonth"
+                        android:src="@drawable/ic_arrow_next"
+                        android:adjustViewBounds="true"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintTop_toTopOf="@+id/header"
+                        app:layout_constraintBottom_toBottomOf="@+id/header"
+                        app:layout_constraintStart_toEndOf="@+id/header"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutMonth"
+                    app:layout_constraintStart_toStartOf="parent"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="일"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textStyle="bold"
+                            android:textColor="@color/dark_grey"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="월"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textStyle="bold"
+                            android:textColor="@color/dark_grey"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="화"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textStyle="bold"
+                            android:textColor="@color/dark_grey"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="수"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textStyle="bold"
+                            android:textColor="@color/dark_grey" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="목"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textStyle="bold"
+                            android:textColor="@color/dark_grey" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="금"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textStyle="bold"
+                            android:textColor="@color/dark_grey" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="토"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textStyle="bold"
+                            android:textColor="@color/dark_grey" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/calendarList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutDay"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/grey"
+                    app:layout_constraintTop_toBottomOf="@+id/calendarList"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/divider"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutClinicRoomAndTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textViewClinicRoom"
+                            android:text="@string/hospital_clinic_room"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            android:textStyle="bold"
+                            android:includeFontPadding="false"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txtDivider"
+                            android:layout_marginStart="3dp"
+                            android:text="/"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            android:textStyle="normal"
+                            android:includeFontPadding="false"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/textViewClinicRoom"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/hospital_time_select"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            android:textStyle="bold"
+                            android:includeFontPadding="false"
+                            android:layout_marginStart="3dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/txtDivider"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/divider1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey"
+                        android:layout_marginTop="17dp"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutClinicRoomAndTime"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never"
+                        android:id="@+id/roomList"
+                        app:layout_constraintTop_toBottomOf="@+id/divider1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutGuide"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="44dp"
+                        android:layout_marginStart="20dp"
+                        app:layout_constraintTop_toBottomOf="@+id/roomList"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textViewGuide"
+                            android:text="@string/hospital_register_guide"
+                            android:textStyle="bold"
+                            android:textColor="@color/light_grey"
+                            android:textSize="@dimen/fix_text_size_3"
+                            android:includeFontPadding="false"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textViewGuideDesc1"
+                            android:text="@string/hospital_register_guide_desc1"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textColor="@color/light_grey"
+                            android:textStyle="normal"
+                            android:includeFontPadding="false"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewGuide"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textViewGuideDesc2"
+                            android:text="@string/hospital_register_guide_desc2"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textColor="@color/light_grey"
+                            android:textStyle="normal"
+                            android:includeFontPadding="false"
+                            android:layout_marginTop="3dp"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewGuideDesc1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutAgree"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="34dp"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutGuide"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:background="@color/grey"
+                            android:layout_marginTop="24dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            >
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/textViewWarning"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:text="@string/hospital_register_all_agree"
+                                android:textColor="@color/dark_grey"
+                                android:textSize="@dimen/fix_text_size_3"
+                                android:textStyle="bold"
+                                android:includeFontPadding="false"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                />
+
+                            <androidx.appcompat.widget.AppCompatImageButton
+                                android:id="@+id/checkAllAgree"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginEnd="20dp"
+                                android:background="@drawable/btn_check_box"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@+id/layout"
+                            app:layout_constraintStart_toStartOf="parent"
+                            >
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/layoutAgreeDesc1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="16dp"
+                                android:paddingStart="20dp"
+                                android:paddingEnd="20dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                >
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/textViewAgreeDesc1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/hospital_register_agree_desc1"
+                                    android:textColor="@color/dark_grey"
+                                    android:textSize="@dimen/fix_text_size_3"
+                                    android:textStyle="normal"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    />
+
+                                <androidx.appcompat.widget.AppCompatImageButton
+                                    android:id="@+id/checkAgreee1"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:background="@drawable/btn_sign_out_check"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/layoutAgreeDesc2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="16dp"
+                                android:paddingStart="20dp"
+                                android:paddingEnd="20dp"
+                                app:layout_constraintTop_toBottomOf="@+id/layoutAgreeDesc1"
+                                app:layout_constraintStart_toStartOf="parent"
+                                >
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/textViewAgreeDesc2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/hospital_register_agree_desc2"
+                                    android:textColor="@color/dark_grey"
+                                    android:textSize="@dimen/fix_text_size_3"
+                                    android:textStyle="normal"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    />
+
+                                <androidx.appcompat.widget.AppCompatImageButton
+                                    android:id="@+id/checkAgreee2"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:background="@drawable/btn_sign_out_check"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="29dp"
+                        android:layout_marginBottom="28dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutAgree"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layoutDate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constrainedWidth="true"
+                            app:layout_constraintWidth_percent="0.5"
+                            >
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/selectedDate"
+                                tools:text="3월 7일 토"
+                                android:textStyle="normal"
+                                android:textSize="@dimen/fix_text_size_10"
+                                android:textColor="@color/dark_grey"
+                                android:includeFontPadding="false"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hospital_reservation_clinic_date"
+                                android:textStyle="normal"
+                                android:textSize="@dimen/fix_text_size_2"
+                                android:textColor="@color/light_grey"
+                                android:includeFontPadding="false"
+                                android:layout_marginTop="5dp"
+                                app:layout_constraintTop_toBottomOf="@+id/selectedDate"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/layoutDate"
+                            app:layout_constrainedWidth="true"
+                            app:layout_constraintWidth_percent="0.5"
+                            >
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/layoutSeletedTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                >
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/selectedTime"
+                                    tools:text="10:00"
+                                    android:textStyle="normal"
+                                    android:textSize="@dimen/fix_text_size_10"
+                                    android:textColor="@color/dark_grey"
+                                    android:includeFontPadding="false"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/aMpM"
+                                    tools:text="AM"
+                                    android:textStyle="normal"
+                                    android:textSize="@dimen/fix_text_size_10"
+                                    android:textColor="@color/light_grey"
+                                    android:includeFontPadding="false"
+                                    app:layout_constraintTop_toTopOf="@+id/selectedTime"
+                                    app:layout_constraintBottom_toBottomOf="@+id/selectedTime"
+                                    app:layout_constraintStart_toEndOf="@+id/selectedTime"
+                                    />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hospital_reservation_clinic_time"
+                                android:textStyle="normal"
+                                android:textSize="@dimen/fix_text_size_2"
+                                android:textColor="@color/light_grey"
+                                android:includeFontPadding="false"
+                                android:layout_marginTop="5dp"
+                                app:layout_constraintTop_toBottomOf="@+id/layoutSeletedTime"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:paddingBottom="31dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/layoutClinicInfo"
+                app:layout_constraintStart_toStartOf="parent"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutRegister"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintWidth_percent="0.5"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="26dp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/registerName"
+                        tools:text="브이케어 신논현 본점"
+                        android:textStyle="normal"
+                        android:textColor="@color/light_grey"
+                        android:textSize="@dimen/fix_text_size_2"
+                        android:includeFontPadding="false"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hospital_register_clinic"
+                        android:textSize="22dp"
+                        android:textColor="@color/white"
+                        android:textStyle="normal"
+                        android:includeFontPadding="false"
+                        app:layout_constraintTop_toBottomOf="@+id/registerName"
+                        app:layout_constraintStart_toStartOf="@+id/registerName"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnReservatioCompleted"
+                    android:layout_width="0dp"
+                    android:layout_height="51dp"
+                    android:layout_marginEnd="26dp"
+                    app:layout_constraintStart_toEndOf="@+id/layoutRegister"
+                    app:layout_constraintTop_toTopOf="@+id/layoutRegister"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/hospital_reservation_title"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fix_text_size_5"
+                    android:includeFontPadding="false"
+                    android:gravity="center"
+                    android:background="@drawable/orange_round_solid_15"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

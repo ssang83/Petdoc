@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/petFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/home_content_margin"
+        android:layout_marginTop="@dimen/home_content_margin"
+        android:text="고양이 ∙ 한방/재활"
+        android:textSize="@dimen/fix_text_size_3"
+        android:textColor="@color/dark_grey"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/home_content_margin"
+        android:layout_marginTop="@dimen/home_content_margin"
+        android:text="2019년 4월 1일"
+        android:textStyle="normal"
+        android:textColor="@color/light_grey"
+        android:textSize="@dimen/fix_text_size_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="10년 넘게 기분부전장애(가벼운 우울 증상이 지속되는 상 태)와 불안장애를 겪으며 정신과를 전전했던 저자와 정신과 전문의와의 12주간의 대화를 엮은 『죽고 싶지만 떡볶이는..."
+        android:textSize="@dimen/fix_text_size_3"
+        android:textColor="@color/dark_grey"
+        android:textStyle="normal"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:layout_marginStart="@dimen/home_content_margin"
+        android:layout_marginEnd="@dimen/home_content_margin"
+        android:layout_marginTop="@dimen/home_text_gap1"
+        app:layout_constraintTop_toBottomOf="@+id/petFilter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutRecommend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/home_content_margin"
+        android:layout_marginTop="@dimen/home_banner_share_margin_top"
+        app:layout_constraintTop_toBottomOf="@+id/content"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewRecommend"
+            android:layout_width="@dimen/home_content_gap8"
+            android:layout_height="@dimen/home_content_gap8"
+            android:src="@drawable/ic_recommend"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/recommendCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/home_text_gap1"
+            android:text="추천 25"
+            android:textStyle="normal"
+            android:textColor="@color/light_grey"
+            android:textSize="@dimen/fix_text_size_1"
+            app:layout_constraintStart_toEndOf="@+id/imageViewRecommend"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        android:layout_marginTop="@dimen/home_content_gap6"
+        app:layout_constraintTop_toBottomOf="@+id/layoutRecommend"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

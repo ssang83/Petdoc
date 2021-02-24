@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/grey_line_upside_round_rect">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical"
+        android:paddingTop="12dp"
+        android:paddingStart="20dp"
+        android:paddingBottom="12dp"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="결과 등록일"
+                android:textColor="@color/slateGrey"
+                android:textSize="11dp"
+                android:textStyle="normal"
+                android:includeFontPadding="false"
+                />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="8dp"
+                android:layout_marginStart="5dp"
+                android:layout_gravity="center"
+                android:background="@color/light_blue_grey"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                tools:text="2018.12.26"
+                android:textStyle="normal"
+                android:textSize="11dp"
+                android:textColor="@color/slateGrey"
+                android:includeFontPadding="false"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/testType"
+                android:text="종합 검사"
+                android:textColor="@color/gunmetal"
+                android:textSize="@dimen/fix_text_size_3"
+                android:textStyle="bold"
+                android:includeFontPadding="false"
+                />
+
+            <View
+                android:id="@+id/newBadge"
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                android:layout_marginStart="4dp"
+                android:background="@drawable/orange_circle"
+                android:visibility="gone"
+                />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/description"
+            android:layout_marginEnd="20dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="혈액검사 39개 항목, 알러지검사 104개 항목"
+            android:textColor="@color/light_grey"
+            android:textSize="12dp"
+            android:textStyle="normal"
+            android:includeFontPadding="false"
+            android:layout_marginTop="3dp"
+            />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:id="@+id/arrow"
+        android:src="@drawable/ic_arrow"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="25dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,24 @@
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:drawable="@drawable/ic_scanner_connect_progress_01"
+        android:duration="500" />
+
+
+    <item
+        android:drawable="@drawable/ic_connect_scanner_progress_02"
+        android:duration="500" />
+
+
+    <item
+        android:drawable="@drawable/ic_scanner_connect_progress_03"
+        android:duration="500" />
+
+
+    <item
+        android:drawable="@drawable/ic_connect_scanner_progress_04"
+        android:duration="500" />
+
+
+</animation-list>

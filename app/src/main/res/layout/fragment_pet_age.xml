@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/topLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/stepper"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/pet_add_stepper_height"
+            android:layout_marginStart="@dimen/pet_add_stepper_margin"
+            android:layout_marginEnd="@dimen/pet_add_stepper_margin"
+            android:background="@drawable/bg_pet_add_inactive"
+            android:layout_marginTop="@dimen/pet_add_name_profile_margin_top"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/pet_add_stepper_height"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.66"
+                android:background="@drawable/bg_pet_add_active"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/login_close_button_size"
+                android:layout_height="@dimen/login_close_button_size"
+                android:padding="@dimen/login_close_button_padding"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/x_button"
+                android:id="@+id/btnClose"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btnClose"
+                app:layout_constraintBottom_toBottomOf="@id/btnClose"
+                android:textColor="@color/dark_grey"
+                android:textAlignment="gravity"
+                android:gravity="center"
+                android:textSize="@dimen/fix_text_size_4"
+                android:textStyle="bold"
+                android:text="@string/pet_info_detail" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewPetAgeDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/pet_add_stepper_margin"
+        android:layout_marginEnd="@dimen/pet_add_stepper_margin"
+        android:layout_marginTop="30dp"
+        android:textSize="@dimen/fix_text_size_3"
+        android:textColor="@color/light_grey"
+        android:textStyle="bold"
+        android:includeFontPadding="false"
+        tools:text="심바는 몇 살인가요?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutCalendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPetAgeDesc"
+        android:layout_marginTop="7dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        >
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/radioCalendar"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:background="@drawable/btn_radio"
+            android:button="@null"
+            android:clickable="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pet_age_birth"
+            android:textSize="@dimen/fix_text_size_3"
+            android:textColor="@color/dark_grey"
+            android:textStyle="normal"
+            android:includeFontPadding="false"
+            android:layout_marginStart="6dp"
+            app:layout_constraintTop_toTopOf="@+id/radioCalendar"
+            app:layout_constraintStart_toEndOf="@+id/radioCalendar"
+            app:layout_constraintBottom_toBottomOf="@+id/radioCalendar"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutCalendarDate"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/pet_add_stepper_width1"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/lightbluegrey_round_rect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutCalendar">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewCalendarDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/pet_add_name_edit_padding"
+            android:textSize="@dimen/fix_text_size_3"
+            android:textColor="@color/light_grey3"
+            android:textStyle="normal"
+            android:includeFontPadding="false"
+            android:text="@string/pet_age_default_calendar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_drop_down"
+            android:adjustViewBounds="true"
+            android:layout_marginEnd="@dimen/pet_add_name_edit_margin_right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="27dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutCalendarDate"
+        >
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/radioPicker"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:background="@drawable/btn_radio"
+            android:button="@null"
+            android:clickable="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pet_age_about_age"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/fix_text_size_3"
+            android:textStyle="normal"
+            android:layout_marginStart="6dp"
+            android:includeFontPadding="false"
+            app:layout_constraintStart_toEndOf="@+id/radioPicker"
+            app:layout_constraintTop_toTopOf="@+id/radioPicker"
+            app:layout_constraintBottom_toBottomOf="@+id/radioPicker"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutDatePicker"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/pet_add_stepper_width1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutPicker"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="10dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutAge"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/pet_add_stepper_width1"
+            android:background="@drawable/lightbluegrey_round_rect"
+            android:layout_marginEnd="@dimen/pet_age_date_picker_margin"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/layoutMonth">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewPickerAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/pet_add_name_edit_padding"
+                android:textSize="@dimen/fix_text_size_3"
+                android:textColor="@color/light_grey3"
+                android:textStyle="normal"
+                android:includeFontPadding="false"
+                android:text="@string/pet_age_default_picker_age"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_drop_down"
+                android:adjustViewBounds="true"
+                android:layout_marginEnd="@dimen/pet_add_name_edit_margin_right"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutMonth"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/pet_add_stepper_width1"
+            android:background="@drawable/lightbluegrey_round_rect"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/layoutAge">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewPickerMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/pet_add_name_edit_padding"
+                android:textSize="@dimen/fix_text_size_3"
+                android:textColor="@color/light_grey3"
+                android:textStyle="normal"
+                android:includeFontPadding="false"
+                android:text="@string/pet_age_default_picker_month"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_drop_down"
+                android:adjustViewBounds="true"
+                android:layout_marginEnd="@dimen/pet_add_name_edit_margin_right"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnNext"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height_default"
+        android:includeFontPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/button_margin"
+        android:layout_marginEnd="@dimen/button_margin"
+        android:layout_marginBottom="@dimen/button_margin"
+        android:background="@drawable/grey_round_rect"
+        android:textColor="@color/light_grey3"
+        android:textStyle="bold"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:textSize="@dimen/fix_text_size_5"
+        android:text="@string/pet_add_next" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

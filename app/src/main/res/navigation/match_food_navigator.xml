@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/match_food_navigator"
+    app:startDestination="@id/myPetWeightFragment2">
+
+    <fragment
+        android:id="@+id/myPetWeightFragment2"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.food.MyPetWeightFragment"
+        android:label="MyPetWeightFragment"
+        tools:layout="@layout/fragment_pet_weight"
+        >
+        <action
+            android:id="@+id/action_myPetWeightFragment2_to_myPetBodyTypeFragment2"
+            app:destination="@id/myPetBodyTypeFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/myPetBodyTypeFragment2"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.food.MyPetBodyTypeFragment"
+        android:label="MyPetBodyTypeFragment"
+        tools:layout="@layout/fragment_pet_body">
+        <action
+            android:id="@+id/action_myPetBodyTypeFragment2_to_myPetWalkingHourFragment2"
+            app:destination="@id/myPetWalkingHourFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/myPetWalkingHourFragment2"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.food.MyPetWalkingHourFragment"
+        android:label="MyPetWalkingHourFragment"
+        tools:layout="@layout/fragment_pet_walking_time"
+        >
+        <action
+            android:id="@+id/action_matchfood_walkingtime_to_likefood"
+            app:destination="@id/myPetLikeFoodFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/myPetLikeFoodFragment2"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.food.MyPetLikeFoodFragment"
+        android:label="MyPetLikeFoodFragment"
+        tools:layout="@layout/fragment_pet_like_food">
+        <action
+            android:id="@+id/action_matchfood_likefood_to_allergefood"
+            app:destination="@id/myPetAllergeFoodFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/myPetAllergeFoodFragment2"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.food.MyPetAllergeFoodFragment"
+        android:label="MyPetAllergeFoodFragment"
+        tools:layout="@layout/fragment_pet_allerge_food">
+        <action
+            android:id="@+id/action_myPetAllergeFoodFragment2_to_myPetDetailDiagnosisFragment"
+            app:destination="@id/myPetDetailDiagnosisFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myPetCurrentFeedFragment2"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.food.MyPetCurrentFeedFragment"
+        android:label="MyPetCurrentFeedFragment"
+        tools:layout="@layout/fragment_current_feeding"
+        >
+        <action
+            android:id="@+id/action_myPetCurrentFeedFragment2_to_myPetPregnantFragment2"
+            app:destination="@id/myPetPregnantFragment2" />
+        <action
+            android:id="@+id/action_myPetCurrentFeedFragment2_to_petFoodRecommedProgressingFragment"
+            app:destination="@id/petFoodRecommedProgressingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myPetPregnantFragment2"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.food.MyPetPregnantFragment"
+        android:label="MyPetPregnantFragment"
+        tools:layout="@layout/fragment_pet_pregnant"
+        >
+        <action
+            android:id="@+id/action_matchfood_to_result_progressing"
+            app:destination="@id/petFoodRecommedProgressingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/petFoodRecommedProgressingFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.food.PetFoodRecommendProgressingFragment"
+        android:label="PetFoodRecommedProgressingFragment"
+        tools:layout="@layout/fragment_petfood_progressing"
+        >
+        <action
+            android:id="@+id/action_foodprogressing_to_mypetfoodlist"
+            app:destination="@id/myPetFoodRecommendResult2" />
+    </fragment>
+    <fragment
+        android:id="@+id/myPetFoodRecommendResult2"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.food.MyPetFoodRecommendResult"
+        android:label="MyPetFoodRecommendResult"
+        tools:layout="@layout/fragment_pet_food_recommend"
+        />
+    <fragment
+        android:id="@+id/myPetDetailDiagnosisFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.food.MyPetDetailDiagnosisFragment"
+        android:label="MyPetDetailDiagnosisFragment"
+        tools:layout="@layout/fragment_pet_detail_diagnosis"
+        >
+        <action
+            android:id="@+id/action_myPetDetailDiagnosisFragment_to_myPetCurrentFeedFragment2"
+            app:destination="@id/myPetCurrentFeedFragment2" />
+    </fragment>
+</navigation>

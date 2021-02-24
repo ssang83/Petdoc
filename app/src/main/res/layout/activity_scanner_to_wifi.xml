@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:textStyle="bold"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/fix_text_size_4"
+            android:text="@string/care_connect_scanner"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/login_close_button_size"
+            android:layout_height="@dimen/login_close_button_size"
+            android:padding="@dimen/login_close_button_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_close"
+            android:id="@+id/btnClose"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/grey"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="39dp"
+            android:layout_marginEnd="39dp"
+            android:layout_marginTop="30dp"
+            android:text="인터넷 공유기와 펫닥스캐너를\n연결하시나요?"
+            android:textSize="25dp"
+            android:textColor="@color/dark_grey"
+            android:textStyle="normal"
+            android:includeFontPadding="false"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="공유기와 스캐너를 연결하시면 측정 중에도\n인터넷을 이용할 수 있습니다."
+            android:textStyle="normal"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/fix_text_size_2"
+            android:includeFontPadding="false"
+            android:layout_marginStart="39dp"
+            android:layout_marginEnd="39dp"
+            android:layout_marginTop="16dp"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewLogo">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewRouter1"
+                android:layout_width="136dp"
+                android:layout_height="136dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/img_connect_router3"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewRouter2"
+                android:layout_width="136dp"
+                android:layout_height="136dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/img_connect_router4"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:adjustViewBounds="true"
+                android:background="@drawable/ic_router_progress_03"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="101.5dp"
+            android:paddingStart="24dp"
+            >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorf0f2f4"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/connectAP"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/grey_line_upside_rect"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="14dp"
+                    android:text="공유기와 연결하기"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/dark_grey"
+                    />
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/symbol_mark_rightbend"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:adjustViewBounds="true"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/notConnect"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/grey_line_upside_rect"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="14dp"
+                    android:text="연결 안 함"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/dark_grey"
+                    />
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/symbol_mark_rightbend"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:adjustViewBounds="true"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="연결 안 할 시 7일간 팝업이 뜨지 않습니다."
+            android:textSize="12dp"
+            android:textColor="@color/light_grey"
+            android:textStyle="normal"
+            android:includeFontPadding="false"
+            android:layout_gravity="center"
+            android:layout_marginTop="24.5dp"
+            android:layout_marginBottom="32dp"
+            />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

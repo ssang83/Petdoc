@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <View
+        android:layout_width="48dp"
+        android:layout_height="6dp"
+        android:id="@+id/swipeDown"
+        android:background="@drawable/white_alpha_98_round_solid"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/white_top_round_bg"
+        app:layout_constraintTop_toBottomOf="@+id/swipeDown"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"
+        android:paddingStart="24dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="20dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:text="병원 방문일자"
+                android:textColor="@color/slateGrey"
+                android:textSize="@dimen/fix_text_size_3"
+                android:textStyle="bold"
+                android:includeFontPadding="false"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                android:id="@+id/visitDate"
+                android:layout_marginStart="30dp"
+                tools:text="2020.07.05"
+                android:textStyle="normal"
+                android:textSize="14dp"
+                android:textColor="@color/slateGrey"
+                android:includeFontPadding="false"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="11dp"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:text="결과 등록일자"
+                android:textColor="@color/slateGrey"
+                android:textSize="@dimen/fix_text_size_3"
+                android:textStyle="bold"
+                android:includeFontPadding="false"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                android:id="@+id/regDate"
+                android:layout_marginStart="30dp"
+                tools:text="2020.07.10"
+                android:textStyle="normal"
+                android:textSize="14dp"
+                android:textColor="@color/slateGrey"
+                android:includeFontPadding="false"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="11dp"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:text="시료명"
+                android:textColor="@color/slateGrey"
+                android:textSize="@dimen/fix_text_size_3"
+                android:textStyle="bold"
+                android:includeFontPadding="false"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                android:id="@+id/type"
+                android:layout_marginStart="30dp"
+                tools:text="혈액"
+                android:textStyle="normal"
+                android:textSize="14dp"
+                android:textColor="@color/slateGrey"
+                android:includeFontPadding="false"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="11dp"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:text="의료기관 정보"
+                android:textColor="@color/slateGrey"
+                android:textSize="@dimen/fix_text_size_3"
+                android:textStyle="bold"
+                android:includeFontPadding="false"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                android:id="@+id/hospitalName"
+                android:layout_marginStart="30dp"
+                tools:text="브이케어 동물병원"
+                android:textStyle="normal"
+                android:textSize="14dp"
+                android:textColor="@color/slateGrey"
+                android:includeFontPadding="false"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

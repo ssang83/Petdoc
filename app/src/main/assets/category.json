@@ -1,0 +1,44 @@
+[
+  {
+    title: "#행동",
+    content: "반려동물이 불안해하거나 갑자기 공격적일 때 또는 대소변 문제 등이 있을 때 물어보세요.",
+    image: "ic_category_behavior",
+    titleColor: "#50BFC6"
+  },
+  {
+    title: "#영양",
+    content: "사료나 생식에 대한 궁금 점이 있을 때나 아이가 비만이거나 너무 안먹을 때 물어보세요.",
+    image: "ic_category_nutrition",
+    titleColor: "#8F75E0"
+  },
+  {
+    title: "#질병",
+    content: "응급을 제외한 모든 반려동물의 의료적인 조치나 궁금증이 생겼으면 물어보세요.",
+    image: "ic_category_disease",
+    titleColor: "#FF5A5C"
+  },
+  {
+    title: "#한방/재활",
+    content: "침이나 한약 치료에 관심이 있거나, 아이 재활 상담이 필요할 때 물어보세요.",
+    image: "ic_category_oriental",
+    titleColor: "#D66350"
+  },
+  {
+    title: "#수술",
+    content: "중성화, 골절, 종양, 스켈링 등 치과 치료 등 의료처치가 필요할 때 물어보세요.",
+    image: "ic_category_surgery",
+    titleColor: "#5597E5"
+  },
+  {
+    title: "#예방접종",
+    content: "주사접종, 심장사상충, 기생충, 구충등의 사전 조치가 필요한 의료처치가 필요할 때 물어보세요.",
+    image: "ic_category_shot",
+    titleColor: "#31C99D"
+  },
+  {
+    title: "#기타",
+    content: "노령질환, 용품, 미용, 목욕 등 의료적인  외에 상담이 필요할 때 물어보세요.",
+    image: "ic_category_etc",
+    titleColor: "#5C6073"
+  }
+]

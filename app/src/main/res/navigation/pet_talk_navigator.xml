@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pet_talk_navigator"
+    app:startDestination="@id/petTalkListFragment">
+
+    <fragment
+        android:id="@+id/petTalkListFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.pettalk.PetTalkListFragment"
+        android:label="PetTalkListFragment"
+        tools:layout="@layout/fragment_pettalk_list"
+        >
+        <action
+            android:id="@+id/action_list_to_detail"
+            app:destination="@id/petTalkDetailFragment" />
+        <action
+            android:id="@+id/action_list_to_detail_with_nostack"
+            app:destination="@id/petTalkDetailFragment"
+            app:popUpTo="@id/petTalkListFragment"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/petTalkDetailFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.pettalk.PetTalkDetailFragment"
+        android:label="PetTalkDetailFragment"
+        tools:layout="@layout/fragment_pettalk_detail"/>
+</navigation>

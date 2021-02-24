@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="kr.co.petdoc.petdoc.domain.Order" />
+
+        <variable
+            name="viewModel"
+            type="kr.co.petdoc.petdoc.viewmodel.MyPurchaseHistoryModel" />
+
+        <variable
+            name="position"
+            type="int"/>
+
+        <variable
+            name="itemCount"
+            type="int"/>
+
+        <import type="android.view.View"/>
+        <import type="kr.co.petdoc.petdoc.extensions.IntExtensionsKt"/>
+        <import type="kr.co.petdoc.petdoc.nicepay.OrderStatus"/>
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootLayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="18dp"
+        android:onClick="@{() -> viewModel.onItemClick(item)}"
+        android:background="@color/white"
+        android:paddingTop="30dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/orderStatus"
+            tools:text="결제 완료"
+            android:text="@{viewModel.setStatusText(item.orderStatus)}"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:ordetStatusText="@{item.orderStatus}"
+            android:includeFontPadding="false"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/orderDate"
+            tools:text="2020.12.05"
+            android:text="@{viewModel.setOrderDate(item.orderDate, item.cancelDate, item.orderStatus)}"
+            android:textStyle="normal"
+            android:textColor="@color/light_grey"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/orderStatus"
+            android:includeFontPadding="false"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="17dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/orderStatus"
+            app:thumbnail="@{item.itemUrl}"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_purchase_product"
+            app:layout_constraintTop_toTopOf="@+id/thumbnail"
+            app:layout_constraintStart_toStartOf="@+id/thumbnail"
+            app:layout_constraintEnd_toEndOf="@id/thumbnail"
+            app:layout_constraintBottom_toBottomOf="@+id/thumbnail"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/title"
+            tools:text="반려동물 건강검진\n프로그램 펫 체크 어드밴스드"
+            android:text="@{item.itemName}"
+            android:textSize="16dp"
+            android:textColor="@color/slateGrey"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@+id/thumbnail"
+            app:layout_constraintTop_toTopOf="@+id/thumbnail"
+            android:includeFontPadding="false"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/price"
+            android:text="@{@string/won(IntExtensionsKt.numberWithComma(item.payAmount))}"
+            android:textStyle="bold"
+            android:textColor="@color/slateGrey"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@+id/title"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            android:layout_marginTop="10dp"
+            tools:text="328,900원"
+            android:includeFontPadding="false"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnDelete"
+            android:layout_width="123dp"
+            android:layout_height="37dp"
+            android:includeFontPadding="false"
+            app:layout_constraintStart_toStartOf="@+id/title"
+            app:layout_constraintTop_toBottomOf="@+id/price"
+            android:background="@drawable/lightbluegrey_round_rect_6"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/slateGrey"
+            android:textStyle="normal"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:text="내역 삭제"
+            android:onClick="@{() -> viewModel.onDelete(item)}"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnCancel"
+            android:layout_width="123dp"
+            android:layout_height="37dp"
+            android:includeFontPadding="false"
+            app:layout_constraintStart_toEndOf="@+id/btnDelete"
+            app:layout_constraintTop_toBottomOf="@+id/price"
+            app:cancelText="@{item.authKeyStatus == 3 ? `Y` : `N`}"
+            android:background="@{item.authKeyStatus == 3 ? @drawable/bg_my_order_cancel_disable : @drawable/lightbluegrey_round_rect_6}"
+            android:enabled="@{item.authKeyStatus == 3 ? false : true}"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:textStyle="normal"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:text="@{viewModel.setButtonText(item.orderStatus)}"
+            tools:text="결제 취소"
+            android:onClick="@{() -> viewModel.onCancel(item)}"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_grey2"
+            app:layout_constraintTop_toBottomOf="@+id/btnDelete"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp"
+            android:visibility="@{position == (itemCount-1) ? View.GONE : View.VISIBLE}"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

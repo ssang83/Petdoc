@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="알러지 검사 정보"
+                android:textColor="@color/slateGrey"
+                android:textSize="@dimen/fix_text_size_4"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnClose"
+                android:layout_width="@dimen/login_close_button_size"
+                android:layout_height="@dimen/login_close_button_size"
+                android:adjustViewBounds="true"
+                android:padding="14dp"
+                android:src="@drawable/x_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingStart="24dp"
+                android:paddingTop="34dp"
+                android:paddingEnd="24dp"
+                android:paddingBottom="30dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="알러지란?"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:includeFontPadding="false"
+                    android:text="@string/allergy_about_allergy"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="34dp"
+                    android:includeFontPadding="false"
+                    android:text="알러지 검사란?"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:includeFontPadding="false"
+                    android:text="@string/allergy_about_allergy_test"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="34dp"
+                    android:includeFontPadding="false"
+                    android:text="대표적인 알러지 증상"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal"
+                    app:hyphenBulletText="@{@string/allergy_symptom_1}"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal"
+                    app:hyphenBulletText="@{@string/allergy_symptom_2}"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal"
+                    app:hyphenBulletText="@{@string/allergy_symptom_3}"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal"
+                    app:hyphenBulletText="@{@string/allergy_symptom_4}"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal"
+                    app:hyphenBulletText="@{@string/allergy_symptom_5}"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="34dp"
+                    android:includeFontPadding="false"
+                    android:text="효과적으로 알러지 관리하기"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="1. 회피 요법"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="2dp"
+                    android:text="알러지 검사를 통해 나온 알러지원에 대한 접촉을 최소화하기."
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="2. 약물 요법"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="2dp"
+                    android:text="수의사와의 상담 후 적절한 약물 처방으로 가려움증과 2차 감염 위험성 줄이기."
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="3. 피부 강화"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="2dp"
+                    android:text="피부 영양제를 통한 피부 보호막 강화로 피부를 통한 알러지원의 침입 방지."
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="4. 적당한 활동"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="2dp"
+                    android:text="운동을 통해 면역력을 증강과 동시에 반려동물의 스트레스 해소."
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="5. 면역 증진"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="2dp"
+                    android:text="면역 증강제, 유산균의 꾸준한 복용으로 정상적인 면역기능 회복."
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="34dp"
+                    android:includeFontPadding="false"
+                    android:text="알러지 검사 결과"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:includeFontPadding="false"
+                    android:text="알러지 검사 결과는 Class 0~6으로 구분하며, 숫자가 클수록 주의가 필요한 알러젠입니다. Class 3이상의 알러젠에 대해 집중적인 관리가 필요하며, Class2-3사이의 알러젠은 반복 노출 시 알러지 증상을 보일 수 있습니다. 알러지 증상은 특정 알러지원이 아닌 여러 알러지원의 반응이 더해져서 나타나므로, class1~2의 낮은 알러지원에 대한 접촉 및 섭취의 최소화도 알러지 관리에 매우 중요합니다."
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="23dp"
+                    android:background="@color/light_blue_grey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.35"
+                        android:background="@color/grey"
+                        android:gravity="center"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="18dp"
+                        android:text="Class 0"
+                        android:textColor="@color/slateGrey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textStyle="normal" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/light_blue_grey" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:background="@color/white"
+                        android:gravity="center|left"
+                        android:paddingStart="10dp"
+                        android:paddingTop="9dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="알러지 반응이 없거나 거의 존재하지 않음."
+                        android:textColor="@color/slateGrey"
+                        android:textSize="13dp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_blue_grey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.35"
+                        android:background="@color/grey"
+                        android:gravity="center"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="18dp"
+                        android:text="Class 1"
+                        android:textColor="@color/slateGrey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textStyle="normal" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/light_blue_grey" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:background="@color/white"
+                        android:gravity="center|left"
+                        android:paddingStart="10dp"
+                        android:paddingTop="9dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="알러지 반응을 보일 가능성이 낮음."
+                        android:textColor="@color/slateGrey"
+                        android:textSize="13dp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_blue_grey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.35"
+                        android:background="@color/grey"
+                        android:gravity="center"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="18dp"
+                        android:text="Class 2"
+                        android:textColor="@color/slateGrey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textStyle="normal" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/light_blue_grey" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:background="@color/white"
+                        android:gravity="center|left"
+                        android:paddingStart="10dp"
+                        android:paddingTop="9dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="알러지 반응을 보일 가능성이 약간 증가함."
+                        android:textColor="@color/slateGrey"
+                        android:textSize="13dp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_blue_grey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.35"
+                        android:background="@color/grey"
+                        android:gravity="center"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="18dp"
+                        android:text="Class 3"
+                        android:textColor="@color/slateGrey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textStyle="normal" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/light_blue_grey" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:background="@color/white"
+                        android:gravity="center|left"
+                        android:paddingStart="10dp"
+                        android:paddingTop="9dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="알러지 반응을 보일 가능성이 상당히 증가함."
+                        android:textColor="@color/slateGrey"
+                        android:textSize="13dp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_blue_grey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.35"
+                        android:background="@color/grey"
+                        android:gravity="center"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="18dp"
+                        android:text="Class 4"
+                        android:textColor="@color/slateGrey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textStyle="normal" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/light_blue_grey" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:background="@color/white"
+                        android:gravity="center|left"
+                        android:paddingStart="10dp"
+                        android:paddingTop="9dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="알러지 반응을 보일 가능성이 높음."
+                        android:textColor="@color/slateGrey"
+                        android:textSize="13dp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_blue_grey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.35"
+                        android:background="@color/grey"
+                        android:gravity="center"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="18dp"
+                        android:text="Class 5"
+                        android:textColor="@color/slateGrey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textStyle="normal" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/light_blue_grey" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:background="@color/white"
+                        android:gravity="center|left"
+                        android:paddingStart="10dp"
+                        android:paddingTop="9dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="알러지 반응을 보일 가능성이 매우 높음."
+                        android:textColor="@color/slateGrey"
+                        android:textSize="13dp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_blue_grey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.35"
+                        android:background="@color/grey"
+                        android:gravity="center"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="18dp"
+                        android:text="Class 6"
+                        android:textColor="@color/slateGrey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textStyle="normal" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/light_blue_grey" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:background="@color/white"
+                        android:gravity="center|left"
+                        android:paddingStart="10dp"
+                        android:paddingTop="9dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="알러지 반응을 보일 가능성이 상당히 높음"
+                        android:textColor="@color/slateGrey"
+                        android:textSize="13dp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_blue_grey" />
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+</layout>
+

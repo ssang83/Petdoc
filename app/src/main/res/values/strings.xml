@@ -1,0 +1,944 @@
+<resources>
+    <string name="app_name">Petdoc</string>
+
+    <string name="google_map_api_key">AIzaSyApWBYrkBBVhZMv0K3RjuWE8TP1s1a8aCs</string>
+    <string name="kakao_app_key">263bb955f5d310936b1adaccbbfc2d88</string>
+    <string name="facebook_app_id">1429231817399783</string>
+    <string name="fb_login_protocol_scheme">fb1429231817399783</string>
+
+    <!-- test -->
+    <string name="title_list">List</string>
+    <string name="title_upload">Upload</string>
+    <string name="title_about">About</string>
+
+    <!--Errors-->
+    <string name="error_no_internet">Check your internet connection and try again.</string>
+    <string name="error_server_problem">Server issue occurred, please try again.</string>
+    <string name="error_unknown">Unknown error</string>
+    <string name="error_image_processing">Error during processing.</string>
+    <string name="error_invalid_image">Image is invalid.</string>
+    <string name="str_file_not_found">File is not created</string>
+
+
+    <string name="str_allow_permission_for_image">Please allow permission to take Image.</string>
+    <string name="str_allow_permission_from_setting">Please allow permission from Application setting.</string>
+
+    <string name="str_ok">OK</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="str_plz_select_img">Please select Image to upload.</string>
+
+    <!--Testr APIs-->
+    <string name="api_image_list">image_list.php</string>
+    <string name="api_upload">upload.php</string>
+    <string name="api_error">error_api</string>
+
+    <string name="api_image_list_mock">image_list</string>
+    <string name="api_upload_mock">upload</string>
+    <string name="api_error_mock">error_api</string>
+
+
+    <!-- Splash(Intro) screen =================================================================== -->
+    <string name="copyright_message">Copyrights 2019 © Petdoc corp.</string>
+    <string name="permission_guide_title">앱 접근 권한 안내</string>
+    <string name="permission_guide_subtitle">편리한 앱 이용을 위해 다음 권한들을 사용하오니 확인 부탁드립니다.</string>
+    <string name="permission_guide_tail">선택적 접근 권한은 해당 기능을 사용할 때 허용이 필요하며, 허용하지 않아도 해당 기능 외 서비스 이용이 가능합니다.</string>
+    <string name="legacy_permission">필수적 앱 접근 권한</string>
+    <string name="legacy_title">기기 및 앱 기록</string>
+    <string name="legacy_sub_title">앱 상태(버전) 확인</string>
+    <string name="choice_permission_title">선택적 접근 권한</string>
+    <string name="permission_camera_text1">사진,카메라</string>
+    <string name="permission_camera_text2">글 작성 시 사진 또는 촬영</string>
+    <string name="permission_location_text1">내 위치</string>
+    <string name="permission_location_text2">내 주변 병원 찾기</string>
+    <string name="permission_call_text1">전화</string>
+    <string name="permission_call_text2">병원 전화 문의</string>
+    <string name="permission_noti_text1">알림</string>
+    <string name="permission_noti_text2">상담 채팅, 병원 예약 상태 및 마케팅 알림</string>
+    <string name="skip">SKIP</string>
+    <string name="next">NEXT</string>
+    <string name="user_guide_1_title">상담하세요!</string>
+    <string name="user_guide_1_content">병원에 갈지 말 지 고민될 때,\n갑자기 아이가 이상한 행동을 할 때!</string>
+    <string name="user_guide_2_title">검색하세요!</string>
+    <string name="user_guide_2_content">다른 보호자의 상담 내역 열람,\n반려백과 검색까지! 수의사가 참여한\n전문성 있는 컨텐츠를 검색해보세요!</string>
+    <string name="user_guide_3_title">펫톡하세요!</string>
+    <string name="user_guide_3_content">귀여운 우리 아이 자랑\n수의사가 알려주는 반려동물 지식\n고민상담은 물론 나눔, 중고거래까지!</string>
+    <string name="user_guide_4_title">케어하세요!</string>
+    <string name="user_guide_4_content">우리 아이 접종 시기 관리부터\n배변 체크까지 기록하면 할수록\n푸짐한 혜택이!</string>
+    <string name="user_guide_5_title">쇼핑하세요!</string>
+    <string name="user_guide_5_content">펫닥이 꼼꼼이 검수한 안전한 제품\n게릴라 세일은 덤!</string>
+    <string name="user_guide_start">시작하기</string>
+
+    <!-- Login Screen ========================================================================== -->
+    <string name="login_greeting_message">안녕하세요 고객님,\n내 손안에 수의사 펫닥입니다.</string>
+    <string name="email">E-mail</string>
+    <string name="nickName">Nickname</string>
+    <string name="password">Password</string>
+    <string name="password_confirm">Password confirm</string>
+    <string name="password_kr">비밀번호</string>
+    <string name="password_confirm_kr">비밀번호 확인</string>
+    <string name="phone_number">Phone number</string>
+    <string name="sample_email">hello@petdoc.co.kr</string>
+    <string name="sample_password">영문, 숫자 조합 8자리 이상입니다.</string>
+    <string name="sample_password_confirm">비밀번호를 다시 입력해주세요.</string>
+    <string name="login">로그인</string>
+    <string name="find_password">아이디/비밀번호 찾기</string>
+    <string name="sign_up_email">이메일로 회원가입</string>
+    <string name="last_social_login_1">마지막 로그인 계정</string>
+    <string name="last_social_login_2">입니다.</string>
+
+    <string name="google_account">구글 계정</string>
+    <string name="naver_account">네이버 계정</string>
+    <string name="facebook_account">페이스북 계정</string>
+    <string name="kakao_account">카카오 계정</string>
+    <string name="apple_account">애플 계정</string>
+    <string name="email_account">이메일 계정</string>
+
+    <string name="policy_term_title">약관동의</string>
+    <string name="policy_term_check_content_title">서비스 이용을 위해\n고객님의 동의가 필요합니다.</string>
+    <string name="policy_term_check_content_text">펫닥에서는 서비스 이용약관과 개인정보 보호정책 그리고 위치 기반 서비스에 대한 이용동의를 필수로 수집하고 있습니다. 아래 동의 버튼을 누르시면 다음 사항들에 대해 동의하신 것으로 인정됩니다.</string>
+    <string name="policy_term">펫닥 통합 이용약관</string>
+    <string name="policy_private_info">개인정보 수집 및 이용정책</string>
+    <string name="policy_marketing">마케팅 동의방침</string>
+    <string name="policy_location">제3자 정보제공동의</string>
+    <string name="policy_open_data">병원예약 제3자 정보제공동의</string>
+    <string name="policy_link_all_text">펫닥 통합 이용약관, 개인정보 수집 및 이용정책, 제3자 정보제공동의</string>
+
+    <string name="sign_up_by_email_guide_text">한 번의 가입으로 펫닥에서 제공하는 모든 서비스와 펫닥 제휴 동물병원 서비스를 편리하게 이용하실 수 있습니다.</string>
+
+    <string name="sign_up_by_email_hint1">이메일을 입력해 주세요.</string>
+    <string name="sign_up_by_email_hint2">영문, 숫자, 특수 조합 8~16자리.</string>
+    <string name="sign_up_by_email_hint3">비밀번호를 다시 입력해주세요.</string>
+    <string name="sign_up_by_email_hint4">휴대폰 번호를 입력해주세요.</string>
+    <string name="sign_up_by_email_hint5">닉네임을 입력해주세요.</string>
+    <string name="sign_up_by_email_wrong_pattern1">이메일 형식이 아닙니다.</string>
+    <string name="sign_up_by_email_wrong_pattern2">비밀번호 형식에 맞게 입력해주세요.</string>
+    <string name="sign_up_by_email_wrong_pattern3">비밀번호가 일치하지 않습니다.</string>
+
+    <string name="sign_up_sns_extra_info_title">SNS 가입정보 입력</string>
+
+    <string name="find_password_by_email">비밀번호 재설정</string>
+    <string name="find_password_by_email_guide">비밀번호를 잊으셨나요?\n계정을 찾으려면 이메일을 입력하세요.</string>
+    <string name="send">전송</string>
+    <string name="authorize_code">인증코드</string>
+    <string name="change">변경</string>
+    <string name="authorize">인증</string>
+    <string name="authorize_done">인증완료</string>
+    <string name="save">저장하기</string>
+
+    <string name="password_change">비밀번호 재설정</string>
+
+    <string name="name">이름</string>
+    <string name="email_kr">이메일</string>
+    <string name="gender">성별</string>
+    <string name="birthday">생년월일</string>
+
+    <string name="male">남자</string>
+    <string name="female">여자</string>
+
+    <string name="phone_number_kr">휴대폰 번호</string>
+
+
+    <string name="confirm">확인</string>
+    <string name="confirm_self">본인 확인</string>
+    <string name="confirm_self_complete">가입 완료</string>
+    <string name="cancel">취소</string>
+    <string name="allow">동의</string>
+    <string name="complete">완료</string>
+
+    <string name="mypage">마이페이지</string>
+    <string name="information_change">정보변경</string>
+    <string name="mypet_information">반려동물 정보</string>
+    <string name="mypet_history">예약내역</string>
+
+    <string name="profile_image_choose">프로필 사진(선택)</string>
+
+    <string name="bookmark">북마크</string>
+    <string name="couponbox">쿠폰함</string>
+    <string name="petpoint">펫 포인트</string>
+    <string name="mystory">내 게시글</string>
+    <string name="ask1on1">1:1문의</string>
+    <string name="notice">공지사항</string>
+    <string name="setting">설정</string>
+    <string name="my_album">내 사진앨범</string>
+    <string name="my_album_detail">자세히 보기</string>
+    <string name="scanner_ear_image">사진보기</string>
+    <string name="external_device">연결 디바이스 관리</string>
+    <string name="customer_report">앱 불편사항 접수</string>
+
+    <string name="nickname">닉네임</string>
+    <string name="nicknamehint">닉네임을 8자 이내로 입력해주세요</string>
+    <string name="emailid">이메일 아이디</string>
+    <string name="emailhint">hello@petdoc.co.kr</string>
+    <string name="mail_re_send">인증메일 재발송</string>
+    <string name="mail_confirm_guide">이메일 인증 시 펫포인트 1,000점이 적립됩니다.</string>
+    <string name="privacy_data_period">개인정보 유효기간 설정</string>
+    <string name="period_1">1년</string>
+    <string name="period_3">3년</string>
+    <string name="period_5">5년</string>
+    <string name="period_forever">탈퇴 시</string>
+
+    <string name="weight">체중</string>
+    <string name="body">체형</string>
+    <string name="activity">산책시간</string>
+    <string name="allerge">알러지/싫어하는 주재료</string>
+    <string name="likefood">좋아하는 주재료</string>
+    <string name="current_feeding">현재 급여 사료</string>
+    <string name="sickness">앓고있거나 걱정되는 질병</string>
+    <string name="pregnant">임신 여부</string>
+    <string name="detail_diagnosis">정밀진단</string>
+
+    <!-- 체중 화면 ========== -->
+    <string name="pet_weight_sub_text"> 체중을\n알려주세요.</string>
+    <string name="pet_body_sub_text"> 체형은\n어느정도 인가요?</string>
+    <string name="kg">kg</string>
+
+    <string name="body_level_1_title">매우 마름</string>
+    <string name="body_level_1_text">갈비뼈와 골반뼈를 멀리서도 육안으로 확인할 수 있어요. 위에서 보면 허리 부분이 심각하게 말라있어요.</string>
+    <string name="body_level_2_title">마름</string>
+    <string name="body_level_2_text">지방층이 없고 갈비뼈가 쉽게 만져져요. 허리 뼈의 가시돌기와 골반뼈가 돌출되기 시작해요.</string>
+    <string name="body_level_3_title">적정</string>
+    <string name="body_level_3_text">위에서 봤을 때 허리선을 확인할 수 있어요.</string>
+    <string name="body_level_4_title">과체중</string>
+    <string name="body_level_4_text">지방이 많아서 갈비뼈가 잘 만져지지 않아요. 위에서 봤을 때 허리선을 거의 구별할 수 없어요.</string>
+    <string name="body_level_5_title">비만</string>
+    <string name="body_level_5_text">꼬리 아랫 부분이 매우 두꺼워져요. 위에서 봤을 때 허리선을 거의 구별할 수 없어요.</string>
+
+    <string name="hour">시간</string>
+    <string name="walking_guide_title">일주일에 산책은\n몇 시간 정도 하나요?</string>
+
+    <string name="food_allerge_sub_guide"> 알러지가 있거나 싫어하는\n주재료가 있으면 알려주세요.</string>
+    <string name="food_allerge_multi_text">※ 중복 선택 가능</string>
+    <string name="food_like_sub_guide"> 좋아하는\n 주재료는 무엇인가요?</string>
+
+    <string name="food_type_chicken">닭고기</string>
+    <string name="food_type_duck">오리고기</string>
+    <string name="food_type_beef">소고기</string>
+    <string name="food_type_fish">연어&amp;참치</string>
+    <string name="food_type_meat_and_fish">미트&amp;피쉬</string>
+    <string name="food_type_sheep">양고기</string>
+    <string name="food_type_allerge">알러지가없어요</string>
+    <string name="food_type_all">다 좋아해요</string>
+
+    <string name="current_food_guide">현재 급여하는 사료와 간식을\n입력해주세요.</string>
+    <string name="feeding_hint">브랜드와 사료명을 함께 입력해주세요</string>
+    <string name="feeding_snack_hint">급여중인 간식을 입력해주세요</string>
+
+    <string name="dry_food">건식 사료</string>
+    <string name="wet_food">습식 사료</string>
+    <string name="snack">간식</string>
+
+    <string name="dry_food_input_guide">건식 사료 정보 입력</string>
+    <string name="wet_food_input_guide">습식 사료 정보 입력</string>
+    <string name="snack_input_guide">간식 정보 입력</string>
+    <string name="option_width_bracket">(선택)</string>
+
+    <string name="food_sample">내추럴발란스</string>
+
+    <string name="food_sickness_sub_guide">현재 치료 중이거나\n걱정되는 질병이 있다면 알려주세요.</string>
+    <string name="food_sickness_sub_guide_option">※ 최대 3개 중복 선택 가능</string>
+    <string name="food_search_done">진단결과 보러가기</string>
+
+    <string name="food_recommend_progressing">등록하신 진단정보를 바탕으로\n데이터를 분석 중입니다.\n잠시 기다리시면 하나에게 최적화된\n맞춤형 사료를 추천해 드립니다.</string>
+    <string name="food_recommend_progressing_1">진단정보 분석중</string>
+
+    <string name="sickness_healthy">튼튼해요</string>
+    <string name="sickness_joint">관절</string>
+    <string name="sickness_skin">피모</string>
+    <string name="sickness_stomach">소화</string>
+    <string name="sickness_dispense">면역</string>
+    <string name="sickness_bean">결석&amp;신장</string>
+    <string name="sickness_fat">비만</string>
+
+    <string name="detail_detect_done">정밀 진단 완료</string>
+    <string name="detail_detect_context">어떤 질병이 있는지\n더 정확하게 알고 싶다면!</string>
+
+    <string name="pregnant_subguide">\n혹시 임신중이거나 수유중인가요?</string>
+    <string name="non_pregnant">임신 안 함</string>
+    <string name="pregnant_true">임신중</string>
+    <string name="breeding_true">수유중</string>
+
+    <string name="fix">수정</string>
+    <string name="sickness_detail_search">질병 정밀 진단</string>
+    <string name="sickness_detail_done">정밀 진단 완료</string>
+    <string name="sickness_detail_done_guide">*정밀 진단 결과로 추천된 영양겔 입니다.\n이 중 급여하고 싶은 영양겔 2가지를 선택해주세요.</string>
+    <string name="sickness_detail_choice_done">선택 완료</string>
+
+    <string name="food_recommend_like_sample">#갱년기 #비만 #결석</string>
+
+    <string name="buy_recommend_food">맞춤식 구매하기</string>
+    <string name="main_feeding">주식 사료</string>
+    <string name="sub_supplier">보조 영양제</string>
+
+    <string name="food_recommend_result_item_type">일일 권장 급여량</string>
+
+
+    <string name="detail_search_joint_question">관절 관련 질병 체크리스트</string>
+    <string name="detail_search_joint_no1">산책을 자주 하는 편인가요?</string>
+    <string name="detail_search_joint_no2">다리에 근육이 많은 편인가요?</string>
+    <string name="detail_search_joint_no3">뒷다리 양쪽 허벅지 근육의 크기가 동일한가요?</string>
+    <string name="detail_search_joint_no4">슬개골 탈구증이 있거나 걱정되나요?</string>
+    <string name="detail_search_joint_no5">산책을 나가면 쉽게 지치나요?</string>
+
+    <string name="detail_search_skin_question">피모 관련 질병 체크리스트</string>
+    <string name="detail_search_skin_no1">몸에 각질이 있는 편인가요?</string>
+    <string name="detail_search_skin_no2">털에 윤기가 없고 푸석푸석 한가요?</string>
+    <string name="detail_search_skin_no3">피부를 많이 핧거나 긁는 증상이 있나요?</string>
+    <string name="detail_search_skin_no4">미용 후 털이 나지 않는 증상을 경험한 적이 있나요?</string>
+    <string name="detail_search_skin_no5">알러지 사료를 먹이거나, 먹이기 위한 고민을 해본적이 있나요?</string>
+
+    <string name="detail_search_smotach_question">소화 관련 질병 체크리스트</string>
+    <string name="detail_search_smotach_no1">평소에 설사를 많이 하는 편인가요?</string>
+    <string name="detail_search_smotach_no2">평소에 구토를 많이 하는 편인가요?</string>
+    <string name="detail_search_smotach_no3">대변의 양이 항상 일정한가요?</string>
+    <string name="detail_search_smotach_no4">대변의 형태는 적당히 단단한가요?</string>
+    <string name="detail_search_smotach_no5">사료 이외의 다른 간식을 많이 급여하나요?</string>
+
+
+    <string name="detail_search_dispense_question">면역 관련 질병 체크리스트</string>
+    <string name="detail_search_dispense_no1">다른 아이들보다 질병에 잘 건린다고 생각하나요?</string>
+    <string name="detail_search_dispense_no2">입양 당시 몸이 허약한 상태였나요?</string>
+    <string name="detail_search_dispense_no3">마취를 하는 수술을 최근에 한 적이 있나요?</string>
+    <string name="detail_search_dispense_no4">평소보다 생활하기 힘들어하는 경우가 많나요?</string>
+    <string name="detail_search_dispense_no5">최근에 임신과 출산을 한 적이 있나요?</string>
+
+    <string name="detail_search_bean_question">결석&amp;신장 관련 질병 체크리스트</string>
+    <string name="detail_search_bean_no1">오줌을 누는 횟수가 유난히 적거나 많은가요?</string>
+    <string name="detail_search_bean_no2">화장실을 자주 들락날락 거리는 현상이 있나요?</string>
+    <string name="detail_search_bean_no3">방광염이나 결석질환으로 고생한 적이 있나요?</string>
+    <string name="detail_search_bean_no4">나이가 듦에 따라 신장 질환이 걱정되나요?</string>
+    <string name="detail_search_bean_no5">피가 섞인 오줌을 눈 적이 있나요?</string>
+
+    <string name="detail_search_fat_question">비만 관련 질병 체크리스트</string>
+    <string name="detail_search_fat_no1">적게 먹는데 살이 찌는 것 같나요?</string>
+    <string name="detail_search_fat_no2">위에서 내려다 봤을 떄 허리가 보이나요?</string>
+    <string name="detail_search_fat_no3">갈비뼈가 만져지지 않고 살이 많져지나요?</string>
+    <string name="detail_search_fat_no4">허리디크스 질환이 있었던 적이 있나요?</string>
+    <string name="detail_search_fat_no5">산책을 나가면 금방 힘들어하나요?</string>
+
+    <string name="detail_search_done">정밀 진단 완료</string>
+
+    <string name="detail_diagnosis_sub_text"> 해당하는\n항목을 체크해주세요.</string>
+
+
+
+    <!-- home tab menu -->
+    <string name="home_all">전체</string>
+    <string name="home_consulting">상담</string>
+    <string name="home_guideline">반려백과</string>
+    <string name="home_petdoc_tv">펫닥TV</string>
+    <string name="home_pet_talk">펫톡</string>
+
+    <!-- main menu -->
+    <string name="main_home">홈</string>
+    <string name="main_hospital">병원예약</string>
+    <string name="main_consulting">상담</string>
+    <string name="main_care">케어</string>
+    <string name="main_shopping">쇼핑</string>
+    <string name="main_life">라이프</string>
+
+    <!-- 반려동물 등록 화면 -->
+    <string name="pet_add_name_title">반려동물 등록</string>
+    <string name="pet_add_next">다음</string>
+    <string name="pet_picture_choice">반려동물 사진(선택)</string>
+    <string name="pet_name_edit_title">반려동물의 이름을 알려주세요.</string>
+    <string name="pet_name_edit_hint">이름을 10자 이내로 입력해주세요.</string>
+    <string name="pet_name_confirm">반려동물 이름을 입력해주세요.</string>
+    <string name="pet_kind_confirm">반려동물 종류를 선택해주세요.</string>
+    <string name="pet_breed_know">품종을 알아요.</string>
+    <string name="pet_breed_not_know">잘 모르겠어요.</string>
+    <string name="pet_breed_search_hint">품종을 검색해주세요.</string>
+    <string name="pet_breed_search_empty">검색결과가 없습니다.</string>
+    <string name="pet_breed_confirm">반려동물 품종을 선택해주세요.</string>
+    <string name="pet_breed_weight_desc">하나의 크기는 어느정도 인가요? 하나가 아직 성장기라면 다 자란 후의 예상 크기를 선택해주세요.</string>
+    <string name="pet_age_birth">생년월일을 알아요.</string>
+    <string name="pet_age_about_age">대략적인 나이만 알아요.</string>
+    <string name="pet_age_default_calendar">0000년 0월 0일</string>
+    <string name="pet_age_default_picker_age">00세</string>
+    <string name="pet_age_default_picker_month">00개월</string>
+    <string name="pet_age_picker_age_title">년수</string>
+    <string name="pet_age_picker_month_title">개월수</string>
+    <string name="pet_sex_male">남아</string>
+    <string name="pet_sex_female">여아</string>
+    <string name="pet_neutralization_before">중성화 전</string>
+    <string name="pet_neutralization_complete">중성화 완료</string>
+    <string name="pet_add_complete">반려동물 등록 완료</string>
+    <string name="pet_age_confirm">반려동물 나이를 선택해주세요.</string>
+    <string name="pet_sex_confirm">반려동물 성별 및 중성화 여부를 선택해주세요.</string>
+    <string name="pet_vaccine_status_confirm">반려동물 예방접종 여부를 선택해주세요.</string>
+
+
+    <!-- 라이프 ================================================================================== -->
+    <string name="famous_pettalk">인기 펫톡</string>
+    <string name="more">더보기</string>
+    <string name="sample_1">뭔가 저희 강아지만 그런건가요? 갑자기 조용한 것 같아서 찾아보면 구석에서 웅크리고 있는겁니다.그래서 다가가서 보니까 똥을 먹고 있..똥,..하,,</string>
+    <string name="dog">강아지</string>
+    <string name="cat">고양이</string>
+    <string name="hamster">햄스터</string>
+    <string name="hedgehog">고슴도치</string>
+    <string name="special">특수동물</string>
+    <string name="market">나눔벼룩</string>
+    <string name="all">전체</string>
+    <string name="before">이전게시글</string>
+
+    <string name="reference_book">추천 백과</string>
+    <string name="reply">댓글</string>
+
+    <!-- 마이페이지 반려동물 정보 화면 -->
+    <string name="pet_information_title">반려동물 정보</string>
+    <string name="pet_information_edit">편집</string>
+    <string name="pet_information_add">추가하기</string>
+    <string name="pet_information_age">나이</string>
+    <string name="pet_information_breed">품종</string>
+    <string name="pet_information_diagnosis">맞춤식 진단받기</string>
+    <string name="pet_information_diagnosis_result">맞춤식 진단결과</string>
+    <string name="pet_information_add_status">반려동물 등록하기</string>
+    <string name="pet_informattion_empty">아직 등록된 반려동물이 없습니다.</string>
+    <string name="pet_info_detail">반려동물 기초 정보</string>
+    <string name="pet_info_detail_diagnosis">맞춤식 진단 정보</string>
+    <string name="pet_info_food_research">맞춤식 진단</string>
+    <string name="pet_info_detail_diagnosis_result">맞춤식 진단 결과</string>
+    <string name="pet_info_detail_diagnosis_keyword">진단결과 키워드</string>
+    <string name="pet_default_info_name">이름</string>
+    <string name="pet_default_info_kind">반려동물 종류</string>
+    <string name="pet_default_info_breed">품종</string>
+    <string name="pet_default_info_birth">생년월일/나이</string>
+    <string name="pet_default_info_gender">성별</string>
+    <string name="pet_default_info_vaccine">예방접종 여부</string>
+    <string name="pet_point_title">펫 포인트</string>
+    <string name="pet_saved_point">보유 포인트</string>
+    <string name="pet_saved_point_desc">적립 예정이 포함된 포인트</string>
+    <string name="pet_used_point">가용 포인트</string>
+    <string name="pet_used_point_desc">실제 사용 가능한 포인트</string>
+    <string name="pet_point_history_all">전체 내역</string>
+    <string name="pet_point_history_empty">조회 가능한 포인트가 없습니다.</string>
+    <string name="mypage_my_post">내 게시글</string>
+    <string name="mypage_my_post_empty">내 게시글이 없습니다.</string>
+    <string name="mypage_bookmark">북마크</string>
+    <string name="mypage_bookmark_empty">저장한 글이 없습니다.</string>
+    <string name="mypage_bookmark_hospital">병원</string>
+    <string name="mypage_bookmark_pet_guide">반려백과</string>
+    <string name="mypage_setting_main">설정</string>
+    <string name="mypage_setting_alarm">알림 설정</string>
+    <string name="mypage_setting_marketing">마케팅 정보 수신 설정</string>
+    <string name="mypage_setting_sign_out">탈퇴하기</string>
+    <string name="mypage_setting_terms">서비스 이용약관</string>
+    <string name="mypage_setting_privacy_policy">개인정보 처리 방침</string>
+    <string name="mypage_setting_marketing_agree">마케팅 수신 동의 안내</string>
+    <string name="mypage_setting_location_service">위치기반 서비스 이용약관</string>
+    <string name="mypage_setting_logout">로그아웃</string>
+    <string name="mypage_setting_version_info">버전 정보</string>
+    <string name="mypage_setting_alarm_all">전체 알림 수신</string>
+    <string name="mypage_setting_chatting_alarm">상담 채팅 알림 수신</string>
+    <string name="mypage_setting_reply_alarm">댓글 알림 수신</string>
+    <string name="mypage_setting_level_alarm">등급 알림 수신</string>
+    <string name="mypage_setting_marketing_info">마케팅 정보 수신 설정</string>
+    <string name="mypage_setting_marketing_info_all">전체 정보 수신 동의</string>
+    <string name="mypage_setting_marketing_info_email">이메일 정보 수신 동의</string>
+    <string name="mypage_setting_marketing_info_sms">SMS 정보 수신 동의</string>
+    <string name="mypage_setting_sign_out_guide">펫닥 탈퇴 시 원하시는 서비스를 선택하여 탈퇴하실 수 있습니다. 탈퇴를 원하시는 서비스를 선택해주세요.</string>
+    <string name="mypage_setting_sign_out_guide1">선택하신 서비스의 탈퇴가 완료되면 다음의 정보가 완전 삭제되며, 온・오프라인 상의 각종 혜택을 받으실 수 없습니다.</string>
+    <string name="mypage_setting_sign_out_petdoc">펫닥(Petdoc, V+lab)</string>
+    <string name="mypage_setting_sign_out_v_care">V+care, 펫닥 제휴 동물병원</string>
+    <string name="mypage_setting_sign_out_login_account">펫닥 서비스 로그인 계정정보</string>
+    <string name="mypage_setting_sign_out_customer_info">고객정보 및 온라인 서비스 활동정보</string>
+    <string name="mypage_setting_sign_out_pet_info">등록하신 반려동물 정보</string>
+    <string name="mypage_setting_sign_out_pet_manage_info">반려동물의 관리정보</string>
+    <string name="mypage_setting_sign_out_product_info">제품 구매정보</string>
+    <string name="mypage_setting_sign_out_point_info">보유중인 펫포인트 정보 (잔여 0,000P)</string>
+    <string name="mypage_setting_notice">공지사항</string>
+    <string name="mypage_reception_and_reservation">접수/예약</string>
+    <string name="mypage_reception">접수</string>
+    <string name="mypage_reception_history">접수 내역</string>
+    <string name="mypage_reservation">예약</string>
+    <string name="mypage_reservation_history">예약 내역</string>
+    <string name="mypage_hospital">병원</string>
+    <string name="mypage_reception_pet">접수 대상</string>
+    <string name="mypage_reception_category">접수 항목</string>
+    <string name="mypage_doctor_offie">진료실</string>
+    <string name="mypage_doctor_comment">남기고 싶은 말</string>
+    <string name="mypage_reception_cancel">접수 취소</string>
+    <string name="mypage_reservation_cancel">예약 취소</string>
+    <string name="mypage_change_date">날짜/시간 변경</string>
+    <string name="mypage_reservation_pet">예약 대상</string>
+    <string name="mypage_reservation_category">예약 항목</string>
+    <string name="mypage_date_time">날짜/시간</string>
+    <string name="mypage_room">객실</string>
+    <string name="mypage_feed_pay">사료 급여</string>
+    <string name="mypage_guideline">안내사항</string>
+    <string name="mypage_reception_empty">접수 내역이 없습니다.</string>
+    <string name="mypage_reservation_empty">예약 내역이 없습니다.</string>
+    <string name="mypage_inquiry_reply_waiting">답변대기</string>
+    <string name="mypage_inquiry_reply_complete">답변완료</string>
+    <string name="mypage_inquiry">1:1문의</string>
+    <string name="mypage_inquiry_write">글쓰기</string>
+    <string name="mypage_inquiry_detail">아직 답변이 없습니다. 조금만 기다려주세요!</string>
+    <string name="mypage_inquiry_reply_petdoc">펫닥</string>
+    <string name="mypage_inquiry_write_hint">제목을 입력해주세요.</string>
+    <string name="mypage_inquiry_write_comment_hint">고객센터 응대시간은 9:00~18:00입니다.</string>
+    <string name="mypage_inquiry_write_post">글 올리기</string>
+    <string name="mypage_inquiry_write_post_error">글을 작성해주세요.</string>
+
+    <string name="home_search_hint">검색어를 입력해주세요.</string>
+    <string name="home_user_level">보호자 님의 현재 등급</string>
+    <string name="home_input_care_record">케어 기록하기</string>
+    <string name="home_pet_doctor_title">수의사 상담이 필요하신가요?</string>
+    <string name="home_go_petdoc_chat">상담하러 가기</string>
+    <string name="home_near_pet_hospital">가까운 동물병원</string>
+    <string name="home_hospital_more">동물병원 더보기</string>
+    <string name="home_magazine">추천백과</string>
+    <string name="home_magazine_more">더보기</string>
+    <string name="home_hospital_call">전화</string>
+    <string name="home_hospital_reservation">예약</string>
+    <string name="home_hospital_reception">접수</string>
+    <string name="home_pet_add">반려동물 등록</string>
+    <string name="home_pet_add_desc">보호자님의 사랑스러운\n반려동물을 등록해주세요!</string>
+    <string name="home_chat_category1">#한방/재활</string>
+    <string name="home_chat_category1_desc">침이나 한약 치료에 관심이 있거나, 아이 재활 상담이 필요할 때 물어보세요.</string>
+    <string name="home_banner_comment">댓글을 입력해주세요.</string>
+    <string name="home_search_top_keyword">많이 검색된 검색어</string>
+    <string name="home_search_count">건</string>
+    <string name="home_search_filter_recommend">추천순</string>
+    <string name="home_search_filter_recently">최신순</string>
+    <string name="home_search_filter_all">전체</string>
+    <string name="home_search_filter_action">행동</string>
+    <string name="home_search_filter_feed">영양</string>
+    <string name="home_search_filter_disease">질병</string>
+    <string name="home_search_filter_oriental">한방/재활</string>
+    <string name="home_search_filter_surgery">수술</string>
+    <string name="home_search_filter_vaccine">예방접종</string>
+    <string name="home_search_filter_etc">기타</string>
+
+    <string name="shopping_recommend_product">추천제품</string>
+    <string name="shopping_custome_meal">커스터밀 맞춤식 사료</string>
+    <string name="shopping_match_food_test">맞춤식 진단받기</string>
+    <string name="shopping_match_food_test_result">맞춤식 진단결과</string>
+    <string name="shopping_pet_add">반려동물 등록하기</string>
+    <string name="shopping_custom_meal_title">커스터밀 맞춤형 건강식</string>
+    <string name="shopping_custom_meal_title_desc">펫닥 수의사들이 설계한 문진시스템을 통해 반려견의 개별적 건강상태에 따라 가장 적합한 사료와 영양겔을 추천해주는 맞춤형 건강식</string>
+
+    <string name="care_sunday">일</string>
+    <string name="care_monday">월</string>
+    <string name="care_tuesday">화</string>
+    <string name="care_wednesday">수</string>
+    <string name="care_thursday">목</string>
+    <string name="care_friday">금</string>
+    <string name="care_saturday">토</string>
+    <string name="care_action_check">건강수첩</string>
+    <string name="care_action_walk">산책</string>
+    <string name="care_action_tooth">양치</string>
+    <string name="care_action_bath">목욕</string>
+    <string name="care_action_poop">대소변</string>
+    <string name="care_action_communion">교감</string>
+    <string name="care_health_check">펫닥 스캐너</string>
+    <string name="care_health_weight">체중</string>
+    <string name="care_health_treat">진료</string>
+    <string name="care_health_ear">귀</string>
+    <string name="care_health_body_temp">체온</string>
+    <string name="care_health_humidity">온습도</string>
+    <string name="care_health_temp">온도</string>
+    <string name="care_health_humidity1">습도</string>
+    <string name="care_health_memo">메모</string>
+    <string name="care_health_connect_scanner">펫닥 스캐너 연결하기</string>
+    <string name="care_scanner_disconnect">기기연결 OFF</string>
+    <string name="care_scanner_status">기기연결</string>
+    <string name="care_scanner_on">ON</string>
+    <string name="care_walk_title">산책</string>
+    <string name="care_walk_desc">아이와 즐거운 산책을 마치셨나요?</string>
+    <string name="care_walk_complete">산책완료</string>
+    <string name="care_walk_reason">Q. 산책을 해야하는 이유?</string>
+    <string name="care_walk_reason1">최소 1주일에 1회 이상 산책을 해주세요</string>
+    <string name="care_walk_reason2">‘간식 주는 보호자보다 산책 시켜주는 보호자를 더 좋아한다’는 말을 아시나요? 산책은 강아지에게 있어 사회활동과 스트레스 해소의 창구입니다. 보호자와의 교감과 더불어 운동 효과까지 있으니 일석 사조입니다.</string>
+    <string name="care_walk_reason3">안전하고 올바른 산책을 위한 산책 예절 교육을 꼭 숙지해주시고 배변봉투와 간단한 간식거리를 꼭 챙겨주세요.</string>
+    <string name="care_tooth_title">양치</string>
+    <string name="care_tooth_complete">양치완료</string>
+    <string name="care_tooth_cancel">취소하기</string>
+    <string name="care_tooth_desc">아이와 즐거운 양치를 마치셨나요?</string>
+    <string name="care_tooth_question">Q. 양치를 해야하는 이유?</string>
+    <string name="care_tooth_reason1">최소 1주일에 2회 이상 양치를 해주세요</string>
+    <string name="care_tooth_reason2">사람처럼 강아지도 양치가 필수적입니다. 치아 간격이 넓고 충치의 원인인 탄수화물과 당을 먹을일이 적기 때문에 충치에는 잘 걸리지 않습니다. 다만, 치석으로 인한 잇몸염증과 같은 치주질환이 발생할 가능성이 큽니다. 이러한 질환에 걸리면 사료를 잘 먹지 않게되고 심하면 이빨이 영구적으로 빠지게될 수 있습니다. 먹는 것은 모든 건강의 기본입니다. 아이들을 위해 양치를 꼭 해주세요.</string>
+    <string name="care_tooth_reason3">반려동물 전용 칫솔과 치약 또는 전용 덴탈껌으로 양치를 해주세요</string>
+    <string name="care_bath_title">목욕</string>
+    <string name="care_bath_complete">목욕완료</string>
+    <string name="care_bath_desc">아이와 즐거운 목욕을 마치셨나요?</string>
+    <string name="care_bath_question">Q. 목욕을 해야하는 이유?</string>
+    <string name="care_bath_reason1">최소 2주일에 1회 이상 목욕을 해주세요</string>
+    <string name="care_bath_reason2">강아지의 피부는 사람보다 훨씬 얇다는 것을 알고 계신가요? 그래서 더 세심한 관리가 필요한 것이 강아지 목욕입니다. 목욕을 해주지 않으면 냄새, 털 뭉침 등 겉으로 느껴지는 문제 외에도 비듬, 각질 등 피부질환과 세균 감염 위험이 증가하여 아이들의 건강을 크게 해치게 됩니다.</string>
+    <string name="care_communion_title">교감</string>
+    <string name="care_communion_complete">교감완료</string>
+    <string name="care_communion_desc">아이와 따뜻한 교감을 마치셨나요?</string>
+    <string name="care_communion_question">Q. 교감을 해야하는 이유?</string>
+    <string name="care_communion_reason1">최소 하루 10분 교감을 해주세요.</string>
+    <string name="care_communion_reason2">고양이는 독립적인 성격으로 알려져 있기 때문에 많은 보호자들이 고양이는 별 신경을 쓰지 않아도 된다고 착각합니다. 하지만 고양이는 감성적으로 아주 예민하기 때문에 장난감으로 놀아주고 털을 빗어주며 쓰다듬어주는 등의 교감이 꼭 필요합니다. 교감을 자주 해주지 않는다면 유대감 하락, 스트레스 축적으로 행동 이상(물거나 할퀴는 등)을 유발할 수 있어 교감은 꼭 필요합니다.</string>
+    <string name="care_poop_title">대소변</string>
+    <string name="care_poop_complete">대소변 기록 완료</string>
+    <string name="care_poop_type1">보통</string>
+    <string name="care_poop_type2">무른변</string>
+    <string name="care_poop_type3">설사</string>
+    <string name="care_poop_type4">단단함</string>
+    <string name="care_poop_type5">검은색</string>
+    <string name="care_poop_type6">붉은색</string>
+    <string name="care_poop_question">Q. 대소변을 기록해야하는 이유?</string>
+    <string name="care_poop_reason1">최소 1주일에 2회 이상 대소변을 확인 해주세요</string>
+    <string name="care_poop_reason2">강아지의 건강 변화를 가장 빠르게 체크할 수 있는 방법은 바로 대소변 체크 입니다. 매일 하루 몇 번씩 확인이 가능하고 육안과 냄새로 바로 알 수 있기 때문입니다. 하지만 평소에 잘 확인하지 않으면 작은 변화는 쉽게 알기 힘듭니다. 그래서 건강할 때 더 많이 체크해주어야 하는 것이 대소변 체크 입니다.</string>
+    <string name="care_poop_reason3">건강한 상태일 때의 모습을 잘 기억해두고 비교하여 체크해야 합니다.</string>
+    <string name="care_poop_pee">소변</string>
+    <string name="care_poop_feces">대변</string>
+    <string name="care_memo">메모</string>
+    <string name="care_memo_complete">메모완료</string>
+    <string name="care_memo_hint">오늘 아이의 상태를 입력해 주세요!</string>
+    <string name="care_clinic">진료</string>
+    <string name="care_clinic_type">진료 종류 선택</string>
+    <string name="care_clinic_hint">진료받은 내용을 입력해주세요!</string>
+    <string name="care_clinic_complete">진료기록 완료</string>
+    <string name="care_weight_title">체중</string>
+    <string name="care_weight_complete">체중기록 완료</string>
+    <string name="care_weight_question">Q. 체중을 기록해야하는 이유?</string>
+    <string name="care_weight_reason1">최소 1주일에 2회 이상 체중을 재주세요</string>
+    <string name="care_weight_reason2">5kg의 강아지 몸무게가 0.5kg 변화하는 것이 작게 느껴질 수도 있습니다. 하지만 사람으로 바꾸어 말하면 50kg의 사람 몸무게가 5kg 빠지는 것과 같이 매우 큰 변화입니다. 육안으로 보았을 때는 이러한 변화를 쉽게 알 수 없습니다. 아이들의 몸무게를 주기적으로 측정해서 변화추이를 보면 말 못하는 아이들의 건강 변화를 예측할 수 있는 힌트가 됩니다.</string>
+    <string name="care_weight_reason3">반려동물 전용 체중계가 없다면 일반 체중계에 아이를 안고 올라가서 무게를 잰 후, 본인의 몸무게를 빼면 아이의 무게를 잴 수 있습니다.</string>
+    <string name="care_history_all">기록 전체보기</string>
+    <string name="care_history_camera_record">사진 기록 보기</string>
+    <string name="care_body_temperture_result">측정결과</string>
+    <string name="care_body_temperture_boundray">범위</string>
+    <string name="care_body_temperture_date">측정일자</string>
+    <string name="care_mearsure_no_list">%s 측정 데이터가 없습니다.</string>
+    <string name="care_connect_scanner">펫닥 스캐너 연결</string>
+    <string name="care_connect_scanner_intro">펫닥 스캐너와 연결이\n필요합니다.</string>
+    <string name="care_connect_scanner_intro_desc">펫닥 스캐너를 가지고 있다면 “스캐너가 있습니다”\n버튼을 눌러주세요.</string>
+    <string name="care_scanner_yes">스캐너가 있습니다</string>
+    <string name="care_scanner_no">없습니다</string>
+    <string name="care_scanner_close_title">펫닥 스캐너 연결 종료</string>
+    <string name="care_scanner_close_desc">종료 버튼을 누르시면\n펫닥 스캐너를 이용하실 수 없습니다.</string>
+    <string name="care_scanner_close_confirm">종료</string>
+    <string name="care_scanner_close_cancel">취소</string>
+    <string name="care_scanner_power_on">펫닥 스캐너 WiFi 모듈의\n전원을 2초간 눌러주세요.</string>
+    <string name="care_scanner_power_on_guide">전원 LED 깜빡임이 멈추면(약 10초) 자동으로\n신호를 확인합니다.</string>
+    <string name="care_scanner_wifi_checking">WIFI 신호 확인중…</string>
+    <string name="care_scanner_wifi_checking_compelte">WIFI 신호 확인 완료</string>
+    <string name="care_scanner_wifi_input_paasswd">펫닥 스캐너 WiFi를 선택 후\n비밀번호를 입력하세요.</string>
+    <string name="care_scanner_wifi_input_paasswd_guide">펫닥 스캐너의 SSID와 비밀번호는\nWiFi 모듈 안쪽 스티커에 기재되어 있습니다.</string>
+    <string name="care_scanner_wifi_ssid">WIFI SSID</string>
+    <string name="care_scanner_wifi_passwd">WIFI Password</string>
+    <string name="care_scanner_connecting">펫닥 스캐너 연결중</string>
+    <string name="care_scanner_connecting_complete">펫닥 스캐너 연결 완료</string>
+    <string name="care_scanner_connecting_ap">공유기 연결</string>
+    <string name="care_scanner_connecting_confirm">완료</string>
+    <string name="care_scanner_connecting_ap_guide">완료 버튼을 누르신 후, 스캐너 본체에\nWi-Fi 모듈을 장착해주세요.</string>
+    <string name="care_scanner_connecting_guide">스캐너와 스마트폰 연결 중에는 인터넷을 이용하실 수\n없습니다. (Android 계열의 최신 스마트폰(갤럭시S10\n이상)은 인터넷을 이용하실 수 있습니다.)</string>
+    <string name="care_scanner_ap_list">연결할 인터넷 공유기의\nWiFi를 선택하세요.</string>
+    <string name="care_scanner_ap_input_passwd">인터넷 공유기의 WiFi\n비밀번호를 입력해주세요.</string>
+    <string name="care_scanner_ap_connecting">인터넷 공유기와 펫닥 스캐너 연결중</string>
+    <string name="care_scanner_ap_connecting_guide">연결과정에서 스캐너의 전원 LED가 깜빡이며\n약 10초간의 재부팅 과정이 진행됩니다.</string>
+    <string name="care_scanner_ap_connecting_complete">인터넷 공유기와 펫닥 스캐너 연결완료</string>
+    <string name="care_scanner_ap_connecting_complete_guide">완료 버튼을 누른 후 스캐너 본체와 WiFi 모듈을\n연결하면 바로 기능을 이용할 수 있습니다.</string>
+    <string name="care_body_temperature_title">체온 측정</string>
+    <string name="care_body_temperature_guide">정확한 온도측정을 위해\n스캐너를 귀에 밀착 후 스캔해주세요.\n스캔 위치에 따라 체온 차가 발생할 수 있습니다.</string>
+    <string name="care_body_temperature_record">측정 기록</string>
+    <string name="care_body_temperature_scan">체온 스캔하기</string>
+    <string name="care_body_temperature_re_scan">체온 재 스캔하기</string>
+    <string name="care_body_temperature_video_guide">영상 가이드</string>
+    <string name="care_body_temperature_normal">정상 체온입니다.</string>
+    <string name="care_body_temperature_high">고체온증이 의심됩니다.</string>
+    <string name="care_body_temperature_high_guide">시원한 물을 반려동물의 말단부위만 적신 후 강력한 바람으로 체온을 떨어뜨려야 합니다. 만일 체온이 40˚C 정도가 되면 앞선 과정을 중단 후 주변 환기 또는 병원 방문 후 상담 받으세요.</string>
+    <string name="care_body_temperature_low">매우 위험한 상태입니다.</string>
+    <string name="care_body_temperature_low_guide">27˚C 이하로 12시간 이상 지속되면 사망할 가능성이 높습니다. 병원을 방문해 상담 받으세요.</string>
+    <string name="care_body_temperature_error">다시 측정해주세요.</string>
+    <string name="care_body_temperature_calibration_reset">보정 초기화</string>
+    <string name="care_body_temperature_calibration_desc">측정된 체온이 반려동물의 표준 체온과 맞지 않는 경우, 체온 보정을 통해 표준 체온으로 조정 후 다시 측정하세요.</string>
+    <string name="care_body_temperature_calibration_re_scan">다시 스캔</string>
+    <string name="care_body_temperature_calibration_check">체온 보정 값 확인</string>
+    <string name="care_body_temperature_calibration_confirm">적용하기</string>
+    <string name="care_body_temperature_legacy_temp">기존 온도</string>
+    <string name="care_body_temperature_calibration_temp">보정 온도</string>
+    <string name="care_body_temperature_calibration_desc1">이 보정 값을 적용하시겠습니까? </string>
+    <string name="care_humidity">온・습도 측정</string>
+    <string name="care_humidity_scan">온습도 스캔하기</string>
+    <string name="care_humidity_guide">정확한 온/습도 측정을 위해 스캐너의\n위치를 반려동물의 눈높이에 맞춰주세요.</string>
+    <string name="care_ear">귀 사진촬영</string>
+    <string name="care_ear_guide">정확한 증상파악을 위해 부위\n에 맞는 사진을 찍어주세요</string>
+    <string name="care_ear_left">왼쪽 귀</string>
+    <string name="care_ear_right">오른쪽 귀</string>
+    <string name="care_ear_save">저장</string>
+    <string name="care_ear_re_scan">다시 찍기</string>
+    <string name="care_ear_scan_use">사진 사용</string>
+    <string name="care_ear_scan_guide">초점 레버를 조절하여 초점을\n맞춘 후 촬영해주세요</string>
+    <string name="care_clinic_type_select">진료 종류 선택</string>
+    <string name="care_clinic_content">진료 내용</string>
+    <string name="care_body_temperature_dosage">투약</string>
+    <string name="care_body_temperature_delete">삭제</string>
+    <string name="care_no_history">기록이 없습니다.</string>
+    <string name="chat_login">해당 서비스를 이용하시려면\n로그인 후 이용해주세요.</string>
+    <string name="chat_request">상담하기</string>
+    <string name="chat_list">상담 내역</string>
+    <string name="chat_list_empty">상담 내역이 없습니다.\n수의사님과 상담을 시작해보세요!</string>
+    <string name="chat_waiting_reply">수의사 선생님의\n답변을 기다리는 중!</string>
+    <string name="chat_reply_status_wating">상담대기</string>
+    <string name="chat_reply_status_completed">상담종료</string>
+    <string name="chat_message_hint">메세지를 작성해주세요</string>
+    <string name="chat_warning">상담 주의사항</string>
+    <string name="chat_warning_guide">첫째,자가진료는 오히려 아이에게 위험할 수 있어서 상담 해드리지 않아요.\n둘째,실명이 공개되니 예쁜말 부탁드려요.\n셋째,원장님께 감사 인사드리는 센스!\n넷째,동물병원에서 진료받은 내용은 해당 원장님이 가장 잘 아시기 때문에 상담해드리지 않아요.\n답변까지는 약 3시간 정도 소요될 수 있어요.</string>
+    <string name="chat_request_type_01">01.분류 선택</string>
+    <string name="chat_request_type_02">02.정보 확인</string>
+    <string name="chat_request_type_03">03.상담하기</string>
+    <string name="chat_request_pet_choice">반려동물 선택</string>
+    <string name="chat_request_category">상담 분류</string>
+    <string name="chat_request_do">상담하기</string>
+    <string name="chat_request_choice_completed">선택 완료</string>
+    <string name="chat_request_category_guide">정확한 검색을 위해 하나의 분류만 선택 가능합니다.</string>
+    <string name="chat_info_confirm_title">기존 정보 확인</string>
+    <string name="chat_info_confirm_and_pet_guide">기존 상담 및 반려 백과 확인</string>
+    <string name="chat_info_confirm_guide">안내</string>
+    <string name="chat_existing_talk">관련 기존 상담</string>
+    <string name="chat_pet_guide">관련 반려 백과</string>
+    <string name="chat_more">모아보기</string>
+    <string name="chat_count">건</string>
+    <string name="chat_info_confirm_completed">정보 확인 완료</string>
+    <string name="chat_info_existing_chat_empty">해당 분류에 대한 기존 상담 내역이 없습니다.\n수의사 선생님께 상담해 보세요.</string>
+    <string name="chat_info_pet_guide_empty">해당 분류에 대한 반려백과가 없습니다.\n수의사 선생님께 상담해 보세요.</string>
+    <string name="chat_info_guide">기존 정보 확인 안내</string>
+    <string name="chat_info_guide_detail">기존 상담 모아보기 및 반려 백과 확인 후\n수의사님과 상담하실 수 있습니다.</string>
+    <string name="chat_exisiting_info_title">기존 상담 정보</string>
+    <string name="chat_exisiting_magazine_title">기존 반려백과 정보</string>
+    <string name="chat_exisiting_info_order_recommend">추천순</string>
+    <string name="chat_exisiting_info_order_recently">최신순</string>
+    <string name="chat_exisiting_info_total">총</string>
+    <string name="chat_exisiting_info_count_text">건의 상담</string>
+    <string name="chat_request_title">상담하기</string>
+    <string name="chat_request_warning">상담 전 주의 사항</string>
+    <string name="chat_request_warning_all_agree">모두 동의</string>
+    <string name="chat_request_content">상담 내용</string>
+    <string name="chat_request_content_hint">상담 내용을 입력해주세요.상담 시 휴대폰 번호,실명 등 원치 않는 개인 정보가 노출되지 않도록 주의해주 세요.</string>
+    <string name="chat_request_add_photo">사진추가</string>
+    <string name="chat_request_complete">상담 신청</string>
+    <string name="chat_request_warning_need">*필수</string>
+    <string name="chat_request_warning_not_need">*선택</string>
+    <string name="chat_request_warning_1">자가 진료를 하지 않겠습니다.</string>
+    <string name="chat_request_warning_2">진료 비용 문의를 하지 않겠습니다.</string>
+    <string name="chat_request_warning_3">병원 간 진료 비교를 하지 않겠습니다.</string>
+    <string name="chat_request_warning_4">예쁜 말만 사용하겠습니다.</string>
+    <string name="chat_request_warning_5">상담 내용 검색을 허용합니다.</string>
+    <string name="chat_request_warning_guide">위 사항이 지켜지지 않을 경우, 상담 중 종료될 수 있습니다.</string>
+    <string name="chat_pet_dog">#강아지</string>
+    <string name="chat_pet_cat">#고양이</string>
+    <string name="chat_pet_extra">#특수동물</string>
+    <string name="chat_category_etc">#기타</string>
+    <string name="chat_category_surgery">#수술</string>
+    <string name="chat_category_nutrition">#영양</string>
+    <string name="chat_category_shot">#예방접종</string>
+    <string name="chat_category_disease">#질병</string>
+    <string name="chat_category_behavior">#행동</string>
+    <string name="chat_category_oriental">#한방/재활</string>
+    <string name="chat_quit_pet_info">상담 반려동물 정보</string>
+    <string name="chat_quit_result">상담결과</string>
+    <string name="chat_quit_result_desc">원장님과의 상담이 종료되었습니다.\n상담결과를 확인해주세요!</string>
+    <string name="chat_recommend_product">추천 제품</string>
+    <string name="chat_related_hospital">주변 제휴 병원</string>
+    <string name="chat_product_name">브이랩</string>
+    <string name="chat_legacy_popup_title">관련 기존 정보를 확인해 보세요!</string>
+    <string name="chat_legacy_popup_title_desc">상담 전, 선택하신 상담 분류에\n관련된 기존 정보를 살펴보세요.</string>
+    <string name="chat_related_hospital_no_image">병원 이미지가 없습니다.</string>
+    <string name="chat_related_hospital_operation_time">운영시간</string>
+    <string name="chat_related_hospital_clinic_subject">진료과목</string>
+    <string name="chat_related_hospital_clinic_pet">진료동물</string>
+    <string name="chat_related_hospital_benefit">혜택</string>
+    <string name="chat_related_hospital_location">병원위치</string>
+    <string name="chat_related_hospital_guide">높은 퀄리티의 의료서비스 제공을 위해\n병원 전화 연결 시 \'펫닥\' 어플리케이션을\n통해 병원에 연락하셨음을 이야기해주세요!</string>
+    <string name="chat_related_hospital_call">전화하기</string>
+    <string name="chat_related_hospital_desc1">해당 병원은 협회 회원 동물병원입니다.</string>
+    <string name="chat_search_keyword">많이 검색된 검색어</string>
+    <string name="chat_search_best_chat">최근 반응 좋은 상담</string>
+    <string name="chat_search_all_chat">전체 상담</string>
+    <string name="chat_search_all_chat_empty">상담내역이 없습니다.</string>
+    <string name="chat_search_detail_recommend">추천</string>
+    <string name="chat_request_complete_title">상담 신청 완료</string>
+    <string name="chat_request_complete_desc">상담 신청되었습니다.\n이후 상담은 상담내역에서 진행됩니다.</string>
+    <string name="chat_rating_title">상담 만족도 평가</string>
+
+    <string name="life_magazine_empty">검색 된 백과가 없습니다.</string>
+    <string name="life_pet_talk_upload">글쓰기</string>
+    <string name="life_pet_talk_upload_category">카테고리 선택</string>
+    <string name="life_pet_talk_upload_story">스토리</string>
+    <string name="life_pet_talk_upload_title_hint">제목을 14자 이내로 입력해주세요.</string>
+    <string name="life_pet_talk_upload_content_hint">내용을 입력해주세요.</string>
+    <string name="life_pet_talk_upload_delete">게시물 삭제</string>
+    <string name="life_pet_talk_upload_edit_complete">수정 완료</string>
+    <string name="life_pet_talk_upload_complete">글 올리기</string>
+
+    <string name="magazine_editor">Editor.펫닥</string>
+    <string name="magazine_like">좋아요</string>
+    <string name="magazine_bookmark">북마크</string>
+
+    <string name="hospital_call">전화하기</string>
+    <string name="hospital_reservation">예약</string>
+    <string name="hospital_receiption">접수</string>
+    <string name="hospital_clinic_time">진료시간</string>
+    <string name="hospital_clinic_treatement">진료과목</string>
+    <string name="hospital_clinic_animal">진료동물</string>
+    <string name="hospital_description">병원 소개</string>
+    <string name="hospital_clinic_price">진료 가격</string>
+    <string name="hospital_clinic_price_desc">진료 후에 반려동물의 상태에 따라서, 진료 가격은 추가될 수\n있습니다.</string>
+    <string name="hospital_detail_info_empty">상세 정보가 없습니다.</string>
+    <string name="hospital_detail_info_empty1">병원 관계자이신가요?.</string>
+    <string name="hospital_detail_info_empty2">병원 정보 등록하기</string>
+    <string name="hospital_info">병원 정보</string>
+    <string name="hospital_info_reservation">펫닥 접수∙예약 병원</string>
+    <string name="hospital_info_default">일반 병원</string>
+    <string name="hospital_search_list">병원 목록 보기</string>
+    <string name="hospital_search_list_total">전체</string>
+    <string name="hospital_search_list_count">개</string>
+    <string name="hospital_type_all">펫닥 예약 병원</string>
+    <string name="hospital_type_reservation">펫닥 예약 병원</string>
+    <string name="hospital_type_receiption">펫닥 접수 병원</string>
+
+    <string name="level_guide_title">등급 및 혜택 안내</string>
+
+    <string name="image_pick_title">사진 선택</string>
+    <string name="image_pick_gallery">갤러리</string>
+    <string name="image_pick_camera">카메라</string>
+
+
+    <string name="show_hospital_list">목록 보기</string>
+    <string name="search_hint">검색어를 입력해주세요</string>
+    <string name="hospital_search_keword">추천 키워드</string>
+    <string name="hospital_search_lately_keyword">최근 검색</string>
+    <string name="hospital_search_lately_keyword_all_delete">전체삭제</string>
+    <string name="hospital_search_empty">검색한 병원이 없습니다.</string>
+    <string name="hospital_filter_title">병원 필터</string>
+    <string name="hospital_filter_reset">재설정</string>
+    <string name="hospital_filter_working">진료중</string>
+    <string name="hospital_filter_register">접수 가능</string>
+    <string name="hospital_filter_booking">예약 가능</string>
+    <string name="hospital_filter_facility">병원 시설</string>
+    <string name="hospital_filter_facility_beauty">미용</string>
+    <string name="hospital_filter_facility_hotel">호텔</string>
+    <string name="hospital_filter_facility_all_day">24시</string>
+    <string name="hospital_filter_facility_parking">주차</string>
+    <string name="hospital_filter_clinic_pet">진료 동물</string>
+    <string name="hospital_filter_clinic_dog">강아지</string>
+    <string name="hospital_filter_clinic_cat">고양이</string>
+    <string name="hospital_filter_clinic_hamster">햄스터</string>
+    <string name="hospital_filter_clinic_pig">기니피그</string>
+    <string name="hospital_filter_clinic_hedgehog">고슴도치</string>
+    <string name="hospital_filter_clinic_turtle">거북이</string>
+    <string name="hospital_filter_clinic_birds">조류</string>
+    <string name="hospital_filter_clinic_paret">패릿</string>
+    <string name="hospital_filter_completed">필터 적용</string>
+    <string name="hospital_register_title">접수하기</string>
+    <string name="hospital_register_pet_kind">접수 대상</string>
+    <string name="hospital_register_clinic_type">진료 항목</string>
+    <string name="hospital_register_choice_clinic_room">진료실 선택</string>
+    <string name="hospital_register_message">남기고 싶은 말</string>
+    <string name="hospital_register_message_choice">(선택)</string>
+    <string name="hospital_register_message_hint">아이에 대해서 특별히 알아야 하는 사항이 있다면 알려주세요.</string>
+    <string name="hospital_register_guide">이용 안내</string>
+    <string name="hospital_register_guide_desc1">※ 병원에 도착하시면 데스크에 알려주세요.</string>
+    <string name="hospital_register_guide_desc2">※ 접수 순서에 도착하지 않으시면 접수가 자동 취소됩니다.</string>
+    <string name="hospital_register_all_agree">모두 동의</string>
+    <string name="hospital_register_agree_desc1">상기 안내 사항을 확인 및 동의</string>
+    <string name="hospital_register_agree_desc2">개인정보 제 3자 제공 동의</string>
+    <string name="hospital_register_clinic">병원 진료</string>
+    <string name="hospital_register_completed">접수하기</string>
+    <string name="hospital_register_pet_no_clinic">※ 선택한 반려동물은 접수 가능한 진료 항목이 없습니다.</string>
+    <string name="hospital_clinic_status">진료 상태</string>
+    <string name="hospital_clinic_status_busy">혼잡</string>
+    <string name="hospital_clinic_status_smooth">원활</string>
+    <string name="hospital_clinic_status_normal">보통</string>
+    <string name="hospital_reservation_title">예약하기</string>
+    <string name="hospital_reservation_type">예약 항목</string>
+    <string name="hospital_reservation_pet">예약 대상</string>
+    <string name="hospital_reservation_clinic">진료</string>
+    <string name="hospital_reservation_beauty">미용</string>
+    <string name="hospital_reservation_hotel">호텔</string>
+    <string name="hospital_reservation_no_pet">※ 선택한 반려동물은 예약 가능한 항목이 없습니다.</string>
+    <string name="hospital_reservation_no_pet_no_clinic">※ 선택한 반려동물과 진료항목으로는 예약 가능한 수의사가 없습니다.</string>
+    <string name="hospital_reservation_select_date">날짜/시간 선택</string>
+    <string name="hospital_clinic_room">진료실</string>
+    <string name="hospital_time_select">시간 선택</string>
+    <string name="hospital_reservation_clinic_date">Date</string>
+    <string name="hospital_reservation_clinic_time">Time</string>
+    <string name="hospital_booking_pet_weight">반려동물 몸무게</string>
+    <string name="hospital_booking_detail_item">미용 항목</string>
+    <string name="hospital_booking_beauty_guide1">※ 접종이 완료되지 않았거나 전염성 질병이 있으면 예약이 불가능할 수 있습니다.</string>
+    <string name="hospital_booking_beauty_guide2">※ 병원에서 확인 후에 예약이 승인되면 예약이 완료됩니다.</string>
+    <string name="hospital_booking_beauty_guide3">※ 사전 고지 없이 미방문 시 추후 예약이 불가능할 수 있습니다.</string>
+    <string name="hospital_booking_beauty_guide4">※ 예약 취소/변경은 예약 시간 1시간 전까지 가능합니다.</string>
+    <string name="hospital_booking_beauty_guide5">※ 예약 변경 최대 3번까지 가능합니다.</string>
+    <string name="hospital_booking_request">예약요청</string>
+    <string name="hospital_booking_beauty_all">전체 미용</string>
+    <string name="hospital_booking_beauty_direct_call">몸무게 제한으로 병원에 직접 문의해주세요.</string>
+    <string name="hospital_booking_hotel_date">날짜 선택</string>
+    <string name="hospital_booking_hotel_enter_date">입실 날짜</string>
+    <string name="hospital_booking_hotel_out_date">퇴실 날짜</string>
+    <string name="hospital_booking_hotel_enter_tiem">입실 예정 시간</string>
+    <string name="hospital_booking_hotel_out_time">퇴실 예정 시간</string>
+    <string name="hospital_booking_hotel_room_select">객실 선택</string>
+    <string name="hospital_booking_hotel_feed_select">급여 사료 선택</string>
+    <string name="hospital_booking_hotel_feed">기존 사료</string>
+    <string name="hospital_booking_hotel_hotel_feed">호텔 사료</string>
+    <string name="hospital_register_complete">접수 완료</string>
+    <string name="hospital_clinic_reservation_complete">예약 완료</string>
+    <string name="hospital_booking_hotel_feed_desc">※ 병원 방문 시 평소에 급여하고 있는 사료를 가져와 주세요.</string>
+    <string name="hospital_go_maypage">마이페이지 가기</string>
+    <string name="hospital_clinic_reservation_pet">예약 대상</string>
+    <string name="hospital_clinic_reservation_type">예약 항목</string>
+    <string name="hospital_clinic_reservation_date">날짜/시간</string>
+    <string name="hospital_beauty_reservation">예약 요청 완료</string>
+    <string name="hospital_beauty_reservation_detail">세부 항목</string>
+    <string name="hospital_hotel_room">객실</string>
+    <string name="hospital_hotel_feed_type">사료 급여</string>
+    <string name="hospital_hotel_date_title">날짜 선택</string>
+
+    <string name="blood_test_warning_count">혈액 수치에서 주의가 필요한 항목은 %d개 입니다.</string>
+    <string name="allerge_test_warning_count">알러지 원 중 주의가 필요한 항목은 %d개 입니다.</string>
+
+    <string name="logout_title">로그아웃</string>
+    <string name="logout_message">로그아웃을 하시겠습니까?</string>
+    <string name="app_report">앱 불편사항</string>
+    <string name="wifi_device">Wifi 기기</string>
+    <string name="no_device">연결기기 없음</string>
+    <string name="connected">연결됨</string>
+
+    <string name="password_visible">표시</string>
+    <string name="password_hidden">숨기기</string>
+
+    <string name="msg_exit_program_double_back">\'뒤로가기\' 버튼을 한번 더 누르면 애플리케이션이 종료됩니다.</string>
+    
+    <string name="connect_the_scanner_to_the_charger">펫닥 스캐너를 충전기에 연결해주세요.</string>
+    <string name="connect_the_scanner_to_the_charger_description">펫닥 스캐너 충전기가 연결되면 자동으로 펌웨어 설치가 진행됩니다. 스캐너 펌웨어 도중 스캐너 전원이 꺼질 경우 스매너 불량이 발생할 수 있습니다.</string>
+    <string name="caution_while_charging">전원버튼을 누르거나 충전기를 분리하지 마세요.</string>
+    <string name="firmware_progress_dialog_description">신규 펌웨어를 설치하고 있습니다.\n펌웨어 버전 : %s</string>
+    <string name="firmware_reboot_check_scanner_led">펫닥 스캐너의 전원 LED를 확인해주세요.</string>
+    <string name="firmware_reboot_scanner_led_desc">스캐너가 재부팅하는 동안 전원 LED가 깜빡입니다.\n깜빡임이 멈춘 것을 확인해주세요.</string>
+
+    <string name="title_allergy_comment">%s 항목</string>
+    <string name="allergy_comment_head_title">%s 항목 전체</string>
+    <string name="allergy_about_allergy">신체의 면역 기관은 체내에 침입한 유해한 물질에 대한 방어기전을 보입니다. 유해한 물질에 한정되지 않고 음식 등의 무해한 물질에 대해서 방어기전을 보이면 피부 가려움증, 발적, 구토, 호흡곤란 등과 같은 과민 반응이 일어나며 이를 “알러지”라고 합니다. 알러지는 유전적 요인 및 면역계의 비정상적인 작용에 의해 발생할 수 있습니다.</string>
+    <string name="allergy_about_allergy_test">알러지 검사는 알러지를 진단하는 검사가 아닌, 알러지 증상이 나타난 경우 현재 나타난 증상의 원인이 무엇인지 확인하는 검사입니다. 따라서 검사하는 시기에 따라 결과가 다를 수 있습니다.</string>
+    <string name="allergy_symptom_1">피부 : 발적, 부종, 탈모, 악취, 비듬, 과도한 긁기·핥기·털기, 가구 등에 몸 문지르기</string>
+    <string name="allergy_symptom_2">귀 : 발적, 악취, 짙은 고름 같은 귀지, 머리 흔들기, 앞발로 귀를 털거나 긁기</string>
+    <string name="allergy_symptom_3">눈 : 눈 주변 발적, 결막염, 눈물량 증가, 눈 문지르기</string>
+    <string name="allergy_symptom_4">소화기 : 구토, 설사, 복부 팽만</string>
+    <string name="allergy_symptom_5">호흡기 : 콧물, 재채기</string>
+
+    <string name="title_class_2">Class 2의 %d 항목</string>
+    <string name="title_class_3">Class 3의 %d 항목</string>
+    <string name="title_class_4">Class 4의 %d 항목</string>
+    <string name="title_class_5">Class 5의 %d 항목</string>
+    <string name="title_class_6">Class 6의 %d 항목</string>
+
+    <string name="caption_retry">재시도</string>
+
+    <string name="payment_caution">※ 식별코드 등록 후 결제취소가 불가능합니다.\n※ 미성년자 결제 시, 법정대리인이 거래를 취소할 수 있습니다.\n※ 카카오페이, 네이버페이, 삼성페이, 페이코 등의 결제수단은 선택하신 결제수단의 페이로 환불됩니다.</string>
+    <string name="please_choose_credit_card">카드를 선택해주세요.</string>
+    <string name="please_choose_installment">할부 개월을 선택해 주세요.</string>
+    <string name="payment_privacy_terms"><u>개인정보 수집, 이용 및 위탁 동의</u></string>
+    <string name="payment_service_terms"><u>대행 서비스 약관 동의.</u></string>
+    <string name="payment_agree"><u>*필수</u></string>
+
+    <string name="wonFormat" formatted="false">￦%s</string>
+    <string name="won" formatted="false">%s원</string>
+    <string name="count" formatted="false">%d개</string>
+
+</resources>

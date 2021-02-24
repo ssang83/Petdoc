@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/health_care_navigator"
+    app:startDestination="@id/healthCareFragment">
+
+    <fragment
+        android:id="@+id/healthCareFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.care.HealthCareFragment"
+        android:label="HealthCareFragment"
+        tools:layout="@layout/fragment_health_care"
+        >
+        <action
+            android:id="@+id/action_healthCareFragment_to_purchaseFragment"
+            app:destination="@id/purchase_fragment" />
+        <action
+            android:id="@+id/action_healthCareFragment_to_healthCareHospitalFragment"
+            app:destination="@id/healthCareHospitalFragment" />
+        <action
+            android:id="@+id/action_healthCareFragment_to_healthCareBookingCompleteFragment"
+            app:destination="@id/healthCareBookingCompleteFragment" />
+        <action
+            android:id="@+id/action_healthCareFragment_to_healthCareVisitCompleteFragment"
+            app:destination="@id/healthCareVisitCompleteFragment" />
+        <action
+            android:id="@+id/action_healthCareFragment_to_healthCareCodeFragment"
+            app:destination="@id/healthCareCodeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/purchase_fragment"
+        android:name="kr.co.petdoc.petdoc.fragment.purchase.PetCheckAdvancedPurchaseFragment"
+        tools:layout="@layout/fragment_pet_check_advanced_purchase">
+        <action
+            android:id="@+id/action_purchase_fragment_to_nicepay_fragment"
+            app:destination="@id/nicepay_fragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nicepay_fragment"
+        android:name="kr.co.petdoc.petdoc.fragment.purchase.NicePayFragment"
+        tools:layout="@layout/fragment_nicepay">
+        <argument
+            android:name="config"
+            app:argType="kr.co.petdoc.petdoc.nicepay.NicePayConfig" />
+        <action
+            android:id="@+id/action_nicepay_fragment_to_purchase_complete_fragment"
+            app:destination="@id/purchase_complete_fragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/purchase_complete_fragment"
+        android:name="kr.co.petdoc.petdoc.fragment.purchase.PurchaseCompleteFragment"
+        tools:layout="@layout/fragment_purchase_complete">
+        <action
+            android:id="@+id/action_purchase_complete_fragment_to_healthCareCodeFragment"
+            app:destination="@id/healthCareCodeFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/healthCareCodeFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.care.HealthCareCodeFragment"
+        android:label="HealthCareCodeFragment"
+        tools:layout="@layout/fragment_health_care_code"
+        >
+        <action
+            android:id="@+id/action_healthCareCodeFragment_to_healthCareHospitalFragment"
+            app:destination="@id/healthCareHospitalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/healthCareHospitalFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.care.HealthCareHospitalFragment"
+        android:label="HealthCareHospitalFragment"
+        tools:layout="@layout/fragment_health_care_hospital"
+        >
+        <action
+            android:id="@+id/action_healthCareHospitalFragment_to_healthCareHospitalDetailFragment"
+            app:destination="@id/healthCareHospitalDetailFragment" />
+        <action
+            android:id="@+id/action_healthCareHospitalFragment_to_healthCareHospitalSearchFragment"
+            app:destination="@id/healthCareHospitalSearchFragment" />
+        <action
+            android:id="@+id/action_healthCareHospitalFragment_to_healthCareBookingFragment"
+            app:destination="@id/healthCareBookingFragment" />
+        <action
+            android:id="@+id/action_healthCareHospitalFragment_to_purchase_fragment"
+            app:destination="@id/purchase_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/healthCareHospitalDetailFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.care.HealthCareHospitalDetailFragment"
+        android:label="HealthCareHospitalDetailFragment"
+        tools:layout="@layout/fragment_health_care_hospital_detail"
+        >
+        <action
+            android:id="@+id/action_healthCareHospitalDetailFragment_to_healthCareBookingFragment"
+            app:destination="@id/healthCareBookingFragment" />
+        <action
+            android:id="@+id/action_healthCareHospitalDetailFragment_to_healthCareHospitalDetailImageFragment"
+            app:destination="@id/healthCareHospitalDetailImageFragment" />
+        <action
+            android:id="@+id/action_healthCareHospitalDetailFragment_to_healthCareHospitalLocationFragment"
+            app:destination="@id/healthCareHospitalLocationFragment" />
+        <action
+            android:id="@+id/action_healthCareHospitalDetailFragment_to_healthCareHospitalVetFragment"
+            app:destination="@id/healthCareHospitalVetFragment" />
+        <action
+            android:id="@+id/action_healthCareHospitalDetailFragment_to_hospitalVideoFragment2"
+            app:destination="@id/hospitalVideoFragment2" />
+        <action
+            android:id="@+id/action_healthCareHospitalDetailFragment_to_hospitalPriceFragment2"
+            app:destination="@id/hospitalPriceFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/healthCareBookingFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.care.HealthCareBookingFragment"
+        android:label="HealthCareBookingFragment"
+        tools:layout="@layout/fragment_health_care_booking"
+        >
+        <action
+            android:id="@+id/action_healthCareBookingFragment_to_healthCareBookingCompleteFragment"
+            app:destination="@id/healthCareBookingCompleteFragment" />
+        <action
+            android:id="@+id/action_healthCareBookingFragment_to_bookingPolicyFragment2"
+            app:destination="@id/bookingPolicyFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/healthCareBookingCompleteFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.care.HealthCareBookingCompleteFragment"
+        android:label="HealthCareBookingCompleteFragment"
+        tools:layout="@layout/fragment_health_care_booking_complete"
+        >
+        <action
+            android:id="@+id/action_healthCareBookingCompleteFragment_to_healthCareFragment"
+            app:popUpTo="@id/healthCareCodeFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/healthCareFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/healthCareHospitalSearchFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.care.HealthCareHospitalSearchFragment"
+        android:label="HealthCareHospitalSearchFragment"
+        tools:layout="@layout/fragment_health_care_hospital_search"
+        />
+    <fragment
+        android:id="@+id/healthCareHospitalDetailImageFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.care.HealthCareHospitalDetailImageFragment"
+        android:label="HealthCareHospitalDetailImageFragment"
+        tools:layout="@layout/fragment_health_care_hospital_image_detail">
+        <action
+            android:id="@+id/action_healthCareHospitalDetailImageFragment_to_hospitalVideoFragment2"
+            app:destination="@id/hospitalVideoFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/healthCareHospitalLocationFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.care.HealthCareHospitalLocationFragment"
+        android:label="HealthCareHospitalLocationFragment"
+        tools:layout="@layout/fragment_health_care_hospital_location"/>
+    <fragment
+        android:id="@+id/healthCareHospitalVetFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.care.HealthCareHospitalVetFragment"
+        android:label="HealthCareHospitalVetFragment"
+        tools:layout="@layout/fragment_health_care_hospital_doctor"/>
+    <fragment
+        android:id="@+id/hospitalVideoFragment2"
+        android:name="kr.co.petdoc.petdoc.fragment.hospital.HospitalVideoFragment"
+        android:label="HospitalVideoFragment"
+        tools:layout="@layout/fragment_only_webview"
+        />
+    <fragment
+        android:id="@+id/bookingPolicyFragment2"
+        android:name="kr.co.petdoc.petdoc.fragment.hospital.BookingPolicyFragment"
+        android:label="BookingPolicyFragment"
+        tools:layout="@layout/fragment_booking_policy"/>
+    <fragment
+        android:id="@+id/healthCareVisitCompleteFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.care.HealthCareVisitCompleteFragment"
+        android:label="HealthCareVisitCompleteFragment"
+        tools:layout="@layout/fragment_health_care_visit_complete"
+        />
+    <fragment
+        android:id="@+id/hospitalPriceFragment2"
+        android:name="kr.co.petdoc.petdoc.fragment.hospital.HospitalPriceFragment"
+        android:label="HospitalPriceFragment"
+        tools:layout="@layout/fragment_hospital_price"
+        />
+</navigation>

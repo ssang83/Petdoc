@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+        <variable name="foodreference" type="kr.co.petdoc.petdoc.viewmodel.FoodRecommentDataModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/colorpetfood">
+
+        <ImageView
+            android:layout_width="@dimen/login_close_button_size"
+            android:layout_height="@dimen/login_close_button_size"
+            android:padding="@dimen/login_close_button_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:adjustViewBounds="true"
+            android:src="@drawable/x_button"
+            android:id="@+id/petfood_recommend_weight_back_button"
+            />
+
+        <TextView
+            android:id="@+id/mypage_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/petfood_recommend_weight_back_button"
+            app:layout_constraintBottom_toBottomOf="@id/petfood_recommend_weight_back_button"
+            android:textColor="@color/dark_grey"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textSize="@dimen/fix_text_size_4"
+            android:textStyle="bold"
+            android:text="@string/pet_info_detail_diagnosis"
+            />
+
+
+
+        <!-- 펫 이름 + 가이드 문구 ================================================================= -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/petfood_recommend_weight_back_button"
+            android:layout_marginTop="@dimen/food_reference_weight_margin"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:text="@{foodreference.weightGuideName()}"
+            android:textColor="@color/dark_grey"
+            android:textStyle="bold"
+            android:textSize="22dp"
+            android:includeFontPadding="false"
+            android:id="@+id/petfood_recomment_weight_name_guide"
+            />
+
+        <!-- 줄자 ============================================================================== -->
+        <kr.co.petdoc.petdoc.widget.ScrollRulerView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/food_reference_weight_ruler_height"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/petfood_recomment_weight_name_guide"
+            android:layout_marginStart="@dimen/login_close_button_padding"
+            android:layout_marginEnd="@dimen/login_close_button_padding"
+            android:layout_marginTop="@dimen/food_reference_weight_margin"
+            android:id="@+id/petfood_recommend_ruler_area"
+            android:scrollbars="none"
+            android:scrollbarSize="0dp"
+            android:scrollbarFadeDuration="0"
+            android:overScrollMode="never"
+            android:background="@drawable/grey_round_solid_stroke_rect"
+            android:padding="1dp"
+            />
+    
+        <ImageView
+            android:layout_width="@dimen/food_reference_weight_triangle_size"
+            android:layout_height="@dimen/food_reference_weight_triangle_size"
+            android:adjustViewBounds="true"
+            app:layout_constraintTop_toBottomOf="@id/petfood_recommend_ruler_area"
+            app:layout_constraintStart_toStartOf="@id/petfood_recommend_ruler_area"
+            app:layout_constraintEnd_toEndOf="@id/petfood_recommend_ruler_area"
+            android:src="@drawable/upside_arrow_triangle"
+            android:layout_marginTop="@dimen/food_reference_weight_gap"
+            android:id="@+id/petfood_recommend_triangle"
+            />
+
+
+        <!-- input box ======================================================================== -->
+        <TextView
+            android:layout_width="@dimen/food_reference_weight_input_box_width"
+            android:layout_height="@dimen/food_reference_weight_input_box_height"
+            app:layout_constraintStart_toStartOf="@id/petfood_recommend_ruler_area"
+            app:layout_constraintEnd_toEndOf="@id/petfood_recommend_ruler_area"
+            app:layout_constraintTop_toBottomOf="@id/petfood_recommend_triangle"
+            android:background="@drawable/grey_round_solid_stroke_rect"
+            android:layout_marginTop="@dimen/food_reference_weight_gap"
+            android:id="@+id/petfood_recommend_weight_input_text"
+            android:textSize="@dimen/fix_text_size_8"
+            android:text="0.0"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@color/dark_grey"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            app:layout_constraintStart_toEndOf="@id/petfood_recommend_weight_input_text"
+            app:layout_constraintTop_toTopOf="@id/petfood_recommend_weight_input_text"
+            app:layout_constraintBottom_toBottomOf="@id/petfood_recommend_weight_input_text"
+            android:layout_marginStart="@dimen/food_reference_weight_gap"
+            android:text="@string/kg"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/fix_text_size_7"
+            android:textStyle="bold"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pet_weight_guide"
+            android:text="체중을 입력해주세요."
+            android:textColor="@color/orange"
+            android:textSize="12dp"
+            android:textStyle="normal"
+            android:visibility="gone"
+            android:includeFontPadding="false"
+            app:layout_constraintBottom_toTopOf="@+id/petfood_recomment_weight_save_button_area"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="22dp"
+            />
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/petfood_recomment_weight_save_button_area"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height_default"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="@dimen/button_margin"
+            app:layoutDescription="@xml/authorize_myself_button_motion"
+            android:paddingStart="@dimen/button_margin"
+            android:paddingEnd="@dimen/button_margin"
+            >
+
+            <TextView
+                android:id="@+id/petfood_recomment_weight_save_button"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:includeFontPadding="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/dark_blue_round_rect"
+                android:textColor="@color/white_alpha"
+                android:textAlignment="gravity"
+                android:gravity="center"
+                android:textSize="@dimen/fix_text_size_5"
+                android:text="@string/confirm"
+                android:textStyle="bold"
+                />
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

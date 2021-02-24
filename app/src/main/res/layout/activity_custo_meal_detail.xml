@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorfff7f0">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorfbe5da"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:textStyle="bold"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/fix_text_size_4"
+            android:text="커스터밀 맞춤식"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/login_close_button_size"
+            android:layout_height="@dimen/login_close_button_size"
+            android:padding="@dimen/login_close_button_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_back"
+            android:id="@+id/btnBack"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewCustomMealTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_customeal_detail_top"
+                android:adjustViewBounds="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewCustomMealLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_customeal_logo"
+                android:adjustViewBounds="true"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewCustomMealTop"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="26dp"
+                />
+
+            <LinearLayout
+                android:id="@+id/layoutDesc1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="26dp"
+                android:paddingEnd="26dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewCustomMealLogo"
+                app:layout_constraintStart_toStartOf="parent"
+                android:orientation="vertical"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="그냥 제일 좋은 사료 말고요!"
+                    android:textStyle="normal"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textColor="@color/reddishgrey"
+                    android:includeFontPadding="false"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:layout_marginTop="8dp"
+                    android:text="우리 강아지한테\n가장 좋은 사료가 뭐예요?"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:includeFontPadding="false"
+                    android:text="커스터밀 맞춤형 건강식은 반려동물에게 개별적인 건강상태와 입맛을 고려한 맛있고 건강한 식사를 제공하고 싶은 마음으로 고민을 시작해 펫닥의 영양학 전문 수의사들과 함께 만든 ‘Customized meal’입니다. 수의사가 설계한 문진 프로그램을 통해 내 반려동물의 나이, 몸무게, 품종, 질병, 알러지 정보등을 입력하고 내 아이에게 가장 적합한 건강식을 선물해주세요."
+                    android:textStyle="normal"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textColor="@color/dark_grey"
+                    />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageViewCustomMealPackage"
+                android:src="@drawable/img_customeal_detail_package"
+                android:adjustViewBounds="true"
+                app:layout_constraintTop_toBottomOf="@+id/layoutDesc1"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="10dp"
+                />
+
+            <LinearLayout
+                android:id="@+id/layoutFeedType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="30dp"
+                android:paddingEnd="26dp"
+                android:paddingStart="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewCustomMealPackage"
+                app:layout_constraintStart_toStartOf="parent"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="60dp"
+                        android:layout_height="62dp"
+                        android:id="@+id/imageViewGel"
+                        android:src="@drawable/img_customeal_detail_gel"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewGel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="기능별 영양겔"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textStyle="normal"
+                        android:includeFontPadding="false"
+                        android:layout_marginStart="19dp"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewGel"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewGel"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="아이의 건강 상태에 맞춘 보조 영양겔로 영양밸런스를 맞춰주고 기호성까지 탁월하게 상승"
+                        android:textStyle="normal"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textColor="@color/reddishgrey"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="3dp"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewGel"
+                        app:layout_constraintStart_toStartOf="@+id/textViewGel"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="60dp"
+                        android:layout_height="62dp"
+                        android:id="@+id/imageViewMeat"
+                        android:src="@drawable/img_customeal_detail_meat"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewMeat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="단일 육류 베이스 ED식"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textStyle="normal"
+                        android:includeFontPadding="false"
+                        android:layout_marginStart="19dp"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewMeat"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewMeat"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="단일 육류 사용으로 알러지원을 찾는 데 도움"
+                        android:textStyle="normal"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textColor="@color/reddishgrey"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="3dp"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewMeat"
+                        app:layout_constraintStart_toStartOf="@+id/textViewMeat"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="60dp"
+                        android:layout_height="62dp"
+                        android:id="@+id/imageViewProtein"
+                        android:src="@drawable/img_customeal_detail_protein"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewProtein"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="가수분해 단백질"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textStyle="normal"
+                        android:includeFontPadding="false"
+                        android:layout_marginStart="19dp"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewProtein"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewProtein"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="육류 알러지원을 최소화 및 소화 흡수력 증가"
+                        android:textStyle="normal"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textColor="@color/reddishgrey"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="3dp"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewProtein"
+                        app:layout_constraintStart_toStartOf="@+id/textViewProtein"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="60dp"
+                        android:layout_height="62dp"
+                        android:id="@+id/imageViewGrainfree"
+                        android:src="@drawable/img_customeal_detail_grainfree"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewGrainfree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="그레인 프리"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textStyle="normal"
+                        android:includeFontPadding="false"
+                        android:layout_marginStart="19dp"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewGrainfree"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewGrainfree"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="식이 역반응 최소화 및 소화 흡수력 극대화"
+                        android:textStyle="normal"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textColor="@color/reddishgrey"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="3dp"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewGrainfree"
+                        app:layout_constraintStart_toStartOf="@+id/textViewGrainfree"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="60dp"
+                        android:layout_height="62dp"
+                        android:id="@+id/imageViewFeed"
+                        android:src="@drawable/img_customeal_detail_feed"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewFeed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="반습식 소프트사료"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textStyle="normal"
+                        android:includeFontPadding="false"
+                        android:layout_marginStart="19dp"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewFeed"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewFeed"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="음수량 증대 및 기호성 상승에 도움 부드러운 제형으로 턱관절에 부담없이"
+                        android:textStyle="normal"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textColor="@color/reddishgrey"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="3dp"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewFeed"
+                        app:layout_constraintStart_toStartOf="@+id/textViewFeed"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="60dp"
+                        android:layout_height="62dp"
+                        android:id="@+id/imageViewAAFCO"
+                        android:src="@drawable/img_customeal_detail_aafco"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewAAFCO"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2020 AAFCO"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textStyle="normal"
+                        android:includeFontPadding="false"
+                        android:layout_marginStart="19dp"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewAAFCO"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewAAFCO"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="최신 미국사료협회 기준에 부합하는 깐깐한 사료"
+                        android:textStyle="normal"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textColor="@color/reddishgrey"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="3dp"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewAAFCO"
+                        app:layout_constraintStart_toStartOf="@+id/textViewAAFCO"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/layoutDesc2"
+                android:layout_marginTop="50dp"
+                app:layout_constraintTop_toBottomOf="@+id/layoutFeedType"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingStart="26dp"
+                android:paddingEnd="26dp"
+                android:orientation="vertical"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="아무리 좋다고 소문난 사료도\n우리 아이에게 맞지 않으면\n소용 없는 걸요."
+                    android:textColor="@color/dark_grey"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    android:includeFontPadding="false"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="커스터밀은 수의사가 설계한 문진시스템을 통해 아이의 품종, 나이, 운동량, 질병, 알러지 등 다양한 건강 정보를 반영한 결과 값에 따라 아이의 건강 상태에 맞는 가장 적절한 사료와 영양겔을 추천해줍니다."
+                    android:textStyle="normal"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textColor="@color/dark_grey"
+                    android:includeFontPadding="false"
+                    />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageViewCustomMealFeed"
+                app:layout_constraintTop_toBottomOf="@+id/layoutDesc2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/img_customeal_detail_feed_desc"
+                android:adjustViewBounds="true"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/layoutDesc3"
+                android:paddingStart="26dp"
+                android:paddingEnd="26dp"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewCustomMealFeed"
+                app:layout_constraintStart_toStartOf="parent"
+                android:orientation="vertical"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EASY FOR YOU,\nBEST FOR DOG!"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    android:includeFontPadding="false"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="반려견 사료, 어렵게 고르지 마세요!\n어려운 고민은 이미 펫닥브이랩 수의사들이 다 했으니까요!\n이제 커스터밀로 우리아이에게 딱 맞는 맞춤형 건강식을 선물해주세요!"
+                    android:textStyle="normal"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textColor="@color/dark_grey"
+                    android:includeFontPadding="false"
+                    />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="50dp"
+                android:padding="26dp"
+                app:layout_constraintTop_toBottomOf="@+id/layoutDesc3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@color/pale_three"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="※ 커스터밀 맞춤식은 반려동물의 질병 예방차원을 위한 영양소 공급과 같은 일반적인 건강관리를 위한 전문적인 식단을 제공하고 있으나, 질병을 직접적으로 치료하는 식단은 아니므로 질병 치료식(처방식)은 가까운 동물병원에서 수의사와 상담하시기를 권장합니다."
+                    android:textColor="@color/reddishgrey"
+                    android:textSize="@dimen/fix_text_size_2"
+                    android:textStyle="normal"
+                    android:paddingBottom="50dp"
+                    android:includeFontPadding="false"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnTop"
+        android:layout_width="@dimen/home_button_top_size"
+        android:layout_height="@dimen/home_button_top_size"
+        android:src="@drawable/btn_top"
+        android:adjustViewBounds="true"
+        android:layout_marginEnd="@dimen/mypage_pet_information_profile_margin"
+        android:layout_marginBottom="22dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnConfirm"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnConfirm"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height_default"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/button_margin"
+        android:layout_marginEnd="@dimen/button_margin"
+        android:layout_marginBottom="@dimen/button_margin"
+        android:background="@drawable/salmon_solid_round_rect_6"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:textSize="@dimen/fix_text_size_5"
+        tools:text="맞춤식 진단 받기" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

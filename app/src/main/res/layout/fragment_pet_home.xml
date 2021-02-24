@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/home_header_height"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/petImage"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/img_pet_profile_default"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/grey_full_round_stroke_rect"
+                app:layout_constraintBottom_toBottomOf="@id/petImage"
+                app:layout_constraintEnd_toEndOf="@id/petImage"
+                app:layout_constraintStart_toStartOf="@id/petImage"
+                app:layout_constraintTop_toTopOf="@id/petImage" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewLogo"
+            android:layout_width="97dp"
+            android:layout_height="20dp"
+            android:src="@drawable/img_logo"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnNoti"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_common_noti"
+            android:adjustViewBounds="true"
+            app:layout_constraintEnd_toStartOf="@+id/btnMyPage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:id="@+id/notiUpdate"
+            app:layout_constraintTop_toTopOf="@+id/btnNoti"
+            app:layout_constraintEnd_toEndOf="@+id/btnNoti"
+            android:background="@drawable/orange_circle"
+            android:visibility="gone"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnMyPage"
+            android:layout_width="@dimen/home_header_height"
+            android:layout_height="@dimen/home_header_height"
+            android:padding="@dimen/top_my_icon_padding"
+            android:src="@drawable/ic_mypage"
+            android:adjustViewBounds="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:overScrollMode="never"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutSearch"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/home_search_height"
+                android:background="@drawable/orange_round_line"
+                android:layout_marginTop="@dimen/home_content_margin"
+                android:layout_marginStart="@dimen/home_content_margin"
+                android:layout_marginEnd="@dimen/home_content_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewSearch"
+                    android:layout_width="@dimen/home_search_image_size"
+                    android:layout_height="@dimen/home_search_image_size"
+                    android:src="@drawable/ic_search"
+                    android:adjustViewBounds="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/home_search_hint_margin"
+                    android:text="@string/home_search_hint"
+                    android:textStyle="normal"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/light_grey3"
+                    android:textSize="@dimen/fix_text_size_3"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewSearch"
+                    app:layout_constraintTop_toTopOf="@+id/imageViewSearch"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageViewSearch"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/bannerPager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="110dp"
+                android:layout_marginTop="@dimen/home_content_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutSearch"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/launcherList"
+                android:layout_marginTop="28dp"
+                android:overScrollMode="never"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bannerPager"
+                />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:id="@+id/divider"
+                android:background="@color/grey"
+                android:layout_marginTop="25dp"
+                app:layout_constraintTop_toBottomOf="@+id/launcherList"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutHospital"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/divider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/hospital_tab_1_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/hospital_tab_2_text"
+                    android:text="#펫닥예약병원"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/hospital_tab_2_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/hospital_tab_1_text"
+                    android:text="#가까운동물병원"
+                    android:layout_marginStart="18dp"
+                    android:textColor="@color/light_grey"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/fix_text_size_4"
+                    />
+
+                <View
+                    android:id="@+id/hospital_tab_1_underline"
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    app:layout_constraintTop_toBottomOf="@id/hospital_tab_1_text"
+                    app:layout_constraintStart_toStartOf="@id/hospital_tab_1_text"
+                    app:layout_constraintEnd_toEndOf="@id/hospital_tab_1_text"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/orange"
+                    />
+
+                <View
+                    android:id="@+id/hospital_tab_2_underline"
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    app:layout_constraintTop_toBottomOf="@id/hospital_tab_2_text"
+                    app:layout_constraintStart_toStartOf="@id/hospital_tab_2_text"
+                    app:layout_constraintEnd_toEndOf="@id/hospital_tab_2_text"
+                    android:background="@color/orange"
+                    android:visibility="invisible"
+                    android:layout_marginTop="8dp"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/hospitalList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:overScrollMode="never"
+                app:layout_constraintTop_toBottomOf="@+id/layoutHospital"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutHospitalMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/white_solid_round_21"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hospitalList">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewHospitalMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="11dp"
+                    android:paddingBottom="11dp"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    android:text="@string/home_hospital_more"
+                    android:textStyle="bold"
+                    android:textColor="@color/blue_grey"
+                    android:textSize="@dimen/fix_text_size_2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_home_banner_price"
+                android:id="@+id/bannerPrice"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutHospitalMore"
+                android:adjustViewBounds="true"
+                />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutPetTalk"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bannerPrice">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/home_content_margin"
+                    android:text="@string/famous_pettalk"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textColor="@color/dark_grey"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutPetTalkMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewPetTalkMore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/home_text_gap"
+                        android:text="@string/home_magazine_more"
+                        android:textStyle="normal"
+                        android:textColor="@color/color8d95a0"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/imageViewPetTalkArrow"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewPetTalkArrow"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginEnd="@dimen/home_content_margin"
+                        android:src="@drawable/ic_arrow"
+                        android:adjustViewBounds="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/textViewPetTalkMore"
+                        app:layout_constraintBottom_toBottomOf="@+id/textViewPetTalkMore"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/petTalkList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/layoutPetTalk"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/petTalkList">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/home_content_margin"
+                    android:text="@string/home_magazine"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textColor="@color/dark_grey"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutMagazineMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewMore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/home_text_gap"
+                        android:text="@string/home_magazine_more"
+                        android:textStyle="normal"
+                        android:textColor="@color/color8d95a0"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/imageViewArrow"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewArrow"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:adjustViewBounds="true"
+                        android:layout_marginEnd="@dimen/home_content_margin"
+                        android:src="@drawable/ic_arrow"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/textViewMore"
+                        app:layout_constraintBottom_toBottomOf="@+id/textViewMore"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/magazineList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/home_text_gap2"
+                    android:layout_marginStart="@dimen/home_text_gap2"
+                    android:overScrollMode="never"
+                    android:background="@color/white"
+                    android:layout_marginTop="@dimen/home_content_gap5"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    app:layout_constraintTop_toBottomOf="@id/layoutMagazineMore"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="50dp"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

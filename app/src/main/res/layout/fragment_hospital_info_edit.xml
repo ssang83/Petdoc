@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:textStyle="bold"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/fix_text_size_4"
+            android:text="정보 수정 제안"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/login_close_button_size"
+            android:layout_height="@dimen/login_close_button_size"
+            android:padding="@dimen/login_close_button_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_back"
+            android:id="@+id/btnBack"
+            />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnBack"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="24dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/name"
+            tools:text="브이케어 동물병원"
+            android:textStyle="bold"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/fix_text_size_9"
+            android:includeFontPadding="false"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:id="@+id/location"
+            tools:text="서울시 서초구 논현로 79길 32 1층"
+            android:textStyle="normal"
+            android:textColor="@color/color5c6073"
+            android:textSize="@dimen/fix_text_size_1"
+            android:includeFontPadding="false"
+            />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="@color/paleGreyThree"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/layoutInfo"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="수정 제안할 항목을 선택해주세요."
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/light_grey"
+        android:textStyle="bold"
+        android:textSize="@dimen/fix_text_size_4"
+        android:includeFontPadding="false"
+        app:layout_constraintTop_toBottomOf="@+id/divider1"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDesc"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:layout_marginTop="15dp"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnCheck1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/btn_hospital_checkbox"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="폐업 되었어요."
+                android:textSize="@dimen/fix_text_size_3"
+                android:textStyle="normal"
+                android:textColor="@color/dark_grey"
+                android:layout_marginStart="8dp"
+                android:includeFontPadding="false"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:layout_marginTop="20dp"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnCheck2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/btn_hospital_checkbox"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="동물병원 이름이 변경됐어요."
+                android:textSize="@dimen/fix_text_size_3"
+                android:textStyle="normal"
+                android:textColor="@color/dark_grey"
+                android:layout_marginStart="8dp"
+                android:includeFontPadding="false"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:layout_marginTop="20dp"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnCheck3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/btn_hospital_checkbox"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="주소(위치)가 변경됐어요."
+                android:textSize="@dimen/fix_text_size_3"
+                android:textStyle="normal"
+                android:textColor="@color/dark_grey"
+                android:layout_marginStart="8dp"
+                android:includeFontPadding="false"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:layout_marginTop="20dp"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnCheck4"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/btn_hospital_checkbox"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="전화번호가 변경됐어요."
+                android:textSize="@dimen/fix_text_size_3"
+                android:textStyle="normal"
+                android:textColor="@color/dark_grey"
+                android:layout_marginStart="8dp"
+                android:includeFontPadding="false"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:layout_marginTop="20dp"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnCheck5"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/btn_hospital_checkbox"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="진료/영업시간이 달라졌어요."
+                android:textSize="@dimen/fix_text_size_3"
+                android:textStyle="normal"
+                android:textColor="@color/dark_grey"
+                android:layout_marginStart="8dp"
+                android:includeFontPadding="false"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnEdit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height_default"
+        android:layout_marginStart="@dimen/button_margin"
+        android:layout_marginEnd="@dimen/button_margin"
+        android:layout_marginBottom="@dimen/button_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/main_color_round_rect"
+        android:textColor="@color/orange"
+        android:textStyle="bold"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:textSize="@dimen/fix_text_size_5"
+        android:text="@string/complete" />
+</androidx.constraintlayout.widget.ConstraintLayout>

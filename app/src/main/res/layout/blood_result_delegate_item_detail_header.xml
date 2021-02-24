@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="detailHeader"
+            type="kr.co.petdoc.petdoc.model.healthcareresult.BloodResultDetailHeader" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="14dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/bloodItem"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="@{@string/title_allergy_comment(detailHeader.smallCategory)}"
+                android:textColor="@color/slateGrey"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                tools:text="간담도계 항목" />
+
+            <TextView
+                android:id="@+id/tvComment"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|bottom"
+                android:drawableEnd="@drawable/ic_arrow"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:text="수의사 코멘트 보기"
+                android:textColor="#5C6073"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/grey_solid_round_rect_2"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:gravity="center"
+                android:text="항목"
+                android:textColor="@color/light_grey"
+                android:textSize="13dp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/light_blue_grey" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.7"
+                android:gravity="center"
+                android:text="결과"
+                android:textColor="@color/light_grey"
+                android:textSize="13dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

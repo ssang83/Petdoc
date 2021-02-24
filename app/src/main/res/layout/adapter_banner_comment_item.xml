@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/home_pet_image_size"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/profileImage"
+        android:layout_width="@dimen/home_banner_commet_profile_size"
+        android:layout_height="@dimen/home_banner_commet_profile_size"
+        android:layout_marginStart="@dimen/home_content_margin"
+        android:layout_marginTop="@dimen/home_content_gap5"
+        android:src="@drawable/profile_default"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/home_content_gap5"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toEndOf="@+id/profileImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nickName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="라떼"
+            android:textStyle="bold"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/fix_text_size_3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/regTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/home_text_gap"
+            tools:text="36초전"
+            android:textSize="@dimen/fix_text_size_1"
+            android:textColor="@color/light_grey_blue"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@+id/nickName"
+            app:layout_constraintTop_toTopOf="@+id/nickName"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="똥이라니,,애정이 부족한 거 아닐까요?"
+            android:textStyle="normal"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/fix_text_size_2"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nickName"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/light_grey5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

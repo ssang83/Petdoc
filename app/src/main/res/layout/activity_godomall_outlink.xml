@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLayer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/buttonLayer"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_grey2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnGoBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_go_back"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="20dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnGoForward"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_go_forward"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toEndOf="@+id/btnGoBack"
+            app:layout_constraintTop_toTopOf="@+id/btnGoBack"
+            app:layout_constraintBottom_toBottomOf="@+id/btnGoBack"
+            android:layout_marginStart="54dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnShare"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_web_share"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnGoBack"
+            app:layout_constraintBottom_toBottomOf="@+id/btnGoBack"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnRefresh"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_web_refresh"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toEndOf="@+id/btnShare"
+            app:layout_constraintTop_toTopOf="@+id/btnGoBack"
+            app:layout_constraintBottom_toBottomOf="@+id/btnGoBack"
+            android:layout_marginStart="58dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnClose"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_web_close"
+            android:adjustViewBounds="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnGoBack"
+            app:layout_constraintBottom_toBottomOf="@+id/btnGoBack"
+            android:layout_marginEnd="20dp"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

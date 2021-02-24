@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+        <variable name="foodreference" type="kr.co.petdoc.petdoc.viewmodel.FoodRecommentDataModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/colorpetfood">
+
+        <ImageView
+            android:layout_width="@dimen/login_close_button_size"
+            android:layout_height="@dimen/login_close_button_size"
+            android:padding="@dimen/login_close_button_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:adjustViewBounds="true"
+            android:src="@drawable/x_button"
+            android:id="@+id/petfood_recommend_weight_back_button"
+            />
+
+        <TextView
+            android:id="@+id/mypage_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/petfood_recommend_weight_back_button"
+            app:layout_constraintBottom_toBottomOf="@id/petfood_recommend_weight_back_button"
+            android:textColor="@color/dark_grey"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textSize="@dimen/fix_text_size_4"
+            android:textStyle="bold"
+            android:text="@string/pet_info_detail_diagnosis"
+            />
+
+
+
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/petfood_recommend_weight_back_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="@dimen/login_close_button_padding"
+            android:layout_marginEnd="@dimen/login_close_button_padding"
+            android:id="@+id/petfood_recommend_ruler_area"
+            android:scrollbars="none"
+            android:scrollbarSize="0dp"
+            android:scrollbarFadeDuration="0"
+            android:overScrollMode="never"
+            android:background="@color/colorpetfood"
+            android:padding="1dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="80dp"
+                >
+
+                <!-- 펫 이름 + 가이드 문구 ================================================================= -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="gravity"
+                    android:gravity="center"
+                    android:text="@{foodreference.bodyGuideName()}"
+                    android:textColor="@color/dark_grey"
+                    android:textStyle="bold"
+                    android:textSize="22dp"
+                    android:id="@+id/petfood_recomment_weight_name_guide"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/food_reference_weight_margin"
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/food_reference_body_panel_height"
+                    android:padding="@dimen/food_reference_body_panel_padding"
+                    android:background="@drawable/pinkishgrey_round_rect"
+                    android:id="@+id/petfood_recommend_body_type_1"
+                    android:layout_marginTop="@dimen/food_reference_weight_margin"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/body_level_1"
+                        android:id="@+id/petfood_recommend_body_image_1"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@id/petfood_recommend_body_image_1"
+                        app:layout_constraintTop_toTopOf="@id/petfood_recommend_body_image_1"
+                        android:text="@string/body_level_1_title"
+                        android:textColor="@color/reddishgrey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:id="@+id/petfood_recommend_body_title_1"
+                        android:layout_marginStart="@dimen/food_reference_body_panel_padding"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintStart_toStartOf="@id/petfood_recommend_body_title_1"
+                        app:layout_constraintTop_toBottomOf="@id/petfood_recommend_body_title_1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:text="@string/body_level_1_text"
+                        android:textColor="@color/dark_grey"
+                        android:layout_marginTop="@dimen/food_reference_body_panel_text_padding"
+                        android:lineSpacingMultiplier="1.1"
+                        android:textSize="@dimen/fix_text_size_2"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/food_reference_body_panel_height"
+                    android:padding="@dimen/food_reference_body_panel_padding"
+                    android:background="@drawable/pinkishgrey_round_rect"
+                    android:id="@+id/petfood_recommend_body_type_2"
+                    android:layout_marginTop="@dimen/food_reference_body_panel_padding"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/body_level_2"
+                        android:id="@+id/petfood_recommend_body_image_2"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@id/petfood_recommend_body_image_2"
+                        app:layout_constraintTop_toTopOf="@id/petfood_recommend_body_image_2"
+                        android:text="@string/body_level_2_title"
+                        android:textColor="@color/reddishgrey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:id="@+id/petfood_recommend_body_title_2"
+                        android:layout_marginStart="@dimen/food_reference_body_panel_padding"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintStart_toStartOf="@id/petfood_recommend_body_title_2"
+                        app:layout_constraintTop_toBottomOf="@id/petfood_recommend_body_title_2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:text="@string/body_level_2_text"
+                        android:textColor="@color/dark_grey"
+                        android:layout_marginTop="@dimen/food_reference_body_panel_text_padding"
+                        android:lineSpacingMultiplier="1.1"
+                        android:textSize="@dimen/fix_text_size_2"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/food_reference_body_panel_height"
+                    android:padding="@dimen/food_reference_body_panel_padding"
+                    android:background="@drawable/pinkishgrey_round_rect"
+                    android:id="@+id/petfood_recommend_body_type_3"
+                    android:layout_marginTop="@dimen/food_reference_body_panel_padding"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/body_level_3"
+                        android:id="@+id/petfood_recommend_body_image_3"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@id/petfood_recommend_body_image_3"
+                        app:layout_constraintTop_toTopOf="@id/petfood_recommend_body_image_3"
+                        android:text="@string/body_level_3_title"
+                        android:textColor="@color/reddishgrey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:id="@+id/petfood_recommend_body_title_3"
+                        android:layout_marginStart="@dimen/food_reference_body_panel_padding"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintStart_toStartOf="@id/petfood_recommend_body_title_3"
+                        app:layout_constraintTop_toBottomOf="@id/petfood_recommend_body_title_3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:text="@string/body_level_3_text"
+                        android:textColor="@color/dark_grey"
+                        android:layout_marginTop="@dimen/food_reference_body_panel_text_padding"
+                        android:lineSpacingMultiplier="1.1"
+                        android:textSize="@dimen/fix_text_size_2"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/food_reference_body_panel_height"
+                    android:padding="@dimen/food_reference_body_panel_padding"
+                    android:background="@drawable/pinkishgrey_round_rect"
+                    android:id="@+id/petfood_recommend_body_type_4"
+                    android:layout_marginTop="@dimen/food_reference_body_panel_padding"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/body_level_4"
+                        android:id="@+id/petfood_recommend_body_image_4"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@id/petfood_recommend_body_image_4"
+                        app:layout_constraintTop_toTopOf="@id/petfood_recommend_body_image_4"
+                        android:text="@string/body_level_4_title"
+                        android:textColor="@color/reddishgrey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:id="@+id/petfood_recommend_body_title_4"
+                        android:layout_marginStart="@dimen/food_reference_body_panel_padding"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintStart_toStartOf="@id/petfood_recommend_body_title_4"
+                        app:layout_constraintTop_toBottomOf="@id/petfood_recommend_body_title_4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:text="@string/body_level_4_text"
+                        android:textColor="@color/dark_grey"
+                        android:layout_marginTop="@dimen/food_reference_body_panel_text_padding"
+                        android:lineSpacingMultiplier="1.1"
+                        android:textSize="@dimen/fix_text_size_2"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/food_reference_body_panel_height"
+                    android:padding="@dimen/food_reference_body_panel_padding"
+                    android:background="@drawable/pinkishgrey_round_rect"
+                    android:id="@+id/petfood_recommend_body_type_5"
+                    android:layout_marginTop="@dimen/food_reference_body_panel_padding"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/body_level_5"
+                        android:id="@+id/petfood_recommend_body_image_5"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@id/petfood_recommend_body_image_5"
+                        app:layout_constraintTop_toTopOf="@id/petfood_recommend_body_image_5"
+                        android:text="@string/body_level_5_title"
+                        android:textColor="@color/reddishgrey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:id="@+id/petfood_recommend_body_title_5"
+                        android:layout_marginStart="@dimen/food_reference_body_panel_padding"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintStart_toStartOf="@id/petfood_recommend_body_title_5"
+                        app:layout_constraintTop_toBottomOf="@id/petfood_recommend_body_title_5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:text="@string/body_level_5_text"
+                        android:textColor="@color/dark_grey"
+                        android:layout_marginTop="@dimen/food_reference_body_panel_text_padding"
+                        android:lineSpacingMultiplier="1.1"
+                        android:textSize="@dimen/fix_text_size_2"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/petfood_recomment_weight_save_button"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height_default"
+            android:background="@drawable/dark_blue_round_rect"
+            android:textColor="@color/white_alpha"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textSize="@dimen/fix_text_size_5"
+            android:text="@string/confirm"
+            android:layout_marginTop="@dimen/food_reference_body_panel_button_margin"
+            android:layout_marginBottom="@dimen/food_reference_body_panel_padding"
+            android:layout_marginStart="@dimen/food_reference_body_panel_padding"
+            android:layout_marginEnd="@dimen/food_reference_body_panel_padding"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

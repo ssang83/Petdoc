@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <View
+        android:layout_width="48dp"
+        android:layout_height="6dp"
+        android:id="@+id/swipeDown"
+        android:background="@drawable/white_alpha_98_round_solid"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/white_top_round_bg"
+        app:layout_constraintTop_toBottomOf="@+id/swipeDown"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="예상진료비"
+            android:textSize="@dimen/fix_text_size_6"
+            android:textStyle="bold"
+            android:textColor="@color/dark_grey"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationArea"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            app:lottie_autoPlay="false"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="약 "
+                android:textColor="@color/dark_grey"
+                android:textStyle="bold"
+                android:textSize="24dp"
+                android:includeFontPadding="false"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/priceRange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2만 5천원"
+                android:textColor="@color/orange"
+                android:textStyle="bold"
+                android:textSize="24dp"
+                android:includeFontPadding="false"
+                />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="※ 표시되는 가격은 예상 진료비로 방문하시는 병원에 따라 실제 진료비가 변경될 수 있습니다. "
+            android:textSize="@dimen/fix_text_size_2"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textStyle="normal"
+            android:textColor="@color/light_grey"
+            android:textAlignment="center"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnHospital"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_default"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="32dp"
+            android:textStyle="bold"
+            android:background="@drawable/orange_round_rect"
+            android:textColor="@color/white"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textSize="@dimen/fix_text_size_5"
+            android:text="가까운 동물병원 찾기" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

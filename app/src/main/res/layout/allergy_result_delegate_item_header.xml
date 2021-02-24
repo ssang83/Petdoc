@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="SpUsage" >
+
+    <data>
+        <variable
+            name="warningCnt"
+            type="Integer" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="총 105가지 알러지원 검사 결과"
+            android:textColor="@color/slateGrey"
+            android:textSize="@dimen/fix_text_size_4"
+            android:textStyle="normal" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/warningCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="64dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:textColor="@color/slateGrey"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            tools:text="알러지 원 중 주의가 필요한 항목은 3개 입니다." />
+
+    </LinearLayout>
+</layout>

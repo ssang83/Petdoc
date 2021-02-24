@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/little_orange"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/login_close_button_size"
+                android:layout_height="@dimen/login_close_button_size"
+                android:padding="@dimen/login_close_button_padding"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_close"
+                android:id="@+id/btnClose"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewLogo"
+                android:layout_width="182dp"
+                android:layout_height="24dp"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="@dimen/care_content_margin10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnClose"
+                android:src="@drawable/img_scanner_logo"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewLogo">
+                
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewRouter1"
+                    android:layout_width="136dp"
+                    android:layout_height="136dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/img_connect_router1"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewRouter2"
+                    android:layout_width="136dp"
+                    android:layout_height="136dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/img_connect_router2"/>
+                
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/connectStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/connect_scanner_ap_progress"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewConnecting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/layoutImage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="60dp"
+                android:textStyle="bold"
+                android:textSize="@dimen/fix_text_size_8"
+                android:textColor="@color/dark_grey"
+                android:text="@string/care_scanner_ap_connecting"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewConnectingGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/care_content_margin8"
+                android:text="@string/care_scanner_ap_connecting_guide"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/fix_text_size_2"
+                android:textStyle="normal"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewConnecting"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height_default"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        android:textColor="@color/dark_grey"
+        android:textStyle="bold"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:textSize="@dimen/fix_text_size_5"
+        android:text="@string/care_scanner_connecting_confirm" />
+</androidx.constraintlayout.widget.ConstraintLayout>

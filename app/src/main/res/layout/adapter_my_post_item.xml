@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/profileImage"
+        android:layout_width="@dimen/login_close_button_size"
+        android:layout_height="@dimen/login_close_button_size"
+        android:layout_marginStart="@dimen/mypage_pet_information_profile_margin"
+        android:layout_marginTop="@dimen/pet_age_date_picker_margin"
+        tools:src="@drawable/img_invalid_name"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/postTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="성난 이웃을 만났을 때"
+        android:textSize="@dimen/fix_text_size_3"
+        android:textColor="@color/dark_grey"
+        android:textStyle="normal"
+        android:layout_marginTop="@dimen/mypage_post_item_margin_top"
+        android:layout_marginStart="@dimen/pet_add_name_profile_title_margin_top"
+        app:layout_constraintStart_toEndOf="@+id/profileImage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/petName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/pet_add_name_profile_title_margin_top"
+        android:layout_marginTop="@dimen/mypage_pet_text_gap"
+        tools:text="달구"
+        android:textStyle="normal"
+        android:textColor="@color/light_grey"
+        android:textSize="@dimen/fix_text_size_1"
+        app:layout_constraintTop_toBottomOf="@+id/postTitle"
+        app:layout_constraintStart_toEndOf="@+id/profileImage"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/regDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/change_information_gap1"
+        android:layout_marginTop="@dimen/mypage_pet_text_gap"
+        tools:text="4월 13일"
+        android:textStyle="normal"
+        android:textColor="@color/light_grey"
+        android:textSize="@dimen/fix_text_size_1"
+        app:layout_constraintTop_toBottomOf="@+id/postTitle"
+        app:layout_constraintStart_toEndOf="@+id/petName"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/replyCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="댓글 12"
+        android:textStyle="normal"
+        android:textColor="@color/light_grey"
+        android:textSize="@dimen/fix_text_size_1"
+        android:layout_marginEnd="@dimen/mypage_pet_information_profile_margin"
+        android:layout_marginBottom="@dimen/mypage_pet_information_profile_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        android:layout_marginTop="@dimen/pet_age_date_picker_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileImage"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

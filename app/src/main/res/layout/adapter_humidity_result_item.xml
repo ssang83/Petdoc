@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="53dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/temperature"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:gravity="center"
+        android:text="00.0C"
+        android:textColor="@color/dark_grey"
+        android:textSize="@dimen/fix_text_size_2"
+        android:textStyle="normal"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/humidity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="100%"
+        android:textColor="@color/dark_grey"
+        android:textSize="@dimen/fix_text_size_2"
+        android:textStyle="normal"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintStart_toEndOf="@+id/temperature"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="00.00.00 오후 00:00"
+        android:textColor="@color/dark_grey"
+        android:textSize="@dimen/fix_text_size_2"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintStart_toEndOf="@+id/humidity"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5" />
+</androidx.constraintlayout.widget.ConstraintLayout>

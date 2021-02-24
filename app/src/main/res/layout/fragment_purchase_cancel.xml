@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="viewModel"
+            type="kr.co.petdoc.petdoc.viewmodel.MyPurchaseCancelViewModel"/>
+        <import type="kr.co.petdoc.petdoc.nicepay.OrderCancel"/>
+        <import type="android.view.View"/>
+        <import type="kr.co.petdoc.petdoc.extensions.IntExtensionsKt"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:textStyle="bold"
+                android:textColor="@color/slateGrey"
+                android:textSize="18dp"
+                android:text="결제 취소 요청"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/login_close_button_size"
+                android:layout_height="@dimen/login_close_button_size"
+                android:padding="14dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_back"
+                android:id="@+id/btnBack"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@color/grey"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/layoutHeader"
+            app:layout_constraintBottom_toTopOf="@+id/btnCancel"
+            android:layout_marginBottom="21dp"
+            android:overScrollMode="never"
+            android:background="@color/white">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvLabelGoods"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="24dp"
+                    android:textColor="@color/slateGrey"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:text="상품 정보"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivThumbnail"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLabelGoods"
+                    app:thumbnail="@{viewModel.orderDetail.itemUrl}"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/bg_purchase_product"
+                    app:layout_constraintTop_toTopOf="@+id/ivThumbnail"
+                    app:layout_constraintStart_toStartOf="@+id/ivThumbnail"
+                    app:layout_constraintEnd_toEndOf="@id/ivThumbnail"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivThumbnail"
+                    />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="3dp"
+                    tools:text="반려동물 건강검진 프로그램\n펫 체크 어드밴스드"
+                    android:textStyle="bold"
+                    android:text="@{viewModel.orderDetail.itemName}"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toEndOf="@id/ivThumbnail"
+                    app:layout_constraintTop_toTopOf="@id/ivThumbnail"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="3dp"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:text="@{@string/won(IntExtensionsKt.numberWithComma(viewModel.orderDetail.payAmount))}"
+                    app:layout_constraintStart_toEndOf="@id/ivThumbnail"
+                    app:layout_constraintBottom_toBottomOf="@id/ivThumbnail"
+                    tools:text="328,900원"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvCancelReason"
+                    android:text="취소 사유 선택"
+                    android:textStyle="bold"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="16dp"
+                    android:includeFontPadding="false"
+                    app:layout_constraintTop_toBottomOf="@+id/ivThumbnail"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginStart="20dp"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/btnReason1"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_btn_purchase_cancel"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginTop="17dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:onClick="@{() -> viewModel.onCancelReason(OrderCancel.CHANGE_MIND)}"
+                    android:selected="@{viewModel.cancelReason == OrderCancel.CHANGE_MIND}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btnReason2"
+                    app:layout_constraintTop_toBottomOf="@id/tvCancelReason">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="단순 변심"
+                        android:textStyle="bold"
+                        android:textColor="@color/purchase_cancel_reason"
+                        android:textSize="14dp"
+                        android:includeFontPadding="false"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/btnReason2"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_btn_purchase_cancel"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="17dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:onClick="@{() -> viewModel.onCancelReason(OrderCancel.SERVICE_NOT_STATISFIED)}"
+                    android:selected="@{viewModel.cancelReason == OrderCancel.SERVICE_NOT_STATISFIED}"
+                    app:layout_constraintStart_toEndOf="@id/btnReason1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvCancelReason">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="서비스 불만족"
+                        android:textStyle="bold"
+                        android:textColor="@color/purchase_cancel_reason"
+                        android:textSize="14dp"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/btnReason3"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_btn_purchase_cancel"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginTop="17dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:onClick="@{() -> viewModel.onCancelReason(OrderCancel.PRICE_HIGH)}"
+                    android:selected="@{viewModel.cancelReason == OrderCancel.PRICE_HIGH}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btnReason4"
+                    app:layout_constraintTop_toBottomOf="@id/btnReason1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="가격 부담"
+                        android:textStyle="bold"
+                        android:textColor="@color/purchase_cancel_reason"
+                        android:textSize="14dp"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/btnReason4"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_btn_purchase_cancel"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="17dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:onClick="@{() -> viewModel.onCancelReason(OrderCancel.ETC)}"
+                    android:selected="@{viewModel.cancelReason == OrderCancel.ETC}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/btnReason3"
+                    app:layout_constraintTop_toBottomOf="@id/btnReason2">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="기타"
+                        android:textStyle="bold"
+                        android:textColor="@color/purchase_cancel_reason"
+                        android:textSize="14dp"
+                        android:includeFontPadding="false"
+                        />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/etcReasonLayer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/btnReason3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:orientation="vertical"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:visibility="@{viewModel.cancelReason == OrderCancel.ETC ? View.VISIBLE : View.GONE}"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvEtcReason"
+                        android:text="기타 사유 입력"
+                        android:textSize="16dp"
+                        android:textColor="@color/slateGrey"
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
+                        />
+
+                    <EditText
+                        android:id="@+id/editEtcReason"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/grey_round_stoke_rect"
+                        android:cursorVisible="true"
+                        android:textCursorDrawable="@drawable/search_cursor"
+                        android:gravity="center_vertical|top"
+                        android:hint="사유를 입력해주세요."
+                        android:textColorHint="@color/light_grey3"
+                        android:inputType="textMultiLine"
+                        android:imeOptions="actionDone"
+                        android:paddingStart="16dp"
+                        android:paddingTop="16dp"
+                        android:paddingEnd="16dp"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/slateGrey"
+                        android:textStyle="normal"
+                        android:textSize="@dimen/fix_text_size_3"
+                        android:onTextChanged="@{(text, start, before, count) -> viewModel.onTextChanged(text)}"
+                        />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvWarning"
+                    android:text="유의 사항"
+                    android:textStyle="bold"
+                    android:textColor="@color/light_grey"
+                    android:textSize="15dp"
+                    android:includeFontPadding="false"
+                    app:layout_constraintTop_toBottomOf="@+id/etcReasonLayer"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="50dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvWarning1"
+                    android:text="※ 식별코드 등록 후 결제취소가 불가능합니다."
+                    android:textSize="13dp"
+                    android:textColor="@color/light_grey"
+                    android:textStyle="normal"
+                    android:includeFontPadding="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvWarning"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginStart="20dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvWarning2"
+                    android:text="※ 미성년자 결제 시, 법정대리인이 거래를 취소할 수 있습니다."
+                    android:textSize="13dp"
+                    android:textColor="@color/light_grey"
+                    android:textStyle="normal"
+                    android:includeFontPadding="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvWarning1"
+                    android:layout_marginStart="20dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvWarning3"
+                    android:text="※ 카카오페이, 네이버페이, 삼성페이, 페이코 등의 결제수단은 선택하신 결제수단의 페이로 환불됩니다."
+                    android:textSize="13dp"
+                    android:textColor="@color/light_grey"
+                    android:textStyle="normal"
+                    android:includeFontPadding="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvWarning2"
+                    android:layout_marginStart="20dp"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:id="@+id/btnCancel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:viewModel="@{viewModel}"
+            app:cancelReason="@{viewModel.cancelReason}"
+            android:onClick="@{() -> viewModel.onCancel(editEtcReason.getText().toString())}"
+            >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/pale_blue"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="결제취소"
+                android:textStyle="bold"
+                android:id="@+id/tvCancel"
+                app:cancelReason="@{viewModel.cancelReason}"
+                app:cancelBtnText="@{editEtcReason.getText().toString().trim()}"
+                android:textSize="17dp"
+                android:includeFontPadding="false"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/orange"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutSun"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/layoutMon"
+            >
+
+            <View
+                android:id="@+id/sunBgView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/bg_care_day"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                tools:text="1"
+                android:id="@+id/sunTxtView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:textSize="@dimen/fix_text_size_2"
+                android:textStyle="bold"
+                tools:textColor="@color/light_pink_six"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutMon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toEndOf="@+id/layoutSun"
+            app:layout_constraintEnd_toStartOf="@+id/layoutTue"
+            >
+
+            <View
+                android:id="@+id/monBgView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/bg_care_day"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                tools:text="2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                android:id="@+id/monTxtView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:textSize="@dimen/fix_text_size_2"
+                android:textStyle="bold"
+                tools:textColor="@color/light_pink_six"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutTue"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toEndOf="@+id/layoutMon"
+            app:layout_constraintEnd_toStartOf="@+id/layoutWed"
+            >
+
+            <View
+                android:id="@+id/tueBgView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/bg_care_day"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                tools:text="3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                android:id="@+id/tueTxtView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:textSize="@dimen/fix_text_size_2"
+                android:textStyle="bold"
+                tools:textColor="@color/light_pink_six"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutWed"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toEndOf="@+id/layoutTue"
+            app:layout_constraintEnd_toStartOf="@+id/layoutThu"
+            >
+
+            <View
+                android:id="@+id/wedBgView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/bg_care_day"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                tools:text="4"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                android:id="@+id/wedTxtView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:textSize="@dimen/fix_text_size_2"
+                android:textStyle="bold"
+                tools:textColor="@color/light_pink_six"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutThu"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toEndOf="@+id/layoutWed"
+            app:layout_constraintEnd_toStartOf="@+id/layoutFri"
+            >
+
+            <View
+                android:id="@+id/thuBgView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/bg_care_day"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                tools:text="5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                android:id="@+id/thuTxtView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:textSize="@dimen/fix_text_size_2"
+                android:textStyle="bold"
+                tools:textColor="@color/light_pink_six"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutFri"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toEndOf="@+id/layoutThu"
+            app:layout_constraintEnd_toStartOf="@+id/layoutSat"
+            >
+
+            <View
+                android:id="@+id/friBgView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/bg_care_day"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                tools:text="6"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                android:id="@+id/friTxtView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:textSize="@dimen/fix_text_size_2"
+                android:textStyle="bold"
+                tools:textColor="@color/light_pink_six"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutSat"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toEndOf="@+id/layoutFri"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <View
+                android:id="@+id/satBgView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/bg_care_day"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                tools:text="7"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                android:id="@+id/satTxtView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:textSize="@dimen/fix_text_size_2"
+                android:textStyle="bold"
+                tools:textColor="@color/light_pink_six"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

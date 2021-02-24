@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="SpUsage">
+
+    <data>
+
+        <variable
+            name="item"
+            type="kr.co.petdoc.petdoc.model.healthcareresult.BloodResultDetailItem" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@{(item.position % 2) == 0 ? @drawable/white_solid_round_rect_6 : @drawable/pale_grey_three_solid_round_rect_6 }">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="19dp"
+            android:paddingBottom="18dp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.3">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/itemEng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@{item.itemNameEng}"
+                android:textColor="@color/slateGrey"
+                android:textSize="14dp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="T-Cholesterol" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/itemKor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:includeFontPadding="false"
+                android:text="@{item.itemNameKor}"
+                android:textColor="@color/light_grey"
+                android:textSize="9dp"
+                android:textStyle="normal"
+                android:visibility="@{item.itemNameKor.empty ? View.GONE : View.VISIBLE}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/itemEng"
+                tools:text="요소질소/크레아티닌 비율" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingBottom="18dp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintStart_toEndOf="@+id/layoutItem"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.7">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutValue"
+                android:layout_width="53dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@{item.resultRate}"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="0.0000"
+                    tools:textColor="@color/orange" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:includeFontPadding="false"
+                    android:text="@{item.unit}"
+                    android:textColor="@color/light_grey"
+                    android:textSize="9dp"
+                    android:textStyle="normal"
+                    android:visibility="@{item.unit.empty ? View.GONE : View.VISIBLE}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rate"
+                    tools:text="10^3/µL" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toEndOf="@+id/layoutValue"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/low"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="19dp"
+                    android:background="@drawable/white_left_only_round"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:text="낮음"
+                    android:textColor="@color/light_grey3"
+                    android:textSize="9dp"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/normal"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_value_normal"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:text="정상"
+                    android:textColor="@color/light_grey3"
+                    android:textSize="9dp"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toEndOf="@+id/low"
+                    app:layout_constraintTop_toTopOf="@+id/low" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/high"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_right_only_round"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:text="높음"
+                    android:textColor="@color/light_grey3"
+                    android:textSize="9dp"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toEndOf="@+id/normal"
+                    app:layout_constraintTop_toTopOf="@+id/normal" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/normalRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="43dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@{item.referMinRate}"
+                    android:textColor="@color/light_grey"
+                    android:textSize="9dp"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toStartOf="@+id/low"
+                    app:layout_constraintTop_toBottomOf="@+id/low"
+                    tools:text="00.64" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/referenceRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="40dp"
+                    android:text="@{item.referMaxRate}"
+                    android:textColor="@color/light_grey"
+                    android:textSize="9dp"
+                    android:textStyle="normal"
+                    app:layout_constraintEnd_toEndOf="@+id/high"
+                    app:layout_constraintTop_toBottomOf="@+id/low"
+                    tools:text="2.95" />
+
+                <View
+                    android:id="@+id/statusBar"
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/low"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:background="@color/cornflower" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutStatus2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toEndOf="@+id/layoutValue"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/normal2"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="19dp"
+                    android:background="@drawable/bg_negative"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:text="정상"
+                    android:textColor="@color/light_grey3"
+                    android:textSize="9dp"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/high2"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_right_only_round"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:text="높음"
+                    android:textColor="@color/light_grey3"
+                    android:textSize="9dp"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toEndOf="@+id/normal2"
+                    app:layout_constraintTop_toTopOf="@+id/normal2" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/normalRate2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@{item.referMaxRate}"
+                    android:textColor="@color/light_grey"
+                    android:textSize="9dp"
+                    android:textStyle="normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/normal2"
+                    tools:text="00.64" />
+
+                <View
+                    android:id="@+id/statusBar2"
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/normal2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:background="@color/cornflower" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

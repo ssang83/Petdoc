@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mypage_navigator"
+    app:startDestination="@id/myPageMainFragment"
+    >
+
+
+    <fragment
+        android:id="@+id/myPageMainFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.MyPageMainFragment"
+        android:label="MyPageMainFragment"
+        tools:layout="@layout/fragment_mypage_main"
+        >
+        <action
+            android:id="@+id/action_myPageMainFragment_to_changeMyInformationFragment"
+            app:destination="@id/changeMyInformationFragment" />
+        <action
+            android:id="@+id/action_myPageMainFragment_to_petInformationFragment"
+            app:destination="@id/petInformationFragment" />
+        <action
+            android:id="@+id/action_myPageMainFragment_to_petPointFragment"
+            app:destination="@id/petPointFragment" />
+        <action
+            android:id="@+id/action_myPageMainFragment_to_myPostFragment"
+            app:destination="@id/myPostFragment" />
+        <action
+            android:id="@+id/action_myPageMainFragment_to_bookmarkFragment"
+            app:destination="@id/bookmarkFragment" />
+        <action
+            android:id="@+id/action_myPageMainFragment_to_settingMainFragment"
+            app:destination="@id/settingMainFragment" />
+        <action
+            android:id="@+id/action_myPageMainFragment_to_noticeFragment"
+            app:destination="@id/noticeFragment" />
+        <action
+            android:id="@+id/action_myPageMainFragment_to_externalDeviceFragment"
+            app:destination="@id/externalDeviceFragment" />
+        <action
+            android:id="@+id/action_myPageMainFragment_to_externalDeviceDetailFragment"
+            app:destination="@id/externalDeviceDetailFragment" />
+        <action
+            android:id="@+id/action_myPageMainFragment_to_customerReportFragment"
+            app:destination="@id/customerReportFragment" />
+        <action
+            android:id="@+id/action_myPageMainFragment_to_imageAlbumFragment"
+            app:destination="@id/imageAlbumFragment" />
+        <action
+            android:id="@+id/action_myPageMainFragment_to_myHealthCareFragment"
+            app:destination="@id/myHealthCareFragment" />
+        <action
+            android:id="@+id/action_myPageMainFragment_to_myHospitalBookingFragment"
+            app:destination="@id/myHospitalBookingFragment" />
+        <action
+            android:id="@+id/action_myPageMainFragment_to_myPurchaseHistoryFragment"
+            app:destination="@id/myPurchaseHistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeMyInformationFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.ChangeMyInformationFragment"
+        android:label="ChangeMyInformationFragment"
+        tools:layout="@layout/fragment_change_my_information"
+        />
+    <fragment
+        android:id="@+id/petInformationFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.PetInformationFragment"
+        android:label="PetInformationFragment"
+        tools:layout="@layout/fragment_pet_information">
+        <action
+            android:id="@+id/action_petInformationFragment_to_myPetFoodRecommendResult"
+            app:destination="@id/myPetFoodRecommendResult" />
+    </fragment>
+    <fragment
+        android:id="@+id/petPointFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.PetPointFragment"
+        android:label="PetPointFragment"
+        tools:layout="@layout/fragment_pet_point"/>
+    <fragment
+        android:id="@+id/myPostFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.MyPostFragment"
+        android:label="MyPostFragment"
+        tools:layout="@layout/fragment_my_post"/>
+    <fragment
+        android:id="@+id/bookmarkFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.bookmark.BookmarkFragment"
+        android:label="BookmarkFragment"
+        tools:layout="@layout/fragment_bookmark"/>
+
+    <fragment
+        android:id="@+id/settingMainFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.setting.SettingMainFragment"
+        android:label="SettingMainFragment"
+        tools:layout="@layout/fragment_setting_main">
+        <action
+            android:id="@+id/action_settingMainFragment_to_alarmSettingFragment"
+            app:destination="@id/alarmSettingFragment" />
+        <action
+            android:id="@+id/action_settingMainFragment_to_marketingInfoFragment"
+            app:destination="@id/marketingInfoFragment" />
+        <action
+            android:id="@+id/action_settingMainFragment_to_signoutFragment"
+            app:destination="@id/signoutFragment" />
+        <action
+            android:id="@+id/action_settingMainFragment_to_termsFragment"
+            app:destination="@id/termsFragment" />
+        <action
+            android:id="@+id/action_settingMainFragment_to_privacyPolicyFragment"
+            app:destination="@id/privacyPolicyFragment" />
+        <action
+            android:id="@+id/action_settingMainFragment_to_marketingAgreeFragment"
+            app:destination="@id/marketingAgreeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/alarmSettingFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.setting.AlarmSettingFragment"
+        android:label="AlarmSettingFragment"
+        tools:layout="@layout/fragment_alarm_setting"/>
+    <fragment
+        android:id="@+id/marketingInfoFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.setting.MarketingInfoFragment"
+        android:label="MarketingInfoFragment"
+        tools:layout="@layout/fragment_marketing_info"/>
+    <fragment
+        android:id="@+id/signoutFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.setting.SignoutFragment"
+        android:label="SignoutFragment"
+        tools:layout="@layout/fragment_sign_out"/>
+    <fragment
+        android:id="@+id/termsFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.setting.TermsFragment"
+        android:label="TermsFragment"
+        tools:layout="@layout/fragment_terms"/>
+    <fragment
+        android:id="@+id/privacyPolicyFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.setting.PrivacyPolicyFragment"
+        android:label="PrivacyPolicyFragment"
+        tools:layout="@layout/fragment_privacy_policy"/>
+    <fragment
+        android:id="@+id/marketingAgreeFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.setting.MarketingAgreeFragment"
+        android:label="MarketingAgreeFragment"
+        tools:layout="@layout/fragment_marketing_agree"/>
+    <fragment
+        android:id="@+id/noticeFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.NoticeFragment"
+        android:label="NoticeFragment"
+        tools:layout="@layout/fragment_notice">
+        <action
+            android:id="@+id/action_noticeFragment_to_noticeDetailFragment2"
+            app:destination="@id/noticeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noticeDetailFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.NoticeDetailFragment"
+        android:label="NoticeDetailFragment"
+        tools:layout="@layout/fragment_notice_detail"/>
+    <fragment
+        android:id="@+id/reservationDetailFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.my_hospital.MyReservationHotelDetailFragment"
+        android:label="ReservationDetailFragment"
+        tools:layout="@layout/fragment_reservation_detail"/>
+    <fragment
+        android:id="@+id/inquiryDetailFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.InquiryDetailFragment"
+        android:label="InquiryDetailFragment"
+        tools:layout="@layout/fragment_inquiry_detail"/>
+    <fragment
+        android:id="@+id/inquiryPostFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.InquiryPostFragment"
+        android:label="InquiryPostFragment"
+        tools:layout="@layout/fragment_inquiry_write"/>
+    <fragment
+        android:id="@+id/myPetFoodRecommendResult"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.food.MyPetFoodRecommendResult"
+        android:label="MyPetFoodRecommendResult"
+        tools:layout="@layout/fragment_pet_food_recommend"
+        />
+    <fragment
+        android:id="@+id/externalDeviceFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.ExternalDeviceFragment"
+        android:label="ExternalDeviceFragment"
+        tools:layout="@layout/fragment_external_device">
+        <action
+            android:id="@+id/action_externalDeviceFragment_to_externalDeviceDetailFragment"
+            app:destination="@id/externalDeviceDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customerReportFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.CustomerReportFragment"
+        android:label="CustomerReportFragment"
+        tools:layout="@layout/fragment_customer_report">
+        <action
+            android:id="@+id/action_customerReportFragment_to_inquiryDetailFragment"
+            app:destination="@id/inquiryDetailFragment" />
+        <action
+            android:id="@+id/action_customerReportFragment_to_inquiryPostFragment"
+            app:destination="@id/inquiryPostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageAlbumFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.ImageAlbumFragment"
+        android:label="ImageAlbumFragment"
+        tools:layout="@layout/fragment_image_album">
+        <action
+            android:id="@+id/action_imageAlbumFragment_to_imageDetailFragment"
+            app:destination="@id/imageDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageDetailFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.scanner.ImageDetailFragment"
+        android:label="ImageDetailFragment"
+        tools:layout="@layout/fragment_scan_image_detail"/>
+    <fragment
+        android:id="@+id/externalDeviceDetailFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.ExternalDeviceDetailFragment"
+        android:label="ExternalDeviceDetailFragment"
+        tools:layout="@layout/fragment_external_device_detail">
+        <action
+            android:id="@+id/action_externalDeviceDetailFragment_to_firmwareUpdateInfoFragment"
+            app:destination="@id/firmwareUpdateInfoFragment" />
+        <action
+            android:id="@+id/action_externalDeviceDetailFragment_to_firmwareInstalledVersionInfoFragment"
+            app:destination="@id/firmwareInstalledVersionInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/firmwareUpdateInfoFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.scanner.FirmwareUpdateInfoFragment"
+        android:label="FirmwareUpdateInfoFragment"
+        tools:layout="@layout/fragment_firmware_update_info">
+    </fragment>
+    <fragment
+        android:id="@+id/firmwareInstalledVersionInfoFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.scanner.FirmwareInstalledVersionInfoFragment"
+        android:label="FirmwareInstalledVersionInfoFragment"
+        tools:layout="@layout/fragment_firmware_installed_version_info">
+    </fragment>
+    <fragment
+        android:id="@+id/myReservationClinicDetailFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.my_hospital.MyReservationClinicDetailFragment"
+        android:label="MyReservationClinicDetailFragment"
+        tools:layout="@layout/fragment_my_reservation_clinic_detail"/>
+    <fragment
+        android:id="@+id/myReservationBeautyDetailFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.my_hospital.MyReservationBeautyDetailFragment"
+        android:label="MyReservationBeautyDetailFragment"
+        tools:layout="@layout/fragment_my_reservation_beauty_detail"
+        />
+    <fragment
+        android:id="@+id/myHealthCareFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.health_care.MyHealthCareFragment"
+        android:label="MyHealthCareFragment"
+        tools:layout="@layout/fragment_my_health_care"
+        >
+        <action
+            android:id="@+id/action_myHealthCareFragment_to_myHealthCareResultFragment"
+            app:destination="@id/myHealthCareResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myHospitalBookingFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.my_hospital.MyHospitalBookingFragment"
+        android:label="MyHospitalBookingFragment"
+        tools:layout="@layout/fragment_my_hospital"
+        >
+        <action
+            android:id="@+id/action_myHospitalBookingFragment_to_myReservationClinicDetailFragment"
+            app:destination="@id/myReservationClinicDetailFragment" />
+        <action
+            android:id="@+id/action_myHospitalBookingFragment_to_myReservationBeautyDetailFragment"
+            app:destination="@id/myReservationBeautyDetailFragment" />
+        <action
+            android:id="@+id/action_myHospitalBookingFragment_to_reservationDetailFragment"
+            app:destination="@id/reservationDetailFragment" />
+        <action
+            android:id="@+id/action_myHospitalBookingFragment_to_myReservationDnaDetailFragment"
+            app:destination="@id/myReservationDnaDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myHealthCareResultFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.health_care.MyHealthCareResultFragment"
+        android:label="MyHealthCareResultFragment"
+        tools:layout="@layout/fragment_my_health_care_result"
+        />
+    <fragment
+        android:id="@+id/myReservationDnaDetailFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.my_hospital.MyReservationDnaDetailFragment"
+        android:label="MyReservationDnaDetailFragment"
+        tools:layout="@layout/fragment_my_reservation_dna_detail"
+        />
+    <fragment
+        android:id="@+id/myPurchaseHistoryFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.purchase.MyPurchaseHistoryFragment"
+        android:label="MyPurchaseHistoryFragment"
+        tools:layout="@layout/fragment_my_purchase_history"
+        >
+        <action
+            android:id="@+id/action_myPurchaseHistoryFragment_to_myPurchaseDetailFragment"
+            app:destination="@id/myPurchaseDetailFragment" />
+        <action
+            android:id="@+id/action_myPurchaseHistoryFragment_to_myPurchaseCancelFragment"
+            app:destination="@id/myPurchaseCancelFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myPurchaseDetailFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.purchase.MyPurchaseDetailFragment"
+        android:label="MyPurchaseDetailFragment"
+        tools:layout="@layout/fragment_purchase_detail"
+        >
+        <action
+            android:id="@+id/action_myPurchaseDetailFragment_to_myPurchaseCancelFragment"
+            app:destination="@id/myPurchaseCancelFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myPurchaseCancelFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.purchase.MyPurchaseCancelFragment"
+        android:label="MyPurchaseCancelFragment"
+        tools:layout="@layout/fragment_purchase_cancel"/>
+</navigation>

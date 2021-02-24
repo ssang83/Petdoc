@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/shop_content_margin1"
+        android:layout_marginStart="@dimen/home_content_margin"
+        android:layout_marginEnd="@dimen/home_content_margin"
+        android:layout_marginBottom="@dimen/shop_content_margin1"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewCustomMeal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:src="@drawable/img_custom_meal"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewCustomMeal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/customMealTitle"
+                    android:text="@string/shopping_custom_meal_title"
+                    android:textStyle="normal"
+                    android:maxLines="2"
+                    android:textSize="@dimen/fix_text_size_3"
+                    android:textColor="@color/dark_grey"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/customMealDesc"
+                    android:text="@string/shopping_custom_meal_title_desc"
+                    android:textColor="@color/light_grey"
+                    android:textSize="@dimen/fix_text_size_1"
+                    android:textStyle="normal"
+                    app:layout_constraintTop_toBottomOf="@+id/customMealTitle"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnNoPetAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/shopping_match_food_test"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fix_text_size_2"
+                    android:textStyle="bold"
+                    android:background="@drawable/salmon_round_rect_18"
+                    app:layout_constraintTop_toBottomOf="@+id/customMealDesc"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

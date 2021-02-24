@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+        <variable name="foodreference" type="kr.co.petdoc.petdoc.viewmodel.FoodRecommentDataModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorpetfood">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fadeScrollbars="false"
+            android:fadingEdge="none"
+            android:fadingEdgeLength="0dp"
+            android:overScrollMode="never"
+            android:paddingBottom="@dimen/food_reference_feeding_padding"
+            android:scrollbarFadeDuration="0"
+            android:scrollbarSize="0dp"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toTopOf="@+id/petfood_recomment_sickness_save_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- 펫 이름 + 가이드 문구 ================================================================= -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="@dimen/food_reference_weight_margin"
+                    android:textAlignment="gravity"
+                    android:gravity="center"
+                    android:text="@string/sickness_detail_done"
+                    android:textColor="@color/dark_grey"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/fix_text_size_9"
+                    android:id="@+id/petfood_recomment_sickness_guide"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/petfood_recomment_sickness_guide"
+                    android:layout_marginTop="@dimen/food_reference_walking_time_button_padding"
+                    android:textAlignment="gravity"
+                    android:gravity="center"
+                    android:text="@string/sickness_detail_done_guide"
+                    android:textColor="@color/reddishgrey"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/fix_text_size_2"
+                    android:id="@+id/petfood_recommend_sickness_extra_guide"
+                    android:lineSpacingMultiplier="1.2"
+                    />
+
+                <GridLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/petfood_recommend_sickness_extra_guide"
+                    android:columnCount="3"
+                    android:layout_marginTop="@dimen/food_reference_weight_margin"
+                    android:id="@+id/petfood_recommend_sickness_tabs_area"
+                    >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/petfood_recommend_sickness_tab_joint"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        >
+                        <ImageView
+                            android:id="@+id/petfood_recommend_sickness_tab_joint_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/food_reference_food_allege_image_padding"
+                            android:src="@drawable/sickness_joint"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/petfood_recommend_sickness_tab_joint_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:includeFontPadding="false"
+                            android:textStyle="normal"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/sickness_joint"
+                            android:textColor="@color/reddishgrey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            app:layout_constraintBottom_toBottomOf="@id/petfood_recommend_sickness_tab_joint_image"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/petfood_recommend_sickness_tab_joint_image" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/petfood_recommend_sickness_tab_skin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <ImageView
+                            android:id="@+id/petfood_recommend_sickness_tab_skin_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/food_reference_food_allege_image_padding"
+                            android:src="@drawable/sickness_skin"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/petfood_recommend_sickness_tab_skin_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            android:includeFontPadding="false"
+                            android:textStyle="normal"
+                            android:text="@string/sickness_skin"
+                            android:textColor="@color/reddishgrey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            app:layout_constraintBottom_toBottomOf="@id/petfood_recommend_sickness_tab_skin_image"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/petfood_recommend_sickness_tab_skin_image" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/petfood_recommend_sickness_tab_stomach"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <ImageView
+                            android:id="@+id/petfood_recommend_sickness_tab_stomach_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/food_reference_food_allege_image_padding"
+                            android:src="@drawable/sickness_stomach"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/petfood_recommend_sickness_tab_stomach_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            android:includeFontPadding="false"
+                            android:textStyle="normal"
+                            android:text="@string/sickness_stomach"
+                            android:textColor="@color/reddishgrey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            app:layout_constraintBottom_toBottomOf="@id/petfood_recommend_sickness_tab_stomach_image"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/petfood_recommend_sickness_tab_stomach_image" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/petfood_recommend_sickness_tab_dispense"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <ImageView
+                            android:id="@+id/petfood_recommend_sickness_tab_despense_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/food_reference_food_allege_image_padding"
+                            android:src="@drawable/sickness_despense"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/petfood_recommend_sickness_tab_dispense_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:includeFontPadding="false"
+                            android:textStyle="normal"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/sickness_dispense"
+                            android:textColor="@color/reddishgrey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            app:layout_constraintBottom_toBottomOf="@id/petfood_recommend_sickness_tab_despense_image"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/petfood_recommend_sickness_tab_despense_image" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/petfood_recommend_sickness_tab_bean"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <ImageView
+                            android:id="@+id/petfood_recommend_sickness_tab_bean_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/food_reference_food_allege_image_padding"
+                            android:src="@drawable/sickness_bean"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/petfood_recommend_sickness_tab_bean_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:includeFontPadding="false"
+                            android:textStyle="normal"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/sickness_bean"
+                            android:textColor="@color/reddishgrey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            app:layout_constraintBottom_toBottomOf="@id/petfood_recommend_sickness_tab_bean_image"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/petfood_recommend_sickness_tab_bean_image" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/petfood_recommend_sickness_tab_fat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <ImageView
+                            android:id="@+id/petfood_recommend_sickness_tab_fat_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/food_reference_food_allege_image_padding"
+                            android:src="@drawable/sickness_fat"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/petfood_recommend_sickness_tab_fat_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            android:includeFontPadding="false"
+                            android:textStyle="normal"
+                            android:text="@string/sickness_fat"
+                            android:textColor="@color/reddishgrey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            app:layout_constraintBottom_toBottomOf="@id/petfood_recommend_sickness_tab_fat_image"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/petfood_recommend_sickness_tab_fat_image" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </GridLayout>
+
+
+                <!--<androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/petfood_recommend_sickness_tab_healthy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/petfood_recommend_sickness_tab_joint"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/petfood_recommend_sickness_extra_guide"
+                    android:layout_marginTop="@dimen/food_reference_weight_margin"
+                    >
+
+                    <ImageView
+                        android:id="@+id/petfood_recommend_sickness_tab_healthy_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:padding="@dimen/food_reference_food_allege_image_padding"
+                        android:src="@drawable/sickness_healthy_icon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/petfood_recommend_sickness_tab_healthy_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/sickness_healthy"
+                        android:textColor="@color/reddishgrey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        app:layout_constraintBottom_toBottomOf="@id/petfood_recommend_sickness_tab_healthy_image"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/petfood_recommend_sickness_tab_healthy_image" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/petfood_recommend_sickness_tab_joint"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@id/petfood_recommend_sickness_tab_skin"
+                    app:layout_constraintStart_toEndOf="@id/petfood_recommend_sickness_tab_healthy"
+                    app:layout_constraintTop_toTopOf="@id/petfood_recommend_sickness_tab_healthy">
+
+                    <ImageView
+                        android:id="@+id/petfood_recommend_sickness_tab_joint_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:padding="@dimen/food_reference_food_allege_image_padding"
+                        android:src="@drawable/sickness_joint"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/petfood_recommend_sickness_tab_joint_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/sickness_joint"
+                        android:textColor="@color/reddishgrey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        app:layout_constraintBottom_toBottomOf="@id/petfood_recommend_sickness_tab_joint_image"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/petfood_recommend_sickness_tab_joint_image" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/petfood_recommend_sickness_tab_skin"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@id/petfood_recommend_sickness_tab_joint"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/petfood_recommend_sickness_tab_joint"
+                    app:layout_constraintTop_toTopOf="@id/petfood_recommend_sickness_tab_joint">
+
+                    <ImageView
+                        android:id="@+id/petfood_recommend_sickness_tab_skin_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:padding="@dimen/food_reference_food_allege_image_padding"
+                        android:src="@drawable/sickness_skin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/petfood_recommend_sickness_tab_skin_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/sickness_skin"
+                        android:textColor="@color/reddishgrey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        app:layout_constraintBottom_toBottomOf="@id/petfood_recommend_sickness_tab_skin_image"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/petfood_recommend_sickness_tab_skin_image" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/petfood_recommend_sickness_tab_stomach"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@+id/petfood_recommend_sickness_tab_healthy"
+                    app:layout_constraintStart_toStartOf="@id/petfood_recommend_sickness_tab_healthy"
+                    app:layout_constraintTop_toBottomOf="@id/petfood_recommend_sickness_tab_healthy">
+
+                    <ImageView
+                        android:id="@+id/petfood_recommend_sickness_tab_stomach_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:padding="@dimen/food_reference_food_allege_image_padding"
+                        android:src="@drawable/sickness_stomach"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/petfood_recommend_sickness_tab_stomach_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/sickness_stomach"
+                        android:textColor="@color/reddishgrey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        app:layout_constraintBottom_toBottomOf="@id/petfood_recommend_sickness_tab_stomach_image"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/petfood_recommend_sickness_tab_stomach_image" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/petfood_recommend_sickness_tab_dispense"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@id/petfood_recommend_sickness_tab_joint"
+                    app:layout_constraintStart_toEndOf="@id/petfood_recommend_sickness_tab_stomach"
+                    app:layout_constraintTop_toBottomOf="@id/petfood_recommend_sickness_tab_joint">
+
+                    <ImageView
+                        android:id="@+id/petfood_recommend_sickness_tab_despense_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:padding="@dimen/food_reference_food_allege_image_padding"
+                        android:src="@drawable/sickness_despense"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/petfood_recommend_sickness_tab_dispense_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/sickness_dispense"
+                        android:textColor="@color/reddishgrey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        app:layout_constraintBottom_toBottomOf="@id/petfood_recommend_sickness_tab_despense_image"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/petfood_recommend_sickness_tab_despense_image" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/petfood_recommend_sickness_tab_bean"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@id/petfood_recommend_sickness_tab_dispense"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/petfood_recommend_sickness_tab_dispense"
+                    app:layout_constraintTop_toTopOf="@id/petfood_recommend_sickness_tab_dispense">
+
+                    <ImageView
+                        android:id="@+id/petfood_recommend_sickness_tab_bean_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:padding="@dimen/food_reference_food_allege_image_padding"
+                        android:src="@drawable/sickness_bean"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/petfood_recommend_sickness_tab_bean_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/sickness_bean"
+                        android:textColor="@color/reddishgrey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        app:layout_constraintBottom_toBottomOf="@id/petfood_recommend_sickness_tab_bean_image"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/petfood_recommend_sickness_tab_bean_image" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/petfood_recommend_sickness_tab_fat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@+id/petfood_recommend_sickness_tab_stomach"
+                    app:layout_constraintStart_toStartOf="@id/petfood_recommend_sickness_tab_stomach"
+                    app:layout_constraintTop_toBottomOf="@id/petfood_recommend_sickness_tab_stomach">
+
+                    <ImageView
+                        android:id="@+id/petfood_recommend_sickness_tab_fat_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:padding="@dimen/food_reference_food_allege_image_padding"
+                        android:src="@drawable/sickness_fat"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/petfood_recommend_sickness_tab_fat_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/sickness_fat"
+                        android:textColor="@color/reddishgrey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        app:layout_constraintBottom_toBottomOf="@id/petfood_recommend_sickness_tab_fat_image"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/petfood_recommend_sickness_tab_fat_image" />
+                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+
+
+        <TextView
+            android:id="@+id/petfood_recomment_sickness_save_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_default"
+            android:background="@drawable/dark_blue_round_rect"
+            android:includeFontPadding="false"
+            android:textColor="@color/white"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textSize="@dimen/fix_text_size_5"
+            android:textStyle="bold"
+            android:text="@string/sickness_detail_choice_done"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/food_reference_body_panel_button_margin"
+            android:layout_marginBottom="@dimen/food_reference_body_panel_padding"
+            android:layout_marginStart="@dimen/food_reference_body_panel_padding"
+            android:layout_marginEnd="@dimen/food_reference_body_panel_padding"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

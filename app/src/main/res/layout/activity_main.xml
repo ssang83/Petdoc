@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ffffff">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/divider"/>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/button_layer"
+        android:background="@color/light_grey2" />
+
+    <LinearLayout
+        android:id="@+id/button_layer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_tab_height"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <LinearLayout
+            android:id="@+id/btnHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/docker_icon_size"
+                android:layout_height="@dimen/docker_icon_size"
+                android:src="@drawable/btn_home"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_home"
+                android:textStyle="normal"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/fix_text_size_1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnHospital"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/docker_icon_size"
+                android:layout_height="@dimen/docker_icon_size"
+                android:src="@drawable/btn_hospital"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_hospital"
+                android:textStyle="normal"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/fix_text_size_1"/>
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btnChat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewChat"
+                android:layout_width="@dimen/docker_icon_size"
+                android:layout_height="@dimen/docker_icon_size"
+                android:src="@drawable/btn_chat"
+                android:layout_marginTop="6dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewChat"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/main_consulting"
+                android:textStyle="normal"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/fix_text_size_1"/>
+
+            <View
+                android:id="@+id/badgeStatus"
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                android:background="@drawable/orange_circle"
+                app:layout_constraintTop_toTopOf="@+id/imageViewChat"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewChat"
+                android:visibility="gone"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/btnCare"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/docker_icon_size"
+                android:layout_height="@dimen/docker_icon_size"
+                android:src="@drawable/btn_care"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_care"
+                android:textStyle="normal"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/fix_text_size_1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnShopping"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/docker_icon_size"
+                android:layout_height="@dimen/docker_icon_size"
+                android:src="@drawable/btn_shopping"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_shopping"
+                android:textStyle="normal"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/fix_text_size_1"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

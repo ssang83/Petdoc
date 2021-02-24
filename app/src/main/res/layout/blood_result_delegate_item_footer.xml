@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="SpUsage" >
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="※ 혈액 검사 결과의 카테고리는 참고 사항이며, 각 수치들은 다른 기능에도 영향을 미치기 때문에 꼭 수의사의 진단을 받으시길 바랍니다."
+        android:textColor="@color/slateGrey"
+        android:textSize="13dp"
+        android:textStyle="normal"
+        android:background="@color/colorf0f2f4"
+        android:layout_marginTop="36dp"
+        android:paddingBottom="146dp"
+        android:paddingTop="26dp"
+        android:paddingStart="26dp"
+        android:paddingEnd="26dp"
+        android:includeFontPadding="false"/>
+
+</layout>

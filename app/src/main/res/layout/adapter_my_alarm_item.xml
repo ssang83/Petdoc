@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="item"
+            type="kr.co.petdoc.petdoc.domain.MyAlarm" />
+
+        <variable
+            name="viewModel"
+            type="kr.co.petdoc.petdoc.viewmodel.MyAlarmViewModel" />
+
+        <import type="android.view.View"/>
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootLayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="18dp"
+        android:onClick="@{() -> viewModel.onItemClick(item)}"
+        android:background="@{item.read == false ? @drawable/little_orange_rect : @drawable/grey_down_side_rect}"
+        >
+
+        <View
+            android:id="@+id/latestNoti"
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:background="@drawable/orange_circle"
+            app:layout_constraintTop_toTopOf="@+id/notiTypeImg"
+            app:layout_constraintBottom_toBottomOf="@+id/notiTypeImg"
+            app:layout_constraintEnd_toStartOf="@+id/notiTypeImg"
+            android:layout_marginEnd="5dp"
+            android:visibility="@{item.read == false ? View.VISIBLE : View.GONE}"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:id="@+id/notiTypeImg"
+            app:notiImgRes="@{item.eventType}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="18dp"
+            android:layout_marginStart="18dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/notiTypeTxt"
+            android:text="@{viewModel.setNotiText(item.eventType)}"
+            android:textStyle="bold"
+            android:textSize="14dp"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/slate_grey_two"
+            android:includeFontPadding="false"
+            app:layout_constraintTop_toTopOf="@+id/notiTypeImg"
+            app:layout_constraintStart_toEndOf="@+id/notiTypeImg"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/notiTitle"
+            android:text="@{item.content}"
+            app:notiContent="@{item.read}"
+            android:textColor="@color/charcoal_grey"
+            android:textSize="16dp"
+            android:maxLines="2"
+            android:includeFontPadding="false"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notiTypeTxt"
+            app:layout_constraintStart_toStartOf="@+id/notiTypeTxt"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/regDate"
+            android:text="@{viewModel.setRegDate(item.requestDate)}"
+            android:textSize="12dp"
+            android:textColor="@color/light_grey3"
+            android:includeFontPadding="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/notiTypeImg"
+            android:layout_marginEnd="16dp"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

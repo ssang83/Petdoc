@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_grey4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nutritionScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPagerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/indicator"
+                android:layout_width="64dp"
+                android:layout_height="3dp"
+                app:tabBackground="@color/pale_two"
+                app:tabGravity="center"
+                app:tabIndicatorHeight="3dp"
+                app:tabIndicatorColor="@color/salmon"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_grey2"
+                android:layout_marginTop="25dp"
+                app:layout_constraintTop_toBottomOf="@+id/mainFoodImg"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="24dp"
+                android:text="유의할 질병"
+                android:textColor="@color/dark_grey"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/salmon_circle"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/guideNutritionTxt1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        tools:text="심바는 현재 관절,면역 관련 질환이 걱정되므로 이를 완화, 개선하는데 도움을 주는 보조 영양제를 추천 드립니다."
+                        android:textStyle="normal"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textColor="@color/dark_grey"
+                        android:includeFontPadding="false"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    >
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/salmon_circle"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/guideNutritionTxt2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="심바의 품종은 스코티쉬 스트레이트로 관절질환, 심장질 환, 비만 관련 질병에 취약함으로 미리 예방하셔야 합니다."
+                        android:textStyle="normal"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textColor="@color/dark_grey"
+                        android:includeFontPadding="false"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_grey2"
+                android:layout_marginTop="25dp"
+                app:layout_constraintTop_toBottomOf="@+id/mainFoodImg"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="24dp"
+                android:text="영양겔에 포함된 대표 성분"
+                android:textColor="@color/dark_grey"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginTop="30dp"
+                >
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:id="@+id/nutritionTypeImg1"
+                    tools:src="@drawable/fat_on"
+                    android:adjustViewBounds="true"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewCustomMeal1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="커스터밀 플러스"
+                        tools:textColor="#c886aa"
+                        android:textStyle="normal"
+                        android:textSize="22dp"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/nutrition1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        tools:text="비만"
+                        tools:textColor="#c886aa"
+                        android:textStyle="bold"
+                        android:textSize="22dp"
+                        />
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutIngredientDetail3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_gravity="center"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:id="@+id/imageViewInfo1"
+                        android:src="@drawable/ic_info"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewDetail1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="성분 상세보기"
+                        android:textColor="@color/light_grey"
+                        android:textSize="@dimen/fix_text_size_2"
+                        android:textStyle="normal"
+                        android:layout_marginStart="5dp"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewInfo1"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewInfo1"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageViewInfo1"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="6dp"
+                        android:layout_height="10dp"
+                        android:src="@drawable/ic_arrow"
+                        android:adjustViewBounds="true"
+                        android:layout_marginStart="5dp"
+                        app:layout_constraintStart_toEndOf="@+id/textViewDetail1"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewInfo1"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageViewInfo1"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/ingredientContainer1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="2dp"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    >
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginTop="40dp"
+                >
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:id="@+id/nutritionTypeImg2"
+                    tools:src="@drawable/joint_on"
+                    android:adjustViewBounds="true"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewCustomMeal2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="커스터밀 플러스"
+                        tools:textColor="#7474c8"
+                        android:textStyle="normal"
+                        android:textSize="22dp"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/nutrition2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        tools:text="관절"
+                        tools:textColor="#7474c8"
+                        android:textStyle="bold"
+                        android:textSize="22dp"
+                        />
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutIngredientDetail2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_gravity="center"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:id="@+id/imageViewInfo2"
+                        android:src="@drawable/ic_info"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewDetail2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="성분 상세보기"
+                        android:textColor="@color/light_grey"
+                        android:textSize="@dimen/fix_text_size_2"
+                        android:textStyle="normal"
+                        android:layout_marginStart="5dp"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewInfo2"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewInfo2"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageViewInfo2"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="6dp"
+                        android:layout_height="10dp"
+                        android:src="@drawable/ic_arrow"
+                        android:adjustViewBounds="true"
+                        android:layout_marginStart="5dp"
+                        app:layout_constraintStart_toEndOf="@+id/textViewDetail2"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewInfo2"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageViewInfo2"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/ingredientContainer2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="2dp"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    >
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_grey2"
+                android:layout_marginTop="36dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="24dp"
+                android:text="급여 가이드"
+                android:textColor="@color/dark_grey"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:text="주식사료에 영양제를 섞어서 급여해주세요. 기호성도 높아서 사료를 잘 먹지 않는 아이들도 좋아할 거예요."
+                android:textStyle="normal"
+                android:textSize="@dimen/fix_text_size_4"
+                android:textColor="@color/dark_grey"
+                android:includeFontPadding="false"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="26dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="82dp"
+                android:padding="10dp"
+                android:background="@drawable/grey_solid_round_rect"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="*내 반려동물의 1일 권장 급여량과 급여 기간에 따라서 가격이 다르게 책정됩니다."
+                    android:textStyle="normal"
+                    android:textSize="@dimen/fix_text_size_1"
+                    android:textColor="@color/light_grey"
+                    android:includeFontPadding="false"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="*커스터밀 맞춤식은 반려동물의 질병 예방차원을 위한 영양소 공급과 같은 일반적인 건강관리를 위한 전문적인 식단을 제공하고 있으나, 질병을 직접적으로 치료하는 식단은 아니므로 질병 치료식(처방식)은 가까운 동물병원에서 수의사와 상담하시기를 권장합니다."
+                    android:textStyle="normal"
+                    android:textSize="@dimen/fix_text_size_1"
+                    android:textColor="@color/light_grey"
+                    android:includeFontPadding="false"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnTop"
+        android:layout_width="@dimen/home_button_top_size"
+        android:layout_height="@dimen/home_button_top_size"
+        android:src="@drawable/btn_top"
+        android:adjustViewBounds="true"
+        android:layout_marginEnd="@dimen/mypage_pet_information_profile_margin"
+        android:layout_marginBottom="73dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

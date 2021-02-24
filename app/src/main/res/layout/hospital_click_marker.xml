@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/markerImg"
+            android:layout_width="42dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center_horizontal"
+            tools:src="@drawable/img_hospital_reservation"
+            android:adjustViewBounds="true"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:layout_marginTop="5dp"
+            tools:text="브이케어 동물병원"
+            android:textColor="@color/dark_grey"
+            android:textStyle="bold"
+            android:textSize="@dimen/fix_text_size_1"
+            />
+    </LinearLayout>
+
+</FrameLayout>

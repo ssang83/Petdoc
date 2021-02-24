@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/root"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <View
+        android:id="@+id/point"
+        android:layout_width="4dp"
+        android:layout_height="4dp"
+        android:background="@drawable/orange_circle"
+        app:layout_constraintTop_toTopOf="@+id/clinicItem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/clinicItem"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/clinicItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="(중형)강아지 슬개골 탈구수술"
+        android:textColor="@color/slateGrey"
+        android:textStyle="normal"
+        android:textSize="@dimen/fix_text_size_3"
+        android:includeFontPadding="false"
+        android:layout_marginStart="6dp"
+        app:layout_constraintStart_toEndOf="@+id/point"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/clinicPrice"
+        tools:text="9,999,000원"
+        android:textSize="@dimen/fix_text_size_3"
+        android:textStyle="bold"
+        android:textColor="@color/slateGrey"
+        android:includeFontPadding="false"
+        android:maxLength="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/clinicItem"
+        app:layout_constraintBottom_toBottomOf="@+id/clinicItem"
+        />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:background="@drawable/hospital_price_dash"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintStart_toEndOf="@id/clinicItem"
+        app:layout_constraintEnd_toStartOf="@+id/clinicPrice"
+        app:layout_constraintTop_toTopOf="@+id/clinicItem"
+        app:layout_constraintBottom_toBottomOf="@+id/clinicItem"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

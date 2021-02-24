@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "312781285860",
+    "firebase_url": "https://petdoc-213516.firebaseio.com",
+    "project_id": "petdoc-213516",
+    "storage_bucket": "petdoc-213516.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312781285860:android:d595d0e190523e0c",
+        "android_client_info": {
+          "package_name": "kr.co.petdoc.petdoc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312781285860-55v81nnmlunab2f8d7bctngtr4t79u1u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.co.petdoc.petdoc",
+            "certificate_hash": "5d72d0f837a3206e452b7f4193924bd2b561c10c"
+          }
+        },
+        {
+          "client_id": "312781285860-jdkqqsvvkig8smma7ii7o138ubdpr1ea.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApWBYrkBBVhZMv0K3RjuWE8TP1s1a8aCs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312781285860-0iau1p4mjbu8ek63fb9dj9bi40lni2dt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "312781285860-v3moqui4ucv4eflfovmhvvscr3gn5np8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "kr.co.petdoc"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editPetBreed"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/pet_add_name_edit_height"
+        android:layout_marginLeft="@dimen/pet_kind_list_item_padding_left"
+        android:layout_marginRight="@dimen/pet_kind_list_item_padding_left"
+        android:background="@drawable/input_form"
+        android:textStyle="normal"
+        android:gravity="left|center_vertical"
+        android:hint="@string/pet_breed_search_hint"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:lines="1"
+        android:maxLines="1"
+        android:paddingLeft="@dimen/pet_add_name_edit_padding"
+        android:paddingRight="@dimen/pet_add_name_edit_padding"
+        android:singleLine="true"
+        android:textColor="@color/dark_grey"
+        android:textColorHint="@color/light_grey3"
+        android:textCursorDrawable="@null"
+        android:textSize="@dimen/fix_text_size_3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/petBreedList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/pet_kind_list_item_padding_left"
+        android:overScrollMode="never"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editPetBreed"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:textSize="@dimen/fix_text_size_3"
+        android:textColor="@color/light_grey"
+        android:textStyle="normal"
+        android:text="@string/pet_breed_search_empty"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editPetBreed"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnTop"
+        android:layout_width="@dimen/pet_breed_button_top_size"
+        android:layout_height="@dimen/pet_breed_button_top_size"
+        android:layout_marginEnd="@dimen/pet_add_name_edit_margin_right"
+        android:layout_marginBottom="@dimen/pet_breed_button_margin_bottom"
+        android:src="@drawable/btn_top"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

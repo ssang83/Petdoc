@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/connect_scanner_navigator"
+    app:startDestination="@id/scannerIntroFragment">
+
+    <fragment
+        android:id="@+id/scannerIntroFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.scanner.ScannerIntroFragment"
+        android:label="ScannerIntroFragment"
+        tools:layout="@layout/fragment_scanner_intro">
+        <action
+            android:id="@+id/action_scannerIntroFragment_to_scannePowerOnFragment"
+            app:destination="@id/scannePowerOnFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scannePowerOnFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.scanner.ScannerPowerOnFragment"
+        android:label="ScannePowerOnFragment"
+        tools:layout="@layout/fragment_scanner_wifi_power">
+        <action
+            android:id="@+id/action_scannePowerOnFragment_to_scannerInputPasswdFragment"
+            app:destination="@id/scannerInputPasswdFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scannerInputPasswdFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.scanner.ScannerInputPasswdFragment"
+        android:label="ScannerInputPasswdFragment"
+        tools:layout="@layout/fragment_scanner_input_passwd">
+        <action
+            android:id="@+id/action_scannerInputPasswdFragment_to_scannerConnectFragment"
+            app:destination="@id/scannerConnectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scannerConnectFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.scanner.ScannerConnectFragment"
+        android:label="ScannerConnectFragment"
+        tools:layout="@layout/fragment_scanner_connect">
+        <action
+            android:id="@+id/action_scannerConnectFragment_to_scannerAPListFragment"
+            app:destination="@id/scannerAPListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scannerAPListFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.scanner.ScannerAPListFragment"
+        android:label="ScannerAPListFragment"
+        tools:layout="@layout/fragment_scanner_ap_list">
+        <action
+            android:id="@+id/action_scannerAPListFragment_to_scannerWifiInputPasswdFragment"
+            app:destination="@id/scannerWifiInputPasswdFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scannerWifiInputPasswdFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.scanner.ScannerWifiInputPasswdFragment"
+        android:label="ScannerWifiInputPasswdFragment"
+        tools:layout="@layout/fragment_scanner_wifi_input_password">
+        <action
+            android:id="@+id/action_scannerWifiInputPasswdFragment_to_scannerAPConnectFragment"
+            app:destination="@id/scannerAPConnectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scannerAPConnectFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.scanner.ScannerAPConnectFragment"
+        android:label="ScannerAPConnectFragment"
+        tools:layout="@layout/fragment_scanner_ap_connect"/>
+</navigation>

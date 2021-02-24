@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="312dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_image_pick">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textSize="@dimen/fix_text_size_4"
+            android:textStyle="bold"
+            android:includeFontPadding="false"
+            android:textColor="#333333"
+            android:gravity="center_horizontal"
+            android:text="@string/image_pick_title"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="12dp"
+            android:background="#e9ebef"/>
+
+        <RelativeLayout
+            android:id="@+id/buttonGallery"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/border_grey">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="14dp"
+                android:textColor="#333333"
+                android:textStyle="normal"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.01"
+                android:lineSpacingExtra="6sp"
+                android:gravity="center_horizontal"
+                android:text="@string/image_pick_gallery"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/buttonCamera"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/border_grey">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="14dp"
+                android:textColor="#333333"
+                android:textStyle="normal"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.01"
+                android:lineSpacingExtra="6sp"
+                android:gravity="center_horizontal"
+                android:text="@string/image_pick_camera"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/buttonCancel"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/border_grey">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="14dp"
+                android:textColor="#333333"
+                android:textStyle="normal"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.01"
+                android:lineSpacingExtra="6sp"
+                android:gravity="center_horizontal"
+                android:text="@string/cancel"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

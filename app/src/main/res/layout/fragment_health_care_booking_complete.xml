@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/login_close_button_size"
+        android:layout_height="@dimen/login_close_button_size"
+        android:padding="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_close"
+        android:id="@+id/btnClose"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnClose"
+        app:layout_constraintBottom_toBottomOf="@id/btnClose"
+        android:textColor="@color/slateGrey"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:textSize="@dimen/fix_text_size_4"
+        android:textStyle="bold"
+        android:text="@string/mypage_reservation_history" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        android:background="@color/pale_grey"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintTop_toBottomOf="@+id/btnClose"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="예약 완료"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="20dp"
+                android:textSize="@dimen/fix_text_size_10"
+                android:textColor="@color/slateGrey"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/description"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="예약된 시간에 병원 방문하여 혈액을 채취해주세요. 검사 결과는 채혈일로부터 영업일 기준 4-5일 후에 마이페이지 > 혈액/알러지 검사 결과에서 확인 가능합니다."
+                android:textStyle="normal"
+                android:textSize="@dimen/fix_text_size_3"
+                android:textColor="@color/slateGrey"
+                android:includeFontPadding="false"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/status"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="9dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/description">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutHospitalName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/my_hospital_detail_button_size"
+                    android:layout_marginStart="@dimen/my_hospital_detail_text_margin"
+                    android:layout_marginEnd="@dimen/my_hospital_detail_text_margin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewHospital"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/my_hospital_detail_button_size"
+                        android:background="@drawable/grey_top_left_round"
+                        android:gravity="center"
+                        android:text="@string/mypage_hospital"
+                        android:textColor="@color/slateGrey"
+                        android:textSize="@dimen/fix_text_size_3"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_default="percent"
+                        app:layout_constraintWidth_percent="0.3" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/my_hospital_detail_button_size"
+                        android:background="@drawable/white_top_right_round"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textViewHospital"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_default="percent"
+                        app:layout_constraintWidth_percent="0.7">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/hospitalName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/my_hospital_detail_text_margin_start"
+                            android:textColor="@color/slateGrey"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textStyle="normal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="브이케어 동물병원" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/divider1"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/pale_grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutHospitalName" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutPetName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/my_hospital_detail_text_margin"
+                    android:layout_marginEnd="@dimen/my_hospital_detail_text_margin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider1">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewPetName"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/my_hospital_detail_button_size"
+                        android:background="@color/colorf9f9f9"
+                        android:gravity="center"
+                        android:text="@string/hospital_clinic_reservation_pet"
+                        android:textColor="@color/slateGrey"
+                        android:textSize="@dimen/fix_text_size_3"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_default="percent"
+                        app:layout_constraintWidth_percent="0.3" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/my_hospital_detail_button_size"
+                        android:background="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textViewPetName"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/petName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/my_hospital_detail_text_margin_start"
+                            android:textColor="@color/slateGrey"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textStyle="normal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintWidth_default="percent"
+                            app:layout_constraintWidth_percent="0.7"
+                            tools:text="심바" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/divider2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/pale_grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutPetName" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/my_hospital_detail_text_margin"
+                    android:layout_marginEnd="@dimen/my_hospital_detail_text_margin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider2">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewCategory"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/my_hospital_detail_button_size"
+                        android:background="@color/colorf9f9f9"
+                        android:gravity="center"
+                        android:text="@string/hospital_clinic_reservation_type"
+                        android:textColor="@color/slateGrey"
+                        android:textSize="@dimen/fix_text_size_3"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_default="percent"
+                        app:layout_constraintWidth_percent="0.3" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/my_hospital_detail_button_size"
+                        android:background="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textViewCategory"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/category"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/my_hospital_detail_text_margin_start"
+                            android:textColor="@color/slateGrey"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textStyle="normal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintWidth_default="percent"
+                            app:layout_constraintWidth_percent="0.7"
+                            tools:text="일반진료, 수술상담" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/divider3"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/pale_grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutCategory" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutOffice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/my_hospital_detail_text_margin"
+                    android:layout_marginEnd="@dimen/my_hospital_detail_text_margin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider3">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewOffice"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/my_hospital_detail_button_size"
+                        android:background="@color/colorf9f9f9"
+                        android:gravity="center"
+                        android:text="@string/mypage_doctor_offie"
+                        android:textColor="@color/slateGrey"
+                        android:textSize="@dimen/fix_text_size_3"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_default="percent"
+                        app:layout_constraintWidth_percent="0.3" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/my_hospital_detail_button_size"
+                        android:background="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textViewOffice"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/doctorOffice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/my_hospital_detail_text_margin_start"
+                            android:textColor="@color/slateGrey"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textStyle="normal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintWidth_default="percent"
+                            app:layout_constraintWidth_percent="0.7"
+                            tools:text="김남준 대표원장, 1번 진료실" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/divider4"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/pale_grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutOffice" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/my_hospital_detail_text_margin"
+                    android:layout_marginEnd="@dimen/my_hospital_detail_text_margin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider4">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewDate"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/my_hospital_detail_button_size"
+                        android:background="@color/colorf9f9f9"
+                        android:gravity="center"
+                        android:text="@string/hospital_clinic_reservation_date"
+                        android:textColor="@color/slateGrey"
+                        android:textSize="@dimen/fix_text_size_3"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_default="percent"
+                        app:layout_constraintWidth_percent="0.3" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/my_hospital_detail_button_size"
+                        android:background="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textViewDate"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/bookingDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/my_hospital_detail_text_margin_start"
+                            android:textColor="@color/slateGrey"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textStyle="normal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintWidth_default="percent"
+                            app:layout_constraintWidth_percent="0.7"
+                            tools:text="3월 11일 (화) 오후 3시" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/divider5"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/pale_grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutDate" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/bookingCompleteLayer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/divider5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:paddingTop="30dp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewCheckup"
+                        android:text="검사 전 확인 내용"
+                        android:textColor="@color/slateGrey"
+                        android:textStyle="normal"
+                        android:textSize="25dp"
+                        android:layout_marginStart="20dp"
+                        android:includeFontPadding="false"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/guideDesc1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewCheckup"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1. 우리 아이, 혹시 약을 먹고 있나요?"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/slateGrey"
+                            android:includeFontPadding="false"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="처방약을 복용 중이거나 연고를 사용 중이라면 검사결과에 영향을 줄 수 있으니 처방 받은 동물병원에서 꼭 확인해 주세요. 약의 성분에 따라 검사 전 최소 1주일의 휴약 기간이 필요합니다. 검사 전 병원에 미리 알려주시고, 정확한 휴약 상담을 해주세요."
+                            android:textSize="15dp"
+                            android:textStyle="normal"
+                            android:textColor="@color/slateGrey"
+                            android:includeFontPadding="false"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/guideDesc1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="51dp"
+                        android:orientation="vertical"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="2. 검진 전에 밥을 먹어도 되나요?"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/slateGrey"
+                            android:includeFontPadding="false"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="사람과 마찬가지로 정확한 혈액검사를 위해 최소 6시간 금식이 필요합니다. 물은 마셔도 되지만, 너무 많이 마시면 검사 결과에 영향을 줄 수 있습니다."
+                            android:textSize="15dp"
+                            android:textStyle="normal"
+                            android:textColor="@color/slateGrey"
+                            android:includeFontPadding="false"
+                            />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/light_grey2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnConfirm"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnConfirm"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/my_hospital_detail_button_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white"
+        android:textColor="@color/orange"
+        android:textAlignment="gravity"
+        android:includeFontPadding="false"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="@dimen/fix_text_size_5"
+        android:text="@string/confirm" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

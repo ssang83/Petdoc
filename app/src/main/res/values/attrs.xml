@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BannerImageView">
+        <attr name="heightFactor" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="WeekCalendar">
+
+        <attr name="weekTextSize" format="float"/>
+        <attr name="daysTextSize" format="float"/>
+        <attr name="dayNameLength" format="integer"/>
+        <attr name="numOfPages" format="integer"/>
+        <attr name="weekTextColor" format="integer"/>
+        <attr name="weekBackgroundColor" format="integer"/>
+        <attr name="selectedBgColor" format="integer"/>
+        <attr name="todaysDateBgColor" format="integer"/>
+        <attr name="daysTextColor" format="integer"/>
+        <attr name="todaysDateTextColor" format="integer"/>
+        <attr name="daysBackgroundColor" format="integer"/>
+        <attr name="hideNames" format="boolean"/>
+
+    </declare-styleable>
+</resources>

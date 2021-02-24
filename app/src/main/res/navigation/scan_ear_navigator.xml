@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scan_ear_navigator"
+    app:startDestination="@id/earFragment">
+
+    <fragment
+        android:id="@+id/earFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.scanner.ear.EarFragment"
+        android:label="EarFragment"
+        tools:layout="@layout/fragment_ear">
+        <action
+            android:id="@+id/action_earFragment_to_earScanFragment"
+            app:destination="@id/earScanFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/earScanFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.scanner.ear.EarScanFragment"
+        android:label="EarScanFragment"
+        tools:layout="@layout/fragment_ear_scan"/>
+</navigation>

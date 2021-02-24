@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/login_close_button_size"
+        android:layout_height="@dimen/login_close_button_size"
+        android:padding="@dimen/login_close_button_padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:adjustViewBounds="true"
+        android:src="@drawable/backbutton"
+        android:id="@+id/btnBack"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnBack"
+        app:layout_constraintBottom_toBottomOf="@id/btnBack"
+        android:textColor="@color/dark_grey"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:textSize="@dimen/fix_text_size_4"
+        android:textStyle="bold"
+        android:text="@string/pet_point_title" />
+
+
+    <!-- 보유 포인트 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutSavedPoint"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/mypage_pet_point_height"
+        android:paddingTop="@dimen/mypage_pet_side_margin"
+        android:background="@drawable/grey_line_upside_rect"
+        app:layout_constraintTop_toBottomOf="@+id/btnBack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/layoutUsedPoint">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewSavedPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pet_saved_point"
+            android:textStyle="normal"
+            android:textSize="@dimen/fix_text_size_3"
+            android:textColor="@color/dark_grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewSavedPointDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pet_breed_radio_padding"
+            android:text="@string/pet_saved_point_desc"
+            android:textStyle="normal"
+            android:textSize="@dimen/fix_text_size_1"
+            android:textColor="@color/light_grey"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSavedPoint"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/savedPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pet_age_date_picker_margin"
+            tools:text="0,000,000P"
+            android:textColor="@color/blue_grey"
+            android:textSize="@dimen/fix_text_size_8"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSavedPointDesc"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 가용 포인트 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutUsedPoint"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/mypage_pet_point_height"
+        android:paddingTop="@dimen/mypage_pet_side_margin"
+        android:background="@drawable/grey_line_upside_rect"
+        app:layout_constraintTop_toBottomOf="@+id/btnBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/layoutSavedPoint">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewUsedPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pet_used_point"
+            android:textStyle="normal"
+            android:textSize="@dimen/fix_text_size_3"
+            android:textColor="@color/dark_grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewUsedPointDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pet_breed_radio_padding"
+            android:text="@string/pet_used_point_desc"
+            android:textStyle="normal"
+            android:textSize="@dimen/fix_text_size_1"
+            android:textColor="@color/light_grey"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUsedPoint"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/usedPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pet_age_date_picker_margin"
+            tools:text="0,000,000P"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/fix_text_size_8"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUsedPointDesc"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/light_grey5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/layoutSavedPoint"
+        app:layout_constraintBottom_toBottomOf="@id/layoutSavedPoint"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/light_grey5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutSavedPoint" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHistoryType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mypage_pet_info_panel_bottom_padding"
+        android:layout_marginEnd="@dimen/mypage_pet_info_panel_bottom_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutUsedPoint">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/pointHistoryType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="전체내역"
+            android:textStyle="normal"
+            android:textSize="@dimen/fix_text_size_3"
+            android:textColor="@color/dark_grey"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pet_add_name_edit_margin_top"
+            android:src="@drawable/ic_drop_down"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toEndOf="@+id/pointHistoryType"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pointList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/pet_add_name_edit_margin_left"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHistoryType"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/light_grey"
+        android:textSize="@dimen/fix_text_size_3"
+        android:textStyle="normal"
+        android:text="@string/pet_point_history_empty"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnTop"
+        android:layout_width="@dimen/home_button_top_size"
+        android:layout_height="@dimen/home_button_top_size"
+        android:src="@drawable/btn_top"
+        android:adjustViewBounds="true"
+        android:layout_marginEnd="@dimen/mypage_pet_information_profile_margin"
+        android:layout_marginBottom="@dimen/pet_add_name_edit_margin_top"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

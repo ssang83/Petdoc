@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/external_device_detail"
+    app:startDestination="@id/externalDeviceDetailFragment">
+
+    <fragment
+        android:id="@+id/externalDeviceDetailFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.mypage.ExternalDeviceDetailFragment"
+        android:label="ExternalDeviceDetailFragment"
+        tools:layout="@layout/fragment_external_device_detail">
+        <action
+            android:id="@+id/action_externalDeviceDetailFragment_to_firmwareUpdateInfoFragment"
+            app:destination="@id/firmwareUpdateInfoFragment" />
+        <action
+            android:id="@+id/action_externalDeviceDetailFragment_to_firmwareInstalledVersionInfoFragment"
+            app:destination="@id/firmwareInstalledVersionInfoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/firmwareUpdateInfoFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.scanner.FirmwareUpdateInfoFragment"
+        android:label="FirmwareUpdateInfoFragment"
+        tools:layout="@layout/fragment_firmware_update_info">
+    </fragment>
+
+    <fragment
+        android:id="@+id/firmwareInstalledVersionInfoFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.scanner.FirmwareInstalledVersionInfoFragment"
+        android:label="FirmwareInstalledVersionInfoFragment"
+        tools:layout="@layout/fragment_firmware_installed_version_info">
+    </fragment>
+
+</navigation>

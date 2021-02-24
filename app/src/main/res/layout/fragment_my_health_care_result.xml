@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="@dimen/login_close_button_size"
+                    android:layout_height="@dimen/login_close_button_size"
+                    android:adjustViewBounds="true"
+                    android:padding="14dp"
+                    android:src="@drawable/backbutton"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/mypage_title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="혈액/알러지 검사 결과"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/btnBack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/btnBack" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/paleGreyTen"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutHeader">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/petImage"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="25dp"
+                    android:src="@drawable/img_profile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/grey_full_round_stroke_rect"
+                    app:layout_constraintBottom_toBottomOf="@id/petImage"
+                    app:layout_constraintEnd_toEndOf="@id/petImage"
+                    app:layout_constraintStart_toStartOf="@id/petImage"
+                    app:layout_constraintTop_toTopOf="@id/petImage" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintBottom_toBottomOf="@id/petImage"
+                    app:layout_constraintStart_toEndOf="@+id/petImage"
+                    app:layout_constraintTop_toTopOf="@+id/petImage">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/slateGrey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="하나" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text=" 혈액/알러지 검사 결과"
+                        android:textColor="@color/slateGrey"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toEndOf="@+id/name"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/slateGrey"
+                        android:textSize="13dp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/name"
+                        tools:text="2020.07.10" />
+
+                    <LinearLayout
+                        android:id="@+id/layoutInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        app:layout_constraintStart_toEndOf="@+id/date"
+                        app:layout_constraintTop_toTopOf="@+id/date">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_info" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:includeFontPadding="false"
+                            android:text="신청정보"
+                            android:textColor="@color/light_grey"
+                            android:textSize="13dp"
+                            android:textStyle="normal" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="5dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_arrow" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:background="@drawable/shape_gradient_top_shadow"
+            app:layout_anchor="@id/bottomSheetPager" />
+
+        <kr.co.petdoc.petdoc.widget.BottomSheetViewPager
+            android:id="@+id/bottomSheetPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:behavior_peekHeight="500dp"
+            app:layout_behavior="@string/bottom_sheet_behavior"
+            tools:ignore="UnusedAttribute">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="top"
+                android:background="@drawable/white_top_round_only_30"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/orange"
+                app:tabIndicatorFullWidth="false"
+                app:tabIndicatorHeight="2.5dp"
+                app:tabMode="fixed"
+                app:tabPadding="0dp"
+                app:tabSelectedTextColor="@color/slateGrey"
+                app:tabTextAppearance="@style/BottomSheetTabLayoutTextStyle"
+                app:tabTextColor="@color/light_grey" />
+
+        </kr.co.petdoc.petdoc.widget.BottomSheetViewPager>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

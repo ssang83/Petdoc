@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    style="?android:attr/spinnerItemStyle"
+    android:singleLine="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/fix_text_size_3"
+    android:textColor="@color/light_grey3"
+    android:textStyle="normal"
+    android:gravity="center_vertical"
+    android:text="임신 개월 수를 선택해주세요." />

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="53dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/temperatureLayer"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/takePill"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/ic_care_pill"
+            android:adjustViewBounds="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="15dp"
+            android:visibility="invisible"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/temperature"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:layout_marginStart="2dp"
+            android:gravity="center"
+            android:text="00.0C"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/fix_text_size_2"
+            android:textStyle="normal"
+            app:layout_constraintTop_toTopOf="@+id/takePill"
+            app:layout_constraintBottom_toBottomOf="@+id/takePill"
+            app:layout_constraintStart_toEndOf="@+id/takePill"
+            app:layout_goneMarginStart="5dp"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:gravity="center"
+        android:text="정상"
+        android:textColor="@color/dark_grey"
+        android:textSize="@dimen/fix_text_size_2"
+        android:textStyle="normal"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintStart_toEndOf="@+id/temperatureLayer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:gravity="center"
+        android:text="00.00.00 오후 00:00"
+        android:textColor="@color/dark_grey"
+        android:textSize="@dimen/fix_text_size_2"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintStart_toEndOf="@+id/status"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5" />
+</androidx.constraintlayout.widget.ConstraintLayout>

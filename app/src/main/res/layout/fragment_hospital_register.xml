@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/login_close_button_size"
+            android:layout_height="@dimen/login_close_button_size"
+            android:padding="@dimen/login_close_button_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:adjustViewBounds="true"
+            android:src="@drawable/backbutton"
+            android:id="@+id/btnBack"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/hospitalTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnBack"
+            app:layout_constraintBottom_toBottomOf="@id/btnBack"
+            android:textColor="@color/dark_grey"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textSize="@dimen/fix_text_size_4"
+            android:textStyle="bold"
+            android:text="@string/hospital_register_title" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_grey"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutRegisterInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_bottom_round_35"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutHospitalInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="24dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="17dp"
+                        android:paddingEnd="15dp"
+                        android:id="@+id/nameTxt"
+                        tools:text="브이케어 신논현 본점"
+                        android:textStyle="bold"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="22dp"
+                        android:includeFontPadding="false"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="17dp"
+                        android:paddingEnd="15dp"
+                        android:id="@+id/locationTxt"
+                        tools:text="서울시 서초구 논현로 79길 32 1층"
+                        android:textSize="@dimen/fix_text_size_1"
+                        android:textColor="@color/color5c6073"
+                        android:textStyle="normal"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintTop_toBottomOf="@+id/nameTxt"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:background="@color/grey"
+                        android:layout_marginTop="24dp"
+                        app:layout_constraintTop_toBottomOf="@+id/locationTxt"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewPet"
+                    android:text="@string/hospital_register_pet_kind"
+                    android:textStyle="bold"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:includeFontPadding="false"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutHospitalInfo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/petList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+                    android:layout_marginTop="17dp"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewPet"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewClinic"
+                    android:text="@string/hospital_register_clinic_type"
+                    android:textStyle="bold"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:includeFontPadding="false"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintTop_toBottomOf="@+id/petList"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/noClinicPetTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hospital_register_pet_no_clinic"
+                    android:textStyle="normal"
+                    android:textColor="@color/light_grey"
+                    android:textSize="@dimen/fix_text_size_2"
+                    android:includeFontPadding="false"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewClinic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginStart="20dp"
+                    android:visibility="gone"
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutClinicPet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewClinic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    >
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/clinicList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never"
+                        android:paddingStart="20dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutClinicSelect"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="42dp"
+                        android:paddingStart="20dp"
+                        app:layout_constraintTop_toBottomOf="@+id/clinicList"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textViewClinicChoice"
+                            android:text="@string/hospital_register_choice_clinic_room"
+                            android:textStyle="bold"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            android:includeFontPadding="false"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/btnInfo"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:src="@drawable/ic_info"
+                            app:layout_constraintTop_toTopOf="@+id/textViewClinicChoice"
+                            app:layout_constraintBottom_toBottomOf="@+id/textViewClinicChoice"
+                            app:layout_constraintStart_toEndOf="@+id/textViewClinicChoice"
+                            android:layout_marginStart="6dp"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey"
+                        android:layout_marginTop="17dp"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutClinicSelect"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never"
+                        android:id="@+id/clinicRoomList"
+                        app:layout_constraintTop_toBottomOf="@+id/divider"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutMessage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:paddingStart="20dp"
+                        app:layout_constraintTop_toBottomOf="@+id/clinicRoomList"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textViewMsg"
+                            android:text="@string/hospital_register_message"
+                            android:textStyle="bold"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            android:includeFontPadding="false"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/hospital_register_message_choice"
+                            android:textSize="@dimen/fix_text_size_4"
+                            android:textColor="@color/dark_grey"
+                            android:textStyle="normal"
+                            android:includeFontPadding="false"
+                            app:layout_constraintTop_toTopOf="@+id/textViewMsg"
+                            app:layout_constraintBottom_toBottomOf="@id/textViewMsg"
+                            app:layout_constraintStart_toEndOf="@+id/textViewMsg"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/editMessage"
+                        android:layout_width="0dp"
+                        android:layout_height="179dp"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="28dp"
+                        android:background="@drawable/grey_round_stoke_rect"
+                        android:gravity="center_vertical|top"
+                        android:hint="@string/hospital_register_message_hint"
+                        android:textColorHint="@color/light_grey3"
+                        android:inputType="textMultiLine"
+                        android:paddingStart="16dp"
+                        android:paddingTop="16dp"
+                        android:paddingEnd="16dp"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/dark_grey"
+                        android:textStyle="normal"
+                        android:textSize="@dimen/fix_text_size_3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutMessage"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutGuide"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="44dp"
+                        android:layout_marginStart="20dp"
+                        app:layout_constraintTop_toBottomOf="@+id/editMessage"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textViewGuide"
+                            android:text="@string/hospital_register_guide"
+                            android:textStyle="bold"
+                            android:textColor="@color/light_grey"
+                            android:textSize="@dimen/fix_text_size_3"
+                            android:includeFontPadding="false"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textViewGuideDesc1"
+                            android:text="@string/hospital_register_guide_desc1"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textColor="@color/light_grey"
+                            android:textStyle="normal"
+                            android:includeFontPadding="false"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewGuide"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textViewGuideDesc2"
+                            android:text="@string/hospital_register_guide_desc2"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textColor="@color/light_grey"
+                            android:textStyle="normal"
+                            android:includeFontPadding="false"
+                            android:layout_marginTop="3dp"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewGuideDesc1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutAgree"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="34dp"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutGuide"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:background="@color/grey"
+                            android:layout_marginTop="24dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            >
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/textViewWarning"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:text="@string/hospital_register_all_agree"
+                                android:textColor="@color/dark_grey"
+                                android:textSize="@dimen/fix_text_size_3"
+                                android:textStyle="bold"
+                                android:includeFontPadding="false"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                />
+
+                            <androidx.appcompat.widget.AppCompatImageButton
+                                android:id="@+id/checkAllAgree"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginEnd="20dp"
+                                android:background="@drawable/btn_check_box"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@+id/layout"
+                            app:layout_constraintStart_toStartOf="parent"
+                            >
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/layoutAgreeDesc1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="16dp"
+                                android:paddingStart="20dp"
+                                android:paddingEnd="20dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                >
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/textViewAgreeDesc1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/hospital_register_agree_desc1"
+                                    android:textColor="@color/dark_grey"
+                                    android:textSize="@dimen/fix_text_size_3"
+                                    android:textStyle="normal"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    />
+
+                                <androidx.appcompat.widget.AppCompatImageButton
+                                    android:id="@+id/checkAgreee1"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:background="@drawable/btn_sign_out_check"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/layoutAgreeDesc2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="16dp"
+                                android:paddingStart="20dp"
+                                android:paddingEnd="20dp"
+                                app:layout_constraintTop_toBottomOf="@+id/layoutAgreeDesc1"
+                                app:layout_constraintStart_toStartOf="parent"
+                                >
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/textViewAgreeDesc2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/hospital_register_agree_desc2"
+                                    android:textColor="@color/dark_grey"
+                                    android:textSize="@dimen/fix_text_size_3"
+                                    android:textStyle="normal"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    />
+
+                                <androidx.appcompat.widget.AppCompatImageButton
+                                    android:id="@+id/checkAgreee2"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:background="@drawable/btn_sign_out_check"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:paddingBottom="31dp"
+                app:layout_constraintTop_toBottomOf="@+id/layoutRegisterInfo"
+                app:layout_constraintStart_toStartOf="parent"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutRegister"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintWidth_percent="0.5"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="26dp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/registerName"
+                        tools:text="브이케어 신논현 본점"
+                        android:textStyle="normal"
+                        android:textColor="@color/light_grey"
+                        android:textSize="@dimen/fix_text_size_2"
+                        android:includeFontPadding="false"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hospital_register_clinic"
+                        android:textSize="22dp"
+                        android:textColor="@color/white"
+                        android:textStyle="normal"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/registerName"
+                        app:layout_constraintStart_toStartOf="@+id/registerName"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnRegisterCompleted"
+                    android:layout_width="0dp"
+                    android:layout_height="51dp"
+                    android:layout_marginEnd="26dp"
+                    app:layout_constraintStart_toEndOf="@+id/layoutRegister"
+                    app:layout_constraintTop_toTopOf="@+id/layoutRegister"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/hospital_register_completed"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fix_text_size_5"
+                    android:includeFontPadding="false"
+                    android:gravity="center"
+                    android:background="@drawable/orange_round_solid_15"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

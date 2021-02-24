@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/search_navigator"
+    app:startDestination="@id/searchBeforeFragment">
+
+    <fragment
+        android:id="@+id/searchBeforeFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.search.SearchBeforeFragment"
+        android:label="SearchBeforeFragment"
+        tools:layout="@layout/fragment_search_before">
+        <action
+            android:id="@+id/action_searchBeforeFragment_to_searchResultFragment"
+            app:destination="@id/searchResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchResultFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.search.SearchResultFragment"
+        android:label="SearchResultFragment"
+        tools:layout="@layout/fragment_search_result"/>
+</navigation>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+        <variable name="foodreference" type="kr.co.petdoc.petdoc.viewmodel.FoodRecommentDataModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/colorpetfood">
+
+        <ImageView
+            android:layout_width="@dimen/login_close_button_size"
+            android:layout_height="@dimen/login_close_button_size"
+            android:padding="@dimen/login_close_button_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:adjustViewBounds="true"
+            android:src="@drawable/x_button"
+            android:id="@+id/petfood_recommend_walking_back_button"
+            />
+
+        <TextView
+            android:id="@+id/mypage_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/petfood_recommend_walking_back_button"
+            app:layout_constraintBottom_toBottomOf="@id/petfood_recommend_walking_back_button"
+            android:textColor="@color/dark_grey"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textSize="@dimen/fix_text_size_4"
+            android:textStyle="bold"
+            android:text="@string/pet_info_detail_diagnosis"
+            />
+
+
+        <!-- 펫 이름 + 가이드 문구 ================================================================= -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/petfood_recommend_walking_back_button"
+            android:layout_marginTop="@dimen/food_reference_weight_margin"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:text="@string/walking_guide_title"
+            android:textColor="@color/dark_grey"
+            android:textStyle="bold"
+            android:textSize="@dimen/fix_text_size_9"
+            android:id="@+id/petfood_recomment_walking_guide"
+            />
+
+        <TextView
+            android:id="@+id/petfood_recommend_walking_input_text"
+            android:layout_width="@dimen/food_reference_walking_time_input_width"
+            android:layout_height="@dimen/food_reference_walking_time_input_height"
+            android:background="@drawable/pinkishgrey_round_rect"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/petfood_recomment_walking_guide"
+            android:layout_marginTop="@dimen/food_reference_weight_margin"
+            android:text="@{foodreference.activateString()}"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/fix_text_size_4"
+            />
+
+
+        <ImageView
+            android:layout_width="@dimen/food_referece_walking_time_button_size"
+            android:layout_height="@dimen/food_referece_walking_time_button_size"
+            android:padding="@dimen/food_reference_walking_time_button_padding"
+            android:background="@drawable/minus_circle_button"
+            app:layout_constraintBottom_toBottomOf="@+id/petfood_recommend_walking_input_text"
+            app:layout_constraintEnd_toStartOf="@+id/petfood_recommend_walking_input_text"
+            app:layout_constraintTop_toTopOf="@+id/petfood_recommend_walking_input_text"
+            android:layout_marginEnd="@dimen/food_reference_walking_time_button_gap"
+            android:id="@+id/petfood_recomment_walking_time_decrease"
+            />
+
+
+        <ImageView
+            android:layout_width="@dimen/food_referece_walking_time_button_size"
+            android:layout_height="@dimen/food_referece_walking_time_button_size"
+            android:padding="@dimen/food_reference_walking_time_button_padding"
+            android:background="@drawable/plus_circle_button"
+            android:adjustViewBounds="true"
+            app:layout_constraintBottom_toBottomOf="@+id/petfood_recommend_walking_input_text"
+            app:layout_constraintStart_toEndOf="@+id/petfood_recommend_walking_input_text"
+            app:layout_constraintTop_toTopOf="@+id/petfood_recommend_walking_input_text"
+            android:layout_marginStart="@dimen/food_reference_walking_time_button_gap"
+            android:id="@+id/petfood_recomment_walking_time_increase"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:includeFontPadding="false"
+            android:text="@string/hour"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/fix_text_size_3"
+            app:layout_constraintBottom_toBottomOf="@+id/petfood_recommend_walking_input_text"
+            app:layout_constraintStart_toEndOf="@+id/petfood_recommend_walking_input_text"
+            app:layout_constraintTop_toTopOf="@+id/petfood_recommend_walking_input_text"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:textStyle="bold"
+            android:layout_marginStart="@dimen/food_reference_walking_time_button_padding"
+            />
+
+
+        <TextView
+            android:id="@+id/petfood_recomment_walking_save_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_default"
+            android:includeFontPadding="false"
+            android:background="@drawable/dark_blue_round_rect"
+            android:textColor="@color/white"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textSize="@dimen/fix_text_size_5"
+            android:text="@string/confirm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/food_reference_body_panel_button_margin"
+            android:layout_marginBottom="@dimen/food_reference_body_panel_padding"
+            android:layout_marginStart="@dimen/food_reference_body_panel_padding"
+            android:layout_marginEnd="@dimen/food_reference_body_panel_padding"
+            android:textStyle="bold"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/mypage_pet_text_gap2"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/pale_grey_eight_round_solid_8">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            tools:text="진료"
+            android:textStyle="normal"
+            android:textColor="@color/blue_grey"
+            android:textSize="@dimen/fix_text_size_2"/>
+    </RelativeLayout>
+</FrameLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="132dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:paddingEnd="24dp"
+    android:paddingBottom="36dp"
+    android:paddingStart="24dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/content2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        tools:text="강아지가 털갈이를 하는 시기에는 평소보다 훨씬 더 많은 양이 털이 빠져 호흡기에 신경 써야 하는 것은 물론 강아지 털에 따라 빗질 방법과 권장하는 브러쉬가 다르기 때문에 주 써야 하는 것은 물론 강아지 "
+        android:textSize="@dimen/fix_text_size_4"
+        android:textStyle="normal"
+        android:textColor="@color/dark_grey"
+
+        />
+
+</FrameLayout>

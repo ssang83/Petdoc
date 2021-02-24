@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+        <variable name="petAddInfo" type="kr.co.petdoc.petdoc.viewmodel.PetAddInfoDataModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/login_close_button_size"
+            android:layout_height="@dimen/login_close_button_size"
+            android:padding="@dimen/login_close_button_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:adjustViewBounds="true"
+            android:src="@drawable/backbutton"
+            android:id="@+id/btnBack"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnBack"
+            app:layout_constraintBottom_toBottomOf="@id/btnBack"
+            android:textColor="@color/dark_grey"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textSize="@dimen/fix_text_size_4"
+            android:textStyle="bold"
+            android:text="@string/pet_info_detail" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            android:layout_marginTop="@dimen/pet_age_date_picker_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/petProfile"
+                android:layout_width="@dimen/pet_add_name_profile_image_size"
+                android:layout_height="@dimen/pet_add_name_profile_image_size"
+                android:src="@drawable/img_profile"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/grey_full_round_stroke_rect"
+                app:layout_constraintBottom_toBottomOf="@id/petProfile"
+                app:layout_constraintEnd_toEndOf="@id/petProfile"
+                app:layout_constraintStart_toStartOf="@id/petProfile"
+                app:layout_constraintTop_toTopOf="@id/petProfile" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnProfileAdd"
+                android:layout_width="@dimen/pet_add_name_profile_add_button_size"
+                android:layout_height="@dimen/pet_add_name_profile_add_button_size"
+                android:src="@drawable/ic_profile_add"
+                android:adjustViewBounds="true"
+                app:layout_constraintCircle="@id/petProfile"
+                app:layout_constraintCircleAngle="135"
+                app:layout_constraintCircleRadius="@dimen/pet_add_name_profile_add_button_circle_radius"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:layout_marginTop="@dimen/pet_add_name_profile_title_margin_top"
+                android:text="@string/pet_picture_choice"
+                android:textStyle="normal"
+                android:textSize="@dimen/fix_text_size_2"
+                android:textColor="@color/light_grey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/petProfile"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            android:layout_marginTop="@dimen/mypage_pet_info_detail_margin_top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutProfile"/>
+
+        <!-- 이름 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/divider1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/mypage_pet_side_margin"
+                android:paddingTop="@dimen/pet_kind_list_item_padding_top"
+                android:paddingBottom="@dimen/pet_kind_list_item_padding_top"
+                android:text="@string/pet_default_info_name"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/fix_text_size_3"
+                android:includeFontPadding="false"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/petName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:layout_marginEnd="@dimen/mypage_pet_info_detail_name_margin_end"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/fix_text_size_3"
+                android:textStyle="normal"
+                android:text="@{petAddInfo.petName}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/change_information_margin"
+                android:src="@drawable/ic_arrow"
+                android:adjustViewBounds="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/grey"
+                android:layout_marginTop="@dimen/mypage_pet_info_detail_margin_top"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 반려동물 종류 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutPetKind"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/layoutName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:paddingLeft="@dimen/mypage_pet_side_margin"
+                android:paddingTop="@dimen/pet_kind_list_item_padding_top"
+                android:paddingBottom="@dimen/pet_kind_list_item_padding_top"
+                android:text="@string/pet_default_info_kind"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/fix_text_size_3"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/petKind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:layout_marginEnd="@dimen/mypage_pet_info_detail_name_margin_end"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/fix_text_size_3"
+                android:textStyle="normal"
+                android:text="@{petAddInfo.petKind}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/grey"
+                android:layout_marginTop="@dimen/mypage_pet_info_detail_margin_top"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 품종 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutPetBreed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/layoutPetKind"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:paddingLeft="@dimen/mypage_pet_side_margin"
+                android:paddingTop="@dimen/pet_kind_list_item_padding_top"
+                android:paddingBottom="@dimen/pet_kind_list_item_padding_top"
+                android:text="@string/pet_default_info_breed"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/fix_text_size_3"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/petBreed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:layout_marginEnd="@dimen/mypage_pet_info_detail_name_margin_end"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/fix_text_size_3"
+                android:textStyle="normal"
+                android:text="@{petAddInfo.petBreed}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/change_information_margin"
+                android:src="@drawable/ic_arrow"
+                android:adjustViewBounds="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/grey"
+                android:layout_marginTop="@dimen/mypage_pet_info_detail_margin_top"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>라
+
+        <!-- 생년월일/나이 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutPetBirth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/layoutPetBreed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:paddingLeft="@dimen/mypage_pet_side_margin"
+                android:paddingTop="@dimen/pet_kind_list_item_padding_top"
+                android:paddingBottom="@dimen/pet_kind_list_item_padding_top"
+                android:text="@string/pet_default_info_birth"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/fix_text_size_3"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/petBirth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:layout_marginEnd="@dimen/mypage_pet_info_detail_name_margin_end"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/fix_text_size_3"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/change_information_margin"
+                android:src="@drawable/ic_arrow"
+                android:adjustViewBounds="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/grey"
+                android:layout_marginTop="@dimen/mypage_pet_info_detail_margin_top"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 성별 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutPetGender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/layoutPetBirth"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:paddingLeft="@dimen/mypage_pet_side_margin"
+                android:paddingTop="@dimen/pet_kind_list_item_padding_top"
+                android:paddingBottom="@dimen/pet_kind_list_item_padding_top"
+                android:text="@string/pet_default_info_gender"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/fix_text_size_3"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/petGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/mypage_pet_info_detail_name_margin_end"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/fix_text_size_3"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/change_information_margin"
+                android:src="@drawable/ic_arrow"
+                android:adjustViewBounds="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/grey"
+                android:layout_marginTop="@dimen/mypage_pet_info_detail_margin_top"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 예방접종 여부 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutPetVaccine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/layoutPetGender"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/mypage_pet_side_margin"
+                android:paddingTop="@dimen/pet_kind_list_item_padding_top"
+                android:paddingBottom="@dimen/pet_kind_list_item_padding_top"
+                android:text="@string/pet_default_info_vaccine"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/fix_text_size_3"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/petVaccineStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/mypage_pet_info_detail_name_margin_end"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/fix_text_size_3"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/change_information_margin"
+                android:src="@drawable/ic_arrow"
+                android:adjustViewBounds="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/grey"
+                android:layout_marginTop="@dimen/mypage_pet_info_detail_margin_top"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

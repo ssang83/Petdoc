@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toplayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/stepper"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/pet_add_stepper_height"
+            android:layout_marginStart="@dimen/pet_add_stepper_margin"
+            android:layout_marginEnd="@dimen/pet_add_stepper_margin"
+            android:background="@drawable/bg_pet_add_inactive"
+            android:layout_marginTop="@dimen/pet_add_name_profile_margin_top"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <View
+                android:id="@+id/stepProgress"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/pet_add_stepper_height"
+                android:background="@drawable/bg_pet_add_active"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.16"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/login_close_button_size"
+                android:layout_height="@dimen/login_close_button_size"
+                android:padding="@dimen/login_close_button_padding"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/x_button"
+                android:id="@+id/btnClose"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btnClose"
+                app:layout_constraintBottom_toBottomOf="@id/btnClose"
+                android:textColor="@color/dark_grey"
+                android:textAlignment="gravity"
+                android:gravity="center"
+                android:textSize="@dimen/fix_text_size_4"
+                android:textStyle="bold"
+                android:text="@string/pet_info_detail" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutProfile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toplayout">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewProfile"
+            android:layout_width="@dimen/pet_add_name_profile_image_size"
+            android:layout_height="@dimen/pet_add_name_profile_image_size"
+            android:src="@drawable/img_profile"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/grey_full_round_stroke_rect"
+            app:layout_constraintBottom_toBottomOf="@id/imageViewProfile"
+            app:layout_constraintEnd_toEndOf="@id/imageViewProfile"
+            app:layout_constraintStart_toStartOf="@id/imageViewProfile"
+            app:layout_constraintTop_toTopOf="@id/imageViewProfile" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnProfileAdd"
+            android:layout_width="@dimen/pet_add_name_profile_add_button_size"
+            android:layout_height="@dimen/pet_add_name_profile_add_button_size"
+            android:src="@drawable/ic_profile_add"
+            android:adjustViewBounds="true"
+            app:layout_constraintCircle="@id/imageViewProfile"
+            app:layout_constraintCircleAngle="135"
+            app:layout_constraintCircleRadius="@dimen/pet_add_name_profile_add_button_circle_radius"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pet_add_name_profile_title_margin_top"
+            android:text="@string/pet_picture_choice"
+            android:textStyle="normal"
+            android:includeFontPadding="false"
+            android:textSize="@dimen/fix_text_size_2"
+            android:textColor="@color/light_grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageViewProfile"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewPetNameEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginStart="15dp"
+        android:text="@string/pet_name_edit_title"
+        android:textColor="#8D95A0"
+        android:textSize="@dimen/fix_text_size_3"
+        android:textStyle="bold"
+        android:includeFontPadding="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutProfile"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editPetName"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/pet_add_name_edit_height"
+        android:layout_marginLeft="@dimen/pet_add_name_edit_margin_left"
+        android:layout_marginTop="@dimen/pet_add_name_edit_margin_top"
+        android:layout_marginBottom="@dimen/pet_add_name_edit_margin_bottom"
+        android:layout_marginRight="@dimen/pet_add_name_edit_margin_right"
+        android:background="@drawable/input_form"
+        android:textStyle="normal"
+        android:gravity="left|center_vertical"
+        android:hint="@string/pet_name_edit_hint"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:lines="1"
+        android:maxLength="10"
+        android:maxLines="1"
+        android:paddingLeft="@dimen/pet_add_name_edit_padding"
+        android:paddingRight="@dimen/pet_add_name_edit_padding"
+        android:singleLine="true"
+        android:textColor="@color/dark_grey"
+        android:textColorHint="@color/light_grey3"
+        android:textCursorDrawable="@null"
+        android:textSize="@dimen/fix_text_size_3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPetNameEdit"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewNoInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pet_name_confirm"
+        android:textColor="@color/orange"
+        android:textSize="@dimen/fix_text_size_1"
+        android:textStyle="normal"
+        android:includeFontPadding="false"
+        android:layout_marginStart="@dimen/pet_add_name_edit_padding"
+        android:layout_marginTop="@dimen/pet_add_name_no_input_margin_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editPetName"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnNext"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height_default"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/button_margin"
+        android:layout_marginEnd="@dimen/button_margin"
+        android:layout_marginBottom="@dimen/button_margin"
+        android:background="@drawable/grey_round_rect"
+        android:textColor="@color/light_grey3"
+        android:textStyle="bold"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:textSize="@dimen/fix_text_size_5"
+        android:text="@string/pet_add_next" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

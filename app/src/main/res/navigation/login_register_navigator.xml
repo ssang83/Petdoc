@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_register_navigator"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerPolicyFragment"
+            app:destination="@id/signUpPolicyFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_checkAccountFragment"
+            app:destination="@id/checkAccountFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_findAccountFragment"
+            app:destination="@id/findAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpPolicyFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.login.SignUpPolicyFragment"
+        android:label="SignUpPolicyFragment"
+        tools:layout="@layout/fragment_signup_policy"
+        >
+        <action
+            android:id="@+id/action_signUpPolicyFragment_to_policyWebContentFragment"
+            app:destination="@id/policyWebContentFragment">
+            <argument
+                android:name="showDataInfo"
+                app:argType="kr.co.petdoc.petdoc.fragment.login.PolicyContentInfo"
+                android:defaultValue="@null"
+                app:nullable="true"
+                />
+        </action>
+        <action
+            android:id="@+id/action_signUpPolicyFragment_to_signUpByEmailFragment"
+            app:destination="@id/signUpByEmailFragment" />
+        <action
+            android:id="@+id/action_signUpPolicyFragment_to_snsUserExtraInfoFragment"
+            app:destination="@id/snsUserExtraInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/policyWebContentFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.login.PolicyWebContentFragment"
+        android:label="PolicyWebContentFragment"
+        tools:layout="@layout/fragment_policy_content">
+    </fragment>
+    <fragment
+        android:id="@+id/signUpByEmailFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.login.SignUpByEmailFragment"
+        android:label="SignUpByEmailFragment"
+        tools:layout="@layout/fragment_signup_by_email"
+        />
+    <fragment
+        android:id="@+id/snsUserExtraInfoFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.login.SnsUserExtraInfoFragment"
+        android:label="SnsUserExtraInfoFragment"
+        tools:layout="@layout/fragment_signup_social_extra_info"
+        />
+    <fragment
+        android:id="@+id/checkAccountFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.login.CheckAccountFragment"
+        android:label="CheckAccountFragment"
+        tools:layout="@layout/fragment_check_account"
+        />
+    <fragment
+        android:id="@+id/findAccountFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.login.FindAccountFragment"
+        android:label="FindAccountFragment"
+        tools:layout="@layout/fragment_find_account"
+        />
+</navigation>

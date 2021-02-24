@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chat_info_navigator"
+    app:startDestination="@id/chatExisitingInfoFragment">
+
+    <fragment
+        android:id="@+id/chatExisitingInfoFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.chat.ChatExisitingInfoFragment"
+        android:label="ChatExisitingInfoFragment"
+        tools:layout="@layout/fragment_chat_info">
+        <action
+            android:id="@+id/action_chatExisitingInfoFragment_to_exisitingChatFragment"
+            app:destination="@id/exisitingChatFragment" />
+        <action
+            android:id="@+id/action_chatExisitingInfoFragment_to_exisitingMagazineFragment"
+            app:destination="@id/exisitingMagazineFragment" />
+        <action
+            android:id="@+id/action_chatExisitingInfoFragment_to_chatRequestFragment"
+            app:destination="@id/chatRequestFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exisitingChatFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.chat.ExisitingChatFragment"
+        android:label="ExisitingChatFragment"
+        tools:layout="@layout/fragment_exisiting_chat"/>
+    <fragment
+        android:id="@+id/exisitingMagazineFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.chat.ExisitingMagazineFragment"
+        android:label="ExisitingMagazineFragment"
+        tools:layout="@layout/fragment_exisiting_magazine"/>
+    <fragment
+        android:id="@+id/chatRequestFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.chat.ChatRequestFragment"
+        android:label="ChatRequestFragment"
+        tools:layout="@layout/fragment_request_chat"/>
+</navigation>

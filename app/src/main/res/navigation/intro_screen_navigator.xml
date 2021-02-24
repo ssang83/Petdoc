@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/intro_screen_navigator"
+    app:startDestination="@id/splashIntroFragment">
+
+    <fragment
+        android:id="@+id/splashIntroFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.intro.SplashIntroFragment"
+        android:label="SplashIntro"
+        tools:layout="@layout/fragment_intro_splash"
+        >
+        <action
+            android:id="@+id/action_splashIntroFragment_to_permissionGuide"
+            app:destination="@id/permissionGuide"
+            app:popUpTo="@id/splashIntroFragment"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/permissionGuide"
+        android:name="kr.co.petdoc.petdoc.fragment.intro.PermissionGuideFragment"
+        android:label="PermissionGuide"
+        tools:layout="@layout/fragment_intro_permission_guide"
+        >
+        <action
+            android:id="@+id/action_permissionGuide_to_userGuideFragment"
+            app:destination="@id/userGuideFragment"
+            app:popUpTo="@id/permissionGuide"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/userGuideFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.intro.UserGuideFragment"
+        android:label="UserGuideFragment"
+        tools:layout="@layout/fragment_intro_user_guide"
+        />
+</navigation>

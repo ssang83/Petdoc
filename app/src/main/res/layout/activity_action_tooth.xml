@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:textStyle="bold"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/fix_text_size_4"
+            android:text="@string/care_tooth_title"
+            android:includeFontPadding="false"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/login_close_button_size"
+            android:layout_height="@dimen/login_close_button_size"
+            android:padding="@dimen/login_close_button_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:adjustViewBounds="true"
+            android:src="@drawable/x_button"
+            android:id="@+id/btnClose"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/grey"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnComplete">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/care_pet_action_check_img_width"
+                android:layout_height="@dimen/care_pet_action_check_img_height"
+                android:src="@drawable/img_action_tooth"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="@dimen/care_content_margin10"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:layout_marginTop="@dimen/care_content_margin11"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/fix_text_size_3"
+                android:text="@string/care_tooth_desc"
+                android:textColor="@color/dark_grey"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/care_content_margin2"
+                android:layout_marginEnd="@dimen/care_content_margin2"
+                android:layout_marginTop="@dimen/care_content_margin10"
+                android:layout_marginBottom="@dimen/care_content_margin12"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/care_content_margin11"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:textSize="@dimen/fix_text_size_3"
+                        android:textColor="@color/dark_grey"
+                        android:textStyle="bold"
+                        android:text="@string/care_tooth_question"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/care_content_margin11"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="@dimen/care_content_margin13"
+                            android:layout_height="@dimen/care_content_margin13"
+                            android:layout_gravity="center"
+                            android:background="@drawable/orange_circle"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:layout_marginStart="@dimen/care_content_margin4"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/fix_text_size_3"
+                            android:text="@string/care_tooth_reason1"
+                            android:textStyle="normal"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/care_content_margin1"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="@dimen/care_content_margin13"
+                            android:layout_height="@dimen/care_content_margin13"
+                            android:layout_marginTop="@dimen/care_content_margin3"
+                            android:background="@drawable/orange_circle"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:layout_marginStart="@dimen/care_content_margin4"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/fix_text_size_3"
+                            android:text="@string/care_tooth_reason2"
+                            android:textAlignment="textStart"
+                            android:textStyle="normal"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/care_content_margin1"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="@dimen/care_content_margin13"
+                            android:layout_height="@dimen/care_content_margin13"
+                            android:layout_marginTop="@dimen/care_content_margin3"
+                            android:background="@drawable/orange_circle"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:layout_marginStart="@dimen/care_content_margin4"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/fix_text_size_3"
+                            android:text="@string/care_tooth_reason3"
+                            android:textAlignment="textStart"
+                            android:textStyle="normal"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnComplete"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height_default"
+        android:includeFontPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/button_margin"
+        android:layout_marginEnd="@dimen/button_margin"
+        android:layout_marginBottom="@dimen/button_margin"
+        android:background="@drawable/orange_round_rect_25"
+        android:textColor="@color/orange"
+        android:textStyle="bold"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:textSize="@dimen/fix_text_size_5"
+        android:text="@string/care_tooth_complete" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

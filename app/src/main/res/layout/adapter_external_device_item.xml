@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="25dp"
+        android:paddingStart="25dp"
+        android:paddingTop="19dp"
+        android:paddingBottom="19dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/deviceName"
+            tools:text="Petdoc scanner_0000"
+            android:textSize="@dimen/fix_text_size_3"
+            android:textColor="@color/dark_grey"
+            android:textStyle="normal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutDevice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/deviceStatus"
+                android:text="@string/connected"
+                android:textStyle="normal"
+                android:textColor="@color/color5c6073"
+                android:textSize="@dimen/fix_text_size_3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="invisible"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="6dp"
+                android:layout_height="10dp"
+                android:src="@drawable/ic_arrow"
+                android:layout_marginStart="12dp"
+                app:layout_constraintTop_toTopOf="@+id/deviceStatus"
+                app:layout_constraintStart_toEndOf="@+id/deviceStatus"
+                app:layout_constraintBottom_toBottomOf="@+id/deviceStatus"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingEnd="24dp"
+    android:paddingStart="24dp"
+    android:paddingTop="19dp"
+    android:paddingBottom="19dp"
+    android:background="@drawable/bg_white_with_top_bottom_line">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvDeviceName"
+        android:textSize="@dimen/fix_text_size_3"
+        android:textColor="@color/dark_grey"
+        android:textStyle="normal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Petdoc scanner_0000"/>
+
+    <ImageView
+        android:id="@+id/ivBadgeNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_badge_new_firmware"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@id/tvDeviceName"
+        app:layout_constraintTop_toTopOf="@id/tvDeviceName"
+        app:layout_constraintBottom_toBottomOf="@id/tvDeviceName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvDeviceStatus"
+        android:text="@string/connected"
+        android:textStyle="normal"
+        android:textColor="@color/color5c6073"
+        android:textSize="@dimen/fix_text_size_3"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ivArrow"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivArrow"
+        android:layout_width="6dp"
+        android:layout_height="10dp"
+        android:src="@drawable/ic_arrow"
+        android:layout_marginStart="12dp"
+        app:layout_constraintTop_toTopOf="@+id/tvDeviceStatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDeviceStatus"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>-->

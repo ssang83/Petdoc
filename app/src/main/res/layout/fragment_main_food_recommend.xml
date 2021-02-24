@@ -1,0 +1,1547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_grey4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mainFoodName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="커스터밀 연어/참치\n반습식 사료"
+                android:textStyle="bold"
+                android:textSize="22dp"
+                tools:textColor="#6884ce"
+                android:layout_marginTop="41dp"
+                android:textAlignment="center"
+                android:includeFontPadding="false"
+                android:layout_gravity="center"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutFoodAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewFeedAmount"
+                    android:text="일일 권장 급여량"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:includeFontPadding="false"
+                    />
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="1dp"
+                    android:layout_height="12dp"
+                    android:background="@color/dark_grey"
+                    app:layout_constraintStart_toEndOf="@+id/textViewFeedAmount"
+                    app:layout_constraintTop_toTopOf="@+id/textViewFeedAmount"
+                    app:layout_constraintBottom_toBottomOf="@id/textViewFeedAmount"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/foodAmount"
+                    tools:text="90g"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textColor="@color/dark_grey"
+                    android:includeFontPadding="false"
+                    app:layout_constraintStart_toEndOf="@+id/divider"
+                    app:layout_constraintTop_toTopOf="@+id/textViewFeedAmount"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewFeedAmount"
+                    android:layout_marginStart="10dp"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/mainFoodImg"
+                android:layout_width="240dp"
+                android:layout_height="253dp"
+                tools:src="@color/orange"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="25dp"
+                android:layout_gravity="center"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_grey2"
+                android:layout_marginTop="25dp"
+                app:layout_constraintTop_toBottomOf="@+id/mainFoodImg"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="24dp"
+                android:text="사료의 주재료"
+                android:textColor="@color/dark_grey"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/salmon_circle"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/guideTxt1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        tools:text="하나가 좋아하는 닭고기를 주재료로 한 단일 육류의 반습식 사료를 추천 드립니다."
+                        android:textStyle="normal"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textColor="@color/dark_grey"
+                        android:includeFontPadding="false"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    >
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/salmon_circle"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="커스터밀 주식 사료는 곡물 성분을 첨가하지 않았으며 원료의 종류를 최소화하여 식이성 알러지를 예방할 수 있습니다."
+                        android:textStyle="normal"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textColor="@color/dark_grey"
+                        android:includeFontPadding="false"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="170dp"
+                android:layout_height="171dp"
+                android:layout_marginTop="14dp"
+                android:src="@drawable/img_customeal_photo"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutIngredientDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center"
+                >
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:id="@+id/imageViewInfo"
+                    android:src="@drawable/ic_info"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="성분 상세보기"
+                    android:textColor="@color/light_grey"
+                    android:textSize="@dimen/fix_text_size_2"
+                    android:textStyle="normal"
+                    android:layout_marginStart="5dp"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewInfo"
+                    app:layout_constraintTop_toTopOf="@+id/imageViewInfo"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageViewInfo"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="6dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/ic_arrow"
+                    android:adjustViewBounds="true"
+                    android:layout_marginStart="5dp"
+                    app:layout_constraintStart_toEndOf="@+id/textViewDetail"
+                    app:layout_constraintTop_toTopOf="@+id/imageViewInfo"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageViewInfo"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_grey2"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="24dp"
+                android:text="주식 사료에 포함된 대표 성분"
+                android:textColor="@color/dark_grey"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginTop="30dp"
+                >
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:id="@+id/mainFoodTypeImg"
+                    tools:src="@drawable/salmon_tuna_on"
+                    android:adjustViewBounds="true"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewCustomMeal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="커스터밀"
+                        tools:textColor="#6884ce"
+                        android:textStyle="normal"
+                        android:textSize="22dp"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/mainFoodType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        tools:text="연어/참치"
+                        tools:textColor="#6884ce"
+                        android:textStyle="bold"
+                        android:textSize="22dp"
+                        />
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutIngredientDetail1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_gravity="center"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:id="@+id/imageViewInfo1"
+                        android:src="@drawable/ic_info"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewDetail1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="성분 상세보기"
+                        android:textColor="@color/light_grey"
+                        android:textSize="@dimen/fix_text_size_2"
+                        android:textStyle="normal"
+                        android:layout_marginStart="5dp"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewInfo1"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewInfo1"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageViewInfo1"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="6dp"
+                        android:layout_height="10dp"
+                        android:src="@drawable/ic_arrow"
+                        android:adjustViewBounds="true"
+                        android:layout_marginStart="5dp"
+                        app:layout_constraintStart_toEndOf="@+id/textViewDetail1"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewInfo1"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageViewInfo1"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/ingredientContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="2dp"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    >
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_grey2"
+                android:layout_marginTop="36dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="24dp"
+                android:text="하루 권장 칼로리"
+                android:textColor="@color/dark_grey"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/guideTxt2"
+                android:paddingEnd="24dp"
+                android:paddingStart="24dp"
+                android:layout_marginTop="10dp"
+                tools:text="하나의 연령주기와 몸무게를 고려하였을 때 하루 필요 칼로리는 500kcal 입니다."
+                android:textColor="@color/dark_grey"
+                android:textStyle="normal"
+                android:includeFontPadding="false"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_grey2"
+                android:layout_marginTop="36dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="24dp"
+                android:text="연령주기"
+                android:textColor="@color/dark_grey"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/salmon_circle"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/guideTxt3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        tools:text="하나는 3세 1개월로 연령주기는 성년기 입니다."
+                        android:textStyle="normal"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textColor="@color/dark_grey"
+                        android:includeFontPadding="false"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    >
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/salmon_circle"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/guideTxt4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        tools:text="성년기 반려동물의 경우 적정 체중을 일정하게 유지하는 것이 중요합니다."
+                        android:textStyle="normal"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textColor="@color/dark_grey"
+                        android:includeFontPadding="false"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="3세 5개월"
+                    android:textColor="@color/salmon"
+                    android:textStyle="normal"
+                    android:textSize="22dp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/ageType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    tools:text="성년기"
+                    android:textColor="@color/salmon"
+                    android:textStyle="bold"
+                    android:textSize="22dp"
+                    />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutAgeYoung"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintWidth_percent="0.33"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/petYoungImg"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:src="@drawable/img_pet_profile_default"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutYoungBar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="11dp"
+                        app:layout_constraintTop_toBottomOf="@+id/petYoungImg"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="5dp"
+                            android:id="@+id/youngDefaultBar"
+                            android:background="@color/light_grey4"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="5dp"
+                            android:id="@+id/youngFillBar"
+                            android:visibility="gone"
+                            android:background="@color/salmon"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="5dp"
+                            android:id="@+id/youngSelectBar"
+                            android:background="@color/salmon"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintWidth_percent="0.5"
+                            android:visibility="gone"
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/youngGraph"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_graph_age"
+                        android:adjustViewBounds="true"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toTopOf="@+id/layoutYoungBar"
+                        app:layout_constraintBottom_toBottomOf="@+id/layoutYoungBar"
+                        app:layout_constraintStart_toStartOf="@+id/layoutYoungBar"
+                        app:layout_constraintEnd_toEndOf="@+id/layoutYoungBar"
+                        android:visibility="gone"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="14dp"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutYoungBar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/youngTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="성장기"
+                            android:textStyle="bold"
+                            android:textColor="@color/light_grey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            android:includeFontPadding="false"
+                            android:layout_gravity="center"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/youngPeriod"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="11개월 이하"
+                            android:textStyle="normal"
+                            android:layout_marginTop="4dp"
+                            android:layout_gravity="center"
+                            android:textColor="@color/light_grey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            android:includeFontPadding="false"
+                            />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutAgeAdult"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/layoutAgeYoung"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintWidth_percent="0.33"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/petAdultImg"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:src="@drawable/img_pet_profile_default"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutAdultBar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="11dp"
+                        app:layout_constraintTop_toBottomOf="@+id/petAdultImg"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="5dp"
+                            android:id="@+id/adultDefaultBar"
+                            android:background="@color/light_grey4"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="5dp"
+                            android:id="@+id/adultFillBar"
+                            android:visibility="gone"
+                            android:background="@color/salmon"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="5dp"
+                            android:id="@+id/adultSelectBar"
+                            android:background="@color/salmon"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintWidth_percent="0.5"
+                            android:visibility="gone"
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/adultGraph"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_graph_age"
+                        android:adjustViewBounds="true"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toTopOf="@+id/layoutAdultBar"
+                        app:layout_constraintBottom_toBottomOf="@+id/layoutAdultBar"
+                        app:layout_constraintStart_toStartOf="@+id/layoutAdultBar"
+                        app:layout_constraintEnd_toEndOf="@+id/layoutAdultBar"
+                        android:visibility="gone"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="14dp"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutAdultBar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/adultTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:includeFontPadding="false"
+                            android:text="성년기"
+                            android:textColor="@color/light_grey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/adultPeriod"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="11개월-96개월"
+                            android:textStyle="normal"
+                            android:layout_marginTop="4dp"
+                            android:layout_gravity="center"
+                            android:textColor="@color/light_grey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            android:includeFontPadding="false"
+                            />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutAgeOld"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/layoutAgeAdult"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintWidth_percent="0.33"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/petOldImg"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:src="@drawable/img_pet_profile_default"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutOldBar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="11dp"
+                        app:layout_constraintTop_toBottomOf="@+id/petOldImg"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="5dp"
+                            android:id="@+id/oldDefaultBar"
+                            android:background="@color/light_grey4"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="5dp"
+                            android:id="@+id/oldFillBar"
+                            android:visibility="gone"
+                            android:background="@color/salmon"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="5dp"
+                            android:id="@+id/oldSelectBar"
+                            android:background="@color/salmon"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintWidth_percent="0.5"
+                            android:visibility="gone"
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/oldGraph"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_graph_age"
+                        android:adjustViewBounds="true"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toTopOf="@+id/layoutOldBar"
+                        app:layout_constraintBottom_toBottomOf="@+id/layoutOldBar"
+                        app:layout_constraintStart_toStartOf="@+id/layoutOldBar"
+                        app:layout_constraintEnd_toEndOf="@+id/layoutOldBar"
+                        android:visibility="gone"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="14dp"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutOldBar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/oldTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:includeFontPadding="false"
+                            android:text="노년기"
+                            android:textColor="@color/light_grey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/oldPeriod"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="96개월 이상"
+                            android:textStyle="normal"
+                            android:layout_marginTop="4dp"
+                            android:layout_gravity="center"
+                            android:textColor="@color/light_grey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            android:includeFontPadding="false"
+                            />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_grey2"
+                android:layout_marginTop="36dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="24dp"
+                android:text="몸무게"
+                android:textColor="@color/dark_grey"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/salmon_circle"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/guideTxt5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        tools:text="하나의 품종은 포메라니안으로 소형견 입니다."
+                        android:textStyle="normal"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textColor="@color/dark_grey"
+                        android:includeFontPadding="false"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    >
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/salmon_circle"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/guideTxt6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        tools:text="하나의 몸무게는 7kg으로 성년기 포메라니안 표준 몸무게를 기준으로 보았을 때 표준입니다."
+                        android:textStyle="normal"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textColor="@color/dark_grey"
+                        android:includeFontPadding="false"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    >
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/salmon_circle"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/guideTxt9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        tools:text="계속해서 정상체중을 유지할 수 있도록 하루권장량을 지켜서 급여해주세요."
+                        android:textStyle="normal"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textColor="@color/dark_grey"
+                        android:includeFontPadding="false"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="7kg"
+                    android:textColor="@color/greenishTealTwo"
+                    android:textStyle="normal"
+                    android:textSize="22dp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/weightStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    tools:text="표준"
+                    android:textColor="@color/greenishTealTwo"
+                    android:textStyle="bold"
+                    android:textSize="22dp"
+                    />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutUnderWeight"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintWidth_percent="0.33"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/petImg1"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:src="@drawable/img_pet_profile_default"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutUnderWeightBar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="11dp"
+                        app:layout_constraintTop_toBottomOf="@+id/petImg1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="5dp"
+                            android:id="@+id/underWeightDefaultBar"
+                            android:background="@color/light_grey4"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="5dp"
+                            android:id="@+id/underWeightFillBar"
+                            android:visibility="gone"
+                            android:background="@color/greenishTealTwo"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="5dp"
+                            android:id="@+id/underWeightSelectBar"
+                            android:background="@color/greenishTealTwo"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintWidth_percent="0.5"
+                            android:visibility="gone"
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/underWeightGraph"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_graph_weight"
+                        android:adjustViewBounds="true"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toTopOf="@+id/layoutUnderWeightBar"
+                        app:layout_constraintBottom_toBottomOf="@+id/layoutUnderWeightBar"
+                        app:layout_constraintStart_toStartOf="@+id/layoutUnderWeightBar"
+                        app:layout_constraintEnd_toEndOf="@+id/layoutUnderWeightBar"
+                        android:visibility="gone"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="14dp"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutUnderWeightBar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/underWeight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="왜소"
+                            android:textStyle="bold"
+                            android:textColor="@color/light_grey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            android:includeFontPadding="false"
+                            android:layout_gravity="center"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/underWeightPeriod"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="5kg 이하"
+                            android:textStyle="normal"
+                            android:layout_marginTop="4dp"
+                            android:layout_gravity="center"
+                            android:textColor="@color/light_grey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            android:includeFontPadding="false"
+                            />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutStandardWeight"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/layoutUnderWeight"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintWidth_percent="0.33"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/petImg2"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:src="@drawable/img_pet_profile_default"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutStandardtBar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="11dp"
+                        app:layout_constraintTop_toBottomOf="@+id/petImg2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="5dp"
+                            android:id="@+id/standardDefaultBar"
+                            android:background="@color/light_grey4"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="5dp"
+                            android:id="@+id/standardFillBar"
+                            android:visibility="gone"
+                            android:background="@color/greenishTealTwo"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="5dp"
+                            android:id="@+id/standardSelectBar"
+                            android:background="@color/greenishTealTwo"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintWidth_percent="0.5"
+                            android:visibility="gone"
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/standardGraph"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_graph_weight"
+                        android:adjustViewBounds="true"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toTopOf="@+id/layoutStandardtBar"
+                        app:layout_constraintBottom_toBottomOf="@+id/layoutStandardtBar"
+                        app:layout_constraintStart_toStartOf="@+id/layoutStandardtBar"
+                        app:layout_constraintEnd_toEndOf="@+id/layoutStandardtBar"
+                        android:visibility="gone"
+                        />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="14dp"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutStandardtBar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/standardTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:includeFontPadding="false"
+                            android:text="표준"
+                            android:textColor="@color/light_grey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/standardPeriod"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="5kg - 9kg"
+                            android:textStyle="normal"
+                            android:layout_marginTop="4dp"
+                            android:layout_gravity="center"
+                            android:textColor="@color/light_grey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            android:includeFontPadding="false"
+                            />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutOverWeight"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/layoutStandardWeight"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintWidth_percent="0.33"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/petImg3"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:src="@drawable/img_pet_profile_default"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutOverWeightBar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="11dp"
+                        app:layout_constraintTop_toBottomOf="@+id/petImg3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="5dp"
+                            android:id="@+id/overWeightDefaultBar"
+                            android:background="@color/light_grey4"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="5dp"
+                            android:id="@+id/overWeightFillBar"
+                            android:visibility="gone"
+                            android:background="@color/greenishTealTwo"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="5dp"
+                            android:id="@+id/overWeightSelectBar"
+                            android:background="@color/greenishTealTwo"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintWidth_percent="0.5"
+                            android:visibility="gone"
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/overWeightGraph"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_graph_weight"
+                        android:adjustViewBounds="true"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toTopOf="@+id/layoutOverWeightBar"
+                        app:layout_constraintBottom_toBottomOf="@+id/layoutOverWeightBar"
+                        app:layout_constraintStart_toStartOf="@+id/layoutOverWeightBar"
+                        app:layout_constraintEnd_toEndOf="@+id/layoutOverWeightBar"
+                        android:visibility="gone"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="14dp"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutOverWeightBar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/overWeightTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:includeFontPadding="false"
+                            android:text="비만"
+                            android:textColor="@color/light_grey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/overWeightPeriod"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="9kg 이상"
+                            android:textStyle="normal"
+                            android:layout_marginTop="4dp"
+                            android:layout_gravity="center"
+                            android:textColor="@color/light_grey"
+                            android:textSize="@dimen/fix_text_size_4"
+                            android:includeFontPadding="false"
+                            />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:padding="10dp"
+                android:background="@drawable/grey_solid_round_rect"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="* 위의 표준체중 범위는 성년기 기준입니다."
+                    android:textStyle="normal"
+                    android:textSize="@dimen/fix_text_size_1"
+                    android:textColor="@color/light_grey"
+                    android:includeFontPadding="false"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="* 같은 품종이라도 반려동물마다 각자 골격이 달라서 표준 체중이 다를 수 있습니다. 표준 몸무게는 참조만 해주세요."
+                    android:textStyle="normal"
+                    android:textSize="@dimen/fix_text_size_1"
+                    android:textColor="@color/light_grey"
+                    android:includeFontPadding="false"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutPregnant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="36dp"
+                android:visibility="gone"
+                >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_grey2"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginStart="24dp"
+                    android:text="특수 상황"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/guideTxt7"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    tools:text="하나는 임신 5주 상태로 충분한 영양 공급이 이루어 져야 합니다. 6주 이상의 임신 후기에는 사료의 급여량 도 늘려야 하니 권장 급여량을 참고하여 급여 해주세요."
+                    android:textColor="@color/dark_grey"
+                    android:textStyle="normal"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:includeFontPadding="false"
+                    />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_grey2"
+                android:layout_marginTop="36dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="24dp"
+                android:text="급여 가이드"
+                android:textColor="@color/dark_grey"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/salmon_circle"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/guideTxt8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        tools:text="심바의 1일 권장 급여량 150g을 1일 2회로 나누어 급여해주세요."
+                        android:textStyle="normal"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textColor="@color/dark_grey"
+                        android:includeFontPadding="false"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    >
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/salmon_circle"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="동봉되어 있는 계량컵을 사용하여 사료량을 측정하여 급여해주시면 됩니다."
+                        android:textStyle="normal"
+                        android:textSize="@dimen/fix_text_size_4"
+                        android:textColor="@color/dark_grey"
+                        android:includeFontPadding="false"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="26dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="82dp"
+                android:padding="10dp"
+                android:background="@drawable/grey_solid_round_rect"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="*내 반려동물의 1일 권장 급여량과 급여 기간에 따라서 가격이 다르게 책정됩니다."
+                    android:textStyle="normal"
+                    android:textSize="@dimen/fix_text_size_1"
+                    android:textColor="@color/light_grey"
+                    android:includeFontPadding="false"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="*커스터밀 맞춤식은 반려동물의 질병 예방차원을 위한 영양소 공급과 같은 일반적인 건강관리를 위한 전문적인 식단을 제공하고 있으나, 질병을 직접적으로 치료하는 식단은 아니므로 질병 치료식(처방식)은 가까운 동물병원에서 수의사와 상담하시기를 권장합니다."
+                    android:textStyle="normal"
+                    android:textSize="@dimen/fix_text_size_1"
+                    android:textColor="@color/light_grey"
+                    android:includeFontPadding="false"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnTop"
+        android:layout_width="@dimen/home_button_top_size"
+        android:layout_height="@dimen/home_button_top_size"
+        android:src="@drawable/btn_top"
+        android:adjustViewBounds="true"
+        android:layout_marginEnd="@dimen/mypage_pet_information_profile_margin"
+        android:layout_marginBottom="73dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

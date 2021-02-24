@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="classData"
+            type="kr.co.petdoc.petdoc.model.healthcareresult.AllergyClass" />
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layClass2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="19dp"
+            android:background="@drawable/light_yellow_solid_round_14"
+            android:paddingStart="14dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:visibility="@{classData.danger2.size() > 0 ? View.VISIBLE : View.GONE}">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLabelClass2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="관심대상 알러젠"
+                android:textColor="#ffc000"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvClass2Count"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/yellow_solid_round_rect"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="@{String.valueOf(classData.danger2.size())}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvLabelClass2"
+                tools:text="2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvClass2Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="3dp"
+                android:includeFontPadding="false"
+                android:textColor="@color/slateGrey"
+                android:textSize="@dimen/fix_text_size_4"
+                android:textStyle="normal"
+                android:text="@{@string/title_class_2(classData.danger2.size())}"
+                app:layout_constraintStart_toEndOf="@+id/tvClass2Count"
+                app:layout_constraintTop_toTopOf="@+id/tvClass2Count"
+                tools:text="Class 의 2 항목" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvClass2Items"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="33dp"
+                android:includeFontPadding="false"
+                android:textColor="@color/steel"
+                android:textSize="13dp"
+                android:textStyle="normal"
+                app:allergyClassItems="@{classData.danger2}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvClass2Title"
+                app:layout_constraintTop_toBottomOf="@+id/tvClass2Title"
+                tools:text="진드기, 닭고기" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutWarningItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="19dp"
+            android:background="@drawable/light_pink_solid_round_14"
+            android:orientation="vertical"
+            android:visibility="@{classData.danger3.size() == 0 &amp;&amp; classData.danger4.size() == 0 &amp;&amp; classData.danger5.size() == 0 &amp;&amp; classData.danger6.size() == 0 ? View.GONE : View.VISIBLE}">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLabelClassOver3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="14dp"
+                android:text="주의해야 할 알러젠"
+                android:textColor="#ff5a5c"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutDanger3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="14dp"
+                android:paddingTop="14dp"
+                android:visibility="@{classData.danger3.size() > 0 ? View.VISIBLE : View.GONE}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dangerCount3"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/salmon_pink_solid_round_rect"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:text="@{String.valueOf(classData.danger3.size())}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="2" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/danger3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="3dp"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal"
+                    android:text="@{@string/title_class_3(classData.danger3.size())}"
+                    app:layout_constraintStart_toEndOf="@+id/dangerCount3"
+                    app:layout_constraintTop_toTopOf="@id/dangerCount3"
+                    tools:text="위험도 3의 2 항목" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dangerItem3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="33dp"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/steel"
+                    android:textSize="13dp"
+                    android:textStyle="normal"
+                    app:allergyClassItems="@{classData.danger3}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/danger3"
+                    app:layout_constraintTop_toBottomOf="@+id/danger3"
+                    tools:text="진드기, 닭고기" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutDanger4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="14dp"
+                android:paddingTop="14dp"
+                android:paddingBottom="9dp"
+                android:visibility="@{classData.danger4.size() > 0 ? View.VISIBLE : View.GONE}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <View
+                    android:id="@+id/divider2"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginEnd="14dp"
+                    android:background="@drawable/dash"
+                    android:layerType="software"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dangerCount"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/salmon_pink_solid_round_rect"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:text="@{String.valueOf(classData.danger4.size())}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="2" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/danger4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="3dp"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal"
+                    android:text="@{@string/title_class_4(classData.danger4.size())}"
+                    app:layout_constraintStart_toEndOf="@+id/dangerCount"
+                    app:layout_constraintTop_toTopOf="@+id/dangerCount"
+                    tools:text="위험도 4의 2 항목" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dangerItem"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="33dp"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/steel"
+                    android:textSize="13dp"
+                    android:textStyle="normal"
+                    app:allergyClassItems="@{classData.danger4}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/danger4"
+                    app:layout_constraintTop_toBottomOf="@+id/danger4"
+                    tools:text="진드기, 닭고기" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutDanger5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="14dp"
+                android:paddingBottom="9dp"
+                android:visibility="@{classData.danger5.size() > 0 ? View.VISIBLE : View.GONE}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginEnd="14dp"
+                    android:background="@drawable/dash"
+                    android:layerType="software"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dangerCount1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/salmon_pink_solid_round_rect"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="@{String.valueOf(classData.danger5.size())}"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/danger5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="3dp"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal"
+                    android:text="@{@string/title_class_5(classData.danger5.size())}"
+                    app:layout_constraintStart_toEndOf="@+id/dangerCount1"
+                    app:layout_constraintTop_toTopOf="@+id/dangerCount1"
+                    tools:text="위험도 5의 1 항목" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dangerItem1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="33dp"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/steel"
+                    android:textSize="13dp"
+                    android:textStyle="normal"
+                    app:allergyClassItems="@{classData.danger5}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/danger5"
+                    app:layout_constraintTop_toBottomOf="@+id/danger5"
+                    tools:text="당근" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutDanger6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="14dp"
+                android:paddingBottom="9dp"
+                android:visibility="@{classData.danger6.size() > 0 ? View.VISIBLE : View.GONE}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <View
+                    android:id="@+id/divider1"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginEnd="14dp"
+                    android:background="@drawable/dash"
+                    android:layerType="software"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dangerCount2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/salmon_pink_solid_round_rect"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:text="@{String.valueOf(classData.danger6.size())}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/danger6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="3dp"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textStyle="normal"
+                    android:text="@{@string/title_class_6(classData.danger6.size())}"
+                    app:layout_constraintStart_toEndOf="@+id/dangerCount2"
+                    app:layout_constraintTop_toTopOf="@+id/dangerCount2"
+                    tools:text="위험도 6의 1 항목" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dangerItem2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="33dp"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/steel"
+                    android:textSize="13dp"
+                    android:textStyle="normal"
+                    app:allergyClassItems="@{classData.danger6}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/danger6"
+                    app:layout_constraintTop_toBottomOf="@+id/danger6"
+                    tools:text="당근" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

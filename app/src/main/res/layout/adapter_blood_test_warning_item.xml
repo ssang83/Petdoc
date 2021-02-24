@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="14dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="14dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="9dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/count"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/salmon_pink_solid_round_rect"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="3dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/slateGrey"
+            android:textSize="@dimen/fix_text_size_4"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@+id/count"
+            app:layout_constraintTop_toTopOf="@+id/count"
+            tools:text="간담도계 수치 3 항목" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnGo"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginStart="4dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_go"
+            app:layout_constraintBottom_toBottomOf="@+id/type"
+            app:layout_constraintStart_toEndOf="@+id/type"
+            app:layout_constraintTop_toTopOf="@id/type" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="33dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/steel"
+            android:textSize="13dp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/type"
+            app:layout_constraintTop_toBottomOf="@+id/type"
+            tools:text="Hemoglobin, Hematocrit, MCV, MCH, MCHC" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="14dp"
+        android:background="@drawable/dash"
+        android:layerType="software"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutContent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

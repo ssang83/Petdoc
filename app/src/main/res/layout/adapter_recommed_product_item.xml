@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="164dp"
+    android:layout_height="230dp"
+    android:id="@+id/layoutRoot"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/productImg"
+        android:layout_width="164dp"
+        android:layout_height="164dp"
+        android:src="@drawable/img_product_test"
+        android:adjustViewBounds="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/shopName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="@string/chat_product_name"
+        android:textSize="@dimen/fix_text_size_1"
+        android:textStyle="bold"
+        android:textColor="@color/color8d95a0"
+        app:layout_constraintTop_toBottomOf="@+id/productImg"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="테이스트 플러스 조인트 케어"
+        android:textColor="@color/dark_grey"
+        android:textStyle="bold"
+        android:textSize="@dimen/fix_text_size_2"
+        android:maxLines="2"
+        app:layout_constraintTop_toBottomOf="@+id/shopName"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

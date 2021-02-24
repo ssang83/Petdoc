@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="kr.co.petdoc.petdoc">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.USB_PERMISSION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.usb.host" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-feature
+        android:name="android.permission.WRITE_SETTINGS"
+        android:required="false"/>
+
+
+    <application
+        android:name=".PetdocApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        android:hardwareAccelerated="true"
+        >
+
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/google_map_api_key"/>
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
+
+        <!-- 배지 아이콘 사용 -->
+        <meta-data android:name="com.toast.sdk.push.notification.badge_enabled"
+            android:value="true"/>
+
+        <!-- 앱 실행 중 알림 노출 -->
+        <meta-data android:name="com.toast.sdk.push.notification.foreground_enabled"
+            android:value="true"/>
+
+        <!-- 기본 채널의 이름 설정 -->
+        <meta-data android:name="com.toast.sdk.push.notification.default_channel_name"
+            android:value="Petdoc_Channel_ID"/>
+
+        <receiver
+            android:name=".toast_push.MyToastPushMessageReceiver"
+            android:permission="${applicationId}.toast.push.permission.RECEIVE">
+            <intent-filter>
+                <action android:name="com.toast.android.push.MESSAGE_EVENT" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path" />
+        </provider>
+
+        <service
+            android:name=".fcm.MyFirebaseMessagingService"
+            android:enabled="true"
+            android:exported="true"
+            android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".activity.SplashActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            android:theme="@style/DefaultTheme">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="petdocair" android:host="petdoc.deeplink.page" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.BaseActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateAlwaysHidden|stateHidden|adjustResize"/>
+
+        <!-- crop activity -->
+        <activity
+            android:name="com.soundcloud.android.crop.CropImageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- Redirect URI: "kakao{NATIVE_APP_KEY}://oauth“ -->
+                <data android:host="oauth"
+                    android:scheme="kakao263bb955f5d310936b1adaccbbfc2d88" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
+
+        <activity
+            android:name=".activity.LoginAndRegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DefaultTheme"
+            />
+
+        <activity
+            android:name=".activity.MyPageActivity"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="petdoc" android:host="app.android.data" android:pathPrefix="/infochange"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.ExternalDeviceDetailActivity"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"/>
+
+        <activity
+            android:name=".activity.PetAddActivity"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop" />
+
+
+        <activity
+            android:name=".activity.MatchFoodActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+        
+        <activity android:name=".activity.PetTalkActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.GuideActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.BannerDetailActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.SearchActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.care.ActionWalkActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.care.ActionToothActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.care.ActionBathActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.care.ActionCommunionActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.care.ActionPoopActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.care.CareMemoActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.care.CareClinicActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.care.CareWeightActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.care.CareHistoryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            />
+
+        <activity
+            android:name=".activity.care.BodyTemperatureResultActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DefaultTheme"
+            />
+
+        <activity
+            android:name=".activity.care.HumidityResultActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DefaultTheme"
+            />
+
+        <activity
+            android:name=".activity.care.ConnectScannerActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.care.BodyTemperatureActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.care.HumidityActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.care.EarActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.chat.ChatMessageActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.chat.ChatInfoActivity"
+            android:theme="@style/PetdocScreenDefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.PetInfomationActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.chat.ChatQuitActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.chat.RelatedHospitalActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.chat.ChatSearchActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.chat.ChatSearchDetailActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.life.LifeMagazineActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.life.PetTalkUploadActivity"
+            android:theme="@style/PetdocScreenDefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.MagazineDetailActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.hospital.HospitalActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.hospital.HospitalDetailActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.hospital.HospitalImageDetailActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.hospital.HospitalRegisterActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.hospital.HospitalReservationActivity"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.hospital.ClinicReservationActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.hospital.BeautyReservationActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.hospital.HotelRoomReservationActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.hospital.RegisterCompleteActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.hospital.ClinicReservationCompleteActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.hospital.BeautyReservationCompleteActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.hospital.HotelReservationCompleteActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.care.ImageAlbumActivity"
+            android:theme="@style/PetdocScreenDefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.care.ImageDetailActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.PetTalkDetailActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.MatchFoodResultActivity"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.CustoMealDetailActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.IngredientDetailActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.MatchFoodModifyActivity"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.ClinicPriceActivity"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.hospital.HospitalFilterActivity"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.hospital.HospitalSearchActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.hospital.DoctorActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.hospital.HospitalInfoEditActivity"
+            android:theme="@style/DefaultTheme"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.auth.MobileAuthActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DefaultTheme"
+            />
+
+        <activity
+            android:name=".activity.auth.AuthorizationActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleInstance"
+            android:theme="@style/DefaultTheme"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="petdoc" android:host="app.android.data" android:pathPrefix="/auth"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.AppReportActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DefaultTheme"
+            />
+
+        <activity
+            android:name=".activity.care.ReConnectScannerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DefaultTheme"
+            />
+
+        <activity
+            android:name=".activity.FirmwareUpgradeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            />
+
+        <activity
+            android:name=".activity.ScannerRebootActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DefaultTheme"
+            />
+
+        <activity
+            android:name=".activity.chat.ChatHomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DefaultTheme"
+            />
+
+        <activity
+            android:name=".activity.hospital.HospitalLocationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DefaultTheme"
+            />
+
+        <activity
+            android:name=".activity.hospital.HospitalVideoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DefaultTheme"
+            />
+
+        <activity
+            android:name=".activity.hospital.BookingPolicyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DefaultTheme"
+            />
+
+        <activity
+            android:name=".activity.care.HealthCareActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/PetdocScreenDefaultTheme"
+            />
+
+        <activity
+            android:name=".activity.care.AllergeResultInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DefaultTheme"
+            />
+
+        <activity
+            android:name=".activity.AllergeTestAboutActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.AllergyCommentActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.hospital.HospitalPriceActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DefaultTheme"
+            />
+
+        <activity
+            android:name=".activity.care.ScannerGuideVideoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DefaultTheme"
+            />
+
+        <activity
+            android:name=".fragment.chat.v2.utils.PhotoViewerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DefaultTheme"
+            />
+
+        <activity
+            android:name=".fragment.chat.v2.utils.MediaPlayerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DefaultTheme"
+            />
+
+        <activity
+            android:name=".activity.GodoMallOutlinkActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DefaultTheme"
+            />
+
+        <activity
+            android:name=".activity.chat.v2.SBChatMessageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DefaultTheme"
+            />
+
+        <activity android:name=".activity.SimpleWebViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/PetdocScreenDefaultTheme"/>
+
+        <activity
+            android:name=".activity.BloodTestAboutActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.BloodCommentActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.PushNotiActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/PetdocScreenDefaultTheme"
+            />
+    </application>
+
+</manifest>

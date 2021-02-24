@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!-- Text Size Set ========================================================================= -->
+    <dimen name="text_size_small">10sp</dimen>
+    <dimen name="text_size_1">10.6sp</dimen>
+    <dimen name="text_size_2">12.5sp</dimen>
+    <dimen name="text_size_3">14sp</dimen>
+    <dimen name="text_size_4">15sp</dimen>
+    <dimen name="text_size_5">16sp</dimen>
+    <dimen name="text_size_6">17sp</dimen>
+    <dimen name="text_size_7">18sp</dimen>
+
+    <dimen name="fix_text_size_small">11dp</dimen>
+    <dimen name="fix_text_size_1">11.6dp</dimen>
+    <dimen name="fix_text_size_2">13.5dp</dimen>
+    <dimen name="fix_text_size_3">15dp</dimen>
+    <dimen name="fix_text_size_4">16dp</dimen>
+    <dimen name="fix_text_size_5">17dp</dimen>
+    <dimen name="fix_text_size_6">18dp</dimen>
+    <dimen name="fix_text_size_7">19dp</dimen>
+    <dimen name="fix_text_size_8">21dp</dimen>
+    <dimen name="fix_text_size_9">23dp</dimen>
+    <dimen name="fix_text_size_10">26dp</dimen>
+
+
+    <!-- splash screen ========================================================================= -->
+    <dimen name="splash_logo_image_width">130dp</dimen>
+    <dimen name="splash_logo_copyright_text_height">20dp</dimen>
+    <dimen name="splash_logo_copyright_bottom_margin">30dp</dimen>
+
+    <!-- permission guide screen ================================================================ -->
+    <dimen name="permission_guide_title_margin">50dp</dimen>
+    <dimen name="permission_guide_title_sub_margin">52dp</dimen>
+    <dimen name="permission_guide_padding">24dp</dimen>
+    <dimen name="permission_guide_line_spacing">6dp</dimen>
+    <dimen name="permission_guide_sub_margin">35dp</dimen>
+    <dimen name="permission_guide_sub_margin2">15dp</dimen>
+    <dimen name="permission_guide_icon_height">39dp</dimen>
+
+    <dimen name="button_height_default">50dp</dimen>
+    <dimen name="button_margin">15dp</dimen>
+
+    <!-- user guide screen ===================================================================== -->
+    <dimen name="user_guide_bottom_button_size">60dp</dimen>
+    <dimen name="user_guide_button_margin">9dp</dimen>
+    <dimen name="user_guide_title_height">30dp</dimen>
+    <dimen name="user_guide_content_height">140dp</dimen>
+    <dimen name="user_guide_indicator_size">9dp</dimen>
+    <dimen name="user_guide_selected_indicator_size">16dp</dimen>
+    <dimen name="user_guide_indicator_margin">4dp</dimen>
+
+    <!-- main docker size ================================================================= -->
+    <dimen name="docker_icon_size">24dp</dimen>
+    <dimen name="top_my_icon_padding">10dp</dimen>
+
+    <!-- login screen ========================================================================== -->
+    <dimen name="login_close_button_size">50dp</dimen>
+    <dimen name="login_close_button_padding">16dp</dimen>
+    <dimen name="login_side_margin">34dp</dimen>
+    <dimen name="login_greeting_message_top_margin">100dp</dimen>
+    <dimen name="login_text_line_spacing">1dp</dimen>
+    <dimen name="login_input_box_height">35dp</dimen>
+    <dimen name="login_input_box_padding">5dp</dimen>
+    <dimen name="login_input_box_space">4dp</dimen>
+    <dimen name="login_margin_space">14dp</dimen>
+    <dimen name="login_margin_space2">22dp</dimen>
+    <dimen name="login_social_button_margin">15dp</dimen>
+    <dimen name="login_social_button_check_size">20dp</dimen>
+    <dimen name="login_last_social_history_height">42dp</dimen>
+
+    <!-- policy check ========================================================================== -->
+    <dimen name="policy_check_bottom_button_height">60dp</dimen>
+    <dimen name="policy_check_content_top_padding">40dp</dimen>
+    <dimen name="policy_check_content_top_padding2">21dp</dimen>
+    <dimen name="policy_check_side_margin">40dp</dimen>
+    <dimen name="policy_check_content_image_height">170dp</dimen>
+    <dimen name="policy_check_content_image_top_margin">54dp</dimen>
+    <dimen name="policy_check_content_image_bottom_margin">32dp</dimen>
+    <dimen name="policy_check_line_spacing">1dp</dimen>
+    <dimen name="policy_check_line_spacing_2">2dp</dimen>
+    <dimen name="policy_check_loading_size">40dp</dimen>
+    <dimen name="policy_check_content_bottom_margin">30dp</dimen>
+
+    <!-- life =================================================================================== -->
+    <dimen name="life_top_col_height">500dp</dimen>
+    <dimen name="life_top_col_ad_height">150dp</dimen>
+    <dimen name="life_top_col_gap_1">38dp</dimen>
+    <dimen name="life_top_col_side">16dp</dimen>
+    <dimen name="life_top_col_gap_2">4dp</dimen>
+    <dimen name="life_top_col_gap_3">6dp</dimen>
+    <dimen name="life_top_col_gap_4">24dp</dimen>
+    <dimen name="life_top_col_pettalk_box_height">124dp</dimen>
+    <dimen name="life_top_col_pettalk_box_gap">10dp</dimen>
+    <dimen name="life_top_col_pettalk_pannel_padding">16dp</dimen>
+    <dimen name="life_top_col_pettalk_pannel_text_gap">35dp</dimen>
+    <dimen name="life_top_col_category_height">108dp</dimen>
+    <dimen name="life_top_col_category_width">72dp</dimen>
+    <dimen name="life_top_col_category_image">56dp</dimen>
+    <dimen name="life_top_col_category_text_height">20dp</dimen>
+    <dimen name="life_top_col_advertisement_gap">8dp</dimen>
+
+    <dimen name="life_top_col_like_button">24dp</dimen>
+    <dimen name="life_top_col_like_padding">11dp</dimen>
+    <dimen name="recommend_text_gap">7dp</dimen>
+    <dimen name="recommend_text_gap2">3dp</dimen>
+    <dimen name="recommend_margin">10dp</dimen>
+    <dimen name="recommend_text_height">44dp</dimen>
+    <dimen name="recommend_text_item_gaps">10dp</dimen>
+
+    <dimen name="move_top_icon_size">40dp</dimen>
+    <dimen name="move_top_icon_gap">15dp</dimen>
+
+    <!-- sign up by email ======================================================================= -->
+    <dimen name="sign_up_by_email_margin">15dp</dimen>
+    <dimen name="sign_up_by_email_sub_title_margin">24dp</dimen>
+    <dimen name="sign_up_by_email_title_margin">50dp</dimen>
+
+    <dimen name="sign_up_social_input_box_height">54dp</dimen>
+    <dimen name="sign_up_social_input_box_image_padding">12dp</dimen>
+    <dimen name="sign_up_social_input_box_margin">14dp</dimen>
+
+    <!-- authorization check ==================================================== -->
+    <dimen name="userinfomation_check_gap">12dp</dimen>
+    <dimen name="userinformation_gender_width">72dp</dimen>
+    <dimen name="userinformation_gender_box_size">144dp</dimen>
+
+    <!-- pet add screen ===================================================================== -->
+    <dimen name="pet_add_name_profile_margin_top">15dp</dimen>
+    <dimen name="pet_add_name_profile_image_size">101dp</dimen>
+    <dimen name="pet_add_name_profile_add_button_size">24dp</dimen>
+    <dimen name="pet_add_name_profile_add_button_circle_radius">50dp</dimen>
+    <dimen name="pet_add_name_profile_title_margin_top">12dp</dimen>
+    <dimen name="pet_add_name_edit_height">54dp</dimen>
+    <dimen name="pet_add_name_edit_margin_left">15dp</dimen>
+    <dimen name="pet_add_name_edit_margin_top">10dp</dimen>
+    <dimen name="pet_add_name_edit_margin_bottom">2dp</dimen>
+    <dimen name="pet_add_name_edit_margin_right">15dp</dimen>
+    <dimen name="pet_add_name_edit_padding">16dp</dimen>
+    <dimen name="pet_add_name_no_input_margin_top">9dp</dimen>
+    <dimen name="pet_add_stepper_height">3dp</dimen>
+    <dimen name="pet_add_stepper_margin">26dp</dimen>
+    <dimen name="pet_add_stepper_width1">54dp</dimen>
+    <dimen name="pet_kind_list_item_padding_left">24dp</dimen>
+    <dimen name="pet_kind_list_item_padding_top">19dp</dimen>
+    <dimen name="pet_breed_radio_padding">6dp</dimen>
+    <dimen name="pet_breed_button_top_size">40dp</dimen>
+    <dimen name="pet_breed_button_margin_bottom">15dp</dimen>
+    <dimen name="pet_breed_weight_desc">56dp</dimen>
+    <dimen name="pet_age_date_picker_margin">11dp</dimen>
+
+    <!-- mypage ================================================================= -->
+    <dimen name="mypage_pet_info_panel_height">135dp</dimen>
+    <dimen name="mypage_pet_image_size">88dp</dimen>
+    <dimen name="mypage_pet_image_added_size">30dp</dimen>
+    <dimen name="mypage_information_change_height">34dp</dimen>
+    <dimen name="mypage_pet_side_margin">20dp</dimen>
+    <dimen name="mypage_pet_info_panel_bottom_padding">15dp</dimen>
+    <dimen name="mypage_pet_text_gap">3dp</dimen>
+    <dimen name="mypage_pet_text_gap2">8dp</dimen>
+    <dimen name="mypage_change_info_padding">13dp</dimen>
+    <dimen name="mypage_tab_panel_height">150dp</dimen>
+    <dimen name="mypage_tab_panel_image_height">55dp</dimen>
+    <dimen name="mypage_tab_divider_center_gap">28dp</dimen>
+    <dimen name="mypage_choice_menu_height">56dp</dimen>
+    <dimen name="mypage_choice_menu_text_height">14dp</dimen>
+    <dimen name="mypage_pet_information_button_top_margin">43dp</dimen>
+    <dimen name="mypage_pet_information_profile_margin">16dp</dimen>
+    <dimen name="mypage_pet_information_profile_size">64dp</dimen>
+    <dimen name="mypage_pet_info_detail_margin_top">37dp</dimen>
+    <dimen name="mypage_pet_info_detail_name_margin_end">47dp</dimen>
+    <dimen name="mypage_pet_point_height">110dp</dimen>
+    <dimen name="mypage_pet_point_item_padding_top">7dp</dimen>
+    <dimen name="mypage_post_item_margin_top">17dp</dimen>
+    <dimen name="mypage_hospital_bookmark_image_size">94dp</dimen>
+    <dimen name="mypage_hospital_bookmark_image_top">27dp</dimen>
+    <dimen name="mypage_bookmark_pet_guide_margin_top">18dp</dimen>
+    <dimen name="mypage_bookmark_pet_guide_arrow_maring_end">25dp</dimen>
+
+    <dimen name="change_information_margin">26dp</dimen>
+    <dimen name="change_information_profile_imagesize">96dp</dimen>
+    <dimen name="change_information_gap1">6dp</dimen>
+    <dimen name="change_information_privacy_data_period_height">36dp</dimen>
+    <dimen name="change_information_privacy_data_button_height">44dp</dimen>
+    <dimen name="change_information_privacy_data_period_gap">2dp</dimen>
+    <dimen name="change_information_privacy_data_period_gap2">3dp</dimen>
+    <dimen name="change_information_privacy_data_elevation">2dp</dimen>
+    <dimen name="change_information_privacy_data_divider">0.5dp</dimen>
+    <dimen name="change_information_privacy_data_padding">12dp</dimen>
+    <dimen name="change_information_privacy_phone_button_width">80dp</dimen>
+
+    <!-- food reference ======================================================  -->
+    <dimen name="food_reference_profile_image_margin">30dp</dimen>
+    <dimen name="food_reference_profile_name_top_margin">5dp</dimen>
+    <dimen name="food_reference_select_text_margin">10dp</dimen>
+    <dimen name="food_reference_select_area_padding">30dp</dimen>
+
+    <dimen name="food_reference_weight_margin">30dp</dimen>
+    <dimen name="food_reference_weight_ruler_height">64dp</dimen>
+    <dimen name="food_reference_weight_triangle_size">16dp</dimen>
+    <dimen name="food_reference_weight_gap">12dp</dimen>
+    <dimen name="food_reference_weight_input_box_width">64dp</dimen>
+    <dimen name="food_reference_weight_input_box_height">48dp</dimen>
+
+    <dimen name="food_reference_body_panel_height">116dp</dimen>
+    <dimen name="food_reference_body_panel_padding">15dp</dimen>
+    <dimen name="food_reference_body_panel_button_margin">30dp</dimen>
+    <dimen name="food_reference_body_panel_text_padding">5dp</dimen>
+
+    <dimen name="food_referece_walking_time_button_size">30dp</dimen>
+    <dimen name="food_reference_walking_time_button_padding">6dp</dimen>
+    <dimen name="food_reference_walking_time_button_gap">42dp</dimen>
+    <dimen name="food_reference_walking_time_input_height">48dp</dimen>
+    <dimen name="food_reference_walking_time_input_width">64dp</dimen>
+
+    <dimen name="food_reference_food_allege_image_padding">18dp</dimen>
+    <dimen name="food_reference_feeding_padding">25dp</dimen>
+    <dimen name="food_reference_feeding_text_gap">6dp</dimen>
+    <dimen name="food_reference_feeding_scroll_padding">10dp</dimen>
+
+    <dimen name="sickness_detail_panel_height">94dp</dimen>
+    <dimen name="sickness_detail_panel_padding">15dp</dimen>
+    <dimen name="sickness_detail_panel_padding_side">22dp</dimen>
+    <dimen name="sickness_detail_panel_inside_gap">10dp</dimen>
+
+    <dimen name="pregnant_guide_top_margin">34dp</dimen>
+    <dimen name="food_recommend_result_color_panel_height">200dp</dimen>
+    <dimen name="food_recommend_result_color_panel_actual_height">160dp</dimen>
+    <dimen name="food_recommend_result_pet_image_size">72dp</dimen>
+    <dimen name="food_recommend_result_color_panel_padding">24dp</dimen>
+    <dimen name="food_recommend_result_color_panel_name_height">25dp</dimen>
+    <dimen name="food_recommend_result_color_panel_name_padding">16dp</dimen>
+    <dimen name="food_recommend_result_color_panel_name_padding2">16dp</dimen>
+    <dimen name="food_recommend_result_color_panel_name_padding3">8dp</dimen>
+
+    <dimen name="food_recommend_result_color_panel_fix_button_width">45dp</dimen>
+    <dimen name="food_recommend_result_color_panel_fix_button_height">27dp</dimen>
+
+    <dimen name="food_recommend_result_color_panel_tab_height">60dp</dimen>
+    <dimen name="food_recommend_result_color_panel_tab_underline_1">120dp</dimen>
+    <dimen name="food_recommend_result_color_panel_tab_underline_2">130dp</dimen>
+    <dimen name="underline_height">2.5dp</dimen>
+
+    <dimen name="food_recommend_result_item_margin">30dp</dimen>
+    <dimen name="food_recommend_result_item_gap">3dp</dimen>
+    <dimen name="food_recommend_result_item_gap2">8dp</dimen>
+    <dimen name="food_recommend_result_divider_height">16dp</dimen>
+    <dimen name="food_recommend_result_item_image">220dp</dimen>
+
+    <dimen name="food_recommend_progressing_top_margin">56dp</dimen>
+    <dimen name="food_recommend_progressing_imagesize">100dp</dimen>
+    <dimen name="food_recommend_progressing_bottom_margin">50dp</dimen>
+    <dimen name="food_recommend_progressing_gap">17dp</dimen>
+    <dimen name="food_recommend_progressing_image">220dp</dimen>
+    <dimen name="food_recommend_progressing_image_padding">2dp</dimen>
+
+    <dimen name="edit_text_cancel_image_padding">20dp</dimen>
+    <dimen name="edit_text_cancel_image_width">40dp</dimen>
+
+    <dimen name="detail_search_check_box_size">44dp</dimen>
+    <dimen name="detail_search_check_box_padding">8dp</dimen>
+    <dimen name="detail_search_check_box_gap1">35dp</dimen>
+    <dimen name="detail_search_check_box_gap2">10dp</dimen>
+
+    <!-- pettalk =============================================================================== -->
+    <dimen name="pettalk_list_item_height">73dp</dimen>
+    <dimen name="pettalk_list_item_start_padding">16dp</dimen>
+    <dimen name="pettalk_list_item_top_padding">9dp</dimen>
+    <dimen name="pettalk_list_item_image_size">54dp</dimen>
+    <dimen name="pettalk_list_item_title_gap">12dp</dimen>
+    <dimen name="pettalk_list_item_text_gap">6dp</dimen>
+    <dimen name="pettalk_list_write_button">56dp</dimen>
+    <dimen name="pettalk_list_write_button_padding">16dp</dimen>
+
+    <dimen name="hospital_search_map_bottom_panel_height">55dp</dimen>
+    <dimen name="hospital_search_map_bottom_margin">24dp</dimen>
+    <dimen name="hospital_search_map_bottom_panel_arrow_size">24dp</dimen>
+    <dimen name="hospital_search_map_bottom_panel_gap">5dp</dimen>
+    <dimen name="hospital_search_map_top_search_icon_size">18dp</dimen>
+    <dimen name="hospital_search_map_top_panel_gap">8dp</dimen>
+
+
+    <!-- sign out ======================================================  -->
+    <dimen name="sign_up_padding_top">30dp</dimen>
+    <dimen name="sign_up_padding_start">39dp</dimen>
+    <dimen name="sign_up_padding_end">39dp</dimen>
+    <dimen name="sign_up_padding_bottom">42dp</dimen>
+    <dimen name="sign_up_text_gap">15dp</dimen>
+    <dimen name="sign_up_text_gap1">20dp</dimen>
+    <dimen name="sign_up_guide_padding">16dp</dimen>
+    <dimen name="sign_up_circle_margin_end">7dp</dimen>
+    <dimen name="sign_up_check_margin_top">24dp</dimen>
+
+    <!-- notice ======================================================  -->
+    <dimen name="notice_content_padding">16dp</dimen>
+    <dimen name="notice_list_item_margin_top">17dp</dimen>
+
+    <!-- hospital history ======================================================  -->
+    <dimen name="my_hospital_detail_button_size">55dp</dimen>
+    <dimen name="my_hospital_detail_text_padding_top">30dp</dimen>
+    <dimen name="my_hospital_detail_text_padding_start">20dp</dimen>
+    <dimen name="my_hospital_detail_text_padding_bottom">15dp</dimen>
+    <dimen name="my_hospital_detail_text_margin">9dp</dimen>
+    <dimen name="my_hospital_detail_text_margin_start">20dp</dimen>
+
+    <!-- inquriy ======================================================  -->
+    <dimen name="inquriy_wrtie_button_size">56dp</dimen>
+    <dimen name="inquriy_wrtie_button_margin">17dp</dimen>
+    <dimen name="inquriy_item_padding">16dp</dimen>
+    <dimen name="inquriy_detail_text_gap">13dp</dimen>
+    <dimen name="inquriy_detail_text_gap1">48dp</dimen>
+    <dimen name="inquriy_detail_text_gap2">3dp</dimen>
+    <dimen name="inquriy_detail_text_margin">6dp</dimen>
+    <dimen name="inquriy_write_text_size">193dp</dimen>
+
+    <dimen name="home_header_height">44dp</dimen>
+    <dimen name="home_search_height">54dp</dimen>
+    <dimen name="home_content_margin">16dp</dimen>
+    <dimen name="home_search_image_size">24dp</dimen>
+    <dimen name="home_search_hint_margin">11dp</dimen>
+    <dimen name="home_banner_height">150dp</dimen>
+    <dimen name="home_button_top_size">42dp</dimen>
+    <dimen name="home_pet_image_size">74dp</dimen>
+    <dimen name="home_content_gap">20dp</dimen>
+    <dimen name="home_text_gap">7dp</dimen>
+    <dimen name="home_text_gap1">5dp</dimen>
+    <dimen name="home_text_gap2">8dp</dimen>
+    <dimen name="home_pet_crown_size">26dp</dimen>
+    <dimen name="home_content_gap1">28dp</dimen>
+    <dimen name="home_content_gap2">32dp</dimen>
+    <dimen name="home_content_gap3">36dp</dimen>
+    <dimen name="home_content_gap4">10dp</dimen>
+    <dimen name="home_content_gap5">11dp</dimen>
+    <dimen name="home_content_gap6">13dp</dimen>
+    <dimen name="home_content_gap7">22dp</dimen>
+    <dimen name="home_content_gap8">20dp</dimen>
+    <dimen name="home_chat_pager_height">86dp</dimen>
+    <dimen name="home_hospital_list_height">177dp</dimen>
+    <dimen name="home_magazine_image_size">164dp</dimen>
+    <dimen name="home_hospital_width">77dp</dimen>
+    <dimen name="home_hospital_height">36dp</dimen>
+    <dimen name="home_hospital_item_width">290dp</dimen>
+    <dimen name="home_chat_image_size">45dp</dimen>
+    <dimen name="home_banner_detail_image_size">362dp</dimen>
+    <dimen name="home_banner_share_image_size">26dp</dimen>
+    <dimen name="home_banner_share_margin_top">15dp</dimen>
+    <dimen name="home_banner_share_margin_end">17dp</dimen>
+    <dimen name="home_banner_share_margin_bottom">25dp</dimen>
+    <dimen name="home_banner_commet_profile_size">50dp</dimen>
+    <dimen name="home_search_doctor_question_height">47dp</dimen>
+    <dimen name="home_search_doctor_question_margin">67dp</dimen>
+    <dimen name="home_search_category">100dp</dimen>
+
+    <dimen name="shop_content_margin">41dp</dimen>
+    <dimen name="shop_content_margin1">10dp</dimen>
+    <dimen name="shop_content_margin2">14dp</dimen>
+    <dimen name="shop_content_margin3">12dp</dimen>
+    <dimen name="shop_content_margin4">3dp</dimen>
+    <dimen name="shop_content_margin5">30dp</dimen>
+    <dimen name="shop_content_margin6">19dp</dimen>
+    <dimen name="shop_content_margin7">20dp</dimen>
+    <dimen name="shop_content_margin8">150dp</dimen>
+    <dimen name="shop_content_margin9">6dp</dimen>
+    <dimen name="shop_product_img_size">120dp</dimen>
+    <dimen name="shop_product_wide_img_size">170dp</dimen>
+    <dimen name="shop_pet_profile_img_size">74dp</dimen>
+
+    <dimen name="care_content_margin">18dp</dimen>
+    <dimen name="care_content_margin1">14dp</dimen>
+    <dimen name="care_content_margin2">16dp</dimen>
+    <dimen name="care_content_margin3">8dp</dimen>
+    <dimen name="care_content_margin4">5dp</dimen>
+    <dimen name="care_content_margin5">36dp</dimen>
+    <dimen name="care_content_margin6">31dp</dimen>
+    <dimen name="care_content_margin7">50dp</dimen>
+    <dimen name="care_content_margin8">11dp</dimen>
+    <dimen name="care_content_margin9">20dp</dimen>
+    <dimen name="care_content_margin10">40dp</dimen>
+    <dimen name="care_content_margin11">24dp</dimen>
+    <dimen name="care_content_margin12">48dp</dimen>
+    <dimen name="care_content_margin13">4dp</dimen>
+    <dimen name="care_content_margin14">42dp</dimen>
+    <dimen name="care_content_margin15">12dp</dimen>
+    <dimen name="care_content_margin16">6dp</dimen>
+    <dimen name="care_content_margin17">9dp</dimen>
+    <dimen name="care_content_image_size">38dp</dimen>
+    <dimen name="care_check_image_height">10dp</dimen>
+    <dimen name="care_pet_img_size">58dp</dimen>
+    <dimen name="care_pet_crown_img_size">22dp</dimen>
+    <dimen name="care_pet_action_check_img_width">200dp</dimen>
+    <dimen name="care_pet_action_check_img_height">180dp</dimen>
+    <dimen name="care_poop_type_size">32dp</dimen>
+    <dimen name="care_poop_feces_type_width">56dp</dimen>
+    <dimen name="care_poop_feces_type_height">30dp</dimen>
+    <dimen name="care_scanner_button_height">55dp</dimen>
+
+    <dimen name="main_tab_height">49dp</dimen>
+    <dimen name="health_carepet_image">80dp</dimen>
+
+    <dimen name="banner_image_view_side_margin">15dp</dimen>
+    <dimen name="textview_bullet_margin">7dp</dimen>
+
+    <dimen name="padding_3dp">3dp</dimen>
+    <dimen name="padding_15dp">15dp</dimen>
+    <dimen name="padding_32dp">32dp</dimen>
+    <dimen name="padding_16dp">16dp</dimen>
+    <dimen name="padding_34dp">34dp</dimen>
+    <dimen name="margin_8dp">8dp</dimen>
+    <dimen name="margin_10dp">10dp</dimen>
+    <dimen name="margin_20dp">20dp</dimen>
+    <dimen name="margin_24dp">24dp</dimen>
+    <dimen name="margin_70dp">70dp</dimen>
+
+    <dimen name="day_text_wh">30dp</dimen>
+</resources>

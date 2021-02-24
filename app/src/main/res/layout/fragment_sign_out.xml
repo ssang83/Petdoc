@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/login_close_button_size"
+        android:layout_height="@dimen/login_close_button_size"
+        android:padding="@dimen/login_close_button_padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:adjustViewBounds="true"
+        android:src="@drawable/backbutton"
+        android:id="@+id/btnBack"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnBack"
+        app:layout_constraintBottom_toBottomOf="@id/btnBack"
+        android:textColor="@color/dark_grey"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:textSize="@dimen/fix_text_size_4"
+        android:textStyle="bold"
+        android:text="@string/mypage_setting_sign_out" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBack"/>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        android:paddingTop="@dimen/sign_up_padding_top"
+        android:paddingEnd="@dimen/sign_up_padding_end"
+        android:paddingStart="@dimen/sign_up_padding_start"
+        android:paddingBottom="@dimen/sign_up_padding_bottom"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        app:layout_constraintBottom_toTopOf="@+id/btnSignOut"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/signoutTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="홍길동 고객님,\n정말 탈퇴 하시려고요?"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/fix_text_size_10"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewGuide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sign_up_text_gap"
+                android:text="탈퇴가 완료되면 다음의 정보가 완전 삭제되며, 온・오프라인 상의 각종 혜택을 받으실 수 없습니다."
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/fix_text_size_2"
+                android:textStyle="normal"
+                android:textAlignment="viewStart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/signoutTitle"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutCheck"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sign_up_text_gap1"
+                android:padding="@dimen/sign_up_guide_padding"
+                android:background="@drawable/bg_sign_out_guide"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/textViewGuide"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutPetdoc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <View
+                        android:id="@+id/circle"
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@drawable/orange_circle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sign_up_circle_margin_end"
+                        android:text="@string/mypage_setting_sign_out_petdoc"
+                        android:textSize="@dimen/fix_text_size_3"
+                        android:textColor="@color/blue_grey"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toEndOf="@+id/circle"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/btnCheckPetdoc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_sign_out_check"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutVCare"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/sign_up_check_margin_top"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutPetdoc">
+
+                    <View
+                        android:id="@+id/circle1"
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@drawable/orange_circle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sign_up_circle_margin_end"
+                        android:text="@string/mypage_setting_sign_out_v_care"
+                        android:textSize="@dimen/fix_text_size_3"
+                        android:textColor="@color/blue_grey"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toEndOf="@+id/circle1"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/btnCheckVCare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_sign_out_check"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutCheckDetail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sign_up_text_gap1"
+                app:layout_constraintTop_toBottomOf="@+id/layoutCheck"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViwGuide1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mypage_setting_sign_out_guide1"
+                    android:textColor="@color/dark_grey"
+                    android:textStyle="normal"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutDelInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/sign_up_text_gap1"
+                    android:padding="@dimen/sign_up_guide_padding"
+                    android:background="@drawable/bg_sign_out_guide"
+                    app:layout_constraintTop_toBottomOf="@+id/textViwGuide1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutLoginInfo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <View
+                            android:id="@+id/circle2"
+                            android:layout_width="4dp"
+                            android:layout_height="4dp"
+                            android:background="@drawable/orange_circle"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sign_up_circle_margin_end"
+                            android:text="@string/mypage_setting_sign_out_login_account"
+                            android:textSize="@dimen/fix_text_size_3"
+                            android:textColor="@color/blue_grey"
+                            android:textStyle="normal"
+                            app:layout_constraintStart_toEndOf="@+id/circle2"
+                            app:layout_constraintTop_toTopOf="parent"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutCustomerInfo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/sign_up_circle_margin_end"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutLoginInfo">
+
+                        <View
+                            android:id="@+id/circle3"
+                            android:layout_width="4dp"
+                            android:layout_height="4dp"
+                            android:background="@drawable/orange_circle"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sign_up_circle_margin_end"
+                            android:text="@string/mypage_setting_sign_out_customer_info"
+                            android:textSize="@dimen/fix_text_size_3"
+                            android:textColor="@color/blue_grey"
+                            android:textStyle="normal"
+                            app:layout_constraintStart_toEndOf="@+id/circle3"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutPetInfo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/sign_up_circle_margin_end"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutCustomerInfo">
+
+                        <View
+                            android:id="@+id/circle4"
+                            android:layout_width="4dp"
+                            android:layout_height="4dp"
+                            android:background="@drawable/orange_circle"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sign_up_circle_margin_end"
+                            android:text="@string/mypage_setting_sign_out_pet_info"
+                            android:textSize="@dimen/fix_text_size_3"
+                            android:textColor="@color/blue_grey"
+                            android:textStyle="normal"
+                            app:layout_constraintStart_toEndOf="@+id/circle4"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutPetManageInfo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/sign_up_circle_margin_end"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutPetInfo">
+
+                        <View
+                            android:id="@+id/circle5"
+                            android:layout_width="4dp"
+                            android:layout_height="4dp"
+                            android:background="@drawable/orange_circle"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sign_up_circle_margin_end"
+                            android:text="@string/mypage_setting_sign_out_pet_manage_info"
+                            android:textSize="@dimen/fix_text_size_3"
+                            android:textColor="@color/blue_grey"
+                            android:textStyle="normal"
+                            app:layout_constraintStart_toEndOf="@+id/circle5"
+                            app:layout_constraintTop_toTopOf="parent"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutProductInfo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/sign_up_circle_margin_end"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutPetManageInfo">
+
+                        <View
+                            android:id="@+id/circle6"
+                            android:layout_width="4dp"
+                            android:layout_height="4dp"
+                            android:background="@drawable/orange_circle"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sign_up_circle_margin_end"
+                            android:text="@string/mypage_setting_sign_out_product_info"
+                            android:textSize="@dimen/fix_text_size_3"
+                            android:textColor="@color/blue_grey"
+                            android:textStyle="normal"
+                            app:layout_constraintStart_toEndOf="@+id/circle6"
+                            app:layout_constraintTop_toTopOf="parent"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutPointInfo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/sign_up_circle_margin_end"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutProductInfo">
+
+                        <View
+                            android:id="@+id/circle7"
+                            android:layout_width="4dp"
+                            android:layout_height="4dp"
+                            android:background="@drawable/orange_circle"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sign_up_circle_margin_end"
+                            android:text="@string/mypage_setting_sign_out_point_info"
+                            android:textSize="@dimen/fix_text_size_3"
+                            android:textColor="@color/blue_grey"
+                            android:textStyle="normal"
+                            app:layout_constraintStart_toEndOf="@+id/circle7"
+                            app:layout_constraintTop_toTopOf="parent"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnSignOut"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height_default"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/button_margin"
+        android:layout_marginEnd="@dimen/button_margin"
+        android:layout_marginBottom="@dimen/button_margin"
+        android:background="@drawable/grey_round_rect"
+        android:textColor="@color/light_grey3"
+        android:textAlignment="gravity"
+        android:includeFontPadding="false"
+        android:gravity="center"
+        android:textSize="@dimen/fix_text_size_5"
+        android:textStyle="bold"
+        android:text="@string/mypage_setting_sign_out" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

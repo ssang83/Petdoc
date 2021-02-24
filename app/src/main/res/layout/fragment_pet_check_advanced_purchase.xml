@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="viewModel"
+            type="kr.co.petdoc.petdoc.viewmodel.PetCheckAdvancedPurchaseViewModel"/>
+        <import type="kr.co.petdoc.petdoc.nicepay.PaymentMethod"/>
+        <import type="android.view.View"/>
+        <import type="kr.co.petdoc.petdoc.extensions.IntExtensionsKt"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:textStyle="bold"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/fix_text_size_4"
+                android:text="상품 구매하기"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/login_close_button_size"
+                android:layout_height="@dimen/login_close_button_size"
+                android:padding="14dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_back"
+                android:id="@+id/btnClose"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@color/grey"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/layoutHeader"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/white">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvLabelGoods"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="24dp"
+                    android:textColor="@color/slateGrey"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:text="상품 정보"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivThumbnail"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLabelGoods"
+                    app:thumbnail="@{viewModel.itemInfo.itemUrl}"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="3dp"
+                    android:text="@{viewModel.itemInfo.itemName}"
+                    android:textStyle="bold"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toEndOf="@id/ivThumbnail"
+                    app:layout_constraintTop_toTopOf="@id/ivThumbnail"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/bg_purchase_product"
+                    app:layout_constraintTop_toTopOf="@+id/ivThumbnail"
+                    app:layout_constraintStart_toStartOf="@+id/ivThumbnail"
+                    app:layout_constraintEnd_toEndOf="@id/ivThumbnail"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivThumbnail"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="3dp"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:text="@{@string/won(IntExtensionsKt.numberWithComma(viewModel.itemInfo.itemAmount))}"
+                    app:layout_constraintStart_toEndOf="@id/ivThumbnail"
+                    app:layout_constraintBottom_toBottomOf="@id/ivThumbnail"
+                    tools:text="328,900원"/>
+
+                <View
+                    android:id="@+id/divider1"
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:layout_marginTop="30dp"
+                    android:background="#f8f8f8"
+                    app:layout_constraintTop_toBottomOf="@id/ivThumbnail"/>
+
+                <TextView
+                    android:id="@+id/tvLabelPaymentAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="20dp"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:text="결제 금액"
+                    app:layout_constraintTop_toBottomOf="@id/divider1"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvPurchaseQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="20dp"
+                    android:textSize="16dp"
+                    android:textColor="@color/slateGrey"
+                    android:text="주문 수량"
+                    app:layout_constraintTop_toBottomOf="@id/tvLabelPaymentAmount"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:textSize="16dp"
+                    android:textColor="@color/slateGrey"
+                    android:text="1개"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvPurchaseQuantity"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvPurchaseAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    android:textSize="16dp"
+                    android:textColor="@color/slateGrey"
+                    android:text="주문 금액"
+                    app:layout_constraintTop_toBottomOf="@id/tvPurchaseQuantity"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:textSize="16dp"
+                    android:textColor="@color/slateGrey"
+                    android:textStyle="bold"
+                    android:text="@{@string/won(IntExtensionsKt.numberWithComma(viewModel.itemInfo.itemAmount))}"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvPurchaseAmount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="328,900원"/>
+
+                <View
+                    android:id="@+id/divider2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="#e1e4e6"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvPurchaseAmount"/>
+
+                <TextView
+                    android:id="@+id/tvFinalPurchaseAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginStart="20dp"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/slateGrey"
+                    android:text="최종 결제 금액"
+                    app:layout_constraintTop_toBottomOf="@id/divider2"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:textSize="20dp"
+                    android:textColor="#ff5a5c"
+                    android:textStyle="bold"
+                    android:text="@{@string/won(IntExtensionsKt.numberWithComma(viewModel.itemInfo.itemAmount))}"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvFinalPurchaseAmount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="328,900원"/>
+
+                <View
+                    android:id="@+id/divider3"
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:layout_marginTop="30dp"
+                    android:background="#f8f8f8"
+                    app:layout_constraintTop_toBottomOf="@id/tvFinalPurchaseAmount"/>
+
+                <TextView
+                    android:id="@+id/tvLabelPaymentMethod"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="20dp"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:text="결제 수단"
+                    app:layout_constraintTop_toBottomOf="@id/divider3"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <RelativeLayout
+                    android:id="@+id/btnCreditCard"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:textAlignment="viewEnd"
+                    android:background="@drawable/bg_btn_payment_method_creditcard"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginTop="17dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:onClick="@{() -> viewModel.onPaymentMethodClicked(PaymentMethod.CREDIT_CARD)}"
+                    android:selected="@{viewModel.paymentMethod == PaymentMethod.CREDIT_CARD}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btnKakaoPay"
+                    app:layout_constraintTop_toBottomOf="@id/tvLabelPaymentMethod">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_order_detail_btn_card"
+                        android:layout_centerVertical="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="신용카드"
+                        android:textStyle="bold"
+                        android:textColor="@color/slateGrey"
+                        android:textSize="15dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/btnKakaoPay"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:textAlignment="viewEnd"
+                    android:background="@drawable/bg_btn_payment_method_kakaopay"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="17dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:onClick="@{() -> viewModel.onPaymentMethodClicked(PaymentMethod.KAKAO_PAY)}"
+                    android:selected="@{viewModel.paymentMethod == PaymentMethod.KAKAO_PAY}"
+                    app:layout_constraintStart_toEndOf="@id/btnCreditCard"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLabelPaymentMethod">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_order_detail_btn_kakao"
+                        android:layout_centerVertical="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="카카오페이"
+                        android:textStyle="bold"
+                        android:textColor="@color/slateGrey"
+                        android:textSize="15dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/btnSamsungPay"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:textAlignment="viewEnd"
+                    android:background="@drawable/bg_btn_payment_method_samsungpay"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginTop="12dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:onClick="@{() -> viewModel.onPaymentMethodClicked(PaymentMethod.SAMSUNG_PAY)}"
+                    android:selected="@{viewModel.paymentMethod == PaymentMethod.SAMSUNG_PAY}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btnNaverPay"
+                    app:layout_constraintTop_toBottomOf="@id/btnCreditCard">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_order_detail_btn_samsung"
+                        android:layout_centerVertical="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="삼성페이"
+                        android:textStyle="bold"
+                        android:textColor="@color/slateGrey"
+                        android:textSize="15dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/btnNaverPay"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:textAlignment="viewEnd"
+                    android:background="@drawable/bg_btn_payment_method_naverpay"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="12dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:onClick="@{() -> viewModel.onPaymentMethodClicked(PaymentMethod.NAVER_PAY)}"
+                    android:selected="@{viewModel.paymentMethod == PaymentMethod.NAVER_PAY}"
+                    app:layout_constraintStart_toEndOf="@id/btnSamsungPay"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnCreditCard">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_order_detail_btn_npay"
+                        android:layout_centerVertical="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="네이버페이"
+                        android:textStyle="bold"
+                        android:textColor="@color/slateGrey"
+                        android:textSize="15dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/btnPayco"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:textAlignment="viewEnd"
+                    android:background="@drawable/bg_btn_payment_method_payco"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="12dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:onClick="@{() -> viewModel.onPaymentMethodClicked(PaymentMethod.PAYCO)}"
+                    android:selected="@{viewModel.paymentMethod == PaymentMethod.PAYCO}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/btnSamsungPay"
+                    app:layout_constraintTop_toBottomOf="@id/btnSamsungPay">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_order_detail_btn_payco"
+                        android:layout_centerVertical="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="페이코"
+                        android:textStyle="bold"
+                        android:textColor="@color/slateGrey"
+                        android:textSize="15dp"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvLabelSelectCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:layout_marginStart="20dp"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:text="카드/할부 선택"
+                    android:visibility="@{viewModel.paymentMethod == PaymentMethod.CREDIT_CARD ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintTop_toBottomOf="@id/btnPayco"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/btnSelectCard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="17dp"
+                    android:padding="16dp"
+                    android:text="@{viewModel.creditCard == null ? @string/please_choose_credit_card : viewModel.creditCard.name}"
+                    android:textColor="@{viewModel.creditCard != null ? @color/slateGrey : @color/light_grey3}"
+                    android:textSize="15dp"
+                    android:drawableEnd="@drawable/ic_arrow_open"
+                    android:background="@drawable/grey_line"
+                    android:visibility="@{viewModel.paymentMethod == PaymentMethod.CREDIT_CARD ? View.VISIBLE : View.GONE}"
+                    android:onClick="@{() -> viewModel.onCreditCardChooserBtnClicked()}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLabelSelectCard"/>
+
+                <TextView
+                    android:id="@+id/btnSelectInstallment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="15dp"
+                    android:padding="16dp"
+                    android:text="@{viewModel.installment != null ? viewModel.installment.name : @string/please_choose_installment }"
+                    android:textColor="@{viewModel.installment != null ? @color/slateGrey : @color/light_grey3}"
+                    android:textSize="15dp"
+                    android:drawableEnd="@drawable/ic_arrow_open"
+                    android:background="@drawable/grey_line"
+                    android:visibility="@{viewModel.paymentMethod == PaymentMethod.CREDIT_CARD ? View.VISIBLE : View.GONE}"
+                    android:onClick="@{() -> viewModel.onInstallmentsBtnClicked()}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnSelectCard"/>
+
+                <CheckedTextView
+                    android:id="@+id/checkUseSamePaymentNextTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/btnSelectInstallment"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="30dp"
+                    android:text="선택한 결제 수단을 다음에도 사용"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="15dp"
+                    android:gravity="center_vertical"
+                    android:checkMark="@drawable/bg_checkbox"
+                    android:checked="@{viewModel.isUseSamePaymentMethodChecked}"
+                    android:onClick="@{() -> viewModel.onUseSamePaymentCheckBoxClicked()}"/>
+
+                <CheckedTextView
+                    android:id="@+id/checkAgreementAll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="31dp"
+                    android:text="결제 진행 필수 동의"
+                    android:textColor="@color/slateGrey"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:padding="20dp"
+                    android:checkMark="@drawable/bg_checkbox"
+                    android:background="#f8f8f8"
+                    android:checked="@{viewModel.isAgreeAllTermsChecked}"
+                    android:onClick="@{() -> viewModel.onAgreeAllClicked()}"
+                    app:layout_constraintTop_toBottomOf="@id/checkUseSamePaymentNextTime"/>
+
+                <TextView
+                    android:id="@+id/btnLinkPrivacyPolicy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/payment_privacy_terms"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:textSize="15dp"
+                    android:textColor="@color/slateGrey"
+                    android:onClick="@{() -> viewModel.onPrivacyTermsClicked()}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/checkAgreementAll"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/payment_agree"
+                    android:textStyle="normal"
+                    android:textSize="13dp"
+                    android:textColor="@color/light_grey"
+                    app:layout_constraintStart_toEndOf="@+id/btnLinkPrivacyPolicy"
+                    app:layout_constraintTop_toTopOf="@+id/btnLinkPrivacyPolicy"
+                    app:layout_constraintBottom_toBottomOf="@+id/btnLinkPrivacyPolicy"
+                    android:layout_marginStart="3dp"
+                    android:includeFontPadding="false"
+                    />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/bg_checkbox_sub"
+                    android:layout_marginEnd="20dp"
+                    android:onClick="@{() -> viewModel.onTermsOfPrivacyPolicyClicked()}"
+                    android:checked="@{viewModel.isPrivacyPolicyChecked}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/btnLinkPrivacyPolicy"
+                    app:layout_constraintBottom_toBottomOf="@id/btnLinkPrivacyPolicy"/>
+
+                <TextView
+                    android:id="@+id/btnLinkTermsOfService"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/payment_service_terms"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:textSize="15dp"
+                    android:textColor="@color/slateGrey"
+                    android:onClick="@{() -> viewModel.onServiceTermsClicked()}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnLinkPrivacyPolicy"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/payment_agree"
+                    android:textStyle="normal"
+                    android:textSize="13dp"
+                    android:textColor="@color/light_grey"
+                    app:layout_constraintStart_toEndOf="@+id/btnLinkTermsOfService"
+                    app:layout_constraintTop_toTopOf="@+id/btnLinkTermsOfService"
+                    app:layout_constraintBottom_toBottomOf="@+id/btnLinkTermsOfService"
+                    android:layout_marginStart="3dp"
+                    android:includeFontPadding="false"
+                    />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/bg_checkbox_sub"
+                    android:layout_marginEnd="20dp"
+                    android:checked="@{viewModel.isTermsOfServiceChecked}"
+                    android:onClick="@{() -> viewModel.onTermsOfServiceClicked()}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/btnLinkTermsOfService"
+                    app:layout_constraintBottom_toBottomOf="@id/btnLinkTermsOfService"/>
+
+                <View
+                    android:id="@+id/divider4"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="#e1e4e6"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnLinkTermsOfService"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#2e3042"
+                    android:paddingTop="75dp"
+                    android:paddingBottom="30dp"
+                    android:paddingStart="27dp"
+                    android:paddingEnd="27dp"
+                    app:layout_constraintTop_toBottomOf="@id/space"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <TextView
+                        android:id="@+id/btn_payment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="결제하기"
+                        android:textColor="@color/white"
+                        android:textSize="17dp"
+                        android:gravity="center"
+                        android:paddingTop="17dp"
+                        android:paddingBottom="17dp"
+                        android:background="@drawable/bg_btn_payment"
+                        android:onClick="@{() -> viewModel.onPaymentBtnClicked()}"
+                        app:layout_constraintWidth_percent="0.5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="최종 결제 금액"
+                        android:textColor="#8d95a0"
+                        app:layout_constraintTop_toTopOf="@id/btn_payment"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{@string/wonFormat(IntExtensionsKt.numberWithComma(viewModel.itemInfo.itemAmount))}"
+                        android:textColor="@color/white"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="4dp"
+                        app:layout_constraintBottom_toBottomOf="@id/btn_payment"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:text="￦328,900"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/layCaution"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/divider4"
+                    android:paddingStart="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="25dp"
+                    android:background="@drawable/bg_payment_caution">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="유의 사항"
+                        android:textColor="#8d95a0"
+                        android:textSize="15dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="11dp"
+                        android:text="@string/payment_caution"
+                        android:textSize="13dp"
+                        android:textColor="#8d95a0"/>
+
+                </LinearLayout>
+
+                <Space
+                    android:id="@+id/space"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="30dp"
+                    app:layout_constraintBottom_toBottomOf="@id/layCaution"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

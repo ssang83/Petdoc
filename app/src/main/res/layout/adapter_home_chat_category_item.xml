@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/categoryImg"
+        android:layout_width="@dimen/home_chat_image_size"
+        android:layout_height="@dimen/home_chat_image_size"
+        tools:src="@drawable/ic_category_oriental"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/home_content_margin"
+        app:layout_constraintStart_toEndOf="@+id/categoryImg"
+        app:layout_constraintTop_toTopOf="@+id/categoryImg">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/categoryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            tools:text="@string/home_chat_category1"
+            android:textColor="@color/pale_red"
+            android:textStyle="bold"
+            android:textSize="@dimen/fix_text_size_3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/categoryDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:layout_marginTop="@dimen/home_text_gap"
+            tools:text="@string/home_chat_category1_desc"
+            android:textSize="@dimen/fix_text_size_2"
+            android:textStyle="normal"
+            android:textColor="@color/dark_grey"
+            android:maxLines="2"
+            app:layout_constraintTop_toBottomOf="@+id/categoryTitle"
+            app:layout_constraintStart_toStartOf="@+id/categoryTitle"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

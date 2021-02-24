@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/topLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/stepper"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/pet_add_stepper_height"
+            android:layout_marginStart="@dimen/pet_add_stepper_margin"
+            android:layout_marginEnd="@dimen/pet_add_stepper_margin"
+            android:background="@drawable/bg_pet_add_inactive"
+            android:layout_marginTop="@dimen/pet_add_name_profile_margin_top"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/pet_add_stepper_height"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.83"
+                android:background="@drawable/bg_pet_add_active"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/stepperFinish"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/pet_add_stepper_height"
+            android:layout_marginStart="@dimen/pet_add_stepper_margin"
+            android:layout_marginEnd="@dimen/pet_add_stepper_margin"
+            android:background="@drawable/bg_pet_add_active"
+            android:layout_marginTop="@dimen/pet_add_name_profile_margin_top"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="gone"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/login_close_button_size"
+                android:layout_height="@dimen/login_close_button_size"
+                android:padding="@dimen/login_close_button_padding"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/x_button"
+                android:id="@+id/btnClose"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btnClose"
+                app:layout_constraintBottom_toBottomOf="@id/btnClose"
+                android:textColor="@color/dark_grey"
+                android:textAlignment="gravity"
+                android:gravity="center"
+                android:textSize="@dimen/fix_text_size_4"
+                android:textStyle="bold"
+                android:text="@string/pet_info_detail" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewPeVaccineDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/pet_add_stepper_margin"
+        android:layout_marginEnd="@dimen/pet_add_stepper_margin"
+        android:layout_marginTop="30dp"
+        android:textSize="@dimen/fix_text_size_3"
+        android:textColor="@color/light_grey"
+        android:textStyle="bold"
+        android:includeFontPadding="false"
+        tools:text="심바의 예방접종 여부를 선택해주세요."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/vaccineStatusList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/pet_add_name_edit_padding"
+        android:overScrollMode="never"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPeVaccineDesc"
+        app:layout_constraintBottom_toTopOf="@+id/btnComplete"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnComplete"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height_default"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="@dimen/button_margin"
+        android:textStyle="bold"
+        android:background="@drawable/orange_round_rect"
+        android:textColor="@color/white_alpha"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:textSize="@dimen/fix_text_size_5"
+        android:text="@string/pet_add_complete" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="80dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/itemRoot"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/petImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        tools:src="@drawable/img_pet_profile_default"
+        android:adjustViewBounds="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <View
+        android:id="@+id/border"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:background="@drawable/orange_circle_stroke"
+        app:layout_constraintBottom_toBottomOf="@+id/petImage"
+        app:layout_constraintStart_toStartOf="@+id/petImage"
+        app:layout_constraintEnd_toEndOf="@+id/petImage"
+        app:layout_constraintTop_toTopOf="@+id/petImage"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/petCrown"
+        android:layout_width="@dimen/care_pet_crown_img_size"
+        android:layout_height="@dimen/care_pet_crown_img_size"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_crown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/petName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:layout_marginTop="@dimen/care_content_margin4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/petImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="14dp"
+        android:textColor="@color/slateGrey"
+        android:textStyle="normal"
+        android:maxLines="1"
+        android:ellipsize="end"
+        tools:text="동동이"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

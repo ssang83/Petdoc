@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/pale_grey"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layoutHeader"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/login_close_button_size"
+            android:layout_height="@dimen/login_close_button_size"
+            android:padding="@dimen/login_close_button_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:adjustViewBounds="true"
+            android:src="@drawable/backbutton"
+            android:id="@+id/btnBack"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnBack"
+            app:layout_constraintBottom_toBottomOf="@id/btnBack"
+            android:textColor="@color/dark_grey"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textSize="@dimen/fix_text_size_4"
+            android:textStyle="bold"
+            tools:text="Iptime_home" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnBack"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutDevice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="25dp"
+        android:paddingStart="25dp"
+        android:paddingTop="19dp"
+        android:paddingBottom="19dp"
+        android:layout_marginTop="37dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이 기기 지우기"
+            android:textSize="@dimen/fix_text_size_3"
+            android:textColor="@color/orange"
+            android:textStyle="normal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--
+TODO. 펌웨어 업데이트 작업 내용 (기능 적용시 아래 주석 코드로 적용)
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="kr.co.petdoc.petdoc.viewmodel.ExternalDeviceDetailViewModel" />
+        <variable
+            name="firmwareState"
+            type="kr.co.petdoc.petdoc.scanner.FirmwareVersionState" />
+        <import type="android.view.View"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="@color/pale_grey"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/layoutHeader"
+            android:background="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/login_close_button_size"
+                android:layout_height="@dimen/login_close_button_size"
+                android:padding="@dimen/login_close_button_padding"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/backbutton"
+                android:id="@+id/btnBack"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btnBack"
+                app:layout_constraintBottom_toBottomOf="@id/btnBack"
+                android:textColor="@color/dark_grey"
+                android:textAlignment="gravity"
+                android:gravity="center"
+                android:textSize="@dimen/fix_text_size_4"
+                android:textStyle="bold"
+                tools:text="Iptime_home" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/grey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnBack"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="펫닥 스캐너 관리"
+            android:layout_marginTop="36dp"
+            android:layout_marginStart="25dp"
+            android:textColor="@color/dark_grey"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/layoutHeader"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layDownload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="25dp"
+            android:paddingStart="16dp"
+            android:paddingTop="19dp"
+            android:paddingBottom="19dp"
+            android:background="@drawable/bg_white_with_top_line"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:onClick="@{() -> viewModel.onDownLoadLayoutClicked()}"
+            app:layout_constraintTop_toBottomOf="@id/tvLabel">
+
+            <TextView
+                android:id="@+id/tvLabelDownload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="다운로드 및 설치"
+                android:textColor="@color/dark_grey"
+                android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvDownloadSubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color8d95a0"
+                android:textSize="12dp"
+                android:text="@{viewModel.downLoadSubTitle}"
+                app:layout_constraintTop_toBottomOf="@id/tvLabelDownload"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="마지막 업데이트 확인 : 2020년 10월 21일"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@{viewModel.firmwareVersionState == firmwareState.LATEST_VERSION ? null : viewModel.firmwareVersionState == firmwareState.DOWNLOADED ? @drawable/ic_download : @drawable/ic_install}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/layUpdateDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="25dp"
+            android:paddingStart="16dp"
+            android:paddingTop="19dp"
+            android:paddingBottom="19dp"
+            android:background="@drawable/bg_white_with_top_bottom_line"
+            android:orientation="vertical"
+            android:onClick="@{() -> viewModel.onUpdateDetailClicked()}"
+            app:layout_constraintTop_toBottomOf="@id/layDownload">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="최근 업데이트"
+                android:textColor="@color/dark_grey"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/tvUpdateSubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color8d95a0"
+                android:textSize="12dp"
+                android:text="@{viewModel.updateSubTitle}"
+                tools:text="최신 펌웨어를 2020년 3월 21일에 설치했습니다."/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layDeleteDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="25dp"
+            android:paddingStart="16dp"
+            android:paddingTop="19dp"
+            android:paddingBottom="19dp"
+            android:background="@drawable/bg_white_with_bottom_line"
+            android:orientation="vertical"
+            android:onClick="@{() -> viewModel.onDeleteDeviceClicked()}"
+            app:layout_constraintTop_toBottomOf="@id/layUpdateDetail">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="기기 삭제"
+                android:textColor="@color/dark_grey"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color8d95a0"
+                android:textSize="12dp"
+                android:text="연결되어 있는 펫닥 스캐너를 연결해제합니다."/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="펌웨어 업데이트 관련 문의 정보"
+            android:textColor="@color/color8d95a0"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tvEmail"/>
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이메일 : petdocscanner@petdoc.co.kr"
+            android:textColor="@color/color8d95a0"
+            android:textStyle="bold"
+            android:layout_marginBottom="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+    -->

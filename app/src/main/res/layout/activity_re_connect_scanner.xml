@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/little_orange"
+    android:keepScreenOn="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/login_close_button_size"
+                android:layout_height="@dimen/login_close_button_size"
+                android:padding="@dimen/login_close_button_padding"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_close"
+                android:id="@+id/btnClose"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewLogo"
+                android:layout_width="182dp"
+                android:layout_height="24dp"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="@dimen/care_content_margin10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnClose"
+                android:src="@drawable/img_scanner_logo"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewConnectScanner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/care_content_margin10"
+                android:layout_marginEnd="@dimen/care_content_margin10"
+                android:layout_marginTop="@dimen/care_poop_feces_type_height"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewLogo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/img_connect_scanner"
+                android:adjustViewBounds="true"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/progressScanner"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="@dimen/care_content_margin1"
+                app:layout_constraintTop_toTopOf="@+id/imageViewConnectScanner"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/connect_scanner_progress"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewConnecting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewConnectScanner"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/care_poop_feces_type_height"
+                android:textStyle="bold"
+                android:textSize="@dimen/fix_text_size_8"
+                android:textColor="@color/dark_grey"
+                android:text="@string/care_scanner_connecting"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height_default"
+        android:background="@drawable/orange_round_rect"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:textSize="@dimen/fix_text_size_5"
+        android:visibility="gone"
+        android:text="@string/care_scanner_connecting_confirm"
+        android:layout_marginTop="@dimen/care_content_margin10"
+        android:layout_marginStart="@dimen/button_margin"
+        android:layout_marginEnd="@dimen/button_margin"
+        android:layout_marginBottom="@dimen/button_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

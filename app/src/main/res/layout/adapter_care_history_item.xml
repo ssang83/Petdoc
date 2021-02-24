@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/root"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/recordLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_solid_round_rect_6"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/date"
+            tools:text="2020.05.21"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/fix_text_size_2"
+            android:textStyle="bold"
+            android:background="@drawable/grey_solid_round_10"
+            android:includeFontPadding="false"
+            android:layout_marginTop="22dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/date"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+
+            <!-- 건강수첩 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/careNoteLayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingBottom="30dp"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewHealthNote"
+                    android:text="@string/care_action_check"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:textColor="@color/dark_grey"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:includeFontPadding="false"
+                    />
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/dark_grey"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewHealthNote"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="12dp"
+                    />
+
+                <!-- 건강수첩 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/healthNoteLayout"
+                    app:layout_constraintTop_toBottomOf="@+id/divider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:id="@+id/topLayout"
+                        >
+
+                        <!-- 산책 -->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:id="@+id/walkLayout"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            >
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:id="@+id/imageViewWalk"
+                                android:src="@drawable/ic_walk"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="@string/care_action_walk"
+                                android:textColor="@color/dark_grey"
+                                android:textSize="@dimen/fix_text_size_2"
+                                android:textStyle="bold"
+                                app:layout_constraintTop_toTopOf="@+id/imageViewWalk"
+                                app:layout_constraintBottom_toBottomOf="@+id/imageViewWalk"
+                                app:layout_constraintStart_toEndOf="@+id/imageViewWalk"
+                                android:layout_marginStart="8dp"
+                                />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:id="@+id/walkStatus"
+                                tools:text="완료"
+                                android:textStyle="normal"
+                                android:textSize="@dimen/fix_text_size_2"
+                                android:textColor="@color/dark_grey"
+                                app:layout_constraintTop_toTopOf="@+id/imageViewWalk"
+                                app:layout_constraintBottom_toBottomOf="@id/imageViewWalk"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/grey"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!-- 교감 -->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:id="@+id/communionLayout"
+                            android:visibility="gone"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            >
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:id="@+id/imageViewCommunion"
+                                android:src="@drawable/ic_care_love"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="@string/care_action_communion"
+                                android:textColor="@color/dark_grey"
+                                android:textSize="@dimen/fix_text_size_2"
+                                android:textStyle="bold"
+                                app:layout_constraintTop_toTopOf="@+id/imageViewCommunion"
+                                app:layout_constraintBottom_toBottomOf="@+id/imageViewCommunion"
+                                app:layout_constraintStart_toEndOf="@+id/imageViewCommunion"
+                                android:layout_marginStart="8dp"
+                                />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:id="@+id/communionStatus"
+                                tools:text="완료"
+                                android:textStyle="normal"
+                                android:textSize="@dimen/fix_text_size_2"
+                                android:textColor="@color/dark_grey"
+                                app:layout_constraintTop_toTopOf="@+id/imageViewCommunion"
+                                app:layout_constraintBottom_toBottomOf="@id/imageViewCommunion"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/grey"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- 양치 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:id="@+id/teethLayout"
+                        app:layout_constraintTop_toBottomOf="@+id/topLayout"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:id="@+id/imageViewTeeth"
+                            android:src="@drawable/ic_tooth"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/care_action_tooth"
+                            android:includeFontPadding="false"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewTeeth"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageViewTeeth"
+                            app:layout_constraintStart_toEndOf="@+id/imageViewTeeth"
+                            android:layout_marginStart="8dp"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/teethStatus"
+                            tools:text="완료"
+                            android:includeFontPadding="false"
+                            android:textStyle="normal"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textColor="@color/dark_grey"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewTeeth"
+                            app:layout_constraintBottom_toBottomOf="@id/imageViewTeeth"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/grey"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- 목욕 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:id="@+id/bathLayout"
+                        app:layout_constraintTop_toBottomOf="@+id/teethLayout"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:id="@+id/imageViewBath"
+                            android:src="@drawable/ic_bath"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/care_action_bath"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textStyle="bold"
+                            android:includeFontPadding="false"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewBath"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageViewBath"
+                            app:layout_constraintStart_toEndOf="@+id/imageViewBath"
+                            android:layout_marginStart="8dp"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/bathStatus"
+                            tools:text="완료"
+                            android:textStyle="normal"
+                            android:includeFontPadding="false"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textColor="@color/dark_grey"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewBath"
+                            app:layout_constraintBottom_toBottomOf="@id/imageViewBath"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/grey"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- 대소변 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:id="@+id/poopLayout"
+                        app:layout_constraintTop_toBottomOf="@+id/bathLayout"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:id="@+id/imageViewPoop"
+                            android:src="@drawable/ic_poop"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/care_action_poop"
+                            android:includeFontPadding="false"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewPoop"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageViewPoop"
+                            app:layout_constraintStart_toEndOf="@+id/imageViewPoop"
+                            android:layout_marginStart="8dp"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:id="@+id/peeStatus"
+                            android:background="@drawable/cream_circle"
+                            android:layout_marginEnd="8dp"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewPoop"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageViewPoop"
+                            app:layout_constraintEnd_toStartOf="@+id/fecesStatus"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/fecesStatus"
+                            tools:text="보통"
+                            android:includeFontPadding="false"
+                            android:textStyle="normal"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textColor="@color/dark_grey"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewPoop"
+                            app:layout_constraintBottom_toBottomOf="@id/imageViewPoop"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/grey"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- 체중 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:id="@+id/weightLayout"
+                        app:layout_constraintTop_toBottomOf="@+id/poopLayout"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:id="@+id/imageViewWeight"
+                            android:src="@drawable/ic_care_weight"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/care_health_weight"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textStyle="bold"
+                            android:includeFontPadding="false"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewWeight"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageViewWeight"
+                            app:layout_constraintStart_toEndOf="@+id/imageViewWeight"
+                            android:layout_marginStart="8dp"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/weightValue"
+                            tools:text="4kg"
+                            android:textStyle="normal"
+                            android:includeFontPadding="false"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textColor="@color/dark_grey"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewWeight"
+                            app:layout_constraintBottom_toBottomOf="@id/imageViewWeight"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/grey"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- 진료 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/clinicLayout"
+                        app:layout_constraintTop_toBottomOf="@+id/weightLayout"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:id="@+id/imageViewClinic"
+                            android:src="@drawable/ic_care_clinic"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/care_clinic"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textStyle="bold"
+                            android:includeFontPadding="false"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewClinic"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageViewClinic"
+                            app:layout_constraintStart_toEndOf="@+id/imageViewClinic"
+                            android:layout_marginStart="8dp"
+                            />
+
+                        <LinearLayout
+                            android:id="@+id/clinicType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintTop_toBottomOf="@+id/imageViewClinic"
+                            app:layout_constraintStart_toStartOf="@+id/imageViewClinic"
+                            android:layout_marginTop="9dp"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:id="@+id/clinicContent"
+                            tools:text="종합백신 DHPPL 접종 및 소변 검사"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textStyle="normal"
+                            android:includeFontPadding="false"
+                            app:layout_constraintTop_toBottomOf="@+id/clinicType"
+                            app:layout_constraintStart_toStartOf="@+id/imageViewClinic"
+                            />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/grey"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintTop_toBottomOf="@+id/clinicContent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- 메모 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/memoLayout"
+                        app:layout_constraintTop_toBottomOf="@+id/clinicLayout"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:id="@+id/imageViewMemo"
+                            android:src="@drawable/ic_care_memo"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textViewMemo"
+                            android:text="@string/care_memo"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textStyle="bold"
+                            android:includeFontPadding="false"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewMemo"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageViewMemo"
+                            app:layout_constraintStart_toEndOf="@+id/imageViewMemo"
+                            android:layout_marginStart="8dp"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:id="@+id/memo"
+                            tools:text="3~5일간은 미용, 목욕, 격렬한 운동, 장거리 이동을 하지 않는 것이 좋고 접종 부위를 만지지 않도록 신경써주기"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textStyle="normal"
+                            android:paddingBottom="10dp"
+                            android:includeFontPadding="false"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewMemo"
+                            app:layout_constraintStart_toStartOf="@+id/imageViewMemo"
+                            />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/grey"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 펫닥 스캐너-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/scannerLayout"
+                app:layout_constraintTop_toBottomOf="@+id/careNoteLayer"
+                app:layout_constraintStart_toStartOf="parent"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewScanner"
+                    android:text="@string/care_health_check"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/fix_text_size_4"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/dark_grey"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <View
+                    android:id="@+id/divider1"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/dark_grey"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewScanner"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="12dp"
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/scannerRecordLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/divider1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    >
+
+                    <!-- 체온 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/temperatureLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageViewTemperature"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_temp_on"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:includeFontPadding="false"
+                            android:text="@string/care_health_body_temp"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageViewTemperature"
+                            app:layout_constraintStart_toEndOf="@+id/imageViewTemperature"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewTemperature" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/bodyTemperture"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:includeFontPadding="false"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageViewTemperature"
+                            app:layout_constraintEnd_toStartOf="@+id/btnTemperatureHistory"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewTemperature"
+                            tools:text="38.5°C" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/btnTemperatureHistory"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@drawable/ic_go"
+                            app:layout_constraintBottom_toBottomOf="@id/imageViewTemperature"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewTemperature" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/grey"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- 온습도 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:id="@+id/humidityLayout"
+                        app:layout_constraintTop_toBottomOf="@+id/temperatureLayout">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:id="@+id/imageViewHumidity"
+                            android:src="@drawable/ic_humidity_on"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/care_health_humidity"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:includeFontPadding="false"
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewHumidity"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageViewHumidity"
+                            app:layout_constraintStart_toEndOf="@+id/imageViewHumidity"
+                            android:layout_marginStart="8dp"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/humidity"
+                            tools:text="22°C/66%"
+                            android:includeFontPadding="false"
+                            android:layout_marginEnd="8dp"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewHumidity"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageViewHumidity"
+                            app:layout_constraintEnd_toStartOf="@+id/btnHumidityHistory"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:id="@+id/btnHumidityHistory"
+                            android:src="@drawable/ic_go"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewHumidity"
+                            app:layout_constraintBottom_toBottomOf="@id/imageViewHumidity"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/grey"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- 귀 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/earLayout"
+                        android:paddingBottom="20dp"
+                        app:layout_constraintTop_toBottomOf="@+id/humidityLayout"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:id="@+id/imageViewEar"
+                            android:src="@drawable/ic_ear_on"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/care_health_ear"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/fix_text_size_2"
+                            android:textStyle="bold"
+                            android:includeFontPadding="false"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewEar"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageViewEar"
+                            app:layout_constraintStart_toEndOf="@+id/imageViewEar"
+                            android:layout_marginStart="8dp"
+                            />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/btnCameraRecord"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewEar"
+                            app:layout_constraintBottom_toBottomOf="@id/imageViewEar"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            >
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:id="@+id/imageViewScanCamera"
+                                android:src="@drawable/ic_scan_camera"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/textViewEarHistory"
+                                android:text="@string/care_history_camera_record"
+                                android:textStyle="normal"
+                                android:textSize="@dimen/fix_text_size_2"
+                                android:includeFontPadding="false"
+                                android:textColor="@color/dark_grey"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginEnd="6dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/imageViewScanCamera"
+                                app:layout_constraintEnd_toStartOf="@+id/btnEarHistory"
+                                />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:id="@+id/btnEarHistory"
+                                android:src="@drawable/ic_go"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="111dp"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintTop_toBottomOf="@+id/imageViewEar"
+                            app:layout_constraintStart_toStartOf="@+id/imageViewEar"
+                            >
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/leftEarLayout"
+                                app:layout_constrainedWidth="true"
+                                app:layout_constraintWidth_percent="0.48"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                >
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/leftEarScan"
+                                    tools:background="@drawable/img_product_test"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/black_alpha20_rect"
+                                    android:text="왼쪽"
+                                    android:includeFontPadding="false"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/fix_text_size_1"
+                                    android:textStyle="bold"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/rightEarLayout"
+                                android:layout_marginStart="17dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/leftEarLayout"
+                                >
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/rightEarScan"
+                                    tools:background="@drawable/img_product_test"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/black_alpha20_rect"
+                                    android:text="오른쪽"
+                                    android:includeFontPadding="false"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/fix_text_size_1"
+                                    android:textStyle="bold"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/grey"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/scannerNoRecord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/care_no_history"
+                    android:textStyle="normal"
+                    android:includeFontPadding="false"
+                    android:textSize="@dimen/fix_text_size_2"
+                    android:textColor="@color/light_grey"
+                    app:layout_constraintTop_toBottomOf="@+id/divider1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="36dp"
+                    android:layout_marginBottom="36dp"
+                    android:visibility="gone"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/noRecored"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        tools:text="2020.05.22 기록이 없습니다."
+        android:textColor="@color/light_grey"
+        android:textSize="@dimen/fix_text_size_2"
+        android:textStyle="normal"
+        android:gravity="center"
+        android:visibility="gone"
+        android:includeFontPadding="false"
+        android:background="@drawable/white_solid_round_rect_6"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/home_header_height"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/home_pet_talk"
+            android:textColor="@color/dark_grey"
+            android:textStyle="bold"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textSize="@dimen/fix_text_size_4"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/home_header_height"
+            android:layout_height="@dimen/home_header_height"
+            android:padding="@dimen/top_my_icon_padding"
+            android:src="@drawable/backbutton"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnEdit"
+            android:layout_width="@dimen/home_header_height"
+            android:layout_height="@dimen/home_header_height"
+            android:padding="@dimen/top_my_icon_padding"
+            android:src="@drawable/ic_pettalk_edit"
+            android:visibility="gone"
+            android:adjustViewBounds="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/home_content_gap4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader"
+        app:layout_constraintBottom_toTopOf="@+id/input">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutProfile"
+                android:layout_width="match_parent"
+                android:layout_height="71dp"
+                android:paddingTop="11dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                >
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/profile_default"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/light_grey_circle"
+                    app:layout_constraintBottom_toBottomOf="@id/profileImage"
+                    app:layout_constraintEnd_toEndOf="@id/profileImage"
+                    app:layout_constraintStart_toStartOf="@id/profileImage"
+                    app:layout_constraintTop_toTopOf="@id/profileImage" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutContent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="12dp"
+                    app:layout_constraintStart_toEndOf="@id/profileImage"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/replyCount"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:text="부농젤리"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:textSize="@dimen/fix_text_size_3"
+                        android:textColor="@color/dark_grey"
+                        android:textAlignment="gravity"
+                        android:textStyle="normal"
+                        android:gravity="center_vertical|start"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/nickName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title"
+                        android:textColor="@color/color8d95a0"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        tools:text="두리누나칸더언니"
+                        android:textSize="@dimen/fix_text_size_1"
+                        android:textStyle="normal"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/regDate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        app:layout_constraintStart_toEndOf="@id/nickName"
+                        app:layout_constraintTop_toTopOf="@+id/nickName"
+                        android:textColor="@color/color8d95a0"
+                        tools:text="5월 25일"
+                        android:textSize="@dimen/fix_text_size_1"
+                        android:textStyle="normal"
+                        android:layout_marginStart="@dimen/pettalk_list_item_text_gap"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/replyCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/layoutContent"
+                    android:textColor="@color/color8d95a0"
+                    tools:text="댓글 6"
+                    android:textStyle="normal"
+                    android:textSize="@dimen/fix_text_size_1"
+                    android:layout_marginStart="@dimen/pettalk_list_item_text_gap"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey"
+                app:layout_constraintTop_toBottomOf="@+id/layoutProfile"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+            
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutPager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/divider"
+                app:layout_constraintStart_toStartOf="parent"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/viewPagerImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    >
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="343dp"
+                        android:paddingTop="10dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:tabBackground="@drawable/tab_pager_seletor"
+                        app:tabGravity="center"
+                        app:tabIndicatorHeight="0dp"
+                        app:layout_constraintTop_toBottomOf="@+id/viewPager"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btnShare"
+                    android:layout_width="@dimen/home_banner_share_image_size"
+                    android:layout_height="@dimen/home_banner_share_image_size"
+                    android:layout_marginEnd="@dimen/home_banner_share_margin_end"
+                    android:background="@drawable/ic_share"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/viewPagerImg"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                tools:text="뭔가,,저희 강아지만 그런건가요? 갑자기 조용한 것 같아서 찾아보면 구석에서 웅크리고 있는겁니다. 그래서 다가가서 보니까 똥을 먹고 있...똥...하...어떻해야 할까요? 집사님들 도와주세욧!"
+                android:textStyle="normal"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/fix_text_size_3"
+                app:layout_constraintTop_toBottomOf="@+id/layoutPager"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/replyList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:overScrollMode="never"
+                android:background="@color/grey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/content" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/veryLightPinkFour"
+        app:layout_constraintBottom_toTopOf="@+id/input"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_tab_height"
+        android:background="@color/white"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/emptyView"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editReply"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="62dp"
+            android:background="@android:color/transparent"
+            android:gravity="left|center_vertical"
+            android:hint="@string/home_banner_comment"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:maxLength="100"
+            android:paddingLeft="@dimen/home_content_margin"
+            android:paddingRight="14dp"
+            android:textStyle="normal"
+            android:textColor="@color/dark_grey"
+            android:textColorHint="@color/light_grey3"
+            android:textSize="@dimen/fix_text_size_3" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnSend"
+            android:layout_width="@dimen/home_content_gap2"
+            android:layout_height="@dimen/home_content_gap2"
+            android:background="@drawable/btn_input"
+            android:layout_marginEnd="@dimen/home_content_gap5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/emptyView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#00000000" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/grey_line_upside_rect"
+    android:paddingBottom="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/petProfileImage"
+        android:layout_width="@dimen/mypage_pet_information_profile_size"
+        android:layout_height="@dimen/mypage_pet_information_profile_size"
+        android:layout_marginStart="@dimen/mypage_pet_information_profile_margin"
+        android:layout_marginTop="@dimen/mypage_pet_information_profile_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/img_pet_profile_default"
+        android:adjustViewBounds="true"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/grey_full_round_stroke_rect"
+        app:layout_constraintStart_toStartOf="@id/petProfileImage"
+        app:layout_constraintTop_toTopOf="@id/petProfileImage"
+        app:layout_constraintBottom_toBottomOf="@id/petProfileImage"
+        app:layout_constraintEnd_toEndOf="@id/petProfileImage"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/petCrown"
+        android:layout_width="@dimen/mypage_pet_image_added_size"
+        android:layout_height="@dimen/mypage_pet_image_added_size"
+        app:layout_constraintStart_toStartOf="@id/petProfileImage"
+        app:layout_constraintTop_toTopOf="@id/petProfileImage"
+        android:src="@drawable/ic_crown"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/petName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="나니"
+        android:textStyle="bold"
+        android:textSize="@dimen/fix_text_size_6"
+        android:textColor="@color/dark_grey"
+        android:layout_marginStart="@dimen/mypage_pet_information_profile_margin"
+        app:layout_constraintStart_toEndOf="@+id/petProfileImage"
+        app:layout_constraintTop_toTopOf="@+id/petProfileImage"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutPetInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mypage_pet_information_profile_margin"
+        android:layout_marginTop="@dimen/mypage_pet_text_gap"
+        app:layout_constraintStart_toEndOf="@+id/petProfileImage"
+        app:layout_constraintTop_toBottomOf="@+id/petName">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pet_information_age"
+            android:textColor="@color/light_grey"
+            android:textSize="@dimen/fix_text_size_2"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/petAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/change_information_gap1"
+            tools:text="3세 1개월 (여아)"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/fix_text_size_2"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@+id/textViewAge"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewBreed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mypage_pet_text_gap"
+            android:text="@string/pet_information_breed"
+            android:textColor="@color/light_grey"
+            android:textSize="@dimen/fix_text_size_2"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAge"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/petBreed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/change_information_gap1"
+            android:layout_marginTop="@dimen/mypage_pet_text_gap"
+            tools:text="3세 1개월 (여아)"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/fix_text_size_2"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@+id/textViewBreed"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAge"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutPetAddStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mypage_pet_information_profile_margin"
+        android:layout_marginTop="@dimen/mypage_pet_text_gap"
+        app:layout_constraintStart_toEndOf="@+id/petProfileImage"
+        app:layout_constraintTop_toBottomOf="@+id/petName"
+        android:visibility="gone" >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewPetStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pet_information_add_status"
+            android:textColor="@color/color353d5e"
+            android:textSize="@dimen/fix_text_size_2"
+            android:textStyle="bold"
+            android:background="@drawable/pale_grey_seven_bg"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/petAddStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/change_information_gap1"
+            tools:text="70% 진행중"
+            android:textStyle="bold"
+            android:textColor="@color/periwinkleBlue"
+            android:textSize="@dimen/fix_text_size_1"
+            app:layout_constraintTop_toTopOf="@+id/textViewPetStatus"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewPetStatus"
+            app:layout_constraintStart_toEndOf="@+id/textViewPetStatus"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/diagnosisTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/pet_breed_button_margin_bottom"
+        android:layout_marginStart="@dimen/mypage_pet_info_panel_bottom_padding"
+        tools:text="@string/pet_information_diagnosis"
+        android:textStyle="bold"
+        android:textSize="@dimen/fix_text_size_2"
+        android:textColor="@color/white"
+        android:background="@drawable/blue_grey_bg"
+        app:layout_constraintStart_toEndOf="@+id/petProfileImage"
+        app:layout_constraintTop_toBottomOf="@+id/layoutPetInfo"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/customealPurchase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="맞춤식 구매하기"
+        android:textStyle="bold"
+        android:textSize="@dimen/fix_text_size_2"
+        android:textColor="@color/white"
+        android:background="@drawable/salmon_round_rect_18"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/diagnosisTitle"
+        app:layout_constraintTop_toTopOf="@+id/diagnosisTitle"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/diagnosisStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/change_information_gap1"
+        android:layout_marginTop="@dimen/mypage_pet_text_gap2"
+        tools:text="70% 진행중"
+        android:textStyle="bold"
+        android:textColor="@color/periwinkleBlue"
+        android:textSize="@dimen/fix_text_size_1"
+        app:layout_constraintStart_toEndOf="@+id/diagnosisTitle"
+        app:layout_constraintTop_toTopOf="@+id/diagnosisTitle" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/mypage_pet_information_profile_margin"
+        android:padding="@dimen/mypage_pet_information_profile_margin"
+        android:src="@drawable/btn_switch"
+        android:adjustViewBounds="true"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <View
+        android:layout_width="7dp"
+        android:layout_height="7dp"
+        android:id="@+id/updateBadge"
+        android:background="@drawable/salmon_circle"
+        android:visibility="gone"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintTop_toTopOf="@+id/diagnosisTitle"
+        app:layout_constraintEnd_toEndOf="@+id/diagnosisTitle"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

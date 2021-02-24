@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorpetfood">
+    
+    <ImageView
+        android:layout_width="@dimen/food_recommend_progressing_imagesize"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="@dimen/food_recommend_progressing_top_margin"
+        android:src="@drawable/custom_meal_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/petfood_recommend_progressing_icon"
+        />
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:textStyle="normal"
+        android:layout_marginBottom="@dimen/food_recommend_progressing_bottom_margin"
+        android:lineSpacingMultiplier="1.1"
+        android:text="@string/food_recommend_progressing"
+        android:textAlignment="center"
+        android:textColor="@color/dark_grey"
+        android:textSize="@dimen/fix_text_size_3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:layout_marginBottom="@dimen/food_recommend_progressing_gap"
+        android:text="@string/food_recommend_progressing_1"
+        android:textColor="@color/salmon"
+        android:textSize="@dimen/fix_text_size_9"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/petfood_recommend_progressing_pet_image"
+        android:layout_width="@dimen/food_recommend_progressing_image"
+        android:layout_height="@dimen/food_recommend_progressing_image"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="@+id/petfood_recommend_progressing_icon"
+        app:layout_constraintStart_toStartOf="@+id/petfood_recommend_progressing_icon"
+        app:layout_constraintTop_toBottomOf="@+id/petfood_recommend_progressing_icon"
+        android:padding="@dimen/food_recommend_progressing_image_padding"
+        android:src="@drawable/pet_default_image_white"
+        />
+
+    <kr.co.petdoc.petdoc.widget.CircleLineProgressView
+        android:id="@+id/petfood_recommend_progressing_bar"
+        android:layout_width="@dimen/food_recommend_progressing_image"
+        android:layout_height="@dimen/food_recommend_progressing_image"
+        app:layout_constraintTop_toTopOf="@+id/petfood_recommend_progressing_pet_image"
+        app:layout_constraintBottom_toBottomOf="@+id/petfood_recommend_progressing_pet_image"
+        app:layout_constraintEnd_toEndOf="@+id/petfood_recommend_progressing_pet_image"
+        app:layout_constraintStart_toStartOf="@+id/petfood_recommend_progressing_pet_image"
+        android:indeterminate="false"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progressDrawable="@drawable/petfood_progressing"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

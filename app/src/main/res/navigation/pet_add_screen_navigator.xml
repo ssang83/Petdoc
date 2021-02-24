@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pet_add_screen_navigator"
+    app:startDestination="@id/petNameFragment">
+    <fragment
+        android:id="@+id/petNameFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.petadd.PetNameFragment"
+        android:label="PetNameFragment"
+        tools:layout="@layout/fragment_pet_name">
+        <action
+            android:id="@+id/action_petNameFragment_to_petKindFragment"
+            app:destination="@id/petKindFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/petKindFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.petadd.PetKindFragment"
+        android:label="PetKindFragment"
+        tools:layout="@layout/fragment_pet_kind">
+        <action
+            android:id="@+id/action_petKindFragment_to_petBreedFragment"
+            app:destination="@id/petBreedFragment" />
+        <action
+            android:id="@+id/action_petKindFragment_to_petSpeciesListFragment"
+            app:destination="@id/petSpeciesListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/petBreedFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.petadd.PetBreedFragment"
+        android:label="PetBreedFragment"
+        tools:layout="@layout/fragment_pet_breed">
+        <action
+            android:id="@+id/action_petBreedFragment_to_petAgeFragment"
+            app:destination="@id/petAgeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/petAgeFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.petadd.PetAgeFragment"
+        android:label="PetAgeFragment"
+        tools:layout="@layout/fragment_pet_age">
+        <action
+            android:id="@+id/action_petAgeFragment_to_petSexFragment"
+            app:destination="@id/petSexFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/petSexFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.petadd.PetSexFragment"
+        android:label="PetSexFragment"
+        tools:layout="@layout/fragment_pet_sex">
+        <action
+            android:id="@+id/action_petSexFragment_to_petVaccineFragment"
+            app:destination="@id/petVaccineFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/petVaccineFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.petadd.PetVaccineFragment"
+        android:label="PetVaccineFragment"
+        tools:layout="@layout/fragment_pet_vaccine"/>
+    <fragment
+        android:id="@+id/petSpeciesListFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.petadd.PetSpeciesListFragment"
+        android:label="PetSpeciesListFragment"
+        tools:layout="@layout/fragment_species_list">
+        <action
+            android:id="@+id/action_petSpeciesListFragment_to_petAgeFragment"
+            app:destination="@id/petAgeFragment" />
+    </fragment>
+</navigation>

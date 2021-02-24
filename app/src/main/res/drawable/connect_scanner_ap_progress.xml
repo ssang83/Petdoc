@@ -1,0 +1,24 @@
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:drawable="@drawable/ic_router_progress_01"
+        android:duration="100" />
+
+
+    <item
+        android:drawable="@drawable/ic_router_progress_02"
+        android:duration="100" />
+
+
+    <item
+        android:drawable="@drawable/ic_router_progress_03"
+        android:duration="100" />
+
+
+    <item
+        android:drawable="@drawable/ic_router_progress_04"
+        android:duration="100" />
+
+
+</animation-list>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/home_header_height"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/main_shopping"
+            android:textColor="@color/dark_grey"
+            android:textStyle="bold"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textSize="@dimen/fix_text_size_4"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnNoti"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_common_noti"
+            android:adjustViewBounds="true"
+            app:layout_constraintEnd_toStartOf="@+id/btnMyPage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:id="@+id/notiUpdate"
+            app:layout_constraintTop_toTopOf="@+id/btnNoti"
+            app:layout_constraintEnd_toEndOf="@+id/btnNoti"
+            android:background="@drawable/orange_circle"
+            android:visibility="gone"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnMyPage"
+            android:layout_width="@dimen/home_header_height"
+            android:layout_height="@dimen/home_header_height"
+            android:padding="@dimen/top_my_icon_padding"
+            android:src="@drawable/ic_mypage"
+            android:adjustViewBounds="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/layoutHeader"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

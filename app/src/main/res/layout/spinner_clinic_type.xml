@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    style="?android:attr/spinnerItemStyle"
+    android:singleLine="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/fix_text_size_2"
+    android:textColor="@color/dark_grey"
+    android:textStyle="normal"
+    android:gravity="center_vertical"
+    android:paddingLeft="8dp"
+    android:text="@string/care_clinic_type" />

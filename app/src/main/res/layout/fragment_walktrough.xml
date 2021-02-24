@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/little_orange">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        tools:text="반려동물 건강관리는\n미리미리,똑똑하게"
+        android:textColor="@color/slateGrey"
+        android:textStyle="bold"
+        android:textSize="28dp"
+        android:includeFontPadding="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="41dp"
+        android:layout_marginStart="30dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/content"
+        tools:text="스캐너로 매일 건강 기록하고\n펫 체크 어드밴스드로\n우리 아이 건강검진까지!"
+        android:textSize="16dp"
+        android:textStyle="normal"
+        android:textColor="@color/slateGrey"
+        android:includeFontPadding="false"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        android:layout_marginTop="12dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/walktroughImg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:src="@drawable/img_walktrough_01"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

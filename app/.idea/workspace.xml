@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="06fe7fad-f494-4a00-aacd-2e2f78c1dd9b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/activity/care/ActionBathActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/activity/care/ActionCommunionActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/activity/care/ActionPoopActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/activity/care/ActionToothActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/activity/care/ActionWalkActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/activity/care/CareClinicActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/activity/care/CareHistoryActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/activity/care/CareMemoActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/activity/care/CareWeightActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/widget/NothingSelectedSpinnerAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/color/btn_text_color.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/color/poop_feces_text_color.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_calendar_arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_camera.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_care_poop_check.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_filter_arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/ic_go.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/img_action_bath.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/img_action_communion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/img_action_tooth.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable-xxxhdpi/img_action_walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/bg_clinic_type_grey.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/bg_clinic_type_little_orange.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/bg_feces_type.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/button_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/cream_circle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/light_grey_round_rect_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/light_grey_round_stroke_16.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/milk_chocolate_circle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/orange_round_stroke_16.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/orange_yellow_circle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/paste_pink_circle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/sea_green_circle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/sunny_yellow_circle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/white_top_round_rect.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/activity_action_bath.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/activity_action_communion.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/activity_action_poop.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/activity_action_tooth.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/activity_action_walk.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/activity_care_clinic.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/activity_care_history.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/activity_care_memo.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/activity_care_weight.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/adapter_care_history_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/spinner_clinic_type.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/view_clinic_type.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/activity/LoginAndRegisterActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/activity/LoginAndRegisterActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/adapter/home/HomeHospitalAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/adapter/home/HomeHospitalAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/adapter/mypage/bookmark/HospitalAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/adapter/mypage/bookmark/HospitalAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/fragment/PetCareFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/fragment/PetCareFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/fragment/login/LoginFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/fragment/login/LoginFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/widget/HospitalType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/adapter/home/HospitalType.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/widget/ScrollRulerView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/petdoc/petdoc/widget/ScrollRulerView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/white_top_right_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/white_top_right_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_care.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_care.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/styles.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="192.168.30.166:5555" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1bAACdD8CqsuywprVguo2CNpKuI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="06fe7fad-f494-4a00-aacd-2e2f78c1dd9b" name="Default Changelist" comment="" />
+      <created>1588064397712</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588064397712</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

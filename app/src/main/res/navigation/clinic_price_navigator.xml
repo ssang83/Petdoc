@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clinic_price_navigator"
+    app:startDestination="@id/clinicPriceFragment">
+
+    <fragment
+        android:id="@+id/clinicPriceFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.home.ClinicPriceFragment"
+        android:label="ClinicPriceFragment"
+        tools:layout="@layout/fragment_clinic_price">
+        <action
+            android:id="@+id/action_clinicPriceFragment_to_clinicPriceCategoryFragment"
+            app:destination="@id/clinicPriceCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/clinicPriceCategoryFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.home.ClinicPriceCategoryFragment"
+        android:label="ClinicPriceCategoryFragment"
+        tools:layout="@layout/fragment_clinic_price_category"/>
+</navigation>

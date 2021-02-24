@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:background="@drawable/grey_line_upside_rect"
+    >
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/petDoctorImg"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/profile_default"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="11dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintStart_toEndOf="@+id/petDoctorImg"
+        app:layout_constraintEnd_toStartOf="@+id/layoutStatus"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutReply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/petDoctor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이태형 원장님"
+                android:textStyle="normal"
+                android:textColor="@color/gunmetal"
+                android:textSize="@dimen/fix_text_size_3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/chatContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:text="몸에 문제가 있어서 그럴수도 있고 사료의 문제..."
+                android:textSize="@dimen/fix_text_size_1"
+                android:textColor="@color/light_grey"
+                android:textStyle="normal"
+                app:layout_constraintTop_toBottomOf="@+id/petDoctor"
+                app:layout_constraintStart_toStartOf="@+id/petDoctor"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/waitingReply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chat_waiting_reply"
+            android:textStyle="normal"
+            android:textColor="@color/gunmetal"
+            android:textSize="@dimen/fix_text_size_3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/regDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5월 25일"
+            android:textSize="@dimen/fix_text_size_1"
+            android:textColor="@color/light_grey"
+            android:textStyle="normal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/regDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/unReadCount"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:text="99"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/fix_text_size_1"
+                android:textColor="@color/white"
+                android:background="@drawable/orange_circle"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/replyStatusWating"
+                android:layout_width="54dp"
+                android:layout_height="22dp"
+                android:text="@string/chat_reply_status_wating"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:textStyle="normal"
+                android:textSize="@dimen/fix_text_size_1"
+                android:textColor="@color/orange"
+                android:background="@drawable/orange_round_11"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="gone"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/replyStatusCompleted"
+                android:layout_width="54dp"
+                android:layout_height="22dp"
+                android:text="@string/chat_reply_status_completed"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:textStyle="normal"
+                android:textSize="@dimen/fix_text_size_1"
+                android:textColor="@color/light_grey3"
+                android:background="@drawable/grey_round_stroke_11"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="gone"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

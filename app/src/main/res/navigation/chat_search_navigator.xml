@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chat_search_navigator"
+    app:startDestination="@id/chatSearchBeforeFragment">
+
+    <fragment
+        android:id="@+id/chatSearchBeforeFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.chat.search.ChatSearchBeforeFragment"
+        android:label="ChatSearchBeforeFragment"
+        tools:layout="@layout/fragment_chat_search_before">
+        <action
+            android:id="@+id/action_chatSearchBeforeFragment_to_chatSearchDetailFragment"
+            app:destination="@id/chatSearchDetailFragment" />
+        <action
+            android:id="@+id/action_chatSearchBeforeFragment_to_chatSearchResultFragment"
+            app:destination="@id/chatSearchResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatSearchDetailFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.chat.search.ChatSearchDetailFragment"
+        android:label="ChatSearchDetailFragment"
+        tools:layout="@layout/fragment_chat_search_detail"/>
+    <fragment
+        android:id="@+id/chatSearchResultFragment"
+        android:name="kr.co.petdoc.petdoc.fragment.chat.search.ChatSearchResultFragment"
+        android:label="ChatSearchResultFragment"
+        tools:layout="@layout/fragment_chat_search_result">
+        <action
+            android:id="@+id/action_chatSearchResultFragment_to_chatSearchDetailFragment"
+            app:destination="@id/chatSearchDetailFragment" />
+    </fragment>
+</navigation>

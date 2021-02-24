@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
+        android:layout_marginTop="9dp"
+        android:background="@drawable/pale_grey_three_round_solid_2">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="일반진료"
+            android:textStyle="normal"
+            android:textColor="@color/color353d5e"
+            android:textSize="@dimen/fix_text_size_2"/>
+    </RelativeLayout>
+</FrameLayout>

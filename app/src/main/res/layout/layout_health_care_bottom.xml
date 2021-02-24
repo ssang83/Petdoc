@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/bottomSheet"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/white_top_round_only_25"
+    android:orientation="vertical"
+    app:behavior_hideable="false"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:text="검진 대상"
+        android:textStyle="bold"
+        android:textSize="@dimen/fix_text_size_4"
+        android:textColor="@color/slateGrey"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/petList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/layoutContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        />
+
+</LinearLayout>

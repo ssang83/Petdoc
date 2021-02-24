@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이름"
+            android:textColor="@color/light_grey"
+            android:textStyle="bold"
+            android:textSize="@dimen/fix_text_size_3"
+            android:includeFontPadding="false"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="29dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editName"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:cursorVisible="true"
+            android:textCursorDrawable="@drawable/search_cursor"
+            android:background="@drawable/grey_round_stoke_rect"
+            android:gravity="center_vertical|start"
+            android:inputType="text"
+            android:hint="이름을 입력해주세요."
+            android:textColorHint="@color/light_grey3"
+            android:maxLines="1"
+            android:padding="16dp"
+            android:singleLine="true"
+            android:textAlignment="gravity"
+            android:textColor="@color/dark_grey"
+            android:textStyle="normal"
+            android:textSize="@dimen/fix_text_size_3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="휴대폰번호"
+            android:textColor="@color/light_grey"
+            android:textStyle="bold"
+            android:textSize="@dimen/fix_text_size_3"
+            android:includeFontPadding="false"
+            android:layout_marginTop="34dp"
+            android:layout_marginStart="29dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:cursorVisible="true"
+            android:textCursorDrawable="@drawable/search_cursor"
+            android:background="@drawable/grey_round_stoke_rect"
+            android:gravity="center_vertical|start"
+            android:inputType="numberSigned"
+            android:hint="'-' 제외한 휴대폰번호를 적어주세요. "
+            android:textColorHint="@color/light_grey3"
+            android:maxLines="1"
+            android:padding="16dp"
+            android:singleLine="true"
+            android:textAlignment="gravity"
+            android:textColor="@color/dark_grey"
+            android:textStyle="normal"
+            android:textSize="@dimen/fix_text_size_3" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnFind"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height_default"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/button_margin"
+        android:layout_marginEnd="@dimen/button_margin"
+        android:layout_marginBottom="@dimen/button_margin"
+        android:background="@drawable/grey_round_rect"
+        android:textColor="@color/light_grey3"
+        android:textStyle="bold"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:textSize="@dimen/fix_text_size_5"
+        android:text="아이디 찾기" />
+</androidx.constraintlayout.widget.ConstraintLayout>

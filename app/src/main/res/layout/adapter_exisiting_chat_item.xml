@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/root"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="138dp"
+    android:layout_height="178dp"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/shadow"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="178dp"
+        android:padding="14dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/regDate"
+            android:text="2019년 4월 1일"
+            android:textColor="@color/light_grey"
+            android:textSize="@dimen/fix_text_size_1"
+            android:textStyle="normal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <kr.co.petdoc.petdoc.widget.EllipsizingTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:id="@+id/chatContent"
+            android:text="강아지가 치킨 뼈를 먹었어요 아주 조금이긴 하지만 위험하다고 들어서요 지금 병원에 있는데 어떻게하죠?"
+            android:textStyle="normal"
+            android:maxLines="4"
+            android:ellipsize="end"
+            android:textSize="@dimen/fix_text_size_3"
+            android:textColor="@color/dark_grey"
+            app:layout_constraintTop_toBottomOf="@+id/regDate"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="5dp"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewRecommend"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:src="@drawable/ic_recommend"
+                android:adjustViewBounds="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/recommendCount"
+                android:layout_marginStart="5dp"
+                android:text="추천 25"
+                android:textColor="@color/light_grey"
+                android:textSize="@dimen/fix_text_size_1"
+                android:textStyle="normal"
+                app:layout_constraintStart_toEndOf="@+id/imageViewRecommend"
+                app:layout_constraintTop_toTopOf="@+id/imageViewRecommend"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewRecommend"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

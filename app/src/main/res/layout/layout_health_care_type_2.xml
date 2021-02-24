@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/pale_grey_ten_solid_round_14">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewCheckup"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:src="@drawable/ic_checkup_total"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="종합 검사"
+        android:textColor="@color/slateGrey"
+        android:textSize="@dimen/fix_text_size_4"
+        android:textStyle="bold"
+        android:includeFontPadding="false"
+        app:layout_constraintTop_toTopOf="@+id/imageViewCheckup"
+        app:layout_constraintStart_toEndOf="@+id/imageViewCheckup"
+        android:layout_marginStart="13dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="혈액과 알러지 검사를 통하여 내 반려동물의 종합적인 건강상태를 체크하세요!"
+        android:textStyle="normal"
+        android:textSize="@dimen/fix_text_size_3"
+        android:textColor="@color/slateGrey"
+        android:includeFontPadding="false"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTotal"
+        app:layout_constraintStart_toStartOf="@+id/textViewTotal"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="10dp"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutTestStep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDesc"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginEnd="55dp"
+            android:background="@color/lightPeriwinkle"
+            app:layout_constraintTop_toTopOf="@+id/image"
+            app:layout_constraintBottom_toBottomOf="@+id/image"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="55dp"
+            android:src="@drawable/ic_checkup_booking"
+            android:adjustViewBounds="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <View
+            android:id="@+id/endPoint"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginEnd="55dp"
+            android:background="@drawable/light_periwinke_circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/image"
+            app:layout_constraintBottom_toBottomOf="@+id/image"
+            />
+
+        <View
+            android:id="@+id/secondPoint"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/light_periwinke_circle"
+            app:layout_constraintTop_toTopOf="@+id/image"
+            app:layout_constraintBottom_toBottomOf="@+id/image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="병원 예약"
+            android:textColor="@color/cornflower"
+            android:textSize="13dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/image"
+            app:layout_constraintStart_toStartOf="@+id/image"
+            app:layout_constraintEnd_toEndOf="@+id/image"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="병원 방문"
+            android:textColor="@color/blueyGrey"
+            android:textSize="13dp"
+            android:textStyle="normal"
+            app:layout_constraintTop_toBottomOf="@+id/secondPoint"
+            app:layout_constraintTop_toTopOf="@+id/textView1"
+            app:layout_constraintStart_toStartOf="@+id/secondPoint"
+            app:layout_constraintEnd_toEndOf="@+id/secondPoint"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="결과 대기"
+            android:textColor="@color/blueyGrey"
+            android:textSize="13dp"
+            android:textStyle="normal"
+            app:layout_constraintTop_toTopOf="@+id/textView1"
+            app:layout_constraintTop_toBottomOf="@+id/endPoint"
+            app:layout_constraintStart_toStartOf="@+id/endPoint"
+            app:layout_constraintEnd_toEndOf="@+id/endPoint"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutTestStep"
+        android:layout_marginTop="15dp"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnProduct"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/white_left_bottom_round"
+            android:gravity="center"
+            android:text="상품정보"
+            android:textColor="@color/blue_grey"
+            android:textSize="@dimen/fix_text_size_4"
+            android:textStyle="bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.5" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnBooking"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnProduct"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/blue_grey_right_bottom_round"
+            android:textSize="@dimen/fix_text_size_4"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="병원 예약"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

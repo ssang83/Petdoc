@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/pet_breed_button_margin_bottom"
+        android:layout_marginStart="@dimen/pet_kind_list_item_padding_left"
+        android:layout_marginEnd="@dimen/pet_kind_list_item_padding_left"
+        android:padding="@dimen/pet_add_name_edit_margin_top"
+        android:background="@drawable/bg_pet_weight_desc"
+        android:textColor="@color/light_grey"
+        android:textStyle="normal"
+        android:textAlignment="gravity"
+        android:textSize="@dimen/fix_text_size_1"
+        tools:text="@string/pet_breed_weight_desc" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
